@@ -3,8 +3,10 @@ import LandingPage from './Components/LandingPage';
 
 function App() {
   return (
-    <div>
-      <LandingPage/>
+    <div style={{width: '100vw', height: '100vh'}}>
+      <div class="container">
+        <LandingPage></LandingPage>
+      </div>
     </div>
   );
 }
