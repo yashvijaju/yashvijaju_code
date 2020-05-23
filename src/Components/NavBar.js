@@ -6,10 +6,11 @@ import Typography from '@material-ui/core/Typography'
 const NavBar = () => {
     return(
         <div>
-        <AppBar position="sticky">
-            <Toolbar style={{'background-color': "#61dafb", position: "sticky"}}>
-                <Typography variant="title">
-                React & Material-UI Sample Application
+        <AppBar elevation={1} style={{ alignItems:"center", 'background-color': "white"}}>
+            <Toolbar>
+                <Typography variant="body1" style={{color:"#000000"}}>
+                My Story &nbsp; &nbsp; &nbsp; &nbsp;
+                Contact Me
                 </Typography>
             </Toolbar>
         </AppBar>
