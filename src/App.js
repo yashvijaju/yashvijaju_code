@@ -1,7 +1,7 @@
 import React from 'react';
 import LandingPage from './Components/LandingPage';
 import NavBar from './Components/NavBar';
-
+import Story from './Components/Story';
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <div class="container">
         <NavBar></NavBar>
         <LandingPage></LandingPage>
-        <LandingPage></LandingPage>
+        <Story></Story>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { Component }  from 'react';
+import React  from 'react';
 import Typist from 'react-typist';
 
 export default function LandingPage() {
@@ -11,6 +11,7 @@ export default function LandingPage() {
                     </h>
                 </div>
             </div>
+            <div class="row" style={{'padding-top':'48vh', left: '25vw', display: 'flex', flexDirection: 'row', justifyContent: 'center'}}></div>
         </div>
     )
 }
