@@ -7,10 +7,15 @@ import { NavLink } from 'react-router-dom';
 
 export default function NavBar() {
     return(
-        <div>
+        <div style={{height: '5vh', opacity: '0.75'}}>
             <Fade in={true} timeout={16000}>
-                <AppBar elevation={0} style={{ alignItems:"center", 'background-color': "transparent"}}>
+                <AppBar elevation={0} style={{ alignItems:"center", 'background-color': "white"}}>
                     <Toolbar>
+                        <NavLink to="/" style={{'text-decoration':'none', 'padding-right': '2vw'}}>
+                            <Typography variant="body1" style={{color:"#000000"}}>
+                                Home
+                            </Typography>
+                        </NavLink>
                         <NavLink to="/my-story" style={{'text-decoration':'none', 'padding-right': '2vw'}}>
                             <Typography variant="body1" style={{color:"#000000"}}>
                                 My Story

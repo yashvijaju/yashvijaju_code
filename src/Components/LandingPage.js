@@ -9,7 +9,7 @@ export default function LandingPage() {
     return(
         <div>
             <NavBar></NavBar>
-            <Grid container direction="row" justify="center" style={{height: '100vh',  alignItems: 'center'}}>
+            <Grid container direction="row" justify="center" style={{height: '90vh',  alignItems: 'center'}}>
                 <div class="col offset-l5" style={{outline: '1px solid grey', outlineOffset: '-0.5vw', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>   
                     <h style={{fontSize: '2.5vw', 'padding': '2vh', backgroundColor: '#FFFFFF'}}>
                     <Typist avgTypingDelay={100} startDelay={300} cursor={{hideWhenDone: 'true'}}>Hi. I am Yashvi Jaju and this is my story. </Typist>
