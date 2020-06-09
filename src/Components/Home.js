@@ -3,6 +3,7 @@ import NavBar from './NavBar'
 import Animation from './LandingPage'
 import About from './About'
 import Projects from './Projects'
+import './Scroll.css';
 
 const pink='#F7CAC9';
 const blue='#7EC8E3';
