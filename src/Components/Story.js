@@ -195,12 +195,7 @@ export default function Story() {
           
         </Grid>
       </Grid>
-        
-                
-
-        
-        
-
+       
 
       <Modal
         style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}

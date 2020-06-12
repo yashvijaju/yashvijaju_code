@@ -13,28 +13,28 @@ export default function Animation() {
         <div>
             <Hidden xsDown>
                 <Grid container direction="row" justify="center" style={{height: '90vh',  alignItems: 'center'}}>
-                    <div class="col offset-l5" style={{'border': '2px solid #bee3f1', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>   
-                        <h style={{fontSize: '2.5vw', 'padding': '2vh', backgroundColor: '#FFFFFF', fontFamily: font, 'letter-spacing': '1px', fontWeight: 'lighter'}}>
-                        <Typist avgTypingDelay={100} startDelay={300} cursor={{hideWhenDone: 'true', element: '_', blink: 'true'}}> &lsaquo; Hi, I am Yashvi Jaju and this is my story &rsaquo; </Typist>
-                        </h>
+                    <div className="col offset-l5" style={{'border': '2px solid #bee3f1', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                        <div style={{fontSize: '2.5vw', 'padding': '2vh', backgroundColor: '#FFFFFF', fontFamily: font, 'letterSpacing': '1px', fontWeight: 'lighter'}}>
+                        <Typist avgTypingDelay={100} startDelay={300} cursor={{hideWhenDone:true, element: '_', blink:true}}> &lsaquo; Hi, I am Yashvi Jaju and this is my story &rsaquo; </Typist>
+                        </div>
                     </div>
                 </Grid>
-                <div style={{height: '50vh', width: '100%', position: 'absolute', top: '0', backgroundColor: '#FFFFFF', 'z-index': '-1'}}>
+                <div style={{height: '50vh', width: '100%', position: 'absolute', top: '0', backgroundColor: '#FFFFFF', 'zIndex': '-1'}}>
                 </div>
-                <div style={{height: '50vh', width: '100%', position: 'absolute', top: '50vh', backgroundColor: blue, 'z-index': '-1'}}>
+                <div style={{height: '50vh', width: '100%', position: 'absolute', top: '50vh', backgroundColor: blue, 'zIndex': '-1'}}>
                 </div>
             </Hidden>
             <Hidden smUp>
                 <Grid container direction="row" justify="center" style={{height: '40vh',  alignItems: 'center'}}>
-                    <div class="col offset-l5" style={{'border': '2px solid #bee3f1', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>   
-                        <h style={{fontSize: '3.5vw', 'padding': '2vh', backgroundColor: '#FFFFFF', fontFamily: font, 'letter-spacing': '0.5px', fontWeight: 'lighter'}}>
-                        <Typist avgTypingDelay={100} startDelay={300} cursor={{hideWhenDone: 'true', element: '_', blink: 'true'}}> &lsaquo; Hi. I am Yashvi Jaju and this is my story &rsaquo; </Typist>
-                        </h>
+                    <div className="col offset-l5" style={{'border': '2px solid #bee3f1', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>   
+                        <div style={{fontSize: '3.5vw', 'padding': '2vh', backgroundColor: '#FFFFFF', fontFamily: font, 'letterSpacing': '0.5px', fontWeight: 'lighter'}}>
+                        <Typist avgTypingDelay={100} startDelay={300} cursor={{hideWhenDone:true, element: '_', blink:true}}> &lsaquo; Hi. I am Yashvi Jaju and this is my story &rsaquo; </Typist>
+                        </div>
                     </div>
                 </Grid>
-                <div style={{height: '25vh', width: '100%', position: 'absolute', top: '0', backgroundColor: '#FFFFFF', 'z-index': '-1'}}>
+                <div style={{height: '25vh', width: '100%', position: 'absolute', top: '0', backgroundColor: '#FFFFFF', 'zIndex': '-1'}}>
                 </div>
-                <div style={{height: '25vh', width: '100%', position: 'absolute', top: '25vh', backgroundColor: blue, 'z-index': '-1'}}>
+                <div style={{height: '25vh', width: '100%', position: 'absolute', top: '25vh', backgroundColor: blue, 'zIndex': '-1'}}>
                 </div>
             </Hidden>            
         </div>

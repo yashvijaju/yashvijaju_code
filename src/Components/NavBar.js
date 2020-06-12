@@ -9,11 +9,11 @@ const font = 'Segoe UI';
 
 export default function NavBar() {
     return(
-        <div style={{height: '5vh', opacity: '0.75'}}>
+        <div style={{height: '5vh', opacity: '0.5'}}>
             <Fade in={true} timeout={16000}>
-                <AppBar elevation={0} style={{ alignItems:"center", 'background-color': "white"}}>
+                <AppBar elevation={0} style={{alignItems:"center", 'backgroundColor': "white"}}>
                     <Toolbar>
-                        <NavLink to="/" style={{'text-decoration':'none', 'padding-right': '2vw'}}>
+                        <NavLink to="/" style={{textDecoration:'none', 'paddingRight': '2vw'}}>
                             <Typography variant="body1" style={{color:"#000000", fontFamily: font}}>
                                 Home
                             </Typography>
