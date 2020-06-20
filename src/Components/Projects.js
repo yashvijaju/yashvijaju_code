@@ -3,6 +3,7 @@ import Modal from '@material-ui/core/Modal';
 import { Grid, Typography, Backdrop, Fade, Hidden, Tooltip, Chip } from '@material-ui/core';
 import {KeyboardArrowLeftOutlined, KeyboardArrowRightOutlined} from '@material-ui/icons';
 
+import portfolio from './Media/Projects/portfolio.jpg';
 import crave from './Media/Projects/Crave.jpg';
 import craveFilters from './Media/Projects/filters.mp4';
 import craveLogin from './Media/Projects/login.mp4';
@@ -35,6 +36,16 @@ import d3_2 from './Media/Projects/d3_2.png';
 import d4_1 from './Media/Projects/d4_1.jpg';
 import animationImg from './Media/Projects/animationImg.png';
 import animation from './Media/Projects/animation.mp4';
+
+import pflcollage from './Media/Projects/pflcollage.jpg';
+import pflcollage2 from './Media/Projects/pflcollage2.jpg';
+import pfl1 from './Media/Projects/pfl_1.JPG';
+import pfl2 from './Media/Projects/pfl_2.JPG';
+import pfl3 from './Media/Projects/pfl_3.JPG';
+import pfl4 from './Media/Projects/pfl_4.JPG';
+
+import a2z from './Media/Projects/a2z.jpg';
+import a2z2 from './Media/Projects/a2z2.jpg';
 
 const pink='#F7CAC9';
 const blue='#bee3f1';
@@ -322,7 +333,7 @@ export default function Story() {
       </Grid>
       <Grid container direction="row" justify="center" style={{marginTop: '1vh'}}>
         <Grid className="Web-Dev" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenPortfolio)}>
-          <img id="Crave" src={crave} alt="Crave" title="Crave" style={imageStyle}/>
+          <img id="Portfolio" src={portfolio} alt="Portfolio" title="Portfolio" style={imageStyle}/>
           <Typography variant="body1" style={titleStyle}>
             (this): Web Developer
           </Typography>
@@ -387,16 +398,16 @@ export default function Story() {
           </Typography>
         </Grid>
         <Grid className="Entrepreneurship" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenPFL)}>
-          <img id="T-Shirt Design" src={waveLogo} alt="T-Shirt Design" title="T-Shirt Design" style={imageStyle}/>
+          <img id="Pride For Labor" src={pfl1} alt="Pride For Labor" title="Pride For Labor" style={imageStyle}/>
           <Typography variant="body1" style={titleStyle}>
            PFL
           </Typography>
           <Typography variant="caption" style={textStyle}>
-          I believe in the dignity of labor, whether with head or hand; that the world owes no man a living but that it owes every man an opportunity to make a living. <br/> –John D. Rockefeller 
+          "I believe in the dignity of labor, whether with head or hand; that the world owes no man a living but that it owes every man an opportunity to make a living." –John Rockefeller. Domestic labour isn’t a respected occupation, but that has to change. To solve this, I founded Pride For Labor (PFL) in gra...
           </Typography>
         </Grid>
         <Grid className="Entrepreneurship" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenA2Z)}>
-          <img id="T-Shirt Design" src={waveLogo} alt="T-Shirt Design" title="T-Shirt Design" style={imageStyle}/>
+          <img id="T-Shirt Design" src={a2z} alt="T-Shirt Design" title="T-Shirt Design" style={imageStyle}/>
           <Typography variant="body1" style={titleStyle}>
            A2Z
           </Typography>
@@ -692,7 +703,6 @@ export default function Story() {
         </div>
         </Fade>
       </Modal>
-
       <Modal
         style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}
         aria-labelledby="image-modal-"
@@ -745,7 +755,7 @@ export default function Story() {
               </Grid>
               <Grid item xs={10} md={4} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                 <Typography id="story-modal" variant="caption" style={{fontFamily: font}}>
-                  This manifesto is inspired by Bruce Mau's <span style={{fontStyle: 'italic', cursor: 'pointer'}}><a href="https://tinyurl.com/brucemauincomplete"> Incomplete Manifesto for Growth</a></span>. Written in 1998, his manifesto outlines 43 "rules" by which one should live their life. To create this manifesto, I first encapsulated his manifesto into three simple phrases: 1. Break the rules, &nbsp; 2. Chase the unconventional, and &nbsp; 3. Live in extremes; or don't. <br/>
+                  This manifesto is inspired by Bruce Mau's <span style={{fontStyle: 'italic', cursor: 'pointer'}}><a href="https://tinyurl.com/brucemauincomplete" target="_blank"> Incomplete Manifesto for Growth</a></span>. Written in 1998, his manifesto outlines 43 "rules" by which one should live their life. To create this manifesto, I first encapsulated his manifesto into three simple phrases: 1. Break the rules, &nbsp; 2. Chase the unconventional, and &nbsp; 3. Live in extremes; or don't. <br/>
                   These phrases then motivated my initial designs as seen in 'Iteration One', with a heavy use of Lines, Angles, and Overlays  to demonstrate these underlying themes. The designs in the second iteration build on the initial designs to explore Whitespace, Color Palettes, and Offset-Layers. The third iterations then further explored the aforementioned facets along with the more inticrate Font Sizes, Text Alignment, and a multitude of other finer details that set the tone for my final design. <br/>
                   The manifesto was designed with the intent to be printed using a Risograph, although the CoVid-19 global pandemic prevented this later.
                   <br/> <br/>
@@ -805,18 +815,77 @@ export default function Story() {
         <div>
           <Grid container direction="row" justify="center" style={{backgroundColor: 'white', border: '5px solid #efefef', outline: 'none', width: '70vw', 'maxHeight': '75vh', 'overflowY': 'auto', alignItems: 'center', 'paddingBottom': '5vh', 'paddingTop': '5vh'}}>
             <Grid container direction="row" justify="center">
-                <Grid item xs={10} md={5} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                  <video className="Animation" id="Video Animation" src={animation} alt="Animation" title="Animation" style={{'width': '90%'}} autoPlay controls muted/>
+                <Grid item xs={10} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                  <img src={pflcollage} alt="PFL" title="PFL" style={{'width': '100%', padding: '3px 3px 3px 3px'}}/>
                 </Grid>
-              <Grid item xs={10} md={4} style={{marginTop: '1vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                <Grid item xs={10} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                  <img src={pfl1} alt="PFL" title="PFL" style={{'width': '50%', padding: '3px 3px 3px 3px'}}/>
+                  <img src={pfl2} alt="PFL" title="PFL" style={{'width': '50%', padding: '3px 3px 3px 3px'}}/>
+                </Grid>
+              <Grid item xs={10} style={{marginTop: '1vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                 <Typography id="story-modal" variant="caption" style={{fontFamily: font}}>
-                  Capture accidents, because “the wrong answer is the right answer in search of a different question.” The animation here is inspired by Bruce Mau’s <span style={{fontStyle: 'italic', cursor: 'pointer'}}><a href="https://tinyurl.com/brucemauincomplete"> Incomplete Manifesto for Growth</a></span>. The saturated yellow background with black text visually juxtaposes the conventional signs that warn us aga...inst accidents, while the animation itself progresses to create an accident -- and then captures it within the word-bars.
-                 
+                  "I believe in the dignity of labor, whether with head or hand; that the world owes no man a living but that it owes every man an opportunity to make a living." –John Rockefeller. <br/>
+                  Domestic labour isn’t a respected occupation, but that has to change. <br/>
+                  <br/>
+
+                  To solve this, I founded Pride For Labor (PFL) in grade 10. <br/>
+                    • Conducted social experiments to analyse treatment of domestic staff and employer sensitivity to their conditions <br/>
+                    • Designed a multi-phased program, secured school support, and participation of 500+parents / students <br/>
+                    1. Organised student and teacher volunteers to clean the 8-storey campus while the staff was treated to lunch and movies <br/>
+                    2. Collected 400+ gifts and distributed to support staff for Christmas, 2018 <br/>
+                    3. Conducted campaigns to increase awareness amongst students to respect domestic staff <br/>
+
+                  A little effort is all it takes to spread a smile, and I want to make a revolution, one smile at a time.
                   <br/> <br/>
-                  Adobe Tools: Adobe Photoshop Keyframe Animation <br/>
-                  Created: Apr 2020
+                  Location: Oberoi International School, Mumbai <br/>
+                  Founded: 2016 <br/>
+                  <br/>
                 </Typography>
               </Grid>
+              <Grid item xs={10} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                  <img src={pfl3} alt="PFL" title="PFL" style={{'width': '50%', padding: '3px 3px 3px 3px'}}/>
+                  <img src={pfl4} alt="PFL" title="PFL" style={{'width': '50%', padding: '3px 3px 3px 3px'}}/>
+                </Grid>
+                <Grid item xs={10} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                  <img src={pflcollage2} alt="PFL" title="PFL" style={{'width': '100%', padding: '3px 3px 3px 3px'}}/>
+                </Grid>
+            </Grid>
+          </Grid>
+        </div>
+        </Fade>
+      </Modal>
+      <Modal
+        style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}
+        aria-labelledby="image-modal-"
+        aria-describedby="story-modal-"
+        open={openA2Z}
+        onClose={() => {handleClose(setOpenA2Z)}}
+        closeAfterTransition={true}
+        BackdropComponent={Backdrop}
+        BackdropProps={{timeout: 500}}
+      >
+
+        <Fade in={openA2Z}>
+        <div>
+          <Grid container direction="row" justify="center" style={{backgroundColor: 'white', border: '5px solid #efefef', outline: 'none', width: '70vw', 'maxHeight': '75vh', 'overflowY': 'auto', alignItems: 'center', 'paddingBottom': '5vh', 'paddingTop': '5vh'}}>
+            <Grid container direction="row" justify="center">
+                <Grid item xs={10} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                  <img src={pflcollage} alt="PFL" title="PFL" style={{'width': '100%', padding: '3px 3px 3px 3px'}}/>
+                </Grid>
+                <Grid item xs={10} style={{marginTop: '1vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                  <Typography id="story-modal" variant="caption" style={{fontFamily: font}}>
+                  A2Z is a bi-monthly magazine distributed to 400+ flats in my building society free of cost. The magazine's revenue model was driven by advertisements.
+                  • Founded and edited A2Z with a team of 5 friends at the age of 11
+                  • Transformed A2Z's business model from being subscription-oriented to advertisement-led after the first issue was released
+                  • Handled finances, sought advertisers, and negotiated printing costs
+                    <br/> <br/>
+                    Founded: 2012 <br/>
+                    <br/>
+                  </Typography>
+                </Grid>
+                <Grid item xs={10} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                  <img src={pflcollage2} alt="PFL" title="PFL" style={{'width': '100%', padding: '3px 3px 3px 3px'}}/>
+                </Grid>
             </Grid>
           </Grid>
         </div>
