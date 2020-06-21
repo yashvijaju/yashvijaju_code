@@ -48,6 +48,14 @@ import a2z from './Media/Projects/a2z.jpg';
 import a2z2 from './Media/Projects/a2z2.jpg';
 import a2z3 from './Media/Projects/a2z3.jpg';
 import buddha from './Media/Projects/buddh.jpg';
+import buddhaeyes from './Media/Projects/buddhaeyes.jpg';
+import dancers from './Media/Projects/dancers.jpg';
+import frc from './Media/Projects/frc.jpg';
+
+import kathak1 from './Media/Projects/kathak1.png';
+import kathak2 from './Media/Projects/kathak2.jpg';
+import kathak3 from './Media/Projects/kathak3.jpg';
+import kathak4 from './Media/Projects/kathak4.jpg';
 
 
 const pink='#F7CAC9';
@@ -58,8 +66,8 @@ const font = 'Segoe UI';
 const textStyle = {fontFamily: font, fontWeight: 'lighter'};
 const titleStyle = {fontFamily: font, fontWeight: 'normal'};
 const imageStyle = {width: '100%', marginBottom: '1vh'};
-const chipStyle = {color: 'white', border: '2px solid white', borderRadius: '15px', marginRight: '1vw', fontFamily: font, fontWeight: 'bolder', fontSize: '2vh', marginBottom: '1vh'};
-const chipStyleAll = {color: blue, border: '2px solid white', backgroundColor: 'white' , borderRadius: '15px', marginRight: '1vw', fontFamily: font, fontWeight: 'bolder', fontSize: '2vh', marginBottom: '1vh'};
+const chipStyle = {color: 'white', border: '2.5px solid white', borderRadius: '15px', marginRight: '1vw', fontFamily: font, fontWeight: 'bolder', fontSize: '2vh', marginBottom: '1vh'};
+const chipStyleAll = {color: blue, border: '2.5px solid white', backgroundColor: 'white' , borderRadius: '15px', marginRight: '1vw', fontFamily: font, fontWeight: 'bolder', fontSize: '2vh', marginBottom: '1vh'};
 
 export default function Story() {
 
@@ -74,7 +82,10 @@ export default function Story() {
   const [openA2Z, setOpenA2Z] = React.useState(false); 
   const [openBuddha, setOpenBuddha] = React.useState(false); 
   const [openDancers, setOpenDancers] = React.useState(false); 
-  const [TrojanHacks, setOpenTrojanHacks] = React.useState(false);
+  const [trojanHacks, setOpenTrojanHacks] = React.useState(false);
+  const [robotics, setOpenRobotics] = React.useState(false);
+  const [kathak, setOpenKathak] = React.useState(false);
+  const [quilling, setOpenQuilling] = React.useState(false);
 
   const [lastFilter, setLastFilter] = React.useState("All");
   const [comicSrc, setComicSrc] = React.useState(ps1Me);
@@ -339,8 +350,8 @@ export default function Story() {
     <div style={{'padding': '5vh 0vw 2vh 0vw', backgroundColor: blue}}>
       <Grid container direction="row" justify="center" style={{padding: '0 1.5vw 0 1.5vw'}}>
         <Chip className="filterProjects" id="All" variant="outlined" label="All" clickable={true} style={chipStyleAll} onClick={()=>filter("All","All")}/>
-        <Chip className="filterProjects" id="Web Development" variant="outlined" label="Web Development" clickable={true} style={chipStyle} onClick={()=>filter("Web-Dev","Web Development")}/>
-        <Chip className="filterProjects" id="Entrepreneurial Endeavours" variant="outlined" label="Entrepreneurial Endeavours" clickable={true} style={chipStyle} onClick={()=>filter("Entrepreneurship","Entrepreneurial Endeavours")}/>
+        <Chip className="filterProjects" id="Web Dev" variant="outlined" label="Web Dev" clickable={true} style={chipStyle} onClick={()=>filter("Web-Dev","Web Dev")}/>
+        <Chip className="filterProjects" id="Startups" variant="outlined" label="Startups" clickable={true} style={chipStyle} onClick={()=>filter("Entrepreneurship","Startups")}/>
         <Chip className="filterProjects" id="Painting" variant="outlined" label="Painting" clickable={true} style={chipStyle} onClick={()=>filter("Painting","Painting")}/>
         <Chip className="filterProjects" id="Adobe Photoshop & Typography" variant="outlined" label="Adobe Photoshop & Typography" clickable={true} style={chipStyle} onClick={()=>filter("Photoshop","Adobe Photoshop & Typography")}/>
         <Chip className="filterProjects" id="Hackathons" variant="outlined" label="Hackathons" clickable={true} style={chipStyle} onClick={()=>filter("Hackathon","Hackathons")}/>
@@ -440,7 +451,7 @@ export default function Story() {
           </Typography>
         </Grid>
         <Grid className="Painting" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenDancers)}>
-          <img id="Manifesto Design" src={d4_1} alt="Manifesto Design" title="Manifesto Design" style={imageStyle}/>
+          <img id="Dancers" src={dancers} alt="Dancers" title="Dancers" style={imageStyle}/>
           <Typography variant="body1" style={titleStyle}>
            4-Piece dancers
           </Typography>
@@ -458,8 +469,8 @@ export default function Story() {
           I designed this website to document my projects, including and extending beyond the realms of Computer Science. I developed this website via the ReactJS library and a Material UI framewo...
           </Typography>
         </Grid>
-        <Grid className="Hackathon" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen()}>
-          <img id="Crave" src={crave} alt="Crave" title="Crave" style={imageStyle}/>
+        <Grid className="Hackathon" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenRobotics)}>
+          <img id="FRC" src={frc} alt="FRC" title="FRC" style={imageStyle}/>
           <Typography variant="body1" style={titleStyle}>
             Robotics
           </Typography>
@@ -467,10 +478,19 @@ export default function Story() {
           I designed this website to document my projects, including and extending beyond the realms of Computer Science. I developed this website via the ReactJS library and a Material UI framewo...
           </Typography>
         </Grid>
-        <Grid className="Entrepreneurship" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen()}>
+        <Grid className="Entrepreneurship" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenQuilling)}>
           <img id="Crave" src={crave} alt="Crave" title="Crave" style={imageStyle}/>
           <Typography variant="body1" style={titleStyle}>
             Quilling
+          </Typography>
+          <Typography variant="caption" style={textStyle}>
+          I designed this website to document my projects, including and extending beyond the realms of Computer Science. I developed this website via the ReactJS library and a Material UI framewo...
+          </Typography>
+        </Grid>
+        <Grid className="Entrepreneurship" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenKathak)}>
+          <img id="Crave" src={kathak1} alt="Crave" title="Crave" style={imageStyle}/>
+          <Typography variant="body1" style={titleStyle}>
+            Kathak
           </Typography>
           <Typography variant="caption" style={textStyle}>
           I designed this website to document my projects, including and extending beyond the realms of Computer Science. I developed this website via the ReactJS library and a Material UI framewo...
@@ -922,10 +942,13 @@ export default function Story() {
         <div>
           <Grid container direction="row" justify="center" style={{backgroundColor: 'white', border: '5px solid #efefef', outline: 'none', width: '70vw', 'maxHeight': '75vh', 'overflowY': 'auto', alignItems: 'center', 'paddingBottom': '5vh', 'paddingTop': '5vh'}}>
             <Grid container direction="row" justify="center">
-                <Grid item xs={10} md={5}>
-                    <img id="Gautam Buddha" src={buddha} alt="Gautam Buddha" title="Gautam Buddha" style={{'width': '80%'}}/>
+                <Grid item xs={10} md={5} style={{marginTop: '1vh'}}>
+                  <Grid container direction="column" justify="center" style={{alignItems: 'center'}}>
+                    <img id="Gautam Buddha" src={buddha} alt="Gautam Buddha" title="Gautam Buddha" style={{'width': '90%'}}/>
+                    <img id="Gautam Buddha" src={buddhaeyes} alt="Gautam Buddha" title="Gautam Buddha" style={{'width': '90%', marginTop: '5px'}}/>
+                  </Grid>
                 </Grid>
-                <Grid item xs={10} md={4} style={{marginTop: '1vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                <Grid item xs={10} md={5} style={{marginTop: '1vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                   <Typography id="story-modal" variant="caption" style={{fontFamily: font}}>
                     'Circle of Light' is a 43-by-39 inch oil portrait of the Gautam Buddha. This painting is inspired by another painting I had seen in a book. <br/>
                     <br/>
@@ -949,7 +972,201 @@ export default function Story() {
         </div>
         </Fade>
       </Modal>
+      <Modal
+        style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}
+        aria-labelledby="image-modal-"
+        aria-describedby="story-modal-"
+        open={openDancers}
+        onClose={() => {handleClose(setOpenDancers)}}
+        closeAfterTransition={true}
+        BackdropComponent={Backdrop}
+        BackdropProps={{timeout: 500}}
+      >
+
+        <Fade in={openDancers}>
+        <div>
+          <Grid container direction="row" justify="center" style={{backgroundColor: 'white', border: '5px solid #efefef', outline: 'none', width: '70vw', 'maxHeight': '75vh', 'overflowY': 'auto', alignItems: 'center', 'paddingBottom': '5vh', 'paddingTop': '5vh'}}>
+            <Grid container direction="row" justify="center">
+                <Grid item xs={10} md={5} style={{marginTop: '1vh'}}>
+                  <Grid container direction="column" justify="center" style={{alignItems: 'center'}}>
+                    <img id="Gautam Buddha" src={buddha} alt="Gautam Buddha" title="Gautam Buddha" style={{'width': '90%'}}/>
+                  </Grid>
+                </Grid>
+                <Grid item xs={10} md={5} style={{marginTop: '1vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                  <Typography id="story-modal" variant="caption" style={{fontFamily: font}}>
+                    'Circle of Light' is a 43-by-39 inch oil portrait of the Gautam Buddha. This painting is inspired by another painting I had seen in a book. <br/>
+                    <br/>
+                    The Guatam Buddha is an impo
+                    
+                    <br/> <br/>
+                    Painted: May 2014 <br/>
+                    <br/>
+
+                    Methodology: <br/>
+                    As the canvas was lar
+                  </Typography>
+                </Grid>
+            </Grid>
+          </Grid>
+        </div>
+        </Fade>
+      </Modal>
+      <Modal
+        style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}
+        aria-labelledby="image-modal-"
+        aria-describedby="story-modal-"
+        open={robotics}
+        onClose={() => {handleClose(setOpenRobotics)}}
+        closeAfterTransition={true}
+        BackdropComponent={Backdrop}
+        BackdropProps={{timeout: 500}}
+      >
+
+        <Fade in={robotics}>
+        <div>
+          <Grid container direction="row" justify="center" style={{backgroundColor: 'white', border: '5px solid #efefef', outline: 'none', width: '70vw', 'maxHeight': '75vh', 'overflowY': 'auto', alignItems: 'center', 'paddingBottom': '5vh', 'paddingTop': '5vh'}}>
+            <Grid container direction="row" justify="center">
+                <Grid item xs={10} md={5} style={{marginTop: '1vh'}}>
+                  <Grid container direction="column" justify="center" style={{alignItems: 'center'}}>
+                    <img id="Gautam Buddha" src={buddha} alt="Gautam Buddha" title="Gautam Buddha" style={{'width': '90%'}}/>
+                  </Grid>
+                </Grid>
+                <Grid item xs={10} md={5} style={{marginTop: '1vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                  <Typography id="story-modal" variant="caption" style={{fontFamily: font}}>
+                    'Circle of Light' is a 43-by-39 inch oil portrait of the Gautam Buddha. This painting is inspired by another painting I had seen in a book. <br/>
+                    <br/>
+                    The Guatam Buddha is an impo
+                    
+                    <br/> <br/>
+                    Painted: May 2014 <br/>
+                    <br/>
+
+                    Methodology: <br/>
+                    As the canvas was lar
+                  </Typography>
+                </Grid>
+            </Grid>
+          </Grid>
+        </div>
+        </Fade>
+      </Modal>
+      <Modal
+        style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}
+        aria-labelledby="image-modal-"
+        aria-describedby="story-modal-"
+        open={kathak}
+        onClose={() => {handleClose(setOpenKathak)}}
+        closeAfterTransition={true}
+        BackdropComponent={Backdrop}
+        BackdropProps={{timeout: 500}}
+      >
+
+        <Fade in={kathak}>
+        <div>
+          <Grid container direction="row" justify="center" style={{backgroundColor: 'white', border: '5px solid #efefef', outline: 'none', width: '70vw', 'maxHeight': '75vh', 'overflowY': 'auto', alignItems: 'center', 'paddingBottom': '5vh', 'paddingTop': '5vh'}}>
+            <Grid container direction="row" justify="center">
+                <Grid item xs={10} md={5} style={{marginTop: '1vh'}}>
+                  <Grid container direction="column" justify="center" style={{alignItems: 'center'}}>
+                    <img id="Gautam Buddha" src={buddha} alt="Gautam Buddha" title="Gautam Buddha" style={{'width': '90%'}}/>
+                  </Grid>
+                </Grid>
+                <Grid item xs={10} md={5} style={{marginTop: '1vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                  <Typography id="story-modal" variant="caption" style={{fontFamily: font}}>
+                    'Circle of Light' is a 43-by-39 inch oil portrait of the Gautam Buddha. This painting is inspired by another painting I had seen in a book. <br/>
+                    <br/>
+                    The Guatam Buddha is an impo
+                    
+                    <br/> <br/>
+                    Painted: May 2014 <br/>
+                    <br/>
+
+                    Methodology: <br/>
+                    As the canvas was lar
+                  </Typography>
+                </Grid>
+            </Grid>
+          </Grid>
+        </div>
+        </Fade>
+      </Modal>
+      <Modal
+        style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}
+        aria-labelledby="image-modal-"
+        aria-describedby="story-modal-"
+        open={quilling}
+        onClose={() => {handleClose(setOpenQuilling)}}
+        closeAfterTransition={true}
+        BackdropComponent={Backdrop}
+        BackdropProps={{timeout: 500}}
+      >
+
+        <Fade in={quilling}>
+        <div>
+          <Grid container direction="row" justify="center" style={{backgroundColor: 'white', border: '5px solid #efefef', outline: 'none', width: '70vw', 'maxHeight': '75vh', 'overflowY': 'auto', alignItems: 'center', 'paddingBottom': '5vh', 'paddingTop': '5vh'}}>
+            <Grid container direction="row" justify="center">
+                <Grid item xs={10} md={5} style={{marginTop: '1vh'}}>
+                  <Grid container direction="column" justify="center" style={{alignItems: 'center'}}>
+                    <img id="Gautam Buddha" src={buddha} alt="Gautam Buddha" title="Gautam Buddha" style={{'width': '90%'}}/>
+                  </Grid>
+                </Grid>
+                <Grid item xs={10} md={5} style={{marginTop: '1vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                  <Typography id="story-modal" variant="caption" style={{fontFamily: font}}>
+                    'Circle of Light' is a 43-by-39 inch oil portrait of the Gautam Buddha. This painting is inspired by another painting I had seen in a book. <br/>
+                    <br/>
+                    The Guatam Buddha is an impo
+                    
+                    <br/> <br/>
+                    Painted: May 2014 <br/>
+                    <br/>
+
+                    Methodology: <br/>
+                    As the canvas was lar
+                  </Typography>
+                </Grid>
+            </Grid>
+          </Grid>
+        </div>
+        </Fade>
+      </Modal>
+      <Modal
+        style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}
+        aria-labelledby="image-modal-"
+        aria-describedby="story-modal-"
+        open={trojanHacks}
+        onClose={() => {handleClose(setOpenTrojanHacks)}}
+        closeAfterTransition={true}
+        BackdropComponent={Backdrop}
+        BackdropProps={{timeout: 500}}
+      >
+
+        <Fade in={trojanHacks}>
+        <div>
+          <Grid container direction="row" justify="center" style={{backgroundColor: 'white', border: '5px solid #efefef', outline: 'none', width: '70vw', 'maxHeight': '75vh', 'overflowY': 'auto', alignItems: 'center', 'paddingBottom': '5vh', 'paddingTop': '5vh'}}>
+            <Grid container direction="row" justify="center">
+                <Grid item xs={10} md={5} style={{marginTop: '1vh'}}>
+                  <Grid container direction="column" justify="center" style={{alignItems: 'center'}}>
+                    <img id="Gautam Buddha" src={buddha} alt="Gautam Buddha" title="Gautam Buddha" style={{'width': '90%'}}/>
+                  </Grid>
+                </Grid>
+                <Grid item xs={10} md={5} style={{marginTop: '1vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                  <Typography id="story-modal" variant="caption" style={{fontFamily: font}}>
+                    'Circle of Light' is a 43-by-39 inch oil portrait of the Gautam Buddha. This painting is inspired by another painting I had seen in a book. <br/>
+                    <br/>
+                    The Guatam Buddha is an impo
+                    
+                    <br/> <br/>
+                    Painted: May 2014 <br/>
+                    <br/>
+
+                    Methodology: <br/>
+                    As the canvas was lar
+                  </Typography>
+                </Grid>
+            </Grid>
+          </Grid>
+        </div>
+        </Fade>
+      </Modal>
     </div>
-    
   );
 }
