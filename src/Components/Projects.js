@@ -1,7 +1,7 @@
 import React from 'react';
 import Modal from '@material-ui/core/Modal';
 import { Grid, Typography, Backdrop, Fade, Hidden, Tooltip, Chip } from '@material-ui/core';
-import {KeyboardArrowLeftOutlined, KeyboardArrowRightOutlined} from '@material-ui/icons';
+import { KeyboardArrowLeftOutlined, KeyboardArrowRightOutlined, ExpandMoreOutlined } from '@material-ui/icons';
 
 import portfolio from './Media/Projects/portfolio.jpg';
 import crave from './Media/Projects/Crave.jpg';
@@ -46,6 +46,9 @@ import pfl4 from './Media/Projects/pfl_4.JPG';
 
 import a2z from './Media/Projects/a2z.jpg';
 import a2z2 from './Media/Projects/a2z2.jpg';
+import a2z3 from './Media/Projects/a2z3.jpg';
+import buddha from './Media/Projects/buddh.jpg';
+
 
 const pink='#F7CAC9';
 const blue='#bee3f1';
@@ -81,7 +84,7 @@ export default function Story() {
   const [risoSrc, setRisoSrc] = React.useState(d1_1);
   const [risoId, setRisoId] = React.useState(1);
   const [lastFilterRiso, setLastFilterRiso] = React.useState();
-  
+  const [A2ZSrc, setA2ZSrc] = React.useState(a2z);
   
 
   function handleOpen(props) {
@@ -319,6 +322,18 @@ export default function Story() {
     }
   }
 
+  function handleA2Z(props) {
+    if (A2ZSrc === a2z) {
+      setA2ZSrc(a2z2);
+    }
+    else if (A2ZSrc === a2z2) {
+      setA2ZSrc(a2z3);
+    }
+    else {
+      setA2ZSrc(a2z);
+    }
+  }
+
 
   return (
     <div style={{'padding': '5vh 0vw 2vh 0vw', backgroundColor: blue}}>
@@ -407,23 +422,21 @@ export default function Story() {
           </Typography>
         </Grid>
         <Grid className="Entrepreneurship" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenA2Z)}>
-          <img id="T-Shirt Design" src={a2z} alt="T-Shirt Design" title="T-Shirt Design" style={imageStyle}/>
+          <img id="A2Z" src={a2z} alt="A2Z" title="A2Z" style={imageStyle}/>
           <Typography variant="body1" style={titleStyle}>
            A2Z
           </Typography>
           <Typography variant="caption" style={textStyle}>
-          Crave is a delivery service specialising in bringing international food to university students at affordable rates. <br/>
-          I specialised as the front-end web-developer, using the ReactJS library with a Materialize framework to build a Progressive Web Applicat...
+          At the age of 12, I founded A2Z as a backyard summer project with 5 friends. A2Z started as a pay-per-issue magazine that  quickly converted into an advertisement-driven bi-monthly magazine distributed to 400+ flats in my building/ society free of cost. As the founder and edi...
           </Typography>
         </Grid>
         <Grid className="Painting" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenBuddha)}>
-          <img id="Manifesto Design" src={d4_1} alt="Manifesto Design" title="Manifesto Design" style={imageStyle}/>
+          <img id="Gautam Buddha" src={buddha} alt="Gautam Buddha" title="Gautam Buddha" style={imageStyle}/>
           <Typography variant="body1" style={titleStyle}>
-           Buddha
+           'Circle of Light': The Gautam Buddha
           </Typography>
           <Typography variant="caption" style={textStyle}>
-          Crave is a delivery service specialising in bringing international food to university students at affordable rates. <br/>
-          I specialised as the front-end web-developer, using the ReactJS library with a Materialize framework to build a Progressive Web Applicat...
+          'Circle of Light' is a 43-by-39 inch oil portrait of the Gautam Buddha. This painting is inspired by another painting I had seen in a book. The Guatam Buddha is an important figure in Hindu mythology, famous for his surrender of the materialistic world in pursuit of complete enlightenment and sel...
           </Typography>
         </Grid>
         <Grid className="Painting" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenDancers)}>
@@ -869,22 +882,67 @@ export default function Story() {
         <div>
           <Grid container direction="row" justify="center" style={{backgroundColor: 'white', border: '5px solid #efefef', outline: 'none', width: '70vw', 'maxHeight': '75vh', 'overflowY': 'auto', alignItems: 'center', 'paddingBottom': '5vh', 'paddingTop': '5vh'}}>
             <Grid container direction="row" justify="center">
-                <Grid item xs={10} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                  <img src={pflcollage} alt="PFL" title="PFL" style={{'width': '100%', padding: '3px 3px 3px 3px'}}/>
+                <Grid item xs={10} md={5} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                  <Grid container direction="column" justify="center" style={{alignItems: 'center'}}>
+                    <img id="A2Zimg" src={A2ZSrc} alt="A2Z" title="A2Z" style={{'width': '70%'}}/>
+                    <Grid item xs={1}>
+                      <ExpandMoreOutlined id="downPtr" fontSize="large" onClick={()=>{handleA2Z("next")}} style={{cursor: 'pointer'}}/>
+                    </Grid>
+                  </Grid>
                 </Grid>
-                <Grid item xs={10} style={{marginTop: '1vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                <Grid item xs={10} md={4} style={{marginTop: '1vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                   <Typography id="story-modal" variant="caption" style={{fontFamily: font}}>
-                  A2Z is a bi-monthly magazine distributed to 400+ flats in my building society free of cost. The magazine's revenue model was driven by advertisements.
-                  • Founded and edited A2Z with a team of 5 friends at the age of 11
-                  • Transformed A2Z's business model from being subscription-oriented to advertisement-led after the first issue was released
-                  • Handled finances, sought advertisers, and negotiated printing costs
+                  At the age of 12, I founded A2Z as a backyard summer project with 5 friends. A2Z started as a pay-per-issue magazine that  quickly converted into an advertisement-driven bi-monthly magazine distributed to 400+ flats in my building/ society free of cost. <br/>
+                  <br/>
+                  As the founder and editor, I solely handled finances, sought advertisers, and negotiated printing costs. I edited articles and images, building the magazine with all my technical and design expertise stemming from Pages (Apple's take on Microsoft Word). <br/> <br/>
+                  To sell the first issue (pay-per-issue model), I remember knocking door to door on every single flat in the hopes of selling our 100 copies. Each magazine was priced at Rs. 60 (~ $1). I remember the closed doors and the "No, sorry. We don't need this", but I also remember my sheer joy at every single purchase. I don't remember how many copies we sold that day to exactitude, but we definitely didn't sell out. We did, however, break even. And we each earned about a hundred rupees (~1.5$), and that was motivation enough to go on. 
+
                     <br/> <br/>
-                    Founded: 2012 <br/>
+                    Founded: May 2014 <br/>
                     <br/>
                   </Typography>
                 </Grid>
-                <Grid item xs={10} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                  <img src={pflcollage2} alt="PFL" title="PFL" style={{'width': '100%', padding: '3px 3px 3px 3px'}}/>
+            </Grid>
+          </Grid>
+        </div>
+        </Fade>
+      </Modal>
+      <Modal
+        style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}
+        aria-labelledby="image-modal-"
+        aria-describedby="story-modal-"
+        open={openBuddha}
+        onClose={() => {handleClose(setOpenBuddha)}}
+        closeAfterTransition={true}
+        BackdropComponent={Backdrop}
+        BackdropProps={{timeout: 500}}
+      >
+
+        <Fade in={openBuddha}>
+        <div>
+          <Grid container direction="row" justify="center" style={{backgroundColor: 'white', border: '5px solid #efefef', outline: 'none', width: '70vw', 'maxHeight': '75vh', 'overflowY': 'auto', alignItems: 'center', 'paddingBottom': '5vh', 'paddingTop': '5vh'}}>
+            <Grid container direction="row" justify="center">
+                <Grid item xs={10} md={5}>
+                    <img id="Gautam Buddha" src={buddha} alt="Gautam Buddha" title="Gautam Buddha" style={{'width': '80%'}}/>
+                </Grid>
+                <Grid item xs={10} md={4} style={{marginTop: '1vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                  <Typography id="story-modal" variant="caption" style={{fontFamily: font}}>
+                    'Circle of Light' is a 43-by-39 inch oil portrait of the Gautam Buddha. This painting is inspired by another painting I had seen in a book. <br/>
+                    <br/>
+                    The Guatam Buddha is an important figure in Hindu mythology, famous for his surrender of the materialistic world in pursuit of complete enlightenment and self-actualisation. His ideology and way-of-life attracts hundreds of thousands of followers. <br/> 
+                    <br/>
+                    In the portrait, Buddha’s facial features are softened and symmetricalised as a manifestation of his ideology attracting a multitude of followers, as in accordance with the Theory of Evolutionary Advantage. His eyelids are painted half-open to radiate calmness and serenity, as achieved through meditation. This also allows observers to feel as if the Buddha is looking right at them regardless of where they position themselves and thus suggesting a quality of being omniscient. Around Buddha’s head, an aura has been painted to illustrate the high pedestal followers place him on. Moreover, given the asssociation of the colors blue and white with the ocean and sky, shades of these hues have been used throughout the portrait to emphasise the theme of embracing the natural. <br/> 
+                    <br/>
+                    A bright “Circle of Light” has been placed where the Buddha's heart should be to visually define his state of complete internal enlightenment. Just as he preaches to his pupils in order to share his knowledge, tendrils of this “Circle of Light” have been shown to extend from his soul and merge with his surroundings. The color palette of yellow, orange, and red accentuates the portrayal of Buddha as a beacon of hope and fresh beginnings, just like the sun. 
+                    
+                    <br/> <br/>
+                    Painted: May 2014 <br/>
+                    <br/>
+
+                    Methodology: <br/>
+                    As the canvas was large, I started by pencilling out a 10*10 grid - this allowed me to later maintain symmetry while sketching the portrait. I then drew a rough pencil sketch of the Buddha as this was the main object of my painting. Then, to even the tone and decrease the absorption of the oil paint by the canvas, I painted the entire canvas with a thick white base coat to prepare my canvas for the firs coat. I started with the background, using a large brush to paint the top corners in a deep, royal blue. Then, I used a slightly thinner brush to create the aura around Buddha’s head, rotating the brush in a circular motion as I started from the centre and moved to the corners, decreasing the pressure exerted on the brush to paint the different hues of blue as the palette moved from light blue towards the centre to dark blue in the extreme corners. After this, I had to wait for a few days to allow the paint to semi-dry before I began detailing Buddha’s facial features. As this was the first coat of oil paints out of three, my goal was to outline the more general features rather than expending energy focusing on the inticrate details. I first painted the Buddha's hair given this was a dark color; this was done to prevent it from smudging into the lighter shades used while painting his forehead. I then painted the forehead, cheekbones, and ears in a slightly lighter shade of blue, using paints of red and white to create highlights and tone. Once this was done, I painted the Buddha’s neck in a darker blue so as to greatly accentuate the “circle of light” in his chest - represented in the bright shades of yellow, orange, red, and green. Thus, my first coat was complete. 
+                    <br/> Before starting my second coat, I had to wait for the first coat of paint to dry. However, this time, I had to wait for longer (about two-three weeks) to ensure thorough drying as I was to resume painting from the very top, and didn’t want to smudge the lower half while doing so. The primary purpose behind the second coat was to perfect all the background illustrations. It hence focused on detailed shading to create smooth transitions from one hue to another without allowing individual brush strokes to show. This time, I detailed Buddha’s facial features as well, creating the effect of light coming from within by highlighting his central facial section. And thus, with the completion of the second coat, I perfected my painting’s background. The process of waiting continued once again. I then began work on my third coat, focused on perfecting and finely detailing the portrait’s main object - the Buddha’s face. This was by far the most difficult aspect of the painting - especially the eyes - as I had to be doubly careful to ensure that the features radiated serenity while also ensuring that my brush strokes did, at no point, touch the surrounding background. Only after painting this layer and allowing it to dry completely was I able to add the final finishing touches to the painting. I ensured that not only was the border between the Buddha and the background sharp, but also painted the sides of the canvas with a dark bluish-black paint to cover any strokes that went astray down the sides. To mark my painting’s completion, I then used a thin brush to paint my name in the right-hand corner in white.
+                  </Typography>
                 </Grid>
             </Grid>
           </Grid>
