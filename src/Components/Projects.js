@@ -1,7 +1,7 @@
 import React from 'react';
 import Modal from '@material-ui/core/Modal';
-import { Grid, Typography, Backdrop, Fade, Hidden, Tooltip, Chip } from '@material-ui/core';
-import { KeyboardArrowLeftOutlined, KeyboardArrowRightOutlined, ExpandMoreOutlined } from '@material-ui/icons';
+import { Grid, Typography, Backdrop, Fade, Hidden, Tooltip, Chip, Snackbar } from '@material-ui/core';
+import { KeyboardArrowLeftOutlined, KeyboardArrowRightOutlined, ExpandMoreOutlined, CancelOutlined } from '@material-ui/icons';
 
 import portfolio from './Media/Projects/portfolio.jpg';
 import crave from './Media/Projects/Crave.jpg';
@@ -66,8 +66,8 @@ const font = 'Segoe UI';
 const textStyle = {fontFamily: font, fontWeight: 'lighter'};
 const titleStyle = {fontFamily: font, fontWeight: 'normal'};
 const imageStyle = {width: '100%', marginBottom: '1vh'};
-const chipStyle = {color: 'white', border: '2.5px solid white', borderRadius: '15px', marginRight: '1vw', fontFamily: font, fontWeight: 'bolder', fontSize: '2vh', marginBottom: '1vh'};
-const chipStyleAll = {color: blue, border: '2.5px solid white', backgroundColor: 'white' , borderRadius: '15px', marginRight: '1vw', fontFamily: font, fontWeight: 'bolder', fontSize: '2vh', marginBottom: '1vh'};
+const chipStyle = {color: 'white', border: '2.5px solid white', borderRadius: '20px', marginRight: '1vw', fontFamily: font, fontWeight: 'bolder', fontSize: '2vh', marginBottom: '1vh', paddingBottom: '1.5vh', paddingTop: '1.5vh'};
+const chipStyleAll = {color: blue, border: '2.5px solid white', backgroundColor: 'white' , borderRadius: '20px', marginRight: '1vw', fontFamily: font, fontWeight: 'bolder', fontSize: '2vh', marginBottom: '1vh', paddingBottom: '1.5vh', paddingTop: '1.5vh'};
 
 export default function Story() {
 
@@ -96,7 +96,29 @@ export default function Story() {
   const [risoId, setRisoId] = React.useState(1);
   const [lastFilterRiso, setLastFilterRiso] = React.useState();
   const [A2ZSrc, setA2ZSrc] = React.useState(a2z);
+  const [openNotifs, setOpenNotifs] = React.useState(true);
+  const [openFilterNotifs, setOpenFilterNotifs] = React.useState(false);
+  const [filterNotifRender, setFilterNotifRender] = React.useState(0);
   
+  var notifTimer = setTimeout(handleOpenNotif,10000);
+
+  function handleOpenNotif() {
+    if (filterNotifRender === 0) {
+      setOpenFilterNotifs(true);
+      setFilterNotifRender(1);
+    }
+    else {
+      setOpenFilterNotifs(false);
+    }
+  }
+
+  const handleCloseNotif = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setOpenNotifs(false);
+    setOpenFilterNotifs(false);
+  };
 
   function handleOpen(props) {
     props(true);
@@ -159,8 +181,9 @@ export default function Story() {
   function handleComic(props) {
     if (props === "next") {
       if (comicId===1) {
-      setComicSrc(ps2Me);
       setComicId(2);
+      setComicSrc(ps2Me);
+      
       }
       else if (comicId===2) {
         setComicSrc(ps3Ref);
@@ -348,6 +371,36 @@ export default function Story() {
 
   return (
     <div style={{'padding': '5vh 0vw 2vh 0vw', backgroundColor: blue}}>
+      <Hidden mdUp>
+        <Snackbar
+          anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'left',
+            }}
+            open={openNotifs}
+            autoHideDuration={4000}
+            onClose={handleCloseNotif}
+            message="Viewing this on a laptop is highly recommended"
+            id="notif1"
+            action={
+              <CancelOutlined size="small" aria-label="close" color="inherit" style={{cursor: 'pointer'}} onClick={handleCloseNotif}/>
+            }
+        />
+      </Hidden>
+      <Snackbar
+        anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'left',
+        }}
+        open={openFilterNotifs}
+        autoHideDuration={4000}
+        onClose={handleCloseNotif}
+        message="Tip: use the filter buttons (:"
+        id="notif1"
+        action={
+          <CancelOutlined size="small" aria-label="close" color="inherit" style={{cursor: 'pointer'}} onClick={handleCloseNotif}/>
+        }
+      />
       <Grid container direction="row" justify="center" style={{padding: '0 1.5vw 0 1.5vw'}}>
         <Chip className="filterProjects" id="All" variant="outlined" label="All" clickable={true} style={chipStyleAll} onClick={()=>filter("All","All")}/>
         <Chip className="filterProjects" id="Web Dev" variant="outlined" label="Web Dev" clickable={true} style={chipStyle} onClick={()=>filter("Web-Dev","Web Dev")}/>
@@ -424,12 +477,12 @@ export default function Story() {
           </Typography>
         </Grid>
         <Grid className="Entrepreneurship" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenPFL)}>
-          <img id="Pride For Labor" src={pfl1} alt="Pride For Labor" title="Pride For Labor" style={imageStyle}/>
+          <img id="Pride For Labor" src={pfl3} alt="Pride For Labor" title="Pride For Labor" style={imageStyle}/>
           <Typography variant="body1" style={titleStyle}>
-           PFL
+           Pride For Labour
           </Typography>
           <Typography variant="caption" style={textStyle}>
-          "I believe in the dignity of labor, whether with head or hand; that the world owes no man a living but that it owes every man an opportunity to make a living." –John Rockefeller. Domestic labour isn’t a respected occupation, but that has to change. To solve this, I founded Pride For Labor (PFL) in gra...
+          "I believe in the dignity of labor, whether with head or hand; that the world owes no man a living but that it owes every man an opportunity to make a living." –John Rockefeller. Domestic labour isn’t a respected occupation, but that has to change. To solve this, I founded Pride For Labour (PFL) in gra...
           </Typography>
         </Grid>
         <Grid className="Entrepreneurship" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenA2Z)}>
@@ -453,11 +506,10 @@ export default function Story() {
         <Grid className="Painting" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenDancers)}>
           <img id="Dancers" src={dancers} alt="Dancers" title="Dancers" style={imageStyle}/>
           <Typography variant="body1" style={titleStyle}>
-           4-Piece dancers
+           'Dancing on the Moon'
           </Typography>
           <Typography variant="caption" style={textStyle}>
-          Crave is a delivery service specialising in bringing international food to university students at affordable rates. <br/>
-          I specialised as the front-end web-developer, using the ReactJS library with a Materialize framework to build a Progressive Web Applicat...
+          'Dancing on the Moon' is a four-piece abstract oil painting that tries to capture motion in a picture. Tried to capture motion in a picture, but captured the beauty of motion instea... <br/>
           </Typography>
         </Grid>
         <Grid className="Hackathon" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenTrojanHacks)}>
@@ -488,12 +540,12 @@ export default function Story() {
           </Typography>
         </Grid>
         <Grid className="Entrepreneurship" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenKathak)}>
-          <img id="Crave" src={kathak1} alt="Crave" title="Crave" style={imageStyle}/>
+          <img id="Crave" src={kathak4} alt="Crave" title="Crave" style={imageStyle}/>
           <Typography variant="body1" style={titleStyle}>
             Kathak
           </Typography>
           <Typography variant="caption" style={textStyle}>
-          I designed this website to document my projects, including and extending beyond the realms of Computer Science. I developed this website via the ReactJS library and a Material UI framewo...
+          I have been practicing Kathak (Jaipur Gharana) and Bharatnatyam, two popular styles of Indian classical dance, from the age of 4. When I look down, I see a bunch of ghungroos adorning my fe...
           </Typography>
         </Grid>
       </Grid>
@@ -606,7 +658,7 @@ export default function Story() {
           <Grid container direction="row" justify="center" style={{backgroundColor: 'white', border: '5px solid #efefef', outline: 'none', width: '70vw', 'maxHeight': '75vh', 'overflowY': 'auto', alignItems: 'center'}}>
             <Grid container direction="row" justify="center">
               <Grid item xs={11} style={{'paddingTop': '5vh'}}>
-                <iframe src="https://usclavalab.org/" title="Metta Capital Advisors LLP" allowFullScreen={true} style={{'width': '100%', height: '50vh'}}/>
+                <a href="https://mettacapital.in" target="_blank" rel="noopener noreferrer">"<iframe src="https://mettacapital.in" title="Metta Capital Advisors LLP" allowFullScreen={true} style={{'width': '100%', height: '50vh'}}/></a>
               </Grid>
             </Grid>
             <Grid container direction="row" justify="center">
@@ -757,11 +809,11 @@ export default function Story() {
               <Grid item xs={10} md={5}  style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
                 <Hidden xsDown>
                   <Grid item xs={12} style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
-                    <Grid item xs={12} sm={6} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                    <Grid item xs={12} md={6} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                       <Chip className="filterProjects" id="Iter 1" variant="outlined" label="Iteration One" clickable={true} style={{color: blue, backgroundColor: 'white', border: '2px solid #bee3f1', borderRadius: '15px', marginRight: '1vw', fontFamily: font, fontSize: '1.5vh', marginBottom: '1vh'}} onClick={(e)=>handleRiso("filter",1,e.target)}/>
                       <Chip className="filterProjects" id="Iter 2" variant="outlined" label="Iteration Two" clickable={true} style={{color: blue, border: '2px solid #bee3f1', borderRadius: '15px', marginRight: '1vw', fontFamily: font, fontSize: '1.5vh', marginBottom: '1vh'}} onClick={(e)=>handleRiso("filter",2,e.target)}/>
                     </Grid>
-                    <Grid item xs={12} sm={6} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                    <Grid item xs={12} md={6} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                       <Chip className="filterProjects" id="Iter 3" variant="outlined" label="Iteration Three" clickable={true} style={{color: blue, border: '2px solid #bee3f1', borderRadius: '15px', marginRight: '1vw', fontFamily: font, fontSize: '1.5vh', marginBottom: '1vh'}} onClick={(e)=>handleRiso("filter",3,e.target)}/>
                       <Chip className="filterProjects" id="Iter 4" variant="outlined" label="Final" clickable={true} style={{color: blue, border: '2px solid #bee3f1', borderRadius: '15px', marginRight: '1vw', fontFamily: font, fontSize: '1.5vh', marginBottom: '1vh'}} onClick={(e)=>handleRiso("filter",4,e.target)}/>
                     </Grid>
@@ -821,9 +873,28 @@ export default function Story() {
                 </Grid>
               <Grid item xs={10} md={4} style={{marginTop: '1vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                 <Typography id="story-modal" variant="caption" style={{fontFamily: font}}>
-                  Capture accidents, because “the wrong answer is the right answer in search of a different question.” The animation here is inspired by Bruce Mau’s <span style={{fontStyle: 'italic', cursor: 'pointer'}}><a href="https://tinyurl.com/brucemauincomplete"> Incomplete Manifesto for Growth</a></span>. The saturated yellow background with black text visually juxtaposes the conventional signs that warn us aga...inst accidents, while the animation itself progresses to create an accident -- and then captures it within the word-bars.
+                  Capture accidents <br/>
+                  because <br/>
+                  “the wrong answer is the right answer in search of a different question” <br/>
+                  <br/>
+                  Everywhere I go <br/>
+                  Neon yellow signs warn me <br/>
+                  Be careful <br/>
+                  Prevent accidents <br/>
+                  <br/>
+                  Yet, <br/>
+                  I create an accident <br/>
+                  And capture it <br/>
+                  In prison bars <br/>
+                  Made from all the warning signs <br/>
+                  <br/>
+                  And I paint it neon yellow <br/>
+                  --
+                  <br/> <br/>                  
+
+                  <span style={{display:'none'}}>Capture accidents, because “the wrong answer is the right answer in search of a different question”. The animation here is inspired by Bruce Mau’s <span style={{fontStyle: 'italic', cursor: 'pointer'}}><a href="https://tinyurl.com/brucemauincomplete"> Incomplete Manifesto for Growth</a></span>. The saturated yellow background with black text visually juxtaposes the conventional signs that warn us against accidents, while the animation itself progresses to create an accident -- and then captures it within the word-bars.</span>
                  
-                  <br/> <br/>
+                  Inspiration: Bruce Mau's <span style={{fontStyle: 'italic', cursor: 'pointer'}}><a href="https://tinyurl.com/brucemauincomplete"> Incomplete Manifesto for Growth</a></span> <br/>
                   Adobe Tools: Adobe Photoshop Keyframe Animation <br/>
                   Created: Apr 2020
                 </Typography>
@@ -857,6 +928,20 @@ export default function Story() {
                 </Grid>
               <Grid item xs={10} style={{marginTop: '1vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                 <Typography id="story-modal" variant="caption" style={{fontFamily: font}}>
+                  The lift's doors stretched wide open <br/>
+                  <span style={{fontStyle: 'italic'}}>6th floor</span> <br/>
+                  I waited while teachers and students ahead spilled out <br/>
+                  It was my turn <br/>
+                  I took a step ahead <br/>
+                  Turned around <br/>
+                  "Thank you <span style={{fontStyle: 'italic'}}>didi</span>" <br/>
+                  <br/>
+                  Didi smiled <br/>
+                  I was the only one who thanked her that day. <br/>
+                  --
+                  <br/> <br/>
+
+
                   "I believe in the dignity of labor, whether with head or hand; that the world owes no man a living but that it owes every man an opportunity to make a living." –John Rockefeller. <br/>
                   Domestic labour isn’t a respected occupation, but that has to change. <br/>
                   <br/>
@@ -889,8 +974,8 @@ export default function Story() {
       </Modal>
       <Modal
         style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}
-        aria-labelledby="image-modal-"
-        aria-describedby="story-modal-"
+        aria-labelledby="image-modal"
+        aria-describedby="story-modal"
         open={openA2Z}
         onClose={() => {handleClose(setOpenA2Z)}}
         closeAfterTransition={true}
@@ -989,21 +1074,36 @@ export default function Story() {
             <Grid container direction="row" justify="center">
                 <Grid item xs={10} md={5} style={{marginTop: '1vh'}}>
                   <Grid container direction="column" justify="center" style={{alignItems: 'center'}}>
-                    <img id="Gautam Buddha" src={buddha} alt="Gautam Buddha" title="Gautam Buddha" style={{'width': '90%'}}/>
+                    <img id="Dancing on the Moon" src={dancers} alt="Gautam Buddha" title="Gautam Buddha" style={{'width': '90%'}}/>
                   </Grid>
                 </Grid>
                 <Grid item xs={10} md={5} style={{marginTop: '1vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                   <Typography id="story-modal" variant="caption" style={{fontFamily: font}}>
-                    'Circle of Light' is a 43-by-39 inch oil portrait of the Gautam Buddha. This painting is inspired by another painting I had seen in a book. <br/>
-                    <br/>
-                    The Guatam Buddha is an impo
-                    
-                    <br/> <br/>
-                    Painted: May 2014 <br/>
+                    Tried to capture motion <br/>
+                    In a picture <br/>
+                    But captured the beauty of motion <br/>
+                    Because <br/>
+                    Time doesn't wait for you <br/>
+                    Or me <br/>
+
                     <br/>
 
-                    Methodology: <br/>
-                    As the canvas was lar
+                    tick tock <br/>
+
+                    <br/>
+
+                    Ignores all borders <br/>
+                    As we move <br/>
+                    From one timeframe to another <br/>
+                    Lost in time <br/>
+                    Dancing on the moon <br/>
+
+                    --
+
+                    <br/> <br/>
+                    Painted: May 2016 <br/>
+                    Medium: Oil
+                    <br/>
                   </Typography>
                 </Grid>
             </Grid>
@@ -1028,21 +1128,84 @@ export default function Story() {
             <Grid container direction="row" justify="center">
                 <Grid item xs={10} md={5} style={{marginTop: '1vh'}}>
                   <Grid container direction="column" justify="center" style={{alignItems: 'center'}}>
-                    <img id="Gautam Buddha" src={buddha} alt="Gautam Buddha" title="Gautam Buddha" style={{'width': '90%'}}/>
+                    <img id="First Robotics Competition" src={frc} alt="First Robotics Competition" title="First Robotics Competition" style={{'width': '90%'}}/>
                   </Grid>
                 </Grid>
                 <Grid item xs={10} md={5} style={{marginTop: '1vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                   <Typography id="story-modal" variant="caption" style={{fontFamily: font}}>
-                    'Circle of Light' is a 43-by-39 inch oil portrait of the Gautam Buddha. This painting is inspired by another painting I had seen in a book. <br/>
+                    <span style={{fontStyle: 'italic'}}>First</span> — <br/> 
                     <br/>
-                    The Guatam Buddha is an impo
+                    The first time <br/>
+                    I took a step <br/>
+                    Through the open doors <br/>
+                    At the Parle-G factory <br/>
+                    (my team's workshop) <br/>
+                    I was hesitant <br/>
+                    And I took a step back <br/>
+                    But then I saw <br/>
+                    More gears in the box <br/>
+                    Than people in all of Mumbai <br/>
+                    And I heard <br/>
+                    The soft whir <br/>
+                    Of motors <br/>
+                    <br/>
+                    The gears in my heart <br/>
+                    Clicked <br/>
+                    So I took another step. <br/>
+                    <br/>
+                    The first time <br/>
+                    He asked me to get the <br/>
+                    Power Tool <br/>
+                    And tighten the screws <br/>
+                    I had to ask him for help <br/>
+                    I didn't know machines <br/>
+                    Had replaced screwdrivers as well <br/>
+                    <br/>
+                    After that <br/>
+                    I tightened all the screws. <br/>
+                    <br/>
+                    The first time <br/>
+                    I spent the entire evening <br/>
+                    At the factory <br/>
+                    I didn't realise the sun had set <br/>
+                    Hours felt like seconds <br/>
+                    Morning turned into night <br/>
+                    <br/>
+                    My world now revolved around the robot. <br/>
+                    <br/>
+                    The first time <br/>
+                    I visited another stall <br/>
+                    At the Southern Cross Regional <br/>
+                    In Sydney <br/>
+                    I picked up their team badge <br/>
+                    And pinned it on my tracks <br/>
+                    <br/>
+                    The next day <br/>
+                    My tracks were weighed in kilograms <br/>
+                    A yellow-book for the teams <br/>
+                    <br/>
+                    The first time <br/>
+                    They announced 6024 <br/>
+                    As the recipient <br/>
+                    To the Chairman's Award <br/>
+                    Qualifying us for the <br/>
+                    First Championship <br/>
+                    I couldn't believe it <br/>
+                    None of us could <br/>
+                    <br/>
+                    A dream come true <br/>
+                    <span style={{fontStyle:'italic'}}>Houston, we have a problem</span> <br/>
+                    Our hearts are beating too fast. <br/>
+                    --
+
                     
                     <br/> <br/>
-                    Painted: May 2014 <br/>
-                    <br/>
+                    Team: 6024 R Factor, 1st team from Mumbai <br/>
+                    Specialist Role: Safety-Captian <br/>
+                    Qualified for First Championship @Houston, 2018 <br/>
+                    FRC Regionals: Southern Cross Regional (Sydney), South Pacific Regional (Sydney)  <br/>
+                    FRC Awards: Chairman’s Award (Southern Cross Regional), Safety Runners-Up Award (FIRST Championship, Houston) Safety Animation Award (sponsored by Underwriters Laboratories), Safety Award (Southern Cross Regional), Safety Runners-Up Award (South Pacific Regional) <br/>
 
-                    Methodology: <br/>
-                    As the canvas was lar
                   </Typography>
                 </Grid>
             </Grid>
@@ -1066,22 +1229,50 @@ export default function Story() {
           <Grid container direction="row" justify="center" style={{backgroundColor: 'white', border: '5px solid #efefef', outline: 'none', width: '70vw', 'maxHeight': '75vh', 'overflowY': 'auto', alignItems: 'center', 'paddingBottom': '5vh', 'paddingTop': '5vh'}}>
             <Grid container direction="row" justify="center">
                 <Grid item xs={10} md={5} style={{marginTop: '1vh'}}>
-                  <Grid container direction="column" justify="center" style={{alignItems: 'center'}}>
-                    <img id="Gautam Buddha" src={buddha} alt="Gautam Buddha" title="Gautam Buddha" style={{'width': '90%'}}/>
+                  <Grid container direction="column" justify="center">
+                    <img id="Kathak" src={kathak1} alt="Kathak" title="Kathak" style={{'width': '90%', paddingBottom: '0.5vh'}}/>
+                    <img id="Kathak" src={kathak4} alt="Kathak" title="Kathak" style={{'width': '90%', paddingBottom: '0.5vh'}}/>
                   </Grid>
                 </Grid>
-                <Grid item xs={10} md={5} style={{marginTop: '1vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                <Grid item xs={10} md={5} style={{marginTop: '1vh', display: 'flex', alignItems: 'center'}}>
                   <Typography id="story-modal" variant="caption" style={{fontFamily: font}}>
-                    'Circle of Light' is a 43-by-39 inch oil portrait of the Gautam Buddha. This painting is inspired by another painting I had seen in a book. <br/>
+                    When I look down <br/>
+                    I see a bunch of <span style={{fontStyle: 'italic'}}>ghungroos</span> <br/>
+                    Adorning my feet <br/>
                     <br/>
-                    The Guatam Buddha is an impo
-                    
+                    It has been 14 years now <br/>
+                    Since I wore 10 <span style={{fontStyle: 'italic'}}>ghungroos</span> <br/>
+                    Tiny bells tied together with a red thread <br/>
+                    Today I wear 150 <br/>
+                    But I feel light <br/>
+                    <br/>
+                    When I dance <br/>
+                    <span style={{fontStyle: 'italic'}}>Ghungroos</span> sound like <br/>
+                    Chains breaking <br/>
+                    And music coming to life <br/>
+                    <br/>
+                    I stare at one spot <br/> 
+                    And spin <br/>
+                    One <br/>
+                    Two <br/>
+                    Three <br/>
+                    Forty <br/>
+                    Hundred <br/>
+                    <br/>
+                    Time slows down <br/>
+                    But I don't <br/>
+                    <br/>
+                    I am unstoppable <br/>
+                    Like the wind <br/>
+                    A force to be reckoned with <br/>
+                    <br/>
+                    And when I look up <br/>
+                    I am the wind <br/> 
+                    --
                     <br/> <br/>
-                    Painted: May 2014 <br/>
-                    <br/>
 
-                    Methodology: <br/>
-                    As the canvas was lar
+                    Images captured: December 2016
+
                   </Typography>
                 </Grid>
             </Grid>
