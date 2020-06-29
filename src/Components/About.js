@@ -12,7 +12,7 @@ export default function AboutMe() {
             <Grid container direction="row" style={{'padding': '10vh 2vw 5vh 2vw'}}>
                 <Grid item xs={1}/>
                 <Grid item xs={10} style={{backgroundColor: grey, 'borderRadius': '15px', padding: '4vh 4vw 4vh 4vw'}}>
-                    <Typography style={{'fontSize': 'min(2.5vw, 15px)', 'fontFamily': font, fontWeight: 'lighter'}}>
+                    <Typography variant="body2" style={{'fontFamily': font, fontWeight: 'lighter'}}>
                         void aboutMe(int argc, char *argv[]) &#123;  <br/>
                         &emsp; &emsp;> Innovator* Yashvi = new Innovator(); <br/>
                         &emsp; &emsp;> Yashvi-><span style={descriptor}>lastName</span> = Jaju; <br/> 

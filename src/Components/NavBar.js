@@ -13,8 +13,24 @@ export default function NavBar() {
             <Fade in={true} timeout={16000}>
                 <AppBar elevation={0} style={{'backgroundColor': "white", padding: '0vh 2vw 0vh 2vw'}}>
                     <Toolbar>
-                        <Grid item xs={6}>
-                            <Grid container style={{alignItems:'left'}}>
+                        <Hidden smUp>
+                            <Grid item xs={3} style={{display:'flex', flexDirection:'row',justifyContent:'start', alignItems:'center'}}>
+                                <Typography variant="caption" style={{color:"#000000", fontFamily: font, cursor: 'pointer', fontWeight:'lighter'}} onClick={()=>handleScroll(0)}> Yashvi Jaju </Typography>
+                            </Grid>
+                            <Grid item xs={10} style={{display:'flex', flexDirection:'row',justifyContent:'flex-end', alignItems:'center'}}>
+                                <Typography variant="caption" style={{color:"#000000", fontFamily: font, cursor: 'pointer', paddingRight: '4vw', fontWeight:'lighter'}} onClick={()=>handleScroll(window.innerHeight * 0.4)}>
+                                    About Me
+                                </Typography>
+                                <Typography variant="caption" style={{color:"#000000", fontFamily: font, cursor: 'pointer', paddingRight: '4vw', fontWeight:'lighter'}} onClick={()=>handleScroll(window.innerHeight * 1)}>
+                                    My Projects
+                                </Typography>
+                                <Typography variant="caption" style={{color:"#000000", fontFamily: font, cursor: 'pointer', fontWeight:'lighter'}} onClick={()=>handleScroll(window.innerHeight * 20)}>
+                                    Contact
+                                </Typography>
+                            </Grid>
+                        </Hidden>
+                        <Hidden xsDown>
+                            <Grid item xs={5} style={{display:'flex', flexDirection:'row',justifyContent:'start', alignItems:'center'}}>
                                 <Typography variant="caption" style={{color:"#000000", fontFamily: font, cursor: 'pointer'}} onClick={()=>handleScroll(0)}> Yashvi Jaju </Typography>
                                 <Typography variant="caption" style={{color:'#000000'}}> &nbsp; | &nbsp; </Typography>
                                 <Typography variant="caption" style={{color:'#000000'}}>Developer</Typography>
@@ -23,33 +39,19 @@ export default function NavBar() {
                                 <Typography variant="caption" style={{color:'#000000'}}> &nbsp; | &nbsp; </Typography>
                                 <a href="https://www.linkedin.com/in/yashvi-jaju-61a3a3125/" target="_blank" rel="noopener noreferrer"><LinkedIn fontSize="small" style={{color:'#000000'}}/></a>
                             </Grid>
-                        </Grid>
-                        <Grid item xs={6}>
-                            <Grid container direction="row" justify="flex-end">
-                                <Hidden smUp>
-                                    <Typography variant="caption" style={{color:"#000000", fontFamily: font, cursor: 'pointer', paddingRight: '4vw'}} onClick={()=>handleScroll(window.innerHeight * 0.4)}>
-                                        About Me
-                                    </Typography>
-                                    <Typography variant="caption" style={{color:"#000000", fontFamily: font, cursor: 'pointer', paddingRight: '4vw'}} onClick={()=>handleScroll(window.innerHeight * 1)}>
-                                        My Projects
-                                    </Typography>
-                                    <Typography variant="caption" style={{color:"#000000", fontFamily: font, cursor: 'pointer'}} onClick={()=>handleScroll(window.innerHeight * 5)}>
-                                        Contact
-                                    </Typography>
-                                </Hidden>
-                                <Hidden xsDown>
-                                    <Typography variant="caption" style={{color:"#000000", fontFamily: font, cursor: 'pointer', paddingRight: '4vw'}} onClick={()=>handleScroll(window.innerHeight * 0.75)}>
-                                        About Me
-                                    </Typography>
-                                    <Typography variant="caption" style={{color:"#000000", fontFamily: font, cursor: 'pointer', paddingRight: '4vw'}} onClick={()=>handleScroll(window.innerHeight * 1.4)}>
-                                        My Projects
-                                    </Typography>
-                                    <Typography variant="caption" style={{color:"#000000", fontFamily: font, cursor: 'pointer'}} onClick={()=>handleScroll(window.innerHeight * 5)}>
-                                       Contact
-                                    </Typography>
-                                </Hidden>
+                            <Grid item xs={7} style={{display:'flex', flexDirection:'row',justifyContent:'flex-end', alignItems:'center'}}>
+                                <Typography variant="caption" style={{color:"#000000", fontFamily: font, cursor: 'pointer', paddingRight: '4vw'}} onClick={()=>handleScroll(window.innerHeight * 0.75)}>
+                                    About Me
+                                </Typography>
+                                <Typography variant="caption" style={{color:"#000000", fontFamily: font, cursor: 'pointer', paddingRight: '4vw'}} onClick={()=>handleScroll(window.innerHeight * 1.4)}>
+                                    My Projects
+                                </Typography>
+                                <Typography variant="caption" style={{color:"#000000", fontFamily: font, cursor: 'pointer'}} onClick={()=>handleScroll(window.innerHeight * 10)}>
+                                    Contact
+                                </Typography>
                             </Grid>
-                        </Grid>
+                        </Hidden>
+                            
                     </Toolbar>
                 </AppBar>
             </Fade>
