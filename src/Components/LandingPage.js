@@ -1,10 +1,8 @@
 import React  from 'react';
 import Typist from 'react-typist';
-import NavBar from './NavBar'
 import { Grid, Hidden } from '@material-ui/core';
 import './Cursor.css';
 
-const pink='#F7CAC9';
 const blue='#bee3f1';
 const font = 'Segoe UI';
 
