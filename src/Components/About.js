@@ -1,5 +1,8 @@
 import React  from 'react';
 import { Grid, Typography } from '@material-ui/core';
+import { AttachFile } from '@material-ui/icons';
+
+import resume from './Media/YashviJaju—Resume.pdf';
 
 const grey = '#efefef'
 const font = 'Segoe UI';
@@ -29,6 +32,9 @@ export default function AboutMe() {
                         &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyLearning</span> = Web-Development and UI-UX frameworks; <br/>
                         &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyBuilding</span> = A website for MettaCapital; <br/>
                         &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyInterningAt</span> = iSPIRT (think-tank); <br/>
+                        <br/>
+                        &emsp; &emsp;> Yashvi-><span style={descriptor}>Resume</span> = <a href={resume} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none', fontWeight: 'lighter', fontFamily: font, color: 'black'}}><AttachFile fontSize="small" style={{color:'grey'}}/> click to open; <br/>
+                        </a>
                         &#125;
                     </Typography>
                 </Grid>

@@ -940,7 +940,7 @@ export default function Story() {
                   "Thank you <span style={{fontStyle: 'italic'}}>didi</span>" <br/>
                   <br/>
                   Didi smiled <br/>
-                  I was the only one who thanked her that day. <br/>
+                  I was the only one who thanked her that day <br/>
                   --
                   <br/> <br/>
 
