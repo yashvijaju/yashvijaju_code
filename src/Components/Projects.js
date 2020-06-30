@@ -20,9 +20,9 @@ import checkoutImg from './Media/Projects/checkoutImg.jpg';
 import metta from './Media/Projects/Metta.jpg';
 
 import ps1Me from './Media/Projects/ps1.png';
-import ps2Me from './Media/Projects/ps2.png';
+import ps2Me from './Media/Projects/ps2.jpg';
 import ps3Ref from './Media/Projects/ref.jpg';
-import waveTshirt from './Media/Projects/waveTshirt.png';
+import waveTshirt from './Media/Projects/waveTshirt.jpg';
 import waveLogo from './Media/Projects/waveLogo.png';
 import waveRef from './Media/Projects/waveRef.png';
 
@@ -35,7 +35,7 @@ import d2_3 from './Media/Projects/d2_3.png';
 import d3_1 from './Media/Projects/d3_1.png';
 import d3_2 from './Media/Projects/d3_2.png';
 import d4_1 from './Media/Projects/d4_1.jpg';
-import animationImg from './Media/Projects/animationImg.png';
+import animationImg from './Media/Projects/animationImg.jpg';
 import animation from './Media/Projects/animation.mp4';
 
 import pflcollage from './Media/Projects/pflcollage.jpg';
@@ -50,7 +50,7 @@ import a2z2 from './Media/Projects/a2z2.jpg';
 import a2z3 from './Media/Projects/a2z3.jpg';
 import buddha from './Media/Projects/buddh.jpg';
 import buddhaeyes from './Media/Projects/buddhaeyes.jpg';
-import dancers from './Media/Projects/dancers.png';
+import dancers from './Media/Projects/dancers.jpg';
 import frc from './Media/Projects/frc.jpg';
 import frc2 from './Media/Projects/frc2.jpg';
 import frc3 from './Media/Projects/frc3.JPG';
@@ -60,7 +60,7 @@ import trojanhacks2 from './Media/Projects/trojanhacks2.png';
 import trojanhacks3 from './Media/Projects/trojanhacks3.png';
 import trojanhacks4 from './Media/Projects/trojanhacks4.png';
 
-import kathak1 from './Media/Projects/kathak1.png';
+import kathak1 from './Media/Projects/kathak1.jpg';
 import kathak2 from './Media/Projects/kathak2.jpg';
 import kathak3 from './Media/Projects/kathak3.jpg';
 import kathak4 from './Media/Projects/kathak4.jpg';
