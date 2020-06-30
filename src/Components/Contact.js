@@ -47,7 +47,7 @@ export default function Contact() {
             <Grid container direction="row" justify="center">
               <a href="mailto:yjaju@usc.edu" target="_blank" rel="noopener noreferrer"><EmailOutlined fontSize="large" style={{color:blue}}/></a>
               <Typography variant="h6" style={{color:blue}}> &nbsp; | &nbsp; </Typography>
-              <a href="https://www.linkedin.com/in/yashvi-jaju-61a3a3125/" target="_blank" rel="noopener noreferrer"><LinkedIn fontSize="large" style={{color:blue}}/></a>
+              <a href="https://www.linkedin.com/in/yashvi-jaju/" target="_blank" rel="noopener noreferrer"><LinkedIn fontSize="large" style={{color:blue}}/></a>
               <Typography variant="h6" style={{color:blue}}> &nbsp; | &nbsp; </Typography>
               <a href="https://www.instagram.com/yashvijaju/?hl=en" target="_blank" rel="noopener noreferrer"><Instagram fontSize="large" style={{color:blue}}/></a>
               <Typography variant="h6" style={{color:blue}}> &nbsp; | &nbsp; </Typography>
@@ -84,7 +84,7 @@ export default function Contact() {
               <Grid container direction="row">
                 <a href="mailto:yjaju@usc.edu" target="_blank" rel="noopener noreferrer"><EmailOutlined fontSize="large" style={{color:blue}}/></a>
                 <Typography variant="h6" style={{color:blue}}> &nbsp; | &nbsp; </Typography>
-                <a href="https://www.linkedin.com/in/yashvi-jaju-61a3a3125/" target="_blank" rel="noopener noreferrer"><LinkedIn fontSize="large" style={{color:blue}}/></a>
+                <a href="https://www.linkedin.com/in/yashvi-jaju/" target="_blank" rel="noopener noreferrer"><LinkedIn fontSize="large" style={{color:blue}}/></a>
                 <Typography variant="h6" style={{color:blue}}> &nbsp; | &nbsp; </Typography>
                 <a href="https://www.instagram.com/yashvijaju/?hl=en" target="_blank" rel="noopener noreferrer"><Instagram fontSize="large" style={{color:blue}}/></a>
                 <Typography variant="h6" style={{color:blue}}> &nbsp; | &nbsp; </Typography>

@@ -49,11 +49,15 @@ import a2z2 from './Media/Projects/a2z2.jpg';
 import a2z3 from './Media/Projects/a2z3.jpg';
 import buddha from './Media/Projects/buddh.jpg';
 import buddhaeyes from './Media/Projects/buddhaeyes.jpg';
-import dancers from './Media/Projects/dancers.jpg';
+import dancers from './Media/Projects/dancers.png';
 import frc from './Media/Projects/frc.jpg';
 import frc2 from './Media/Projects/frc2.jpg';
 import frc3 from './Media/Projects/frc3.JPG';
 
+import trojanhacks1 from './Media/Projects/trojanhacks1.png';
+import trojanhacks2 from './Media/Projects/trojanhacks2.png';
+import trojanhacks3 from './Media/Projects/trojanhacks3.png';
+import trojanhacks4 from './Media/Projects/trojanhacks4.png';
 
 import kathak1 from './Media/Projects/kathak1.png';
 import kathak2 from './Media/Projects/kathak2.jpg';
@@ -99,6 +103,9 @@ export default function Story() {
   const [risoId, setRisoId] = React.useState(1);
   const [lastFilterRiso, setLastFilterRiso] = React.useState();
   const [A2ZSrc, setA2ZSrc] = React.useState(a2z);
+  const [trojanHacksSrc, setTHSrc] = React.useState(trojanhacks1);
+  const [trojanHacksId, setTHId] = React.useState(1);
+
   const [openNotifs, setOpenNotifs] = React.useState(true);
   const [openFilterNotifs, setOpenFilterNotifs] = React.useState(false);
   const [filterNotifRender, setFilterNotifRender] = React.useState(0);
@@ -371,6 +378,45 @@ export default function Story() {
     }
   }
 
+  function handleTrojanHacks(props) {
+    if (props === "next") {
+      if (trojanHacksId === 1) {
+        setTHId(2);
+        setTHSrc(trojanhacks2);
+      }
+      else if (trojanHacksId === 2) {
+        setTHId(3);
+        setTHSrc(trojanhacks3);
+      }
+      else if (trojanHacksId === 3) {
+        setTHId(4);
+        setTHSrc(trojanhacks4);
+      }
+      else if (trojanHacksId === 4) {
+        setTHId(1);
+        setTHSrc(trojanhacks1);
+      }
+    }
+    if (props === "prev") {
+      if (trojanHacksId === 1) {
+        setTHId(4);
+        setTHSrc(trojanhacks4);
+      }
+      else if (trojanHacksId === 2) {
+        setTHId(1);
+        setTHSrc(trojanhacks1);
+      }
+      else if (trojanHacksId === 3) {
+        setTHId(2);
+        setTHSrc(trojanhacks2);
+      }
+      else if (trojanHacksId === 4) {
+        setTHId(3);
+        setTHSrc(trojanhacks3);
+      }
+    }
+  }
+
 
   return (
     <div style={{'padding': '5vh 0vw 2vh 0vw', backgroundColor: blue}}>
@@ -514,12 +560,12 @@ export default function Story() {
           </Typography>
         </Grid>
         <Grid className="Hackathon" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenTrojanHacks)}>
-          <img id="Crave" src={crave} alt="Crave" title="Crave" style={imageStyle}/>
+          <img id="Trojan Hacks Schedule Generator" src={trojanhacks3} alt="Trojan Hacks Schedule Generator" title="Trojan Hacks Schedule Generator" style={imageStyle}/>
           <Typography variant="body1" style={titleStyle}>
             Automated Schedule Generator: Coder
           </Typography>
           <Typography variant="caption" style={textStyle}>
-          I designed this website to document my projects, including and extending beyond the realms of Computer Science. I developed this website via the ReactJS library and a Material UI framewo...
+          In under 18 hours, we automated the process of generating schedules. Our program allows users to input all the classes they'd like to register for. It then uses the Beautiful Soup API to scrape the we...
           </Typography>
         </Grid>
         <Grid className="Hackathon" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenRobotics)}>
@@ -1338,24 +1384,34 @@ export default function Story() {
         <Fade in={trojanHacks}>
         <div>
           <Grid container direction="row" justify="center" style={{backgroundColor: 'white', border: '5px solid #efefef', outline: 'none', width: '70vw', 'maxHeight': '75vh', 'overflowY': 'auto', alignItems: 'center', 'paddingBottom': '5vh', 'paddingTop': '5vh'}}>
-            <Grid container direction="row" justify="center">
-                <Grid item xs={10} md={5} style={{marginTop: '1vh'}}>
-                  <Grid container direction="column" justify="center" style={{alignItems: 'center'}}>
-                    <img id="Gautam Buddha" src={buddha} alt="Gautam Buddha" title="Gautam Buddha" style={{'width': '90%'}}/>
+            <Grid container direction="column" justify="center" alignItems="center">
+                <Grid item xs={10} style={{marginTop: '1vh'}}>
+                  <Grid container direction="row" justify="center" style={{alignItems: 'center'}}>
+                    <Grid item xs={1}  style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                      <KeyboardArrowLeftOutlined id="leftPtr" fontSize="small" onClick={()=>{handleTrojanHacks("prev")}} style={{cursor: 'pointer'}}/>
+                    </Grid>
+                    <Grid item xs={10} style={{display:'flex', flexDirection: 'column', alignItems:'center'}}>
+                      <img id="Trojan Hacks Schedule Maker" src={trojanHacksSrc} alt="Trojan Hacks Schedule Maker" title="Trojan Hacks Schedule Maker" style={{'width': '98%', paddingBottom: '1vh'}}/>
+                      <Typography variant="caption" align="center">Step {trojanHacksId}</Typography>
+                    </Grid>
+                    <Grid item xs={1}  style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                      <KeyboardArrowRightOutlined id="rightPtr" fontSize="small" onClick={()=>{handleTrojanHacks("next")}} style={{cursor: 'pointer'}}/>
+                    </Grid>
                   </Grid>
                 </Grid>
-                <Grid item xs={10} md={5} style={{marginTop: '1vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                <Grid item xs={10} style={{marginTop: '1vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                   <Typography id="story-modal" variant="caption" style={{fontFamily: font}}>
-                    'Circle of Light' is a 43-by-39 inch oil portrait of the Gautam Buddha. This painting is inspired by another painting I had seen in a book. <br/>
+                    In under 18 hours, we automated the process of generating schedules. Our program allows users to input all the classes they'd like to register for. It then uses the Beautiful Soup API to scrape the web and get the class-data from USC's Web Registration platform. A .csv file is created for each class. Then, the program allows users to filter their schedules by earliest class, etc. Using this data, the program then generates schedules while trying to spread out class-hours over the 5 days of the week. The generated schedules can then be viewed through the Tkinter graphic user interface.<br/>
                     <br/>
-                    The Guatam Buddha is an impo
+                    The project was submitted for TrojanHacks 2019, and won 3rd place.
                     
                     <br/> <br/>
-                    Painted: May 2014 <br/>
+                    Tech Stack: Beautiful Soup 4 (Web Scraping), Tkinter Library (GUI) <br/>
+                    Languages: C++, Python <br/>
+                    Submitted on Devpost: https://devpost.com/software/usc-schedule-maker-t6zf70 <br/>
+                    Created: November 2019 <br/>
                     <br/>
 
-                    Methodology: <br/>
-                    As the canvas was lar
                   </Typography>
                 </Grid>
             </Grid>
