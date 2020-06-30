@@ -26,19 +26,39 @@
     -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" />
     <title>Yashvi Jaju</title>
+    <style> 
+      
+      .center { 
+          position: absolute; 
+          top: 0; 
+          bottom: 0; 
+          left: 0; 
+          right: 0; 
+          margin: auto; 
+      } 
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="loader" class="center" style="display:flex;flex-direction:row;justify-content:center;align-items:center;">
+      <img src="%PUBLIC_URL%/loader.png" style="width:40vw;height:auto"/>
+    </div> 
+    <script> 
+      document.onreadystatechange = function() { 
+        if (document.readyState !== "complete") { 
+          document.querySelector( 
+            "body").style.visibility = "hidden"; 
+          document.getElementById( 
+            "loader").style.visibility = "visible"; 
+        } else { 
+          document.getElementById( 
+            "loader").style.display = "none"; 
+          document.querySelector( 
+            "body").style.visibility = "visible"; 
+        } 
+      }; 
+    </script>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
+  </div>
 </html>
