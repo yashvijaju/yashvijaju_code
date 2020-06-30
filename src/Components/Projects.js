@@ -61,8 +61,6 @@ import trojanhacks3 from './Media/Projects/trojanhacks3.png';
 import trojanhacks4 from './Media/Projects/trojanhacks4.png';
 
 import kathak1 from './Media/Projects/kathak1.jpg';
-import kathak2 from './Media/Projects/kathak2.jpg';
-import kathak3 from './Media/Projects/kathak3.jpg';
 import kathak4 from './Media/Projects/kathak4.jpg';
 
 import quilling1 from './Media/Projects/quilling1.jpg';
@@ -70,10 +68,14 @@ import quilling2 from './Media/Projects/quilling2.jpg';
 import quilling3 from './Media/Projects/quilling3.jpg';
 import quilling4 from './Media/Projects/quilling4.jpg';
 
+import bms from './Media/Projects/bms.png';
+import mcdonald from './Media/Projects/mcdonald.png';
+import ispirt from './Media/Projects/ispirt.jpg';
 
-const pink='#F7CAC9';
+
+const pink='#F7CAC9'; 
 const blue='#bee3f1';
-const grey = '#efefef';
+const grey = '#efefef'; 
 
 const font = 'Segoe UI';
 const textStyle = {fontFamily: font, fontWeight: 'lighter'};
@@ -99,6 +101,10 @@ export default function Story() {
   const [robotics, setOpenRobotics] = React.useState(false);
   const [kathak, setOpenKathak] = React.useState(false);
   const [quilling, setOpenQuilling] = React.useState(false);
+
+  const [iSPIRT, setOpenIspirt] = React.useState(false);
+  const [McDonald, setOpenMcD] = React.useState(false);
+  const [BookMyShow, setOpenBMS] = React.useState(false);
 
   const [lastFilter, setLastFilter] = React.useState("All");
   const [comicSrc, setComicSrc] = React.useState(ps1Me);
@@ -511,7 +517,7 @@ export default function Story() {
         <Chip className="filterProjects" id="Startups" variant="outlined" label="Startups" clickable={true} style={chipStyle} onClick={()=>filter("Startups","Startups")}/>
         <Chip className="filterProjects" id="Digital Art" variant="outlined" label="Digital Art" clickable={true} style={chipStyle} onClick={()=>filter("Digital Art","Digital Art")}/>
         <Chip className="filterProjects" id="Traditional Art" variant="outlined" label="Traditional Art" clickable={true} style={chipStyle} onClick={()=>filter("Traditional Art","Traditional Art")}/>
-        <Chip className="filterProjects" id="Professional" variant="outlined" label="Professional" clickable={true} style={{display:'none'}} onClick={()=>filter("Professional","Professional")}/>
+        <Chip className="filterProjects" id="Professional" variant="outlined" label="Professional" clickable={true} style={chipStyle} onClick={()=>filter("Professional","Professional")}/>
         <Chip className="filterProjects" id="Hackathons" variant="outlined" label="Side Projects" clickable={true} style={chipStyle} onClick={()=>filter("Hackathon","Hackathons")}/>
       </Grid>
       <Grid container direction="row" justify="center" style={{marginTop: '1vh'}}>
@@ -593,7 +599,7 @@ export default function Story() {
             Automated Schedule Generator: Developer
           </Typography>
           <Typography variant="caption" style={textStyle}>
-          In under 18 hours, we automated the process of generating schedules. Our program allows users to input all the classes they'd like to register for. It then uses the Beautiful Soup API to scrape the we...
+          In under 18 hours, we automated the process of generating schedules. Our program allows users to input all the classes they'd like to register for. It then uses the Beautiful Soup API to scra...
           </Typography>
         </Grid>
         <Grid className="Digital Art" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenTshirt)}>
@@ -623,13 +629,13 @@ export default function Story() {
           'Circle of Light' is a 43-by-39 inch oil portrait of the Gautam Buddha. This painting is inspired by another painting I had seen in a book. The Guatam Buddha is an important figure in Hindu mythology, famous for his surrender of the materialistic world in pursuit of complete enlightenment and sel...
           </Typography>
         </Grid>
-        <Grid className="Web-Dev" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenMetta)}>
-          <img id="Metta" src={metta} alt="Metta Capital Advisors LLP" title="Metta Capital Advisors LLP" style={imageStyle}/>
+        <Grid className="Professional" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenIspirt)}>
+          <img id="iSPIRT" src={ispirt} alt="iSPIRT" title="iSPIRT" style={imageStyle}/>
           <Typography variant="body1" style={titleStyle}>
-            MettaCapital: Web Developer, Designer
+            iSPIRT: Software Intern
           </Typography>
           <Typography variant="caption" style={textStyle}>
-          MettaCapital is a leading advisory firm offering services along various facets of investment banking. I specialised as the sole web-developer, using the ReactJS library with a Material UI framework to develop their website from the ground u...
+          I participated in the First Robotics Competition (a robotics competition, simulating sports-tournaments with industry-grade equipent) as a member and Safety Captain of Team 6024-R Factor, the first team from Ind...
           </Typography>
         </Grid>
         <Grid className="Traditional Art" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenKathak)}>
@@ -648,6 +654,33 @@ export default function Story() {
           </Typography>
           <Typography variant="caption" style={textStyle}>
           I participated in the First Robotics Competition (a robotics competition, simulating sports-tournaments with industry-grade equipent) as a member and Safety Captain of Team 6024-R Factor, the first team from Ind...
+          </Typography>
+        </Grid>
+        <Grid className="Professional" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenMcD)}>
+          <img id="McDonald's Hardcastle Restaurants Private Limited" src={mcdonald} alt="McDonald's Hardcastle Restaurants Private Limited" title="McDonald's Hardcastle Restaurants Private Limited" style={imageStyle}/>
+          <Typography variant="body1" style={titleStyle}>
+            McDonald's Hardcastle Restaurants Private Limited: Product Development Intern
+          </Typography>
+          <Typography variant="caption" style={textStyle}>
+          Hardcastle Restaurants Private Limited operates the West and South franchises of McDonald's in India. I interned as a product developer in July 2019, and assisted with the new pilot fea...
+          </Typography>
+        </Grid>
+        <Grid className="Web-Dev" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenMetta)}>
+          <img id="Metta" src={metta} alt="Metta Capital Advisors LLP" title="Metta Capital Advisors LLP" style={imageStyle}/>
+          <Typography variant="body1" style={titleStyle}>
+            MettaCapital: Web Developer, Designer
+          </Typography>
+          <Typography variant="caption" style={textStyle}>
+          MettaCapital is a boutique investment bank. I specialised as the sole web-developer, using the ReactJS library with a Material UI framework to develop their website from the ground u...
+          </Typography>
+        </Grid>
+        <Grid className="Professional" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenBMS)}>
+          <img id="BookMyShow" src={bms} alt="BookMyShow" title="BookMyShow" style={imageStyle}/>
+          <Typography variant="body1" style={titleStyle}>
+            BookMyShow: Software Analyst Intern
+          </Typography>
+          <Typography variant="caption" style={textStyle}>
+          BookMyShow is a digital ticketing company with a dominant share of events and entertainment ticketing in India. I interned as a software analyst in July 2018, and assisted with beta-testi...
           </Typography>
         </Grid>
       </Grid>
@@ -693,7 +726,7 @@ export default function Story() {
               <Grid container direction="row" justify="center">
                 <Grid item xs={10} style={{'paddingTop': '2vh', 'paddingBottom': '5vh'}}>
                   <Typography id="story-modal" variant="caption" style={{fontFamily: font}}>
-                    cout &lsaquo; &lsaquo; Crave is a delivery service that specialises in bringing international food to university students at affordable rates. I collaborated with a team of 4 to ideate and prototype Crave, under LavaLab (USC's premier startup-incubator comprising the school's top ~1% of Designers, Developers, and Product Managers). I specialised as the front-end web developer for Crave;
+                    cout &lsaquo; &lsaquo; Crave is a delivery service that specialises in bringing international food to university students at affordable rates. I collaborated with a team of 4 to ideate and prototype Crave, under LavaLab (USC's premier startup-incubator comprising the school's top ~1% of Designers, Developers, and Product Managers). I specialised as the front-end web developer;
                     <br/> <br/>
                     Tech Stack: ReactJs library, Materialize framework, Progressive Web Application. <br/>
                     (Hosted locally for demo) <br/>
@@ -730,7 +763,7 @@ export default function Story() {
               <Grid container direction="row" justify="center">
                 <Grid item xs={10} style={{'paddingTop': '2vh', 'paddingBottom': '5vh'}}>
                   <Typography id="story-modal" variant="caption" style={{fontFamily: font}}>
-                    Crave is a delivery service that specialises in bringing international food to university students at affordable rates. I collaborated with a team of 4 to ideate and prototype Crave, under LavaLab (USC's premier startup-incubator comprising the school's top ~1% of Designers, Developers, and Product Managers). I specialised as the front-end web developer for Crave.
+                    cout &lsaquo; &lsaquo; Crave is a delivery service that specialises in bringing international food to university students at affordable rates. I collaborated with a team of 4 to ideate and prototype Crave, under LavaLab (USC's premier startup-incubator comprising the school's top ~1% of Designers, Developers, and Product Managers). I specialised as the front-end web developer;
                     <br/> <br/>
                     Tech Stack: ReactJs library, Materialize framework. (Hosted locally for demo) <br/>
                     Created: Apr-May 2020
@@ -771,8 +804,9 @@ export default function Story() {
             <Grid container direction="row" justify="center">
               <Grid item xs={10} style={{'paddingTop': '2vh', 'paddingBottom': '5vh'}}>
                 <Typography id="story-modal" variant="caption" style={{fontFamily: font}}>
-                  print( "MettaCapital is a leading advisory firm offering services along various facets. I specialised as the sole web-developer, using the ReactJS library with a Material UI framework to develop their website from the ground up. <br/>
-                  Features: Navigation bar changes color based on scroll position (homepage), three different designs for persona modals to re nder design as responsive (team page), transactions slidebar using arrays (transactions page). Initially used a Google Maps API to run on the contact page, but public github hosting changed that." )
+                  print( "MettaCapital is a boutique investment bank. I specialised as the sole web-developer, using the ReactJS library with a Material UI framework to develop their website from the ground up." ) <br/>
+                  <br/>
+                  Features: Navigation bar changes color based on scroll position (homepage), three different designs for persona modals to re nder design as responsive (team page), transactions slidebar using arrays (transactions page). Initially used a Google Maps API to run on the contact page, but public github hosting changed that.
                   <br/> <br/>
                   Tech Stack: ReactJs library, Material UI framework. <br/>
                   APIs: 'window-scroll-position' (used to style navigation bar on homepage) <br/>
@@ -802,8 +836,8 @@ export default function Story() {
         <div>
           <Grid container direction="row" justify="center" style={{backgroundColor: 'white', border: '5px solid #efefef', outline: 'none', width: '70vw', 'maxHeight': '75vh', 'overflowY': 'auto', alignItems: 'center', justifyContent: 'center'}}>
             <Grid item xs={10} style={{'paddingTop': '5vh', display: 'flex', flexDirection: 'column'}}>
-              <img src={portfolioCode} title="Portfolio" style={{'width': '100%', height: 'auto'}}/>
-              <Typography variant="caption" style={{fontStyle: 'italic', textAlign:'left'}}>code snippet: functions used handle notifications, opening and closing of modals, and the modal for Crave</Typography>
+              <img src={portfolioCode} title="Portfolio Code" alt="Portfolio Code" style={{'width': '100%', height: 'auto'}}/>
+              <Typography variant="caption" style={{fontStyle: 'italic', textAlign:'left'}}>code snippet: functions used to handle notifications, opening and closing of modals, and the modal for Crave</Typography>
             </Grid>
             <Grid item xs={10} style={{'paddingTop': '2vh', 'paddingBottom': '5vh'}}>
               <Typography id="story-modal" variant="caption" style={{fontFamily: font}}>
@@ -841,7 +875,7 @@ export default function Story() {
               <Grid item xs={1} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                 <KeyboardArrowLeftOutlined id="leftPtr"  fontSize="small" onClick={()=>{handleComic("prev")}} style={{cursor: 'pointer'}}/>
               </Grid>
-              <Grid item xs={10} md={5}>
+              <Grid item xs={8} md={5}>
                 <img className="Modal Adjustment Layers" id={comicId} src={comicSrc} alt="Adjustment Layers" title="Adjustment Layers" style={{'width': '100%', 'paddingTop': '5vh'}}></img>
               </Grid>
               <Grid item xs={1} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
@@ -878,7 +912,7 @@ export default function Story() {
               <Grid item xs={1}  style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                 <KeyboardArrowLeftOutlined id="leftPtr" fontSize="small" onClick={()=>{handleWaveLogo("prev")}} style={{cursor: 'pointer'}}/>
               </Grid>
-              <Grid item xs={10} md={5}>
+              <Grid item xs={8} md={5}>
                 <img className="Modal Adjustment Layers" id={waveId} src={waveSrc} alt="Adjustment Layers" title="Adjustment Layers" style={{'width': '100%'}}/>
               </Grid>
               <Grid item xs={1}  style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
@@ -886,7 +920,7 @@ export default function Story() {
               </Grid>
               <Grid item xs={10} md={4}  style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                 <Typography id="story-modal" variant="caption" style={{fontFamily: font}}>
-                  I used Adobe Photoshop to design a logo for a beach-themed t-shirt. To create this, I first created three Adjustment Layers (light blue, dark blue, and yellow) and used the Pen Tool to trace portions of the original image. With this, I created a Path, converted the path into a Selection, and deleted it from the Layer Mask to display the selection in the Adjustment Layers. I then edited the stacking order to hide the sun behind one wave and reflect in another. To illustrate the text, I designed custom type paths that wrapped around the wave -- used two paths, one aligning text vertically and the other horizontally. Finally, rasterised the type layers and applied layer effects (stroke).
+                  I used Adobe Photoshop to design a logo for a beach-themed t-shirt. To create this, I first created three Adjustment Layers (light blue, dark blue, and yellow) and used the Pen Tool to trace portions of the original image. With this, I created a Path, converted the path into a Selection, inversed it, and deleted it from the Layer Mask to display the selection in the Adjustment Layers. I then edited the stacking order to hide the sun behind one wave and reflect in another. To illustrate the text, I designed custom type paths that wrapped around the wave — used two paths, one aligning text vertically and the other horizontally. Finally, I rasterised the type layers and applied layer effects (stroke).
                   <br/> <br/>
                   Adobe Photoshop Tools: Adjustment Layers, Layer Masks, Custom Type (custom paths), Pen Tool, Layer Effects. <br/>
                   Created: May 2020
@@ -956,7 +990,7 @@ export default function Story() {
                   --
                   <br/> <br/>
                   This manifesto is inspired by Bruce Mau's <span style={{fontStyle: 'italic', cursor: 'pointer'}}><a href="https://tinyurl.com/brucemauincomplete" target="_blank" rel="noopener noreferrer"> Incomplete Manifesto for Growth</a></span>. Written in 1998, his manifesto outlines 43 "rules" by which one should live their life. To create this manifesto, I first encapsulated his manifesto into three simple phrases: 1. Break the rules, &nbsp; 2. Chase the unconventional, and &nbsp; 3. Live in extremes; or don't. <br/>
-                  These phrases then motivated my initial designs as seen in 'Iteration One', with a heavy use of Lines, Angles, and Overlays  to demonstrate these underlying themes. The designs in the second iteration build on the initial designs to explore Whitespace, Color Palettes, and Offset-Layers. The third iterations then further explored the aforementioned facets along with the more inticrate Font Sizes, Text Alignment, and a multitude of other finer details that set the tone for my final design. <br/>
+                  These phrases then motivated my initial designs as seen in 'Iteration One', with a heavy use of Lines, Angles, and Overlays  to demonstrate these underlying themes. The designs in the second iteration build on the initial designs to explore Whitespace, Color Palettes, and Offset-Layers. The third set of iterations focused on the more inticrate details, including Font Sizes and Text Alignment, alongside a multitude of other fine details that cumulatively set the tone for my final design. <br/>
                   The manifesto was designed with the intent to be printed using a Risograph, although the CoVid-19 global pandemic prevented this later.
                   <br/> <br/>
                   Adobe Tools: Adobe InDesign <br/>
@@ -990,20 +1024,26 @@ export default function Story() {
                 <Typography id="story-modal" variant="caption" style={{fontFamily: font}}>
                   Capture accidents <br/>
                   because <br/>
-                  “the wrong answer is the right answer in search of a different question” <br/>
+                  “The wrong answer is the right answer <br/>
+                  In search of a different question” <br/>
                   <br/>
                   Everywhere I go <br/>
                   Neon yellow signs warn me <br/>
                   Be careful <br/>
                   Prevent accidents <br/>
                   <br/>
-                  Yet, <br/>
+                  Yet <br/>
                   I create an accident <br/>
                   And capture it <br/>
                   In prison bars <br/>
                   Made from all the warning signs <br/>
                   <br/>
-                  And I paint it neon yellow <br/>
+                  My head spins <br/>
+                  Bright red <br/>
+                  Screaming "No" <br/>
+                  <br/>
+                  But I paint it <br/>
+                  Neon yellow <br/>
                   --
                   <br/> <br/>                  
 
@@ -1051,7 +1091,7 @@ export default function Story() {
                   Turned around <br/>
                   "Thank you <span style={{fontStyle: 'italic'}}>didi</span>" <br/>
                   <br/>
-                  Didi smiled <br/>
+                  <span style={{fontStyle: 'italic'}}>Didi</span> smiled <br/>
                   I was the only one who thanked her that day <br/>
                   --
                   <br/> <br/>
@@ -1063,11 +1103,11 @@ export default function Story() {
 
                   To solve this, I founded Pride For Labor (PFL) in grade 10. <br/>
                     • Conducted social experiments to analyse treatment of domestic staff and employer sensitivity to their conditions <br/>
-                    • Designed a multi-phased program, secured school support, and participation of 500+parents / students <br/>
+                    • Designed a multi-phased program, secured school support, and participation of 500+ parents/ students <br/>
                     1. Organised student and teacher volunteers to clean the 8-storey campus while the staff was treated to lunch and movies <br/>
-                    2. Collected 400+ gifts and distributed to support staff for Christmas, 2018 <br/>
+                    2. Collected 400+ gifts, distributed to support staff for Christmas, 2018 <br/>
                     3. Conducted campaigns to increase awareness amongst students to respect domestic staff <br/>
-
+                    <br/>
                   A little effort is all it takes to spread a smile, and I want to make a revolution, one smile at a time.
                   <br/> <br/>
                   Location: Oberoi International School, Mumbai <br/>
@@ -1127,15 +1167,15 @@ export default function Story() {
                   We don't need this." <br/>
                   <br/>
                   But I also remember <br/>
-                  My sheer joy <br/>
-                  At every single <br/>
+                  My goofy smile <br/>
+                  After <br/>
+                  Every <br/>
                   Purchase <br/>
                   <br/>
                   I don't remember <br/>
                   How many copies we sold <br/>
                   That day <br/>
-                  We didn't <br/>
-                  Sell out <br/>
+                  We didn't sell out <br/>
                   But <br/>
                   We broke even <br/>
                   <br/>
@@ -1147,8 +1187,8 @@ export default function Story() {
                   <br/> <br/>
                   At the age of 12, I founded A2Z as a backyard summer project with 5 friends. A2Z started as a pay-per-issue magazine that  quickly converted into an advertisement-driven bi-monthly magazine distributed to 400+ flats in my building/ society free of cost. <br/>
                   <br/>
-                  As the founder and editor, I solely handled finances, sought advertisers, and negotiated printing costs. I edited articles and images, building the magazine with all my technical and design expertise stemming from Apple Pages. <br/> <br/>
-                  <br/> <br/>
+                  As the founder and editor, I solely handled finances, sought advertisers, and negotiated printing costs. I edited articles and images, building the magazine with all my technical and design expertise stemming from Apple Pages. <br/> 
+                  <br/>
                   Founded: May 2014 <br/>
                   <br/>
                   </Typography>
@@ -1304,7 +1344,7 @@ export default function Story() {
                     <br/>
                     The gears in my heart <br/>
                     Clicked <br/>
-                    So I took another step. <br/>
+                    So I took another step <br/>
                     <br/>
                     The first time <br/>
                     He asked me to get the <br/>
@@ -1315,7 +1355,7 @@ export default function Story() {
                     Had replaced screwdrivers as well <br/>
                     <br/>
                     After that <br/>
-                    I tightened all the screws. <br/>
+                    I tightened all the screws <br/>
                     <br/>
                     The first time <br/>
                     I spent the entire evening <br/>
@@ -1324,7 +1364,7 @@ export default function Story() {
                     Hours felt like seconds <br/>
                     Morning turned into night <br/>
                     <br/>
-                    My world now revolved around the robot. <br/>
+                    Earth now revolved around the robot <br/>
                     <br/>
                     The first time <br/>
                     I visited another stall <br/>
@@ -1335,7 +1375,7 @@ export default function Story() {
                     <br/>
                     The next day <br/>
                     My tracks were weighed in kilograms <br/>
-                    A yellow-book for the teams. <br/>
+                    A yellow-book for the teams <br/>
                     <br/>
                     The first time <br/>
                     They announced 6024 <br/>
@@ -1347,17 +1387,17 @@ export default function Story() {
                     None of us could <br/>
                     <br/>
                     A dream come true <br/>
-                    <span style={{fontStyle:'italic'}}>Houston, we have a problem</span> <br/>
-                    Our hearts are beating too fast. <br/>
+                    <span style={{fontStyle:'italic'}}>Houston, we have a problem:</span> <br/>
+                    Our hearts are beating too fast <br/>
                     --
 
                     
                     <br/> <br/>
                     Team: 6024 R Factor, 1st team from Mumbai <br/>
-                    Specialist Role: Safety-Captian <br/>
-                    Qualified for First Championship @Houston, 2018 <br/>
-                    FRC Regionals: Southern Cross Regional (Sydney), South Pacific Regional (Sydney)  <br/>
-                    FRC Awards: Chairman’s Award (Southern Cross Regional), Safety Runners-Up Award (FIRST Championship, Houston) Safety Animation Award (sponsored by Underwriters Laboratories), Safety Award (Southern Cross Regional), Safety Runners-Up Award (South Pacific Regional) <br/>
+                    Specialist Role: Safety-Captain <br/>
+                    Qualified for First Championship at Houston, 2018 <br/>
+                    FRC Regionals: Southern Cross (Sydney), South Pacific (Sydney)  <br/>
+                    FRC Awards: Chairman’s Award (Southern Cross Regional), Safety Runners-Up Award (FIRST Championship, Houston) Safety Animation Award (pre-season, sponsored by Underwriters Laboratories), Safety Award (Southern Cross Regional), Safety Runners-Up Award (South Pacific Regional) <br/>
 
                   </Typography>
                 </Grid>
@@ -1382,7 +1422,7 @@ export default function Story() {
           <Grid container direction="row" justify="center" style={{backgroundColor: 'white', border: '5px solid #efefef', outline: 'none', width: '70vw', 'maxHeight': '75vh', 'overflowY': 'auto', alignItems: 'center', 'paddingBottom': '5vh', 'paddingTop': '5vh'}}>
             <Grid container direction="row" justify="center">
                 <Grid item xs={10} md={5} style={{marginTop: '1vh'}}>
-                  <Grid container direction="column" justify="center">
+                  <Grid container direction="column" justify="center" alignItems="center">
                     <img id="Kathak" src={kathak1} alt="Kathak" title="Kathak" style={{'width': '90%', paddingBottom: '0.5vh'}}/>
                     <img id="Kathak" src={kathak4} alt="Kathak" title="Kathak" style={{'width': '90%', paddingBottom: '0.5vh'}}/>
                   </Grid>
@@ -1393,14 +1433,14 @@ export default function Story() {
                     I see a bunch of <span style={{fontStyle: 'italic'}}>ghungroos</span> <br/>
                     Adorning my feet <br/>
                     <br/>
-                    It has been 14 years now <br/>
+                    It has been 14 years <br/>
                     Since I wore 10 <span style={{fontStyle: 'italic'}}>ghungroos</span> <br/>
                     Tiny bells tied together with a red thread <br/>
                     Today I wear 150 <br/>
                     But I feel light <br/>
                     <br/>
                     When I dance <br/>
-                    <span style={{fontStyle: 'italic'}}>Ghungroos</span> sound like <br/>
+                    My <span style={{fontStyle: 'italic'}}>ghungroos</span> sound like <br/>
                     Chains breaking <br/>
                     And music coming to life <br/>
                     <br/>
@@ -1477,7 +1517,6 @@ export default function Story() {
                   <br/>
                   The strings are cut <br/>
                   The puppet stretches <br/>
-                  A little <br/>
                   The coil becomes <br/>
                   Loose <br/>
                   <br/>
@@ -1490,18 +1529,17 @@ export default function Story() {
                   The loose coil becomes <br/>
                   A teardrop <br/>
                   A dimaond <br/>
-                  A victim of my <br/>
-                  Imagination <br/>
+                  A victim of my imagination <br/>
                   <br/>
                   Glued in place <br/>
-                  The puppets put <br/>
+                  All the puppets <br/>
                   Together <br/>
                   Become <br/>
                   The Puppet Show <br/>
                   --
                   <br/> <br/>
-                  Quilling is an art of paper filigree in which strips of paper are rolled using a slitted-tool to create coils of paper. These coils are then shaped as desired, and the loose end of paper is glued. Put together, beautiful inticrate designs can be made. <br/>
-                  I sold envelopes, cards, etc for Rs. 100-200 ($ 2-3) at exhibitions for a few years.
+                  Quilling is an art of paper filigree in which strips of paper are rolled using a slitted-tool to create coils of paper. These coils are then shaped as desired, and sealed by glueing the loose end of paper. Put together, beautiful inticrate designs can be made. <br/> <br/>
+                  I sold envelopes, cards, boxes, etc for Rs. 100-200 ($ 2-3) at exhibitions for a few years.
                   <br/> <br/>
                   Created: 2013-2016 <br/>
                   <br/>
@@ -1544,9 +1582,9 @@ export default function Story() {
                 </Grid>
                 <Grid item xs={10} style={{marginTop: '1vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                   <Typography id="story-modal" variant="caption" style={{fontFamily: font}}>
-                    cout &lsaquo; &lsaquo; In under 18 hours, we automated the process of generating schedules. Our program allows users to input all the classes they'd like to register for. It then uses the Beautiful Soup API to scrape the web and get the class-data from USC's Web Registration platform. A .csv file is created for each class. Then, the program allows users to filter their schedules by earliest class, etc. Using this data, the program then generates schedules while trying to spread out class-hours over the 5 days of the week. The generated schedules can then be viewed through the Tkinter graphic user interface;<br/>
+                    cout &lsaquo; &lsaquo; In under 18 hours, we automated the process of generating schedules. Our program allows users to input all the classes they'd like to register for. It then uses the Beautiful Soup API to scrape the web and get the class-data from USC's Web Registration platform. A .csv file is created for each class. Then, the program allows users to filter their schedules by earliest class, etc. Using this data, the program then generates schedules while trying to spread out class-hours evenly over the 5 days of the week. The generated schedules can then be viewed through the Tkinter graphic user interface;<br/>
                     <br/>
-                    The project was submitted for TrojanHacks 2019, and won 3rd place.
+                    The project was submitted for TrojanHacks 2019 and won 3rd place.
                     
                     <br/> <br/>
                     Tech Stack: Beautiful Soup 4 (Web Scraping), Tkinter Library (GUI) <br/>
@@ -1557,6 +1595,129 @@ export default function Story() {
 
                   </Typography>
                 </Grid>
+            </Grid>
+          </Grid>
+        </div>
+        </Fade>
+      </Modal>
+      <Modal
+        style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}
+        aria-labelledby="image-modal-"
+        aria-describedby="story-modal-"
+        open={McDonald}
+        onClose={() => {handleClose(setOpenMcD)}}
+        closeAfterTransition={true}
+        BackdropComponent={Backdrop}
+        BackdropProps={{timeout: 500}}
+      >
+
+        <Fade in={McDonald}>
+        <div>
+          <Grid container direction="row" justify="center" style={{backgroundColor: 'white', border: '5px solid #efefef', outline: 'none', width: '70vw', 'maxHeight': '75vh', 'overflowY': 'auto', alignItems: 'center', 'paddingBottom': '5vh', 'paddingTop': '5vh'}}>
+            <Grid container direction="row" justify="center" alignItems="center">
+                <Grid item xs={1}/>
+                <Grid item xs={10} md={4} style={{marginTop: '1vh'}}>
+                  <img id="McDonald's" src={mcdonald} alt="McDonald's" title="McDonald's" style={{'width': '100%', paddingBottom: '1vh'}}/>
+                </Grid>
+                <Grid item xs={1}/>
+                <Grid item xs={10} md={5} style={{marginTop: '1vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                  <Typography id="story-modal" variant="caption" style={{fontFamily: font}}>
+                    cout &lsaquo; &lsaquo; Hardcastle Restaurants Private Limited operates the West and South franchises of McDonald's in India; <br/> <br/>
+                    I interned as a product developer: <br/>
+                    • Analysed and beta-tested McDonald's pilot feature: On The Go (food delivery en-route) <br/>
+                    • Visited McDonald's franchises to conduct market research through interaction and observation of consumers <br/>
+                    • Compared statistical success data from pilot runs and user-flow for similar services (Uber Eats, Burger King Traffic Jam Whopper). Also analysed complaints registered in the last month <br/>
+                    • Mapped API calls to pilot feature to capture usage trends and identify key stores to run second run of testing <br/>
+                    • Proposed technological, product, and marketing modifications to existing pilot model to boost success rate <br/>
+                    <br/> 
+                    Intern: July 2019 (Mumbai)<br/>
+                    <br/>
+                  </Typography>
+                </Grid>
+                <Grid item xs={1}/>
+            </Grid>
+          </Grid>
+        </div>
+        </Fade>
+      </Modal>
+      <Modal
+        style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}
+        aria-labelledby="image-modal-"
+        aria-describedby="story-modal-"
+        open={BookMyShow}
+        onClose={() => {handleClose(setOpenBMS)}}
+        closeAfterTransition={true}
+        BackdropComponent={Backdrop}
+        BackdropProps={{timeout: 500}}
+      >
+
+        <Fade in={BookMyShow}>
+        <div>
+          <Grid container direction="row" justify="center" style={{backgroundColor: 'white', border: '5px solid #efefef', outline: 'none', width: '70vw', 'maxHeight': '75vh', 'overflowY': 'auto', alignItems: 'center', 'paddingBottom': '5vh', 'paddingTop': '5vh'}}>
+            <Grid container direction="row" justify="center" alignItems="center">
+                <Grid item xs={1}/>
+                <Grid item xs={10} md={4} style={{marginTop: '1vh'}}>
+                  <img id="BookMyShow" src={bms} alt="BookMyShow" title="BookMyShow" style={{'width': '100%', paddingBottom: '1vh'}}/>
+                </Grid>
+                <Grid item xs={1}/>
+                <Grid item xs={10} md={5} style={{marginTop: '1vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                  <Typography id="story-modal" variant="caption" style={{fontFamily: font}}>
+                    cout &lsaquo; &lsaquo; BookMyShow is a digital ticketing company with a dominant share of events and entertainment ticketing in India; <br/> <br/>
+                    I interned as a software analyst: <br/>
+                    • Beta-tested Partner App <br/>
+                    • Analysed and researched the software frameworks and libraries used by BookMyShow <br/>
+                    <br/> 
+                    Intern: July 2018 (Mumbai) <br/>
+                    <br/>
+
+                  </Typography>
+                </Grid>
+                <Grid item xs={1}/>
+            </Grid>
+          </Grid>
+        </div>
+        </Fade>
+      </Modal>
+      <Modal
+        style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}
+        aria-labelledby="image-modal-"
+        aria-describedby="story-modal-"
+        open={iSPIRT}
+        onClose={() => {handleClose(setOpenIspirt)}}
+        closeAfterTransition={true}
+        BackdropComponent={Backdrop}
+        BackdropProps={{timeout: 500}}
+      >
+
+        <Fade in={iSPIRT}>
+        <div>
+          <Grid container direction="row" justify="center" style={{backgroundColor: 'white', border: '5px solid #efefef', outline: 'none', width: '70vw', 'maxHeight': '75vh', 'overflowY': 'auto', alignItems: 'center', 'paddingBottom': '5vh', 'paddingTop': '5vh'}}>
+            <Grid container direction="row" justify="center" alignItems="center">
+                <Grid item xs={1}/>
+                <Grid item xs={4} md={4} style={{marginTop: '1vh'}}>
+                  <img id="iSPIRT" src={ispirt} alt="iSPIRT" title="iSPIRT" style={{'width': '100%', paddingBottom: '1vh'}}/>
+                </Grid>
+                <Grid item xs={1}/>
+                <Grid item xs={10} md={5} style={{marginTop: '1vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                  <Typography id="story-modal" variant="caption" style={{fontFamily: font}}>
+                    cout &lsaquo; &lsaquo; iSPIRT is a not-for-profit think tank that evangelises and develops societal tech platforms such as IndiaStack to transform India by solving some of her hard problems by addressing financial inclusion, affordable healthcare and access to education. iSPIRT team includes volunteers that created Aadhar, the largest public identity database in the world; <br/> <br/>
+                    I interned as a software developer: <br/>
+                    <br/>
+                    June 2020 - Present: <br/>
+                    • Working on the India COVID-19 SEIR Model: a predictive model for districts in India <br/>
+                    <a href="https://indiacovidmodel.in" target="_blank" rel="norefer noopener">https://indiacovidmodel.in</a> <br/>
+                    <br/>
+                    
+                    July 2017: <br/>
+                    • Beta-tested iSPIRT’s open source digital education app <br/>
+                    • Assisted in editing a technical paper on ‘Digital Yatra’, a project to digitise travel and make Indian airports paperless through linkage with Aadhar. This is now being rolled out through pilot programs at select airports in India <br/>
+                    
+                    <br/> <br/>
+                    Intern: June 2020 - ongoing (Remote); July 2017 (Bangalore) <br/>
+                    <br/>
+                  </Typography>
+                </Grid>
+                <Grid item xs={1}/>
             </Grid>
           </Grid>
         </div>
