@@ -4,6 +4,7 @@ import { Grid, Typography, Backdrop, Fade, Hidden, Tooltip, Chip, Snackbar } fro
 import { KeyboardArrowLeftOutlined, KeyboardArrowRightOutlined, ExpandMoreOutlined, CancelOutlined } from '@material-ui/icons';
 
 import portfolio from './Media/Projects/portfolio.jpg';
+import portfolioCode from './Media/Projects/portfolioCode.jpg';
 import crave from './Media/Projects/Crave.jpg';
 import craveFilters from './Media/Projects/filters.mp4';
 import craveLogin from './Media/Projects/login.mp4';
@@ -64,6 +65,11 @@ import kathak2 from './Media/Projects/kathak2.jpg';
 import kathak3 from './Media/Projects/kathak3.jpg';
 import kathak4 from './Media/Projects/kathak4.jpg';
 
+import quilling1 from './Media/Projects/quilling1.jpg';
+import quilling2 from './Media/Projects/quilling2.jpg';
+import quilling3 from './Media/Projects/quilling3.jpg';
+import quilling4 from './Media/Projects/quilling4.jpg';
+
 
 const pink='#F7CAC9';
 const blue='#bee3f1';
@@ -105,12 +111,13 @@ export default function Story() {
   const [A2ZSrc, setA2ZSrc] = React.useState(a2z);
   const [trojanHacksSrc, setTHSrc] = React.useState(trojanhacks1);
   const [trojanHacksId, setTHId] = React.useState(1);
+  const [quillingSrc, setQuillingSrc] = React.useState(quilling1);
 
   const [openNotifs, setOpenNotifs] = React.useState(true);
   const [openFilterNotifs, setOpenFilterNotifs] = React.useState(false);
   const [filterNotifRender, setFilterNotifRender] = React.useState(0);
   
-  setTimeout(handleOpenNotif,10000);
+  const timer = setTimeout(handleOpenNotif,20000);
 
   function handleOpenNotif() {
     if (filterNotifRender === 0) {
@@ -119,6 +126,7 @@ export default function Story() {
     }
     else {
       setOpenFilterNotifs(false);
+      clearTimeout(timer);
     }
   }
 
@@ -128,6 +136,7 @@ export default function Story() {
     }
     setOpenNotifs(false);
     setOpenFilterNotifs(false);
+    clearTimeout(timer);
   };
 
   function handleOpen(props) {
@@ -139,8 +148,10 @@ export default function Story() {
   };
 
   function filter(props,chip) {
+    setFilterNotifRender(1);
+    clearTimeout(timer);
     if (props === "All") {
-      var arr = ["Web-Dev","Photoshop","Hackathon","Entrepreneurship","Painting"];
+      var arr = ["Web-Dev","Hackathon","Startups","Traditional Art", "Digital Art", "Professional"];
       for (var i = 0; i < arr.length; i++) {
         var x = document.getElementsByClassName(arr[i]);
           for (var j = 0; j < x.length; j++) {
@@ -149,7 +160,7 @@ export default function Story() {
       }
     }
     else {
-      arr = ["Web-Dev","Photoshop","Hackathon","Entrepreneurship","Painting"];
+      arr = ["Web-Dev","Hackathon","Startups","Traditional Art", "Digital Art", "Professional"];
       for ( i = 0; i < arr.length; i++) {
         x = document.getElementsByClassName(arr[i]);
           for (j = 0; j < x.length; j++) {
@@ -417,9 +428,43 @@ export default function Story() {
     }
   }
 
+  function handleQuilling(props) {
+    if (props === "next") {
+      if (quillingSrc === quilling1) {
+        setQuillingSrc(quilling2);
+      }
+      else if (quillingSrc === quilling2) {
+        setQuillingSrc(quilling3);
+      }
+      else if (quillingSrc === quilling3) {
+        setQuillingSrc(quilling4);
+      }
+      else if (quillingSrc === quilling4) {
+        setQuillingSrc(quilling1);
+      }
+    }
+    if (props === "prev") {
+      if (quillingSrc === quilling1) {
+        setQuillingSrc(quilling4);
+      }
+      else if (quillingSrc === quilling2) {
+        setQuillingSrc(quilling1);
+      }
+      else if (quillingSrc === quilling3) {
+        setQuillingSrc(quilling2);
+      }
+      else if (quillingSrc === quilling4) {
+        setQuillingSrc(quilling3);
+      }
+    }
+  }
+
 
   return (
     <div style={{'padding': '5vh 0vw 2vh 0vw', backgroundColor: blue}}>
+      <Typography variant="h5" style={{'fontFamily': font, paddingBottom: '3vh', fontWeight: 'bolder', color: 'white', textAlign: 'center'}}>
+          &#123; My Projects &#125;
+      </Typography>
       <Hidden mdUp>
         <Snackbar
           anchorOrigin={{
@@ -450,89 +495,53 @@ export default function Story() {
           <CancelOutlined size="small" aria-label="close" color="inherit" style={{cursor: 'pointer'}} onClick={handleCloseNotif}/>
         }
       />
-      <Grid container direction="row" justify="center" style={{padding: '0 1.5vw 0 1.5vw'}}>
+      <Grid container direction="row" justify="center" style={{padding: '0 4vw 0 4vw'}}>
         <Chip className="filterProjects" id="All" variant="outlined" label="All" clickable={true} style={chipStyleAll} onClick={()=>filter("All","All")}/>
         <Chip className="filterProjects" id="Web Dev" variant="outlined" label="Web Dev" clickable={true} style={chipStyle} onClick={()=>filter("Web-Dev","Web Dev")}/>
-        <Chip className="filterProjects" id="Startups" variant="outlined" label="Startups" clickable={true} style={chipStyle} onClick={()=>filter("Entrepreneurship","Startups")}/>
-        <Chip className="filterProjects" id="Painting" variant="outlined" label="Painting" clickable={true} style={chipStyle} onClick={()=>filter("Painting","Painting")}/>
-        <Chip className="filterProjects" id="Adobe Photoshop & Typography" variant="outlined" label="Adobe Photoshop & Typography" clickable={true} style={chipStyle} onClick={()=>filter("Photoshop","Adobe Photoshop & Typography")}/>
-        <Chip className="filterProjects" id="Hackathons" variant="outlined" label="Hackathons" clickable={true} style={chipStyle} onClick={()=>filter("Hackathon","Hackathons")}/>
-        
+        <Chip className="filterProjects" id="Startups" variant="outlined" label="Startups" clickable={true} style={chipStyle} onClick={()=>filter("Startups","Startups")}/>
+        <Chip className="filterProjects" id="Digital Art" variant="outlined" label="Digital Art" clickable={true} style={chipStyle} onClick={()=>filter("Digital Art","Digital Art")}/>
+        <Chip className="filterProjects" id="Traditional Art" variant="outlined" label="Traditional Art" clickable={true} style={chipStyle} onClick={()=>filter("Traditional Art","Traditional Art")}/>
+        <Chip className="filterProjects" id="Professional" variant="outlined" label="Professional" clickable={true} style={{display:'none'}} onClick={()=>filter("Professional","Professional")}/>
+        <Chip className="filterProjects" id="Hackathons" variant="outlined" label="Side Projects" clickable={true} style={chipStyle} onClick={()=>filter("Hackathon","Hackathons")}/>
       </Grid>
       <Grid container direction="row" justify="center" style={{marginTop: '1vh'}}>
-        <Grid className="Web-Dev" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenPortfolio)}>
-          <img id="Portfolio" src={portfolio} alt="Portfolio" title="Portfolio" style={imageStyle}/>
-          <Typography variant="body1" style={titleStyle}>
-            (this): Web Developer
-          </Typography>
-          <Typography variant="caption" style={textStyle}>
-          I designed this website to document my projects, including and extending beyond the realms of Computer Science. I developed this website via the ReactJS library and a Material UI framewo...
-          </Typography>
-        </Grid>
-        <Grid className="Web-Dev" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenMetta)}>
-          <img id="Metta" src={metta} alt="Metta Capital Advisors LLP" title="Metta Capital Advisors LLP" style={imageStyle}/>
-          <Typography variant="body1" style={titleStyle}>
-            MettaCapital: Web Developer
-          </Typography>
-          <Typography variant="caption" style={textStyle}>
-          MettaCapital is a leading advisory firm offering services along various facets of investment banking. I specialised as the sole web-developer, using the ReactJS library with a Material UI framework to develop their website from the ground u...
-          </Typography>
-        </Grid>
         <Grid className="Web-Dev" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenCrave)}>
           <img id="Crave" src={crave} alt="Crave" title="Crave" style={imageStyle}/>
           <Typography variant="body1" style={titleStyle}>
             Crave: Front-End Developer, Founder
           </Typography>
           <Typography variant="caption" style={textStyle}>
-          Crave is a delivery service specialising in bringing international food to university students at affordable rates. I specialised as the front-end web-developer, using the ReactJS library with a Materialize framework to build a Progressive Web Applicat...
+          Crave is a delivery service specialising in bringing international food to university students at affordable rates. I specialised as the front-end web-developer, using the ReactJS library with a Materialize framework to build a Progressive Web Application. The website was locally hosted fo...
           </Typography>
         </Grid>
-        <Grid className="Photoshop" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenComic)}>
-          <img id="Adjustment Layers" src={ps1Me} alt="Adjustment Layers" title="Adjustment Layers" style={imageStyle}/>
+        <Grid className="Traditional Art" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenDancers)}>
+          <img id="Dancers" src={dancers} alt="Dancers" title="Dancers" style={imageStyle}/>
           <Typography variant="body1" style={titleStyle}>
-            Cartoon Portrait: Designer
+           'Dancing on the Moon': Artist
           </Typography>
           <Typography variant="caption" style={textStyle}>
-          I used Adobe Photoshop to convert my portrait into this cartoon. To create this, I first stacked many Solid Color Adjustment Layers on top of one another. Then, I used the Pen Tool to trace portions of the original image to create a Path, converted the path into a Selection, and deleted it from the Layer Mask to display the selection in the...
+          'Dancing on the Moon' is a four-piece abstract oil painting that tries to capture motion in a picture. Tried to capture motion in a picture, but captured the beauty of motion instea... <br/>
           </Typography>
         </Grid>
-        <Grid className="Photoshop" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenTshirt)}>
-          <img id="T-Shirt Design" src={waveLogo} alt="T-Shirt Design" title="T-Shirt Design" style={imageStyle}/>
-          <Typography variant="body1" style={titleStyle}>
-           T-Shirt Logo: Designer
-          </Typography>
-          <Typography variant="caption" style={textStyle}>
-          I used Adobe Photoshop to design a logo for a beach-themed t-shirt. To create this, I first created three Adjustment Layers (light blue, dark blue, and yellow) and used the Pen Tool to trace portions of the original image. With this, I created a Path, converted the path into a Selection, and deleted it from the Layer Mask to display the selection in the... 
-          </Typography>
-        </Grid>
-        <Grid className="Photoshop" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenRiso)}>
-          <img id="Manifesto Design" src={d4_1} alt="Manifesto Design" title="Manifesto Design" style={imageStyle}/>
-          <Typography variant="body1" style={titleStyle}>
-          Manifesto: Designer
-          </Typography>
-          <Typography variant="caption" style={textStyle}>
-          This manifesto is inspired by Bruce Mau's <span style={{fontStyle: 'italic'}}> Incomplete Manifesto for Growth</span>. Written in 1998, his manifesto outlines 43 "rules" by which one should live their life. To create this manifesto, I first encapsulated his manifesto into three simple phrases: 1. Break the rules 2. Chase the unconv...
-          </Typography>
-        </Grid>
-        <Grid className="Photoshop" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenAnimation)}>
-          <img id="Photoshop Animation" src={animationImg} alt="Photoshop Animation" title="Photoshop Animation" style={imageStyle}/>
-          <Typography variant="body1" style={titleStyle}>
-          Keyframe Animation: Designer
-          </Typography>
-          <Typography variant="caption" style={textStyle}>
-          Capture accidents, because “the wrong answer is the right answer in search of a different question.” The animation here is inspired by Bruce Mau’s <span style={{fontStyle: 'italic'}}> Incomplete Manifesto for Growth</span>. The saturated yellow background with black text visually juxtaposes the conventional signs that warn us aga...
-          </Typography>
-        </Grid>
-        <Grid className="Entrepreneurship" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenPFL)}>
+        <Grid className="Startups" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenPFL)}>
           <img id="Pride For Labor" src={pfl3} alt="Pride For Labor" title="Pride For Labor" style={imageStyle}/>
           <Typography variant="body1" style={titleStyle}>
            Pride For Labour: Founder
           </Typography>
           <Typography variant="caption" style={textStyle}>
-          "I believe in the dignity of labor, whether with head or hand; that the world owes no man a living but that it owes every man an opportunity to make a living." –John Rockefeller. Domestic labour isn’t a respected occupation, but that has to change. To solve this, I founded Pride For Labour (PFL) in gra...
+          "I believe in the dignity of labor, whether with head or hand; that the world owes no man a living but that it owes every man an opportunity to make a living." –John Rockefeller. Domestic labour isn’t a respected occupation, but that has to change. To solve this, I founded Pride For Labou...
           </Typography>
         </Grid>
-        <Grid className="Entrepreneurship" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenA2Z)}>
+        <Grid className="Digital Art" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenComic)}>
+          <img id="Adjustment Layers" src={ps1Me} alt="Adjustment Layers" title="Adjustment Layers" style={imageStyle}/>
+          <Typography variant="body1" style={titleStyle}>
+            Cartoon Portrait: Artist
+          </Typography>
+          <Typography variant="caption" style={textStyle}>
+          I used Adobe Photoshop to convert my portrait into this cartoon. To create this, I first stacked many Solid Color Adjustment Layers on top of one another. Then, I used the Pen Tool to trace portions of the original image to create a Path, converted the path into a Selection, and deleted it from the Layer Mask to display the selection in the...
+          </Typography>
+        </Grid>
+        <Grid className="Startups" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenA2Z)}>
           <img id="A2Z" src={a2z} alt="A2Z" title="A2Z" style={imageStyle}/>
           <Typography variant="body1" style={titleStyle}>
            A2Z: Founder, Co-Editor
@@ -541,31 +550,85 @@ export default function Story() {
           At the age of 12, I founded A2Z as a backyard summer project with 5 friends. A2Z started as a pay-per-issue magazine that  quickly converted into an advertisement-driven bi-monthly magazine distributed to 400+ flats in my building/ society free of cost. As the founder and edi...
           </Typography>
         </Grid>
-        <Grid className="Painting" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenBuddha)}>
-          <img id="Gautam Buddha" src={buddha} alt="Gautam Buddha" title="Gautam Buddha" style={imageStyle}/>
+        <Grid className="Digital Art" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenRiso)}>
+          <img id="Manifesto Design" src={d4_1} alt="Manifesto Design" title="Manifesto Design" style={imageStyle}/>
           <Typography variant="body1" style={titleStyle}>
-           'Circle of Light': Painter 
+          Manifesto: Artist
           </Typography>
           <Typography variant="caption" style={textStyle}>
-          'Circle of Light' is a 43-by-39 inch oil portrait of the Gautam Buddha. This painting is inspired by another painting I had seen in a book. The Guatam Buddha is an important figure in Hindu mythology, famous for his surrender of the materialistic world in pursuit of complete enlightenment and sel...
+          This manifesto is inspired by Bruce Mau's <span style={{fontStyle: 'italic'}}> Incomplete Manifesto for Growth</span>. Written in 1998, his manifesto outlines 43 "rules" by which one should live their life. To create this manifesto, I first encapsulated his manifesto into three simple phrases: 1. Break the rules 2. Chase the unconv...
           </Typography>
         </Grid>
-        <Grid className="Painting" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenDancers)}>
-          <img id="Dancers" src={dancers} alt="Dancers" title="Dancers" style={imageStyle}/>
+        <Grid className="Web-Dev" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenPortfolio)}>
+          <img id="Portfolio" src={portfolio} alt="Portfolio" title="Portfolio" style={imageStyle}/>
           <Typography variant="body1" style={titleStyle}>
-           'Dancing on the Moon': Painter
+            (this): Web Developer, Designer
           </Typography>
           <Typography variant="caption" style={textStyle}>
-          'Dancing on the Moon' is a four-piece abstract oil painting that tries to capture motion in a picture. Tried to capture motion in a picture, but captured the beauty of motion instea... <br/>
+          I designed this website to document my projects, including and extending beyond the realms of Computer Science. I developed this website via the ReactJS library and a Material UI framewo...
+          </Typography>
+        </Grid>
+        <Grid className="Startups" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenQuilling)}>
+          <img id="Quilling" src={quilling3} alt="Quilling" title="Quilling" style={imageStyle}/>
+          <Typography variant="body1" style={titleStyle}>
+            Quilling: Artist, Startup
+          </Typography>
+          <Typography variant="caption" style={textStyle}>
+          Quilling is an art of paper filigree in which strips of paper are rolled using a slitted-tool to create coils of paper. These coils are then shaped as desired, and the loose end of pap...
           </Typography>
         </Grid>
         <Grid className="Hackathon" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenTrojanHacks)}>
           <img id="Trojan Hacks Schedule Generator" src={trojanhacks3} alt="Trojan Hacks Schedule Generator" title="Trojan Hacks Schedule Generator" style={imageStyle}/>
           <Typography variant="body1" style={titleStyle}>
-            Automated Schedule Generator: Coder
+            Automated Schedule Generator: Developer
           </Typography>
           <Typography variant="caption" style={textStyle}>
           In under 18 hours, we automated the process of generating schedules. Our program allows users to input all the classes they'd like to register for. It then uses the Beautiful Soup API to scrape the we...
+          </Typography>
+        </Grid>
+        <Grid className="Digital Art" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenTshirt)}>
+          <img id="T-Shirt Design" src={waveLogo} alt="T-Shirt Design" title="T-Shirt Design" style={imageStyle}/>
+          <Typography variant="body1" style={titleStyle}>
+           T-Shirt Logo: Artist
+          </Typography>
+          <Typography variant="caption" style={textStyle}>
+          I used Adobe Photoshop to design a logo for a beach-themed t-shirt. To create this, I first created three Adjustment Layers (light blue, dark blue, and yellow) and used the Pen Tool to trace portions of the original image. With this, I created a Path, converted the path into a Selection, and deleted it from the Layer Mask to display the selection in the... 
+          </Typography>
+        </Grid>
+        <Grid className="Digital Art" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenAnimation)}>
+          <img id="Photoshop Animation" src={animationImg} alt="Photoshop Animation" title="Photoshop Animation" style={imageStyle}/>
+          <Typography variant="body1" style={titleStyle}>
+          Keyframe Animation: Artist
+          </Typography>
+          <Typography variant="caption" style={textStyle}>
+          Capture accidents, because “the wrong answer is the right answer in search of a different question.” The animation here is inspired by Bruce Mau’s <span style={{fontStyle: 'italic'}}> Incomplete Manifesto for Growth</span>. The saturated yellow background with black text visually juxtaposes the conventional signs that warn us aga...
+          </Typography>
+        </Grid>
+        <Grid className="Traditional Art" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenBuddha)}>
+          <img id="Gautam Buddha" src={buddha} alt="Gautam Buddha" title="Gautam Buddha" style={imageStyle}/>
+          <Typography variant="body1" style={titleStyle}>
+           'Circle of Light': Artist 
+          </Typography>
+          <Typography variant="caption" style={textStyle}>
+          'Circle of Light' is a 43-by-39 inch oil portrait of the Gautam Buddha. This painting is inspired by another painting I had seen in a book. The Guatam Buddha is an important figure in Hindu mythology, famous for his surrender of the materialistic world in pursuit of complete enlightenment and sel...
+          </Typography>
+        </Grid>
+        <Grid className="Web-Dev" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenMetta)}>
+          <img id="Metta" src={metta} alt="Metta Capital Advisors LLP" title="Metta Capital Advisors LLP" style={imageStyle}/>
+          <Typography variant="body1" style={titleStyle}>
+            MettaCapital: Web Developer, Designer
+          </Typography>
+          <Typography variant="caption" style={textStyle}>
+          MettaCapital is a leading advisory firm offering services along various facets of investment banking. I specialised as the sole web-developer, using the ReactJS library with a Material UI framework to develop their website from the ground u...
+          </Typography>
+        </Grid>
+        <Grid className="Traditional Art" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenKathak)}>
+          <img id="Crave" src={kathak4} alt="Crave" title="Crave" style={imageStyle}/>
+          <Typography variant="body1" style={titleStyle}>
+            Kathak: Artist
+          </Typography>
+          <Typography variant="caption" style={textStyle}>
+          I have been practicing Kathak (Jaipur Gharana) and Bharatnatyam, two popular styles of Indian classical dance, from the age of 4. When I look down, I see a bunch of ghungroos adorning my fe...
           </Typography>
         </Grid>
         <Grid className="Hackathon" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenRobotics)}>
@@ -575,24 +638,6 @@ export default function Story() {
           </Typography>
           <Typography variant="caption" style={textStyle}>
           I participated in the First Robotics Competition (a robotics competition, simulating sports-tournaments with industry-grade equipent) as a member and Safety Captain of Team 6024-R Factor, the first team from Ind...
-          </Typography>
-        </Grid>
-        <Grid className="Entrepreneurship" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenQuilling)}>
-          <img id="Crave" src={crave} alt="Crave" title="Crave" style={imageStyle}/>
-          <Typography variant="body1" style={titleStyle}>
-            Quilling: Designer
-          </Typography>
-          <Typography variant="caption" style={textStyle}>
-          I designed this website to document my projects, including and extending beyond the realms of Computer Science. I developed this website via the ReactJS library and a Material UI framewo...
-          </Typography>
-        </Grid>
-        <Grid className="Entrepreneurship" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}} onClick={()=>handleOpen(setOpenKathak)}>
-          <img id="Crave" src={kathak4} alt="Crave" title="Crave" style={imageStyle}/>
-          <Typography variant="body1" style={titleStyle}>
-            Kathak: Dancer
-          </Typography>
-          <Typography variant="caption" style={textStyle}>
-          I have been practicing Kathak (Jaipur Gharana) and Bharatnatyam, two popular styles of Indian classical dance, from the age of 4. When I look down, I see a bunch of ghungroos adorning my fe...
           </Typography>
         </Grid>
       </Grid>
@@ -638,9 +683,9 @@ export default function Story() {
               <Grid container direction="row" justify="center">
                 <Grid item xs={10} style={{'paddingTop': '2vh', 'paddingBottom': '5vh'}}>
                   <Typography id="story-modal" variant="caption" style={{fontFamily: font}}>
-                    Crave is a delivery service that specialises in bringing international food to university students at affordable rates. I collaborated with a team of 4 to ideate and prototype Crave, under LavaLab (USC's premier startup-incubator comprising the school's top ~1% of Designers, Developers, and Product Managers). I specialised as the front-end web developer for Crave.
+                    cout &lsaquo; &lsaquo; Crave is a delivery service that specialises in bringing international food to university students at affordable rates. I collaborated with a team of 4 to ideate and prototype Crave, under LavaLab (USC's premier startup-incubator comprising the school's top ~1% of Designers, Developers, and Product Managers). I specialised as the front-end web developer for Crave.
                     <br/> <br/>
-                    Tech Stack: ReactJs library, Materialize framework. <br/>
+                    Tech Stack: ReactJs library, Materialize framework, Progressive Web Application. <br/>
                     (Hosted locally for demo) <br/>
                     Created: Apr-May 2020
                   </Typography>
@@ -704,15 +749,20 @@ export default function Story() {
         <div>
           <Grid container direction="row" justify="center" style={{backgroundColor: 'white', border: '5px solid #efefef', outline: 'none', width: '70vw', 'maxHeight': '75vh', 'overflowY': 'auto', alignItems: 'center'}}>
             <Grid container direction="row" justify="center">
-              <Grid item xs={11} style={{'paddingTop': '5vh'}}>
-                <a href="https://mettacapital.in" target="_blank" rel="noopener noreferrer" style={{cursor: 'pointer'}}>"<iframe src="https://mettacapital.in" title="Metta Capital Advisors LLP" allowFullScreen={true} style={{'width': '100%', height: '50vh'}}/></a>
+              <Grid item xs={10} style={{'paddingTop': '5vh'}}>
+                <iframe src="https://mettacapital.in" title="Metta Capital Advisors LLP" allowFullScreen={true} style={{'width': '100%', height: '50vh', border: '3px solid black'}}/>
+              </Grid>
+              <Grid item xs={10} style={{display:'flex',flexDirection:'row',justifyContent:'left'}}>
+                <a href="https://mettacapital.in" target="_blank" rel="noopener noreferrer" style={{cursor: 'pointer', textDecoration: 'none', color:'black'}}>
+                  <Typography variant="caption" style={{fontStyle:'italic'}}>click to open in a new tab (https://mettacapital.in) </Typography>
+                </a>
               </Grid>
             </Grid>
             <Grid container direction="row" justify="center">
               <Grid item xs={10} style={{'paddingTop': '2vh', 'paddingBottom': '5vh'}}>
                 <Typography id="story-modal" variant="caption" style={{fontFamily: font}}>
-                  MettaCapital is a leading advisory firm offering services along various facets. I specialised as the sole web-developer, using the ReactJS library with a Material UI framework to develop their website from the ground up. <br/>
-                  Features: Navigation bar changes color based on scroll position (homepage), three different designs for persona modals to re nder design as responsive (team page), transactions slidebar using arrays (transactions page). Initially used a Google Maps API to run on the contact page, but public github hosting changed that.
+                  print( "MettaCapital is a leading advisory firm offering services along various facets. I specialised as the sole web-developer, using the ReactJS library with a Material UI framework to develop their website from the ground up. <br/>
+                  Features: Navigation bar changes color based on scroll position (homepage), three different designs for persona modals to re nder design as responsive (team page), transactions slidebar using arrays (transactions page). Initially used a Google Maps API to run on the contact page, but public github hosting changed that." )
                   <br/> <br/>
                   Tech Stack: ReactJs library, Material UI framework. <br/>
                   APIs: 'window-scroll-position' (used to style navigation bar on homepage) <br/>
@@ -740,22 +790,22 @@ export default function Story() {
 
         <Fade in={openPortfolio}>
         <div>
-          <Grid container direction="row" justify="center" style={{backgroundColor: 'white', border: '5px solid #efefef', outline: 'none', width: '70vw', 'maxHeight': '75vh', 'overflowY': 'auto', alignItems: 'center'}}>
-            <Grid container direction="row" justify="center">
-              <Grid item xs={11} style={{'paddingTop': '5vh'}}>
-                <iframe src="https://usclavalab.org/" title="Portfolio" allowFullScreen={true} style={{'width': '100%', height: '50vh'}}/>
-              </Grid>
+          <Grid container direction="row" justify="center" style={{backgroundColor: 'white', border: '5px solid #efefef', outline: 'none', width: '70vw', 'maxHeight': '75vh', 'overflowY': 'auto', alignItems: 'center', justifyContent: 'center'}}>
+            <Grid item xs={10} style={{'paddingTop': '5vh', display: 'flex', flexDirection: 'column'}}>
+              <img src={portfolioCode} title="Portfolio" style={{'width': '100%', height: 'auto'}}/>
+              <Typography variant="caption" style={{fontStyle: 'italic', textAlign:'left'}}>code snippet: functions used handle notifications, opening and closing of modals, and the modal for Crave</Typography>
             </Grid>
-            <Grid container direction="row" justify="center">
-              <Grid item xs={10} style={{'paddingTop': '2vh', 'paddingBottom': '5vh'}}>
-                <Typography id="story-modal" variant="caption" style={{fontFamily: font}}>
-                  I designed this website to document my projects, including and extending beyond the realms of Computer Science. I developed this website via the ReactJS library and a Material UI framework.
-                  <br/> <br/>
-                  Tech Stack: ReactJs library, Material UI framework. (Hosted on GitHub Pages) <br/>
-                  APIs: 'typist' (used to create the typist effect on the home-page), 'google-maps' <br/>
-                  Created: June 2020 <br/>
-                </Typography>
-              </Grid>
+            <Grid item xs={10} style={{'paddingTop': '2vh', 'paddingBottom': '5vh'}}>
+              <Typography id="story-modal" variant="caption" style={{fontFamily: font}}>
+                I designed this website to document my projects, including and extending beyond the realms of Computer Science. I developed this website via the ReactJS library and a Material UI framework.
+                <br/> <br/>
+                Features: Filter projects by categories, Integrated contact-me form, 9 different modal designs to illustrate project descriptions (special emphasis on designs made for Crave, Manifesto and Pride For Labor), Custom pre-loading and 404 pages
+                <br/> <br/>
+                Tech Stack: ReactJs library, Material UI framework. (Hosted on GitHub Pages) <br/>
+                Design Stack: Adobe Photoshop to edit photos <br/>
+                APIs: 'typist' (used to create the typist effect on the home-page) <br/>
+                Created: June 2020 <br/>
+              </Typography>
             </Grid>
           </Grid>
         </div>
@@ -1345,26 +1395,67 @@ export default function Story() {
         <Fade in={quilling}>
         <div>
           <Grid container direction="row" justify="center" style={{backgroundColor: 'white', border: '5px solid #efefef', outline: 'none', width: '70vw', 'maxHeight': '75vh', 'overflowY': 'auto', alignItems: 'center', 'paddingBottom': '5vh', 'paddingTop': '5vh'}}>
-            <Grid container direction="row" justify="center">
-                <Grid item xs={10} md={5} style={{marginTop: '1vh'}}>
-                  <Grid container direction="column" justify="center" style={{alignItems: 'center'}}>
-                    <img id="Gautam Buddha" src={buddha} alt="Gautam Buddha" title="Gautam Buddha" style={{'width': '90%'}}/>
+            <Grid container direction="column" justify="center" alignItems="center">
+              <Grid item xs={10} style={{marginTop: '1vh'}}>
+                <Grid container direction="row" justify="center" style={{alignItems: 'center'}}>
+                  <Grid item xs={1}  style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                    <KeyboardArrowLeftOutlined id="leftPtr" fontSize="small" onClick={()=>{handleQuilling("prev")}} style={{cursor: 'pointer'}}/>
+                  </Grid>
+                  <Grid item xs={10} style={{display:'flex', flexDirection: 'column', alignItems:'center'}}>
+                    <img id="Quilling" src={quillingSrc} alt="Quilling" title="Quilling" style={{'width': '98%', paddingBottom: '1vh'}}/>
+                  </Grid>
+                  <Grid item xs={1}  style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                    <KeyboardArrowRightOutlined id="rightPtr" fontSize="small" onClick={()=>{handleQuilling("next")}} style={{cursor: 'pointer'}}/>
                   </Grid>
                 </Grid>
-                <Grid item xs={10} md={5} style={{marginTop: '1vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                  <Typography id="story-modal" variant="caption" style={{fontFamily: font}}>
-                    'Circle of Light' is a 43-by-39 inch oil portrait of the Gautam Buddha. This painting is inspired by another painting I had seen in a book. <br/>
-                    <br/>
-                    The Guatam Buddha is an impo
-                    
-                    <br/> <br/>
-                    Painted: May 2014 <br/>
-                    <br/>
+              </Grid>
+              <Grid item xs={8} style={{marginTop: '1vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                <Typography id="story-modal" variant="caption" style={{fontFamily: font}}>
+                  The Puppet Show — <br/>
+                  <br/>
+                  The strip of paper <br/>
+                  Is a puppet <br/>
+                  And the tool <br/>
+                  The string <br/>
+                  <br/>
+                  The string twists <br/>
+                  And the puppet rotates <br/>
+                  The strip becomes <br/>
+                  A tight coil <br/>
+                  <br/>
+                  The strings are cut <br/>
+                  The puppet stretches <br/>
+                  A little <br/>
+                  The coil becomes <br/>
+                  Loose <br/>
+                  <br/>
+                  But <br/>
+                  I am there <br/>
+                  The puppeteer <br/>
+                  <br/>
+                  I pinch the coil <br/>
+                  Bend it to my will <br/>
+                  The loose coil becomes <br/>
+                  A teardrop <br/>
+                  A dimaond <br/>
+                  A victim of my <br/>
+                  Imagination <br/>
+                  <br/>
+                  Glued in place <br/>
+                  The puppets put <br/>
+                  Together <br/>
+                  Become <br/>
+                  The Puppet Show <br/>
+                  --
+                  <br/> <br/>
+                  Quilling is an art of paper filigree in which strips of paper are rolled using a slitted-tool to create coils of paper. These coils are then shaped as desired, and the loose end of paper is glued. Put together, beautiful inticrate designs can be made. <br/>
+                  I sold envelopes, cards, etc for Rs. 100-200 ($ 2-3) at exhibitions for a few years.
+                  <br/> <br/>
+                  Created: 2013-2016 <br/>
+                  <br/>
 
-                    Methodology: <br/>
-                    As the canvas was lar
-                  </Typography>
-                </Grid>
+                </Typography>
+              </Grid>
             </Grid>
           </Grid>
         </div>

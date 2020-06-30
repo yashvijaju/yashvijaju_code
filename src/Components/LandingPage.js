@@ -2,11 +2,27 @@ import React  from 'react';
 import Typist from 'react-typist';
 import { Grid, Hidden } from '@material-ui/core';
 import './Cursor.css';
+import { ExpandMore, ExpandLess } from '@material-ui/icons';
 
 const blue='#bee3f1';
 const font = 'Segoe UI';
 
 export default function Animation() {
+    function handleScroll(props) {
+        window.scrollTo(0,props);
+        if (props === 0) {
+            var x = document.getElementById("scroll up");
+            x.style.display = 'none';
+            var y = document.getElementById("scroll down");
+            y.style.display = 'inline';
+        }
+        else {
+            x = document.getElementById("scroll up");
+            x.style.display = 'inline';
+            y = document.getElementById("scroll down");
+            y.style.display = 'none';
+        }
+    }
     return(
         <div>
             <Hidden xsDown>
@@ -21,6 +37,10 @@ export default function Animation() {
                 </div>
                 <div style={{height: '50vh', width: '100%', position: 'absolute', top: '50vh', backgroundColor: blue, 'zIndex': '-1'}}>
                 </div>
+                <div style={{marginTop: '-2vh', display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
+                <ExpandMore id="scroll down" fontSize="large" style={{color:'grey', cursor: 'pointer'}} onClick={()=>handleScroll(window.innerHeight * 0.75)} />
+                <ExpandLess id="scroll up" fontSize="large" style={{color:'grey', cursor: 'pointer', display:'none'}} onClick={()=>handleScroll(0)} />
+                </div>  
             </Hidden>
             <Hidden smUp>
                 <Grid container direction="row" justify="center" style={{height: '40vh',  alignItems: 'center'}}>
@@ -34,7 +54,7 @@ export default function Animation() {
                 </div>
                 <div style={{height: '25vh', width: '100%', position: 'absolute', top: '25vh', backgroundColor: blue, 'zIndex': '-1'}}>
                 </div>
-            </Hidden>            
+            </Hidden>
         </div>
     )
 }

@@ -21,17 +21,20 @@ export default function Contact() {
       <Hidden mdUp>
         <Grid container direction="row" alignItems="center" style={{'padding': '5vh 2vw 2vh 2vw'}}>
           <Grid item xs={1}/>
-          <Grid item xs={11} style={{display:'flex',flexDirection:'column'}}>
+          <Grid item xs={11}>
             <Typography variant="h4" style={{color:blue, fontFamily: font, fontWeight: 'bold'}}>
               What's your story?
             </Typography>
+          </Grid>
+          <Grid item xs={1}/>
+          <Grid item xs={10}>
             <Typography variant="body1" style={{color:grey,fontFamily: font, fontWeight: 'lighter', paddingBottom:'2vh'}}>
-              I wanna know, let's schedule a coffee chat!
+            I would love to hear from you, let's schedule a coffee chat!
             </Typography>
           </Grid>
           <Grid item xs={1}/>
+          <Grid item xs={1}/>
           <Grid item xs={10} style={{display: 'flex', flexDirection: 'column', alignItems:'left', paddingBottom:'2vh'}}>
-            
             <TextField multiline rows={2} fullwidth id="Body" placeholder="" label="Send me a message:" style={{fontFamily:font, fontStyle: 'italic'}}/>
           </Grid>
           <Grid item xs={1}/>
@@ -67,7 +70,7 @@ export default function Contact() {
                 What's your story?
               </Typography>
               <Typography variant="h6" style={{color:grey,fontFamily: font, fontWeight: 'lighter'}}>
-                I wanna know, let's schedule a coffee chat!
+                I would love to hear from you, let's schedule a coffee chat!
               </Typography>
             </Grid>
             <Grid item xs={1}/>
