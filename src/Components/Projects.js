@@ -1046,8 +1046,6 @@ export default function Story() {
                   Neon yellow <br/>
                   --
                   <br/> <br/>                  
-
-                  <span style={{display:'none'}}>Capture accidents, because “the wrong answer is the right answer in search of a different question”. The animation here is inspired by Bruce Mau’s <span style={{fontStyle: 'italic', cursor: 'pointer'}}><a href="https://tinyurl.com/brucemauincomplete"> Incomplete Manifesto for Growth</a></span>. The saturated yellow background with black text visually juxtaposes the conventional signs that warn us against accidents, while the animation itself progresses to create an accident -- and then captures it within the word-bars.</span>
                  
                   Inspiration: Bruce Mau's <span style={{fontStyle: 'italic', cursor: 'pointer'}}><a href="https://tinyurl.com/brucemauincomplete"> Incomplete Manifesto for Growth</a></span> <br/>
                   Adobe Tools: Adobe Photoshop Keyframe Animation <br/>

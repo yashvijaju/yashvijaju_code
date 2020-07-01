@@ -52,10 +52,6 @@ export default function Contact() {
               <Typography variant="h6" style={{color:blue}}> &nbsp; | &nbsp; </Typography>
               <a href="https://www.linkedin.com/in/yashvi-jaju/" target="_blank" rel="noopener noreferrer"><LinkedIn fontSize="large" style={{color:blue}}/></a>
               <Typography variant="h6" style={{color:blue}}> &nbsp; | &nbsp; </Typography>
-              <a href="https://www.instagram.com/yashvijaju/?hl=en" target="_blank" rel="noopener noreferrer"><Instagram fontSize="large" style={{color:blue}}/></a>
-              <Typography variant="h6" style={{color:blue}}> &nbsp; | &nbsp; </Typography>
-              <a href="https://www.facebook.com/yashvi.jaju.3" target="_blank" rel="noopener noreferrer"><Facebook fontSize="large" style={{color:blue}}/></a>
-              <Typography variant="h6" style={{color:blue}}> &nbsp; | &nbsp; </Typography>
               <a href="https://github.com/yjaju/" target="_blank" rel="noopener noreferrer"><GitHub fontSize="large" style={{color:blue}}/></a>
             </Grid>
           </Grid>
@@ -88,10 +84,6 @@ export default function Contact() {
                 <a href="mailto:yjaju@usc.edu" target="_blank" rel="noopener noreferrer"><EmailOutlined fontSize="large" style={{color:blue}}/></a>
                 <Typography variant="h6" style={{color:blue}}> &nbsp; | &nbsp; </Typography>
                 <a href="https://www.linkedin.com/in/yashvi-jaju/" target="_blank" rel="noopener noreferrer"><LinkedIn fontSize="large" style={{color:blue}}/></a>
-                <Typography variant="h6" style={{color:blue}}> &nbsp; | &nbsp; </Typography>
-                <a href="https://www.instagram.com/yashvijaju/?hl=en" target="_blank" rel="noopener noreferrer"><Instagram fontSize="large" style={{color:blue}}/></a>
-                <Typography variant="h6" style={{color:blue}}> &nbsp; | &nbsp; </Typography>
-                <a href="https://www.facebook.com/yashvi.jaju.3" target="_blank" rel="noopener noreferrer"><Facebook fontSize="large" style={{color:blue}}/></a>
                 <Typography variant="h6" style={{color:blue}}> &nbsp; | &nbsp; </Typography>
                 <a href="https://github.com/yjaju/" target="_blank" rel="noopener noreferrer"><GitHub fontSize="large" style={{color:blue}}/></a>
               </Grid>
