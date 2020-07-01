@@ -843,11 +843,11 @@ export default function Story() {
               <Typography id="story-modal" variant="caption" style={{fontFamily: font}}>
                 alert( "I designed this website to document my projects, including and extending beyond the realms of Computer Science. I developed this website via the ReactJS library and a Material UI framework." )
                 <br/> <br/>
-                Features: Filter projects by categories, Integrated contact-me form, 9 different modal designs to illustrate project descriptions (special emphasis on designs made for Crave, Manifesto and Pride For Labor), Custom pre-loading and 404 pages
+                Features: Filter projects by categories, Integrated contact-me form, 9 different modal designs to illustrate project descriptions (special emphasis on designs made for Crave, Manifesto and Pride For Labor), Custom pre-loading and 404 pages, Typewriter animation on landing page
                 <br/> <br/>
                 Tech Stack: ReactJs library, Material UI framework. (Hosted on GitHub Pages) <br/>
                 Design Stack: Adobe Photoshop to edit photos <br/>
-                APIs: 'typist' (used to create the typist effect on the home-page) <br/>
+                APIs: none <br/>
                 Created: June 2020 <br/>
               </Typography>
             </Grid>
@@ -1705,7 +1705,7 @@ export default function Story() {
                     <br/>
                     June 2020 - Present: <br/>
                     • Working on the India COVID-19 SEIR Model: a predictive model for districts in India <br/>
-                    <a href="https://indiacovidmodel.in" target="_blank" rel="norefer noopener">https://indiacovidmodel.in</a> <br/>
+                    <a href="https://indiacovidmodel.in" target="_blank" rel="noopener noreferrer">https://indiacovidmodel.in</a> <br/>
                     <br/>
                     
                     July 2017: <br/>
