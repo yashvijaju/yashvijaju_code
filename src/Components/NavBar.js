@@ -2,7 +2,6 @@ import React from 'react'
 import { Typography, Hidden, Toolbar, AppBar, Fade, Grid } from '@material-ui/core'
 import { EmailOutlined, LinkedIn } from '@material-ui/icons';
 
-import resume from './Media/YashviJaju—Resume.pdf';
 
 const font = 'Segoe UI';
 
@@ -47,7 +46,7 @@ export default function NavBar() {
                                     Projects
                                 </Typography>
                                 <Typography variant="caption" style={{color:"#000000",fontFamily: font, cursor: 'pointer', paddingRight: '4vw'}}>
-                                    <a href={resume} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none', fontFamily: font, color: 'black', fontWeight:'lighter'}}>Resume</a>
+                                    <a href="https://drive.google.com/file/d/1UYa99LI9qB2Mj7QITz1ezya8gDcA9Bd7" target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none', fontFamily: font, color: 'black', fontWeight:'lighter'}}>Resume</a>
                                 </Typography>
                                 <Typography variant="caption" style={{color:"#000000", fontFamily: font, cursor: 'pointer', fontWeight:'lighter'}} onClick={()=>handleScroll(window.innerHeight * 20)}>
                                     Contact
@@ -72,7 +71,7 @@ export default function NavBar() {
                                     Projects
                                 </Typography>
                                 <Typography variant="caption" style={{color:"#000000",fontFamily: font, cursor: 'pointer', paddingRight: '4vw'}}>
-                                    <a href={resume} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none', fontFamily: font, color: 'black'}}>Resume</a>
+                                    <a href="https://drive.google.com/file/d/1UYa99LI9qB2Mj7QITz1ezya8gDcA9Bd7" target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none', fontFamily: font, color: 'black'}}>Resume</a>
                                 </Typography>
                                 <Typography variant="caption" style={{color:"#000000", fontFamily: font, cursor: 'pointer'}} onClick={()=>handleScroll(window.innerHeight * 10)}>
                                     Contact
