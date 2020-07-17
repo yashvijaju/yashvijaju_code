@@ -30,9 +30,9 @@ export default function AboutMe() {
                             &emsp; &emsp;> Yashvi-><span style={descriptor}>skills</span> = ["C++", "ReactJs", <br/> &emsp; &emsp; "Material UI", "Git", "Adobe Photoshop", <br/> &emsp; &emsp; "Typography"]; <br/>
                             &emsp; &emsp;> Yashvi-><span style={descriptor}>interests</span> = ["Code", "Create", <br/> &emsp; &emsp;"Bake", "Quill", "Paint", "Kathak", <br/> &emsp; &emsp;"Volunteer", "Learn", "Photo Diaries"]; <br/>
                             <br/>
-                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyReading</span> = The Game <br/> &emsp; &emsp; of Thrones: A Feast for Crows; <br/>
+                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyReading</span> = Sapiens: <br/> &emsp; &emsp; A Brief History of Humankind; <br/>
                             &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyLearning</span> = Web-<br/> &emsp; &emsp;Development and UI-UX frameworks; <br/>
-                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyBuilding</span> = A website <br/> &emsp; &emsp; for MettaCapital; <br/>
+                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyBuilding</span> = Flask <br/> &emsp; &emsp;-based Dash website for COVID-19; <br/>
                             &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyInterningAt</span> = iSPIRT <br/> &emsp; &emsp;(think-tank); <br/>
                             <br/>
                             &emsp; &emsp;> Yashvi-><span style={descriptor}>Resume</span> = <a href="https://drive.google.com/file/d/1UYa99LI9qB2Mj7QITz1ezya8gDcA9Bd7" target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none', fontWeight: 'lighter', fontFamily: font, color: 'black'}}><AttachFile fontSize="small" style={{color:'grey'}}/> click to open; <br/>
@@ -59,9 +59,9 @@ export default function AboutMe() {
                             &emsp; &emsp;> Yashvi-><span style={descriptor}>skills</span> = ["C++", "ReactJs", "Material UI", "Git", "Adobe Photoshop", "Typography"]; <br/>
                             &emsp; &emsp;> Yashvi-><span style={descriptor}>interests</span> = ["Code", "Create", "Bake", "Quill", "Paint", "Kathak", "Social Volunteer", "Learn", "Photo Diaries"]; <br/>
                             <br/>
-                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyReading</span> = The Game of Thrones: A Feast for Crows; <br/>
-                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyLearning</span> = Web-Development and UI-UX frameworks; <br/>
-                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyBuilding</span> = A website for MettaCapital; <br/>
+                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyReading</span> = Sapiens: A Brief History of Humankind; <br/>
+                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyLearning</span> = Data-Visualisation Tools (Plotly: Dash); <br/>
+                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyBuilding</span> = Flask-based Dash website for COVID-19; <br/>
                             &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyInterningAt</span> = iSPIRT (think-tank); <br/>
                             <br/>
                             &emsp; &emsp;> Yashvi-><span style={descriptor}>Resume</span> = <a href="https://drive.google.com/file/d/1UYa99LI9qB2Mj7QITz1ezya8gDcA9Bd7" target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none', fontWeight: 'lighter', fontFamily: font, color: 'black'}}><AttachFile fontSize="small" style={{color:'grey'}}/> click to open; <br/>

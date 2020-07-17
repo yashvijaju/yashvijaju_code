@@ -478,8 +478,11 @@ export default function Story() {
 
   return (
     <div style={{'padding': '5vh 0vw 2vh 0vw', backgroundColor: blue}}>
-      <Typography variant="h5" style={{'fontFamily': font, paddingBottom: '3vh', fontWeight: 'bolder', color: 'white', textAlign: 'center'}}>
+      <Typography variant="h5" style={{'fontFamily': font, paddingBottom: '1vh', fontWeight: 'bolder', color: 'white', textAlign: 'center'}}>
           &#123; My Projects &#125;
+      </Typography>
+      <Typography variant="body1" style={{'fontFamily': font, paddingBottom: '3vh', fontWeight: 'normal', color: 'white', textAlign: 'center'}}>
+          click on a project to learn more
       </Typography>
       <Hidden mdUp>
         <Snackbar
