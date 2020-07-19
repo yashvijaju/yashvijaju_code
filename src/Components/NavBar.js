@@ -57,7 +57,7 @@ export default function NavBar() {
                             <Grid item xs={5} style={{display:'flex', flexDirection:'row',justifyContent:'start', alignItems:'center'}}>
                                 <Typography variant="caption" style={{color:"#000000", fontFamily: font, cursor: 'pointer'}} onClick={()=>handleScroll(0)}> Yashvi Jaju </Typography>
                                 <Typography variant="caption" style={{color:'#000000'}}> &nbsp; | &nbsp; </Typography>
-                                <Typography variant="caption" style={{color:'#000000'}}>Developer</Typography>
+                                <Typography variant="caption" style={{color:'#000000'}}>Developer x Designer</Typography>
                                 <Typography variant="caption" style={{color:'#000000'}}> &nbsp; | &nbsp; </Typography>
                                 <a href="mailto:yjaju@usc.edu" target="_blank" rel="noopener noreferrer"><EmailOutlined fontSize="small" style={{color:'#000000'}}/></a>
                                 <Typography variant="caption" style={{color:'#000000'}}> &nbsp; | &nbsp; </Typography>

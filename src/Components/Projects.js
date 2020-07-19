@@ -1365,7 +1365,7 @@ export default function Story() {
                     Hours felt like seconds <br/>
                     Morning turned into night <br/>
                     <br/>
-                    Earth now revolved around the robot <br/>
+                    Earth now revolved around my robot <br/>
                     <br/>
                     The first time <br/>
                     I visited another stall <br/>
