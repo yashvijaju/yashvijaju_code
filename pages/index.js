@@ -1,13 +1,17 @@
-import React, { Component }  from 'react';
-import Home from '../components/Home';
+import React  from 'react';
 
-class App extends Component {
-  render() {
-    return (      
-       <Home/>
-    );
-  }
+import Animation from '../components/LandingPage'
+import About from '../components/About'
+import Projects from '../components/Projects'
+import Contact from '../components/Contact'
+
+export default function App() {
+  return (      
+    <>
+      <Animation/>
+      <About/>
+      <Projects/>
+      <Contact/>
+    </>
+  );
 }
-
-export default App;
-
