@@ -1,99 +1,140 @@
 import React from 'react';
-import { Grid, Typography, Hidden, Tooltip } from '@material-ui/core';
+import { Grid, Divider, Typography, Hidden, Tooltip } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles'
+import TrackVisibility from 'react-on-screen'
+// Components
+import { Intro } from '../../components/Projects/Intro'
+import { ProblemStatement } from '../../components/Projects/Problem_Statement'
 
-const font = 'Segoe UI';
+const primary = '#9E0D1B';
+const primary_25 = '#E6C2C6';
+const secondary = '#F23838';
+const tertiary = '#FFDCD0';
+
+const useStyles = makeStyles((theme) => ({
+    container: {
+        padding: '0 5vw',
+    },
+    divider: {
+        margin: '5vh 5vw 7.5vh',
+        display: 'flex',
+        width: '90vw',
+        background: primary_25,
+    },
+    pitch_image: {
+        borderRadius: '20px',
+        border: '1px solid #9E0D1B',
+        height: 'auto',
+        width: '31%',
+    },
+    problem_statement: {
+        width: '100%',
+        display: 'flex',
+        justifyContent: 'space-between',
+    },
+    solution_overview: {
+        margin: '10vh 0 0vh',
+        color: secondary, 
+    },
+    feature_image: {
+        width: '100%',
+        height: 'auto',
+        position: 'relative',
+        left: '-6.5vw',
+        borderRadius: '30px',
+        boxShadow: '5px 5px #FFDCD0',
+        margin: '3vh 0',
+    },
+    feature_video: {
+        width: '60%',
+        height: 'auto',
+        position: 'relative',
+        left: '-6.5vw',
+        borderRadius: '30px',
+        boxShadow: '5px 5px #FFDCD0',
+        margin: '3vh 0',
+        outline: 'none',
+    },
+    title: {
+        fontWeight: 'bold',
+        margin: '0 0 2.5vh',
+        color: primary,
+    },
+    text: {
+        color: primary,
+    }
+}));
+
+function VideoText(props, {isVisible}) {
+    const classes = useStyles();
+    
+    if (isVisible) {
+        return (
+            <Grid item xs container direction="row" justify="space-between">
+                <Grid item xs={8}>
+                    <video className={classes.feature_video} alt="Crave Feature" src={props.video} type="video/mp4" controls autoplay/>
+                </Grid>
+                <Grid item xs={4} container direction="column" justify="center">
+                    <Typography className={classes.title} variant="body1">{props.title}</Typography>
+                    <Typography className={classes.text} variant="body2">{props.text}</Typography>
+                </Grid>
+            </Grid>
+        )
+    }
+    else {
+        console.log(isVisible)
+    }
+
+    return (
+        <Grid item xs container direction="row" justify="space-between">
+            <Grid item xs={8}>
+                <img className={classes.feature_image} alt="Crave Feature" src={props.image}/>
+            </Grid>
+            <Grid item xs={4} container direction="column" justify="center">
+                <Typography className={classes.title} variant="body1">{props.title}</Typography>
+                <Typography className={classes.text} variant="body2">{props.text}</Typography>
+            </Grid>
+        </Grid>
+    )
+}
 
 
-export default function Story() {
+export default function Crave() {
+    const classes = useStyles();
 
-    function handlecraveVideo(video,image) {
-        var y = document.getElementById("craveVideo");
-        y.src = video;
-        y.play();
-        var a = document.getElementsByClassName("craveImage");
-        var i;
-        for (i = 0; i < a.length; i++) {
-          a[i].style.border='1px solid #bee3f1';
-        }
-        var x = document.getElementById(image);
-        x.style.border='1px solid black';
-    };
 
+    
     return(
-        <div>
-            <Hidden smDown>
-            <Grid container direction="row" justify="center" style={{backgroundColor: 'white', border: '5px solid #efefef', outline: 'none', width: '70vw', 'maxHeight': '75vh', 'overflowY': 'auto', alignItems: 'center'}}>
-                <Grid container direction="row" justify="center">
-                <Grid item xs={2} style={{'paddingTop': '5vh'}}>
-                    <Tooltip title="Login" arrow={true} placement="right">
-                    <img className="craveImage" id="loginImg" alt="Crave Feature" src="/assets/loginImg.jpg" style={{'width': '75%', cursor: 'pointer', border: '1px solid black','marginBottom': '0.5vh'}} onClick={()=>handlecraveVideo("/assets/login.mp4","loginImg")}/>
-                    </Tooltip>
-                    <Tooltip title="Filters" arrow={true} placement="right">
-                    <img className="craveImage" id="filtersImg" alt="Crave Feature" src="/assets/filtersImg.jpg" style={{'width': '75%', cursor: 'pointer', border: '1px solid #bee3f1','marginBottom': '0.5vh'}} onClick={()=>handlecraveVideo("/assets/filters.mp4","filtersImg")}/>
-                    </Tooltip>
-                    <Tooltip title="Search" arrow={true} placement="right">
-                    <img className="craveImage" id="searchImg" alt="Crave Feature" src="/assets/searchImg.jpg" style={{'width': '75%', cursor: 'pointer', border: '1px solid #bee3f1','marginBottom': '0.5vh'}} onClick={()=>handlecraveVideo("/assets/search.mp4","searchImg")}/>
-                    </Tooltip>
-                    <Tooltip title="Item Description" arrow={true} placement="right">
-                    <img className="craveImage" id="itemDescImg" alt="Crave Feature" src="/assets/itemDescImg.jpg" style={{'width': '75%', cursor: 'pointer', border: '1px solid #bee3f1','marginBottom': '0.5vh'}} onClick={()=>handlecraveVideo("/assets/itemDesc.mp4","itemDescImg")}/>
-                    </Tooltip>
-                    <Tooltip title="Checkout" arrow={true} placement="right">
-                    <img className="craveImage" id="checkoutImg" alt="Crave Feature" src="/assets/checkoutImg.jpg" style={{'width': '75%', cursor: 'pointer', border: '1px solid #bee3f1','marginBottom': '0.5vh'}} onClick={()=>handlecraveVideo("/assets/checkout.mp4","checkoutImg")}/>
-                    </Tooltip>
+        <>
+            <Grid container className={classes.container}>
+                <Intro title_color={primary_25} text_color={primary} company={"Crave"} role={"Developer, Co-Founder"} year={"Jan-May, 2020"} category={"Tech, Entrepreneurship"} team={"LavaLab (Startup Incubator, USC)"} tools={<div><u>Software:</u> React.Js, Redux <br/><u>UI/UX:</u> Materialize, Figma <br/><u>Demo:</u> Twitch <br/></div>} tools1={<div><u>Software:</u> <br/> React.Js <br/> Redux <br/> <br/><u>UI/UX:</u> <br/> Materialize <br/> Figma <br/> <br/></div>} tools2={<div><u>Demo:</u> <br/>  Twitch <br/></div>} introduction={<div>90% of international students crave their favorite snacks from home, but finding international snacks is a huge pain point for college students. Introducing Crave, a web app platform that offers on-demand international snack delivery for students on campus at affordable rates. GrubHub, but for international snacks. <br/> <br/> We prototyped Crave with support from LavaLab’s S’20 cohort. LavaLab is USC's premier startup-incubator comprising the school's top ~1% of Designers, Developers, and Product Managers. I worked with Jimenna Villarreal (PM), Emma Wang (Designer), and Sara Hanson (Developer) to build Crave from an idea to a working prototype.</div>}/>
+            </Grid>
+
+            <Divider className={classes.divider}/>
+
+            <Grid container className={classes.container} id="container">
+                <ProblemStatement title_color={secondary} text_color={primary} bg_color={tertiary} media={<div className={classes.problem_statement}>
+                    <img className={classes.pitch_image} src="/assets/projects/crave/pitchdeck_0.jpg"/>
+                    <img className={classes.pitch_image} src="/assets/projects/crave/pitchdeck_1.jpg"/>
+                    <img className={classes.pitch_image} src="/assets/projects/crave/pitchdeck_2.jpg"/>
+                </div>}/>
+                
+                <Grid item xs container direction="row" justify="space-between">
+                    <Grid item xs={8}></Grid>
+                    <Grid item xs={4}>
+                        <Typography className={classes.solution_overview} variant="body1"><u><b>Solution Overview</b></u></Typography>
+                    </Grid>
                 </Grid>
-                <Grid item xs={8} style={{'paddingTop': '5vh'}}>
-                    <video id="craveVideo" alt="Crave Feature" src="/assets/login.mp4" type="video/mp4" style={{'width': '100%'}} controls autoPlay muted/>
-                </Grid>
-                </Grid>
-                <Grid container direction="row" justify="center">
-                <Grid item xs={10} style={{'paddingTop': '2vh', 'paddingBottom': '5vh'}}>
-                    <Typography id="story-modal" variant="caption" style={{fontFamily: font}}>
-                    cout &lsaquo; &lsaquo; Crave is a delivery service that specialises in bringing international food to university students at affordable rates. I collaborated with a team of 4 to ideate and prototype Crave, under LavaLab (USC's premier startup-incubator comprising the school's top ~1% of Designers, Developers, and Product Managers). I specialised as the front-end web developer;
-                    <br/> <br/>
-                    Tech Stack: ReactJs library, Materialize framework, Progressive Web Application. <br/>
-                    (Hosted locally for demo) <br/>
-                    Created: Apr-May 2020
-                    </Typography>
-                </Grid>
+                <Grid container direction="column">
+                    <TrackVisibility>
+                        <VideoText image="/assets/projects/crave/loginImg.jpg" video="/assets/projects/crave/login.mp4" title="Easy Sign-In" text="We save your credentials in your browser’s LocalStorage to reduce any sign-in friction."></VideoText>
+                    </TrackVisibility>
+                    <VideoText image="/assets/projects/crave/filtersImg.jpg" title="Smart Filters" text="Not sure what you’re craving? Use the filters to find snacks that feed your mood. "></VideoText>
+                    <VideoText image="/assets/projects/crave/searchImg.jpg" title="Easy Search" text="Easily search for your favorite snacks, and if you can’t find it -- don’t worry, leave a request."></VideoText>
+                    <VideoText image="/assets/projects/crave/itemDescImg.jpg" title="Add to Cart" text="Read through snack reviews as you customise your order."></VideoText>
+                    <VideoText image="/assets/projects/crave/checkoutImg.jpg" title="One Click Checkout" text="Make any last edits, fill in your delivery details, and.... checkout! "></VideoText>
                 </Grid>
             </Grid>
-            </Hidden>
-            <Hidden mdUp>
-            <Grid container direction="row" justify="center" style={{backgroundColor: 'white', border: '5px solid #efefef', outline: 'none', width: '90vw', 'maxHeight': '75vh', 'overflowY': 'auto', alignItems: 'center'}}>
-                <Grid container direction="column" justify="center">
-                <Grid container direction="row" justify="center" style={{'paddingTop': '5vh'}}>
-                <Tooltip title="Login" arrow={true} placement="right">
-                    <img className="craveImage" id="loginImg" alt="Crave Feature" src="/assets/loginImg.jpg" style={{'width': '16.5%', cursor: 'pointer', border: '1px solid black',marginRight: '5px'}} onClick={()=>handlecraveVideo("/assets/login.mp4","loginImg")}/>
-                    </Tooltip>
-                    <Tooltip title="Filters" arrow={true} placement="right">
-                    <img className="craveImage" id="filtersImg" alt="Crave Feature" src="/assets/filtersImg.jpg" style={{'width': '16.5%', cursor: 'pointer', border: '1px solid #bee3f1',marginRight: '5px'}} onClick={()=>handlecraveVideo("/assets/filters.mp4","filtersImg")}/>
-                    </Tooltip>
-                    <Tooltip title="Search" arrow={true} placement="right">
-                    <img className="craveImage" id="searchImg" alt="Crave Feature" src="/assets/searchImg.jpg" style={{'width': '16.5%', cursor: 'pointer', border: '1px solid #bee3f1',marginRight: '5px'}} onClick={()=>handlecraveVideo("/assets/search.mp4","searchImg")}/>
-                    </Tooltip>
-                    <Tooltip title="Item Description" arrow={true} placement="right">
-                    <img className="craveImage" id="itemDescImg" alt="Crave Feature" src="/assets/itemDescImg.jpg" style={{'width': '16.5%', cursor: 'pointer', border: '1px solid #bee3f1',marginRight: '5px'}} onClick={()=>handlecraveVideo("/assets/itemDesc.mp4","itemDescImg")}/>
-                    </Tooltip>
-                    <Tooltip title="Checkout" arrow={true} placement="right">
-                    <img className="craveImage" id="checkoutImg" alt="Crave Feature" src="/assets/checkoutImg.jpg" style={{'width': '16.5%', cursor: 'pointer', border: '1px solid #bee3f1',marginRight: '5px'}} onClick={()=>handlecraveVideo("/assets/checkout.mp4","checkoutImg")}/>
-                    </Tooltip>
-                </Grid>
-                <Grid container direction="row" justify="center" style={{'paddingTop': '2vh'}}>
-                    <video id="craveVideo" alt="Crave Feature" src="/assets/login.mp4" type="video/mp4" style={{'width': '90%'}} controls autoPlay muted/>
-                </Grid>
-                </Grid>
-                <Grid container direction="row" justify="center">
-                <Grid item xs={10} style={{'paddingTop': '2vh', 'paddingBottom': '5vh'}}>
-                    <Typography id="story-modal" variant="caption" style={{fontFamily: font}}>
-                    cout &lsaquo; &lsaquo; Crave is a delivery service that specialises in bringing international food to university students at affordable rates. I collaborated with a team of 4 to ideate and prototype Crave, under LavaLab (USC's premier startup-incubator comprising the school's top ~1% of Designers, Developers, and Product Managers). I specialised as the front-end web developer;
-                    <br/> <br/>
-                    Tech Stack: ReactJs library, Materialize framework. (Hosted locally for demo) <br/>
-                    Created: Apr-May 2020
-                    </Typography>
-                </Grid>
-                </Grid>
-            </Grid>
-            </Hidden>
-        </div>
+        </>
     )
 }
