@@ -13,6 +13,9 @@ const useStyles = makeStyles((theme) => ({
     container: {
         padding: '3vw',
         borderRadius: '30px',
+        [theme.breakpoints.down('xs')]: {
+            padding: '5vw',
+        },
     },
     title: {
         margin: '0 0 2vh',
@@ -32,7 +35,7 @@ export function ProblemStatement(props) {
     return(
         <>
             <Grid className={classes.container} container direction="column" style={{backgroundColor: background}}>
-                <Typography variant="body1" className={classes.title} style={{color: title}}><u><b>Problem Statement</b></u></Typography>
+                <Typography variant="body1" className={classes.title} style={{color: title}}><u><b>PROBLEM STATEMENT</b></u></Typography>
                 <Typography className={classes.text} variant="body2" style={{color: text}}>
                     Purchasing international snacks poses a huge pain point — shipping fares are exceptionally high and deliveries take very long.
                     <br/>

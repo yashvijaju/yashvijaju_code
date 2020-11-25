@@ -34,7 +34,7 @@ export function Intro(props) {
         <>
             <Hidden smDown>
                 <Grid container direction="row" justify="space-between" spacing={6}>
-                    <Grid item xs="10" container direction="column"> 
+                    <Grid item xs={10} container direction="column"> 
                         <Grid container direction="row" justify="space-between" style={{ padding: '3vh 0' }}>
                             <TitleText title="Company" text={props.company}></TitleText>
                             <TitleText title="Role" text={props.role}></TitleText>
@@ -45,7 +45,7 @@ export function Intro(props) {
                             <TitleText title="Introduction" text={props.introduction}></TitleText>
                         </Grid>
                     </Grid>
-                    <Grid item xs="2" container direction="column"> 
+                    <Grid item xs={2} container direction="column"> 
                         <Grid container direction="row" justify="space-between" style={{ padding: '3vh 0' }}>
                             <TitleText title="Team" text={props.team}></TitleText>
                         </Grid>
@@ -54,13 +54,19 @@ export function Intro(props) {
                 </Grid>
             </Hidden>
             <Hidden mdUp>
-                <Grid container direction="column" justify="space-between" spacing={3}>
-                    <TitleText title="Company" text={props.company}></TitleText>
-                    <TitleText title="Role" text={props.role}></TitleText>
-                    <TitleText title="Year" text={props.year}></TitleText>
-                    <TitleText title="Category" text={props.category}></TitleText>
-                    <TitleText title="Team" text={props.team}></TitleText>
-                    <TitleText title="Tools & Stack" text={props.tools}></TitleText>
+                <Grid item container direction="column" justify="space-between" spacing={3}>
+                    <Grid item xs={12} container direction="row" justify="space-between">
+                        <TitleText title="Company" text={props.company}></TitleText>
+                        <TitleText title="Year" text={props.year}></TitleText>
+                    </Grid>
+                    <Grid item xs={12} container direction="row" justify="space-between">
+                        <TitleText title="Role" text={props.role}></TitleText>
+                        <TitleText title="Team" text={props.team}></TitleText>
+                    </Grid>
+                    <Grid item xs={12} container direction="row" justify="space-between">
+                        <TitleText title="Tools & Stack" text={props.tools}></TitleText>
+                        <TitleText title="Category" text={props.category}></TitleText>
+                    </Grid>
                     <TitleText title="Introduction" text={props.introduction}></TitleText>
                 </Grid>
             </Hidden>

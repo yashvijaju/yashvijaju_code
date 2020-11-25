@@ -35,7 +35,7 @@ export default function Contact() {
           <Grid item xs={1}/>
           <Grid item xs={1}/>
           <Grid item xs={10} style={{display: 'flex', flexDirection: 'column', alignItems:'left', paddingBottom:'2vh'}}>
-            <TextField multiline rows={2} fullwidth id="Body" placeholder="" label="Send me a message:" style={{fontFamily:font, fontStyle: 'italic'}}/>
+            <TextField multiline rows={2} fullWidth id="Body" placeholder="" label="Send me a message:" style={{fontFamily:font, fontStyle: 'italic'}}/>
           </Grid>
           <Grid item xs={1}/>
           <Grid item xs={1}/>
@@ -74,7 +74,7 @@ export default function Contact() {
               <Typography variant="body1" style={{fontFamily:font, fontWeight:'lighter'}}>
                 Send me a message:
               </Typography>
-              <TextField multiline rows={2} fullwidth id="Body" placeholder="" label="" style={{fontFamily:font, fontStyle: 'italic'}}/>
+              <TextField multiline rows={2} fullWidth id="Body" placeholder="" label="" style={{fontFamily:font, fontStyle: 'italic'}}/>
             </Grid>
           </Grid> 
           <Grid container direction="row" alignItems="center" style={{'padding': '0vh 2vw 5vh 2vw'}}>

@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import { Typography, Hidden, Toolbar, AppBar, Fade, Grid } from '@material-ui/core'
 import { EmailOutlined, LinkedIn } from '@material-ui/icons';
 
@@ -30,9 +31,9 @@ export default function NavBar() {
         }
     }
     return(
-        <div style={{height: '5vh', opacity: '0.75'}}>
+        <div style={{height: '5vh', position: 'absolute', top: '0'}}>
             <Fade in={true} timeout={16000}>
-                <AppBar elevation={0} style={{'backgroundColor': "white", padding: '0vh 2vw 0vh 2vw'}}>
+                <AppBar elevation={0} style={{'backgroundColor': "white", opacity: '0.5', padding: '0vh 2vw 0vh 2vw'}}>
                     <Toolbar>
                         <Hidden smUp>
                             <Grid item xs={3} style={{display:'flex', flexDirection:'row',justifyContent:'start', alignItems:'center'}}>
