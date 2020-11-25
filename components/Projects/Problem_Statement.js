@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
         margin: '0 0 2vh',
     },
     text: {
-        margin: '0 0 2vh',
+        // margin: '0 0 2vh',
     }
 }));
 
@@ -36,11 +36,7 @@ export function ProblemStatement(props) {
         <>
             <Grid className={classes.container} container direction="column" style={{backgroundColor: background}}>
                 <Typography variant="body1" className={classes.title} style={{color: title}}><u><b>PROBLEM STATEMENT</b></u></Typography>
-                <Typography className={classes.text} variant="body2" style={{color: text}}>
-                    Purchasing international snacks poses a huge pain point — shipping fares are exceptionally high and deliveries take very long.
-                    <br/>
-                    According to our survey conducted with ~100 international students at the University of Southern California, 90% of international students crave food from home.
-                </Typography>
+                <Typography className={classes.text} variant="body2" style={{color: text}}>{props.text}</Typography>
                 <Grid container direction="row">
                     {props.media}
                 </Grid>
