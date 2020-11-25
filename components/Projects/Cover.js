@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Typography } from '@material-ui/core';
+import { Grid, Hidden, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles'
 
 
@@ -12,13 +12,11 @@ var background = '#000000';
 const useStyles = makeStyles((theme) => ({
     container: {
         padding: '5vw',
+        height: '50vh',
         [theme.breakpoints.down('sm')]: {
             height: '25vh',
             margin: '0 0 5vh 0',
             padding: '10vw 5vw 5vw',
-        },
-        [theme.breakpoints.up('sm')]: {
-            height: '50vh',
         },
     },
     title: {
@@ -50,9 +48,19 @@ export function Cover(props) {
                     <img className={classes.logo_image} src={props.project_logo}></img>
                 }
                 {props.project_name && 
-                    <Typography variant="h3" className={classes.title} style={{color: title}}><b>
-                        {props.project_name}
-                    </b></Typography>
+                    <>
+                        <Hidden smUp>
+                            <Typography variant="h5" className={classes.title} style={{color: title}}><b>
+                                {props.project_name}
+                            </b></Typography>
+                        </Hidden>
+                        <Hidden smDown>
+                            <Typography variant="h3" className={classes.title} style={{color: title}}><b>
+                                {props.project_name}
+                            </b></Typography>
+                        </Hidden>
+                    </>
+                    
                 }
                 {props.project_subheading &&
                     <Typography className={classes.text} variant="body1" style={{color: title}}>

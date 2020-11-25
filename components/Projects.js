@@ -149,9 +149,9 @@ export default function Story() {
             </Typography>
           </Grid>
         </Link>
-        <Link href="/art/dancers">
+        <Link href="/art/dancing-on-the-moon">
           <Grid className="Traditional Art" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}}>
-            <img id="Dancers" src="/assets/dancers.jpg" alt="Dancers" title="Dancers" style={imageStyle}/>
+            <img id="Dancing on the Moon" src="/assets/projects/dancing-on-the-moon/dancing-on-the-moon.jpg" alt="Dancing on the Moon" title="Dancing on the Moon" style={imageStyle}/>
             <Typography variant="body1" style={titleStyle}>
             'Dancing on the Moon': Artist
             </Typography>
