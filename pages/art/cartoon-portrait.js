@@ -1,71 +1,95 @@
 import React, {useState} from 'react';
-import { Grid, Typography, Hidden, Tooltip } from '@material-ui/core';
-import { KeyboardArrowLeftOutlined, KeyboardArrowRightOutlined } from '@material-ui/icons';
+import { Grid, Divider, Typography, Hidden, Tooltip } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles'
+// Components
+import { Cover } from '../../components/Projects/Cover'
+import { Intro } from '../../components/Projects/Intro'
 
+const primary = '#206CA3';
+const primary_25 = '#B0D9F7';
+const secondary = '#298FD7';
+const tertiary = '#CFF4D2';
 
-const font = 'Segoe UI';
-
-
+const useStyles = makeStyles((theme) => ({
+  container: {
+      padding: '0 5vw',
+      color: primary,
+  },
+  divider: {
+      margin: '5vh 5vw 7.5vh',
+      display: 'flex',
+      width: '90vw',
+      background: primary_25,
+      [theme.breakpoints.down('xs')]: {
+          margin: '5vh 5vw 5vh',
+      },
+  },
+  image: {
+      borderRadius: '20px',
+      border: '1px solid #206CA3',
+      height: 'auto',
+      width: '100%',
+      margin: '0 0 1vh',
+  }
+}));
 
 export default function Story() {
-    const [comicSrc, setComicSrc] = React.useState("/assets/ps1.png");
-    const [comicId, setComicId] = React.useState(1);
+  const classes = useStyles();
 
-    function handleComic(props) {
-        if (props === "next") {
-          if (comicId===1) {
-          setComicId(2);
-          setComicSrc("/assets/ps2.jpg");
-          
-          }
-          else if (comicId===2) {
-            setComicSrc("/assets/ref.jpg");
-            setComicId(3);
-          }
-          else {
-            setComicSrc("/assets/ps1.png");
-            setComicId(1);
-          }
-        }
-        else if (props === "prev") {
-          if (comicId===1) {
-            setComicSrc("/assets/ref.jpg");
-            setComicId(3);
-          }
-          else if (comicId===2) {
-            setComicSrc("/assets/ps1.png");
-            setComicId(1);
-          }
-          else {
-            setComicSrc("/assets/ps2.jpg");
-            setComicId(2);
-          } 
-        }
-      }
+  return(
+      <>
+      <Cover project_name="Cartoon Portrait" bg_color={tertiary} title_color={secondary}></Cover>
+      <Grid container className={classes.container}>
+          <Intro title_color={primary_25} text_color={primary} company={"N/A"} role={<div>Graphic Designer<br/><br/></div>} year={"April 2020"} category={"Digital Art"} team={<div>Individual Project, ITP 190: Tools for Digital Graphics</div>} tools={<div><u>Adobe Photoshop:</u> Paths, <br/> Layer Masks, Adjustment Layers</div>} tools1={<div><u>Adobe Photoshop:</u> <br/> Paths <br/> Layer Masks <br/> Adjustment Layers</div>} tools2={<div></div>} introduction={<div>I created this cartoon illustration for a class project (ITP 190: Tools for Digital Graphics) using Adobe Photoshop. <br/> To design this, I first stacked many adjustment layers (one for each color ie skin tones for, well, skin, whites for the earrings and eyes, black for the hair, dress, spectacles frame, dark grey for the shadows, and so on). Then, I used the pen tool to trace portions of the original image. These tracings were used to create paths, which were converted into selections, and then deleted from the layer masks in order to display the selection in the adjustment layer.
+</div>}/>
+      </Grid>
 
-    return(
-        <div>
-          <Grid container direction="row" justify="center" style={{backgroundColor: 'white', border: '5px solid #efefef', outline: 'none', width: '70vw', 'maxHeight': '75vh', 'overflowY': 'auto', alignItems: 'center', paddingBottom: '5vh'}}>
-            <Grid container direction="row" justify="center">
-              <Grid item xs={1} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                <KeyboardArrowLeftOutlined id="leftPtr"  fontSize="small" onClick={()=>{handleComic("prev")}} style={{cursor: 'pointer'}}/>
-              </Grid>
-              <Grid item xs={8} md={5}>
-                <img className="Modal Adjustment Layers" id={comicId} src={comicSrc} alt="Adjustment Layers" title="Adjustment Layers" style={{'width': '100%', 'paddingTop': '5vh'}}></img>
-              </Grid>
-              <Grid item xs={1} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                <KeyboardArrowRightOutlined id="rightPtr" fontSize="small" onClick={()=>{handleComic("next")}} style={{cursor: 'pointer'}}/>
-              </Grid>
-              <Grid item xs={10} md={4} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                <Typography id="story-modal" variant="caption" style={{fontFamily: font}}>
-                  I used Adobe Photoshop to convert my portrait into this cartoon. To create this, I first stacked many Solid Color Adjustment Layers on top of one another. Then, I used the Pen Tool to trace portions of the original image to create a Path, converted the path into a Selection, and deleted it from the Layer Mask to display the selection in the adjustment layer.
-                  <br/><br/>
-                  Adobe Photoshop Tools: Solid Color Adjustment Layers, Pen Tool, Path, Selection, Layer Masks <br/>
-                  Created: Apr 2020
-                </Typography>
-              </Grid>
-            </Grid>
+      <Divider className={classes.divider}/>
+
+      <Hidden smUp>
+        <Grid container className={classes.container} direction="column" spacing={3}>
+          <Grid item xs={12} sm={4} container direction="column">
+            <img className={classes.image} src="/assets/projects/cartoon-portrait/ref.jpg"/>
+            <Typography variant="caption">
+            1: Original Photo
+            </Typography>
           </Grid>
-        </div>
-    )
+          <Grid item xs={12} sm={4} container direction="column">
+            <img className={classes.image} src="/assets/projects/cartoon-portrait/ps1.png"/>
+            <Typography variant="caption">
+            2: Cartoon created on Photoshop
+            </Typography>
+          </Grid>
+          <Grid item xs={12} sm={4} container direction="column">
+            <img className={classes.image} src="/assets/projects/cartoon-portrait/ps2.jpg"/>
+            <Typography variant="caption">
+            3: Cartoon transposed on original photo
+            </Typography>
+          </Grid>
+        </Grid>
+      </Hidden>
+      <Hidden xsDown>
+        <Grid container className={classes.container} direction="row" spacing={3}>
+          <Grid item xs={12} sm={4} container direction="column">
+            <img className={classes.image} src="/assets/projects/cartoon-portrait/ref.jpg"/>
+            <Typography variant="caption">
+            1: Original Photo
+            </Typography>
+          </Grid>
+          <Grid item xs={12} sm={4} container direction="column">
+            <img className={classes.image} src="/assets/projects/cartoon-portrait/ps1.png"/>
+            <Typography variant="caption">
+            2: Cartoon created on Photoshop
+            </Typography>
+          </Grid>
+          <Grid item xs={12} sm={4} container direction="column">
+            <img className={classes.image} src="/assets/projects/cartoon-portrait/ps2.jpg"/>
+            <Typography variant="caption">
+            3: Cartoon transposed on original photo
+            </Typography>
+          </Grid>
+        </Grid>
+      </Hidden>
+    </>
+  )
 }

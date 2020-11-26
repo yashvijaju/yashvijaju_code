@@ -34,6 +34,9 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
+// Props:
+// Name or Logo: project_name or project_logo
+// Subheading: project_subheading
 export function Cover(props) {       
     title = props.title_color;
     text = props.text_color;
