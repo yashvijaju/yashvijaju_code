@@ -162,7 +162,7 @@ export default function Story() {
         </Link>
         <Link href="/startups/pride-for-labour">
           <Grid className="Startups" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}}>
-            <img id="Pride For Labor" src="/assets/pfl_3.JPG" alt="Pride For Labor" title="Pride For Labor" style={imageStyle}/>
+            <img id="Pride For Labor" src="/assets/projects/pride-for-labour/gratitude_4.jpg" alt="Pride For Labour" title="Pride For Labour" style={imageStyle}/>
             <Typography variant="body1" style={titleStyle}>
             Pride For Labour: Founder
             </Typography>
