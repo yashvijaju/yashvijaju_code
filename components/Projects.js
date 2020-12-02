@@ -195,7 +195,7 @@ export default function Story() {
         </Link>
         <Link href="/art/manifesto">
           <Grid className="Digital Art" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}}>
-            <img id="Manifesto Design" src="/assets/d4_1.jpg" alt="Manifesto Design" title="Manifesto Design" style={imageStyle}/>
+            <img id="Manifesto Design" src="/assets/projects/manifesto/d4_1.jpg" alt="Manifesto Design" title="Manifesto Design" style={imageStyle}/>
             <Typography variant="body1" style={titleStyle}>
             Manifesto: Artist
             </Typography>
