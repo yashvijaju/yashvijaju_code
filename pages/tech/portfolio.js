@@ -1,31 +1,109 @@
 import React from 'react';
-import { Grid, Typography, Hidden, Tooltip } from '@material-ui/core';
+import { Grid, Divider, Typography } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles'
+// Components
+import { Cover } from '../../components/Projects/Cover'
+import { Intro } from '../../components/Projects/Intro'
+import Timeline from '@material-ui/lab/Timeline';
+import TimelineItem from '@material-ui/lab/TimelineItem';
+import TimelineSeparator from '@material-ui/lab/TimelineSeparator';
+import TimelineConnector from '@material-ui/lab/TimelineConnector';
+import TimelineContent from '@material-ui/lab/TimelineContent';
+import TimelineDot from '@material-ui/lab/TimelineDot';
+import TimelineOppositeContent from '@material-ui/lab/TimelineOppositeContent';
 
-const font = 'Segoe UI';
 
+const primary = '#206CA3';
+const primary_25 = '#B0D9F7';
+const secondary = '#298FD7';
+const tertiary = '#CFF4D2';
 
-export default function Story() {
+const useStyles = makeStyles((theme) => ({
+  container: {
+      padding: '0 5vw',
+      color: primary,
+  },
+  oppositeContent: {
+    display: 'none',
+  },
+  divider: {
+      margin: '5vh 5vw 7.5vh',
+      display: 'flex',
+      width: '90vw',
+      background: primary_25,
+      [theme.breakpoints.down('xs')]: {
+          margin: '5vh 5vw 5vh',
+      },
+  },
+  image: {
+      borderRadius: '20px',
+      border: '1px solid #206CA3',
+      height: 'auto',
+      width: '49%',
+      [theme.breakpoints.down('xs')]: {
+        borderRadius: '10px',
+        width: '100%',
+        margin: '0 0 2.5vh',
+      },
+  },
+  timeline_item: {
+    margin: '0 0 5vh',
+  },
+}));
 
-    return(
-        <div>
-          <Grid container direction="row" justify="center" style={{backgroundColor: 'white', border: '5px solid #efefef', outline: 'none', width: '70vw', 'maxHeight': '75vh', 'overflowY': 'auto', alignItems: 'center', justifyContent: 'center'}}>
-            <Grid item xs={10} style={{'paddingTop': '5vh', display: 'flex', flexDirection: 'column'}}>
-              <img src="/assets/portfolioCode.jpg" title="Portfolio Code" alt="Portfolio Code" style={{'width': '100%', height: 'auto'}}/>
-              <Typography variant="caption" style={{fontStyle: 'italic', textAlign:'left'}}>code snippet: functions used to handle notifications, opening and closing of modals, and the modal for Crave</Typography>
-            </Grid>
-            <Grid item xs={10} style={{'paddingTop': '2vh', 'paddingBottom': '5vh'}}>
-              <Typography id="story-modal" variant="caption" style={{fontFamily: font}}>
-                alert( "I designed this website to document my projects, including and extending beyond the realms of Computer Science. I developed this website via the ReactJS library and a Material UI framework." )
-                <br/> <br/>
-                Features: Filter projects by categories, Integrated contact-me form, 9 different modal designs to illustrate project descriptions (special emphasis on designs made for Crave, Manifesto and Pride For Labor), Custom pre-loading and 404 pages, Typewriter animation on landing page
-                <br/> <br/>
-                Tech Stack: ReactJs library, Material UI framework. (Hosted on GitHub Pages) <br/>
-                Design Stack: Adobe Photoshop to edit photos <br/>
-                APIs: none <br/>
-                Created: June 2020 <br/>
-              </Typography>
+export function TimelineEvent(props) {
+  const classes = useStyles();
+
+  return(
+    <TimelineItem>
+      <TimelineOppositeContent className={classes.oppositeContent}>
+      </TimelineOppositeContent>
+      <TimelineSeparator>
+        <TimelineDot color={primary} variant="default"/>
+        <TimelineConnector />
+      </TimelineSeparator>
+      <TimelineContent className={classes.timeline_item}>
+        <Grid container justify="space-between">
+          <Grid item xs={12} sm={1}>
+            {props.time}
+          </Grid>
+          <Grid item xs={12} sm={10}>
+            <Typography variant="body2">
+              <u>Iteration {props.iteration}:</u>
+              <br/>
+              {props.content}
+              <br/><br/>
+            </Typography>
+            <Grid container xs={12} justify="space-between">
+              {props.images}
             </Grid>
           </Grid>
-        </div>
+        </Grid>
+      </TimelineContent>
+    </TimelineItem>
+  )
+};
+
+export default function Story() {
+  const classes = useStyles();
+  
+  return(
+    <>
+    <Cover project_name="Website (*this)" bg_color={tertiary} title_color={secondary}></Cover>
+    <Grid container className={classes.container}>
+        <Intro title_color={primary_25} text_color={primary} company={"N/A"} role={<div>UI/UX Designer, Web Developer</div>} year={"June 2020-ongoing"} category={"Digital Art, Tech"} team={<div>Individual Project</div>} tools={<div><u>Software:</u> Next.js, GitHub Pages <br/> <u>UI / UX:</u> Figma, Material UI</div>} tools1={<div><u>Software:</u> <br/> Next.js <br/> GitHub Pages</div>} tools2={<div><u>UI / UX:</u> <br/> Figma <br/> Material UI</div>} introduction={<div>I designed and developed this website to document my projects in software development, digital and traditional design, and entrepreneurship. First developed in June 2020, this portfolio is constantly undergoing edits and updates.</div>}/>
+    </Grid>
+
+    <Divider className={classes.divider}/>
+
+    <Grid container direction="column" justify="start" className={classes.container}>
+      <Typography variant="h5">this-><b>timeline</b></Typography>
+      <Timeline>
+        <TimelineEvent time="JUNE 2020" iteration="0" content={<>Theme: Each project tells a story. Put together, this is the abridged story of my life. <br/>Color Palette: Pastels <br/>UI / UX: Project description can be read in the project’s modal (9 different modal designs were created). Projects can be filtered by category. Integrated contact-me form. Custom pre-loading and 404 pages. Typewriter animation on landing page developed with pure CSS and JS (no external package used).</>} images={<><img className={classes.image} src="/assets/projects/portfolio/portfolio1_0.jpg"/><img className={classes.image} src="/assets/projects/portfolio/portfolio1_1.jpg"/></>}/>
+
+        <TimelineEvent time="DEC 2020" iteration="1" content={<>Theme: Each project tells a story. Put together, this is the abridged story of my life. <br/>Color Palette: Pastels, but the pallete is custom-designed for each project <br/>UI / UX: Each project has its own page, beginning with brief introductory details. Each category has its own landing page as well. Projects can be filtered by category. Integrated contact-me form. Custom pre-loading and 404 pages. Typewriter animation on landing page developed with pure CSS and JS (no external package used).</>} images={<><img className={classes.image} src="/assets/projects/portfolio/portfolio1_0.jpg"/><img className={classes.image} src="/assets/projects/portfolio/portfolio1_1.jpg"/></>}/>
+      </Timeline>
+    </Grid>
+    </>
     )
 }

@@ -117,7 +117,7 @@ export default function Crave() {
             <Divider className={classes.divider}/>
 
             <Grid container className={classes.container} id="container">
-                <ProblemStatement title_color={secondary} text_color={primary} bg_color={tertiary} text={<div>Purchasing international snacks poses a huge pain point — shipping fares are exceptionally high and deliveries take very long.<br/>According to our survey conducted with ~100 international students at the University of Southern California, 90% of international students crave food from home.</div>} media={<div className={classes.problem_statement}>
+                <ProblemStatement title_color={secondary} text_color={primary} bg_color={tertiary} text={<div>Purchasing international snacks poses a huge pain point — shipping fares are exceptionally high and deliveries take very long.<br/>According to our survey conducted with ~100 international students at the University of Southern California, 90% of international students crave food from home.<br/><br/></div>} media={<div className={classes.problem_statement}>
                     <img className={classes.pitch_image} src="/assets/projects/crave/pitchdeck_0.jpg"/>
                     <img className={classes.pitch_image} src="/assets/projects/crave/pitchdeck_1.jpg"/>
                     <img className={classes.pitch_image} src="/assets/projects/crave/pitchdeck_2.jpg"/>

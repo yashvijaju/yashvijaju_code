@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { Typography, Hidden, Toolbar, AppBar, Fade, Grid } from '@material-ui/core'
 import { EmailOutlined, LinkedIn } from '@material-ui/icons';
 
@@ -7,7 +8,14 @@ import { EmailOutlined, LinkedIn } from '@material-ui/icons';
 const font = 'Segoe UI';
 
 export default function NavBar() {
+    const router = useRouter()
+
     function handleScroll(props) {
+        if (router.pathname !== "/") {
+            router.push('/');
+            window.scrollTo(0,0);
+            return;
+        }
         window.scrollTo(0,props);
         if (props === 0) {
             var x = document.getElementById("scroll up");
