@@ -73,7 +73,7 @@ export default function Story() {
         <>
         <Cover project_name="Automated Schedule Generator" bg_color={tertiary} title_color={secondary}></Cover>
         <Grid container className={classes.container}>
-            <Intro title_color={primary_25} text_color={primary} company={"N/A"} role={"Developer"} year={"November 2019"} category={<div>Tech <br/> <br/></div>} team={"Team Project, TrojanHacks 2019"} tools={<div><u>Software:</u> Beautiful Soup 4, Tkinter <br/><u>Languages:</u> Python, C++</div>} tools1={<div><u>Software:</u> <br/> Beautiful Soup 4 <br/> Tkinter <br/></div>} tools2={<div><u>Languages:</u> <br/>  Python <br/> C++</div>} introduction={<div>In under 18 hours, at TrojanHacks, we automated the process of generating schedules for school. <br/>The program receives the student’s list of classes as an input, and generates optimized schedules as output. <br/>Submitted on Devpost, ranked 3rd at the hackathon.</div>}/>
+            <Intro title_color={primary_25} text_color={primary} company={"N/A"} role={"Developer"} year={"November 2019"} category={<div>Tech <br/> <br/></div>} team={"Team Project, TrojanHacks 2019"} tools={<div><u>Software:</u> Beautiful Soup 4, Tkinter <br/><u>Languages:</u> Python, C++</div>} tools1={<div><u>Software:</u> <br/> Beautiful Soup 4 <br/> Tkinter <br/></div>} tools2={<div><u>Languages:</u> <br/>  Python <br/> C++</div>} introduction={<div>In under 18 hours, at TrojanHacks, we automated the process of generating schedules for school. <br/>The program receives the student’s list of classes as an input, and generates optimized schedules as output. <br/>Submitted on <a href="https://devpost.com/software/usc-schedule-maker-t6zf70" target="_blank" rel="noreferrer noopener">Devpost</a>, ranked 3rd at the hackathon.</div>}/>
         </Grid>
 
         <Divider className={classes.divider}/>
@@ -90,46 +90,4 @@ export default function Story() {
         
         </>
     )
-    // const [trojanHacksSrc, setTHSrc] = React.useState("/assets/trojanhacks1.png");
-    // const [trojanHacksId, setTHId] = React.useState(1);
-
-    
-
-    // return(
-    //     <div>
-    //         <Grid container direction="row" justify="center" style={{backgroundColor: 'white', border: '5px solid #efefef', outline: 'none', width: '70vw', 'maxHeight': '75vh', 'overflowY': 'auto', alignItems: 'center', 'paddingBottom': '5vh', 'paddingTop': '5vh'}}>
-    //             <Grid container direction="column" justify="center" alignItems="center">
-    //                 <Grid item xs={10} style={{marginTop: '1vh'}}>
-    //                 <Grid container direction="row" justify="center" style={{alignItems: 'center'}}>
-    //                     <Grid item xs={1}  style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-    //                     <KeyboardArrowLeftOutlined id="leftPtr" fontSize="small" onClick={()=>{handleTrojanHacks("prev")}} style={{cursor: 'pointer'}}/>
-    //                     </Grid>
-    //                     <Grid item xs={10} style={{display:'flex', flexDirection: 'column', alignItems:'center'}}>
-    //                     <img id="Trojan Hacks Schedule Maker" src={trojanHacksSrc} alt="Trojan Hacks Schedule Maker" title="Trojan Hacks Schedule Maker" style={{'width': '98%', paddingBottom: '1vh'}}/>
-    //                     <Typography variant="caption" align="center">Step {trojanHacksId}</Typography>
-    //                     </Grid>
-    //                     <Grid item xs={1}  style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-    //                     <KeyboardArrowRightOutlined id="rightPtr" fontSize="small" onClick={()=>{handleTrojanHacks("next")}} style={{cursor: 'pointer'}}/>
-    //                     </Grid>
-    //                 </Grid>
-    //                 </Grid>
-    //                 <Grid item xs={10} style={{marginTop: '1vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-    //                 <Typography id="story-modal" variant="caption" style={{fontFamily: font}}>
-    //                     cout &lsaquo; &lsaquo; In under 18 hours, we automated the process of generating schedules. Our program allows users to input all the classes they'd like to register for. It then uses the Beautiful Soup API to scrape the web and get the class-data from USC's Web Registration platform. A .csv file is created for each class. Then, the program allows users to filter their schedules by earliest class, etc. Using this data, the program then generates schedules while trying to spread out class-hours evenly over the 5 days of the week. The generated schedules can then be viewed through the Tkinter graphic user interface;<br/>
-    //                     <br/>
-    //                     The project was submitted for TrojanHacks 2019 and won 3rd place.
-                        
-    //                     <br/> <br/>
-    //                     Tech Stack: Beautiful Soup 4 (Web Scraping), Tkinter Library (GUI) <br/>
-    //                     Languages: C++, Python <br/>
-    //                     Submitted on Devpost: https://devpost.com/software/usc-schedule-maker-t6zf70 <br/>
-    //                     Created: November 2019 <br/>
-    //                     <br/>
-
-    //                 </Typography>
-    //                 </Grid>
-    //             </Grid>
-    //         </Grid>
-    //     </div>
-    // )
 }
