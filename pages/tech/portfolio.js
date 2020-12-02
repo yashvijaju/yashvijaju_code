@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, Divider, Typography } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles'
+import { makeStyles } from '@material-ui/core/styles' 
 // Components
 import { Cover } from '../../components/Projects/Cover'
 import { Intro } from '../../components/Projects/Intro'
@@ -51,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export function TimelineEvent(props) {
+function TimelineEvent(props) {
   const classes = useStyles();
 
   return(
@@ -59,8 +59,8 @@ export function TimelineEvent(props) {
       <TimelineOppositeContent className={classes.oppositeContent}>
       </TimelineOppositeContent>
       <TimelineSeparator>
-        <TimelineDot color={primary} variant="default"/>
-        <TimelineConnector />
+        <TimelineDot style={{backgroundColor: primary}} variant="default"/>
+        <TimelineConnector style={{backgroundColor: primary_25}}/>
       </TimelineSeparator>
       <TimelineContent className={classes.timeline_item}>
         <Grid container justify="space-between">
@@ -91,17 +91,18 @@ export default function Story() {
     <>
     <Cover project_name="Website (*this)" bg_color={tertiary} title_color={secondary}></Cover>
     <Grid container className={classes.container}>
-        <Intro title_color={primary_25} text_color={primary} company={"N/A"} role={<div>UI/UX Designer, Web Developer</div>} year={"June 2020-ongoing"} category={"Digital Art, Tech"} team={<div>Individual Project</div>} tools={<div><u>Software:</u> Next.js, GitHub Pages <br/> <u>UI / UX:</u> Figma, Material UI</div>} tools1={<div><u>Software:</u> <br/> Next.js <br/> GitHub Pages</div>} tools2={<div><u>UI / UX:</u> <br/> Figma <br/> Material UI</div>} introduction={<div>I designed and developed this website to document my projects in software development, digital and traditional design, and entrepreneurship. First developed in June 2020, this portfolio is constantly undergoing edits and updates.</div>}/>
+        <Intro title_color={primary_25} text_color={primary} company={"N/A"} role={<div>UI/UX Designer, Web Developer</div>} year={"June 2020-ongoing"} category={"Digital Art, Tech"} team={<div>Individual Project</div>} tools={<div><u>Software:</u> Next.js, GitHub Pages <br/> <u>UI / UX:</u> Figma, Material UI</div>} tools1={<div><u>Software:</u> <br/> Next.js <br/> GitHub Pages</div>} tools2={<div><u>UI / UX:</u> <br/> Figma <br/> Material UI</div>} introduction={<div>I designed and developed this website to document my projects in software development, digital and traditional design, and entrepreneurship. First developed in June 2020, this portfolio is constantly undergoing edits and updates. <br/> <br/> This is my story.</div>}/>
     </Grid>
 
     <Divider className={classes.divider}/>
 
-    <Grid container direction="column" justify="start" className={classes.container}>
+    <Grid container direction="column" className={classes.container}>
       <Typography variant="h5">this-><b>timeline</b></Typography>
       <Timeline>
         <TimelineEvent time="JUNE 2020" iteration="0" content={<>Theme: Each project tells a story. Put together, this is the abridged story of my life. <br/>Color Palette: Pastels <br/>UI / UX: Project description can be read in the project’s modal (9 different modal designs were created). Projects can be filtered by category. Integrated contact-me form. Custom pre-loading and 404 pages. Typewriter animation on landing page developed with pure CSS and JS (no external package used).</>} images={<><img className={classes.image} src="/assets/projects/portfolio/portfolio1_0.jpg"/><img className={classes.image} src="/assets/projects/portfolio/portfolio1_1.jpg"/></>}/>
 
         <TimelineEvent time="DEC 2020" iteration="1" content={<>Theme: Each project tells a story. Put together, this is the abridged story of my life. <br/>Color Palette: Pastels, but the pallete is custom-designed for each project <br/>UI / UX: Each project has its own page, beginning with brief introductory details. Each category has its own landing page as well. Projects can be filtered by category. Integrated contact-me form. Custom pre-loading and 404 pages. Typewriter animation on landing page developed with pure CSS and JS (no external package used).</>} images={<><img className={classes.image} src="/assets/projects/portfolio/portfolio1_0.jpg"/><img className={classes.image} src="/assets/projects/portfolio/portfolio1_1.jpg"/></>}/>
+        
       </Timeline>
     </Grid>
     </>

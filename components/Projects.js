@@ -206,7 +206,7 @@ export default function Story() {
         </Link>
         <Link href="/tech/portfolio">
           <Grid className="Web-Dev" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}}>
-            <img id="Portfolio" src="/assets/portfolio.jpg" alt="Portfolio" title="Portfolio" style={imageStyle}/>
+            <img id="Portfolio" src="/assets/projects/portfolio/portfolio1_0.jpg" alt="Portfolio" title="Portfolio" style={imageStyle}/>
             <Typography variant="body1" style={titleStyle}>
               (this): Web Developer, Designer
             </Typography>
@@ -228,7 +228,7 @@ export default function Story() {
         </Link>
         <Link href="/tech/schedule-generator">
           <Grid className="Hackathon" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}}>
-            <img id="Trojan Hacks Schedule Generator" src="/assets/trojanhacks3.png" alt="Trojan Hacks Schedule Generator" title="Trojan Hacks Schedule Generator" style={imageStyle}/>
+            <img id="Trojan Hacks Schedule Generator" src="/assets/projects/schedule-generator/schedule-generator1.png" alt="Trojan Hacks Schedule Generator" title="Trojan Hacks Schedule Generator" style={imageStyle}/>
             <Typography variant="body1" style={titleStyle}>
               Automated Schedule Generator: Developer
             </Typography>
@@ -294,7 +294,7 @@ export default function Story() {
         </Link>
         <Link href="/tech/first-robotics-competition">
           <Grid className="Hackathon" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}}>
-            <img id="FRC" src="/assets/frc.jpg" alt="FRC" title="FRC" style={imageStyle}/>
+            <img id="FRC" src="/assets/projects/first-robotics-competiton/frc.jpg" alt="FRC" title="FRC" style={imageStyle}/>
             <Typography variant="body1" style={titleStyle}>
               First Robotics Competition: Member, Safety Captain 
             </Typography>
