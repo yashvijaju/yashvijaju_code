@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
         margin: '0 0 10vh 0',
     },
     title: {
-        color: primary,
+        color: secondary,
         margin: '0 0 4vh 0',
     },
     text: {
@@ -74,7 +74,7 @@ export default function Story() {
                 <iframe src="https://mettacapital.in" title="Metta Capital Advisors LLP" allowFullScreen={true} className={classes.embed}/>
             </Grid>
             <Typography variant="h5" className={classes.title}>
-                Notable Features
+                <b>Notable Features</b>
             </Typography>
             
             <ListItem step="1" text="The website is fully responsive -- three different designs were created for the team modals to adapt to the standard mobile phone, tablet, and laptop/desktop screen sizes"/>

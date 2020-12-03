@@ -140,7 +140,7 @@ export default function Story() {
       <Grid container direction="row" justify="center" style={{marginTop: '1vh'}}>
         <Link href="/startups/crave">
           <Grid className="Web-Dev" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}}>
-            <img id="Crave" src="/assets/crave.jpg" alt="Crave" title="Crave" style={imageStyle}/>
+            <img id="Crave" src="/assets/projects/crave/crave.jpg" alt="Crave" title="Crave" style={imageStyle}/>
             <Typography variant="body1" style={titleStyle}>
               Crave: Front-End Developer, Founder
             </Typography>
@@ -239,7 +239,7 @@ export default function Story() {
         </Link>
         <Link href="/art/tshirt-logo">
           <Grid className="Digital Art" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}}>
-            <img id="T-Shirt Design" src="/assets/waveLogo.png" alt="T-Shirt Design" title="T-Shirt Design" style={imageStyle}/>
+            <img id="T-Shirt Design" src="/assets/projects/tshirt-logo-design/tshirt-logo-design.png" alt="T-Shirt Design" title="T-Shirt Design" style={imageStyle}/>
             <Typography variant="body1" style={titleStyle}>
             T-Shirt Logo: Artist
             </Typography>
@@ -261,7 +261,7 @@ export default function Story() {
         </Link>
         <Link href="/art/circle-of-light">
           <Grid className="Traditional Art" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}}>
-            <img id="Gautam Buddha" src="/assets/buddh.jpg" alt="Gautam Buddha" title="Gautam Buddha" style={imageStyle}/>
+            <img id="Gautam Buddha" src="/assets/projects/circle-of-light/circle-of-light.jpg" alt="Gautam Buddha" title="Gautam Buddha" style={imageStyle}/>
             <Typography variant="body1" style={titleStyle}>
             'Circle of Light': Artist 
             </Typography>
@@ -283,7 +283,7 @@ export default function Story() {
         </Link>
         <Link href="/art/kathak">
           <Grid className="Traditional Art" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}}>
-            <img id="Crave" src="/assets/kathak4.jpg" alt="Crave" title="Crave" style={imageStyle}/>
+            <img id="Kathak" src="/assets/projects/kathak/kathak7.jpg" alt="Kathak" title="Kathak" style={imageStyle}/>
             <Typography variant="body1" style={titleStyle}>
               Kathak: Artist
             </Typography>
