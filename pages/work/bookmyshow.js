@@ -1,34 +1,68 @@
 import React from 'react';
-import { Grid, Typography } from '@material-ui/core';
+import { Grid, Divider, Typography, Hidden, Tooltip } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles'
+// Components
+import { Cover } from '../../components/Projects/Cover'
+import { Intro } from '../../components/Projects/Intro'
+import { DividerLeft } from '../../components/Partials/Divider'
 
-const font = 'Segoe UI';
+const primary = '#DF1827';
+const primary_25 = '#30475E';
+const secondary = '#DF1827';
+const tertiary = '#E8E8E8';
 
+const useStyles = makeStyles((theme) => ({
+    container: {
+        padding: '0 5vw',
+    },
+    divider: {
+        margin: '5vh 5vw 7.5vh',
+        display: 'flex',
+        width: '90vw',
+        background: primary_25,
+        [theme.breakpoints.down('xs')]: {
+            margin: '5vh 5vw 5vh',
+        },
+    },
+    pitch_image: {
+        borderRadius: '20px',
+        border: '1px solid #9E0D1B',
+        height: 'auto',
+        width: '31%',
+    },
+    title: {
+        fontWeight: 'bold',
+        margin: '0 0 2.5vh',
+        color: primary,
+        [theme.breakpoints.down('xs')]: {
+            margin: '0',
+        },
+    },
+    text: {
+        color: primary,
+    }
+}));
 
 export default function Story() {
-    return(
-        <div>
-            <Grid container direction="row" justify="center" style={{backgroundColor: 'white', border: '5px solid #efefef', outline: 'none', width: '70vw', 'maxHeight': '75vh', 'overflowY': 'auto', alignItems: 'center', 'paddingBottom': '5vh', 'paddingTop': '5vh'}}>
-                <Grid container direction="row" justify="center" alignItems="center">
-                    <Grid item xs={1}/>
-                    <Grid item xs={10} md={4} style={{marginTop: '1vh'}}>
-                    <img id="BookMyShow" src="/assets/bms.png" alt="BookMyShow" title="BookMyShow" style={{'width': '100%', paddingBottom: '1vh'}}/>
-                    </Grid>
-                    <Grid item xs={1}/>
-                    <Grid item xs={10} md={5} style={{marginTop: '1vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                    <Typography id="story-modal" variant="caption" style={{fontFamily: font}}>
-                        cout &lsaquo; &lsaquo; BookMyShow is a digital ticketing company with a dominant share of events and entertainment ticketing in India; <br/> <br/>
-                        I interned as a software analyst: <br/>
-                        • Beta-tested Partner App <br/>
-                        • Analysed and researched the software frameworks and libraries used by BookMyShow <br/>
-                        <br/> 
-                        Intern: July 2018 (Mumbai) <br/>
-                        <br/>
+    const classes = useStyles();
 
-                    </Typography>
-                    </Grid>
-                    <Grid item xs={1}/>
-                </Grid>
+    return(
+        <>
+            <Cover project_name="BookMyShow : Software Analyst Intern" bg_color={tertiary} title_color={secondary}></Cover>
+            <Grid container className={classes.container}>
+                <Intro title_color={primary_25} text_color={primary} company={"BookMyShow"} role={"Software Analyst"} year={"July 2018"} category={"Work"} team={"N/A"} tools={<div>N/A</div>} tools1={<div>N/A</div>} tools2={<div></div>} introduction={<div>BookMyShow is a digital ticketing company with a dominant share of events and entertainment ticketing in India. <br/>I interned as a Software Analyst at BookMyShow in July 2018, where I assisted with beta-testing the BookMyShow Partner App and analysing the software frameworks and libraries in use.</div>}/>
             </Grid>
-        </div>
+
+            <Divider className={classes.divider}/>
+
+            <DividerLeft text="WORK SUMMARY" borderColor={primary_25} textColor={primary}/>
+
+            <Grid container direction="column" spacing={12} className={classes.container} style={{color: primary_25, marginTop: '5vh'}}>
+                <Typography variant="body2" style={{marginBottom: '3vh'}}>1.&emsp;&emsp;Beta-tested BookMyShow’s Partner App</Typography>
+                <Typography variant="body2" style={{marginBottom: '3vh'}}>2.&emsp;&emsp;Analysed the software frameworks and libraries used by BookMyShow</Typography>
+                <Typography variant="body2" style={{marginBottom: '3vh'}}>3.&emsp;&emsp;Submitted a paper about BookMyShow’s technology stack</Typography>
+                <Typography variant="body2" style={{marginBottom: '3vh'}}>Unfortunately, any further disclosure of information would lead to a breach of the confidentiality agreement.</Typography>
+            </Grid>
+        </>
     )
 }
