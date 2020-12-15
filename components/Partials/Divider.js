@@ -6,6 +6,7 @@ const useStyles = makeStyles((theme) => ({
     container: {
         display: 'flex',
         alignItems: 'center',
+        padding: '5vh 0 2vh',
     },
     border: {
         borderBottom: '5px solid black',
@@ -22,7 +23,7 @@ export function DividerLeft(props) {
 
     return(
         <>
-            <div className={classes.container}>
+            <div className={classes.container} id={props.id}>
                 <div className={classes.border} style={{width: '5vw', borderColor: props.borderColor}}/>
                 <span className={classes.content}>
                     <Typography variant="body1" style={{color: props.textColor}}>{props.text}</Typography>

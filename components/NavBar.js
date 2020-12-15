@@ -14,7 +14,7 @@ export default function NavBar() {
         if (router.pathname !== "/") {
             router.push('/');
             window.scrollTo(0,0);
-            return;
+            // return;
         }
         window.scrollTo(0,props);
         if (props === 0) {

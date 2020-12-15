@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
         padding: '0 5vw',
     },
     divider: {
-        margin: '5vh 5vw 7.5vh',
+        margin: '5vh 5vw 2.5vh',
         display: 'flex',
         width: '90vw',
         background: primary_25,
@@ -57,7 +57,7 @@ export default function Story() {
 
             <DividerLeft text="WORK SUMMARY" borderColor={primary_25} textColor={primary}/>
 
-            <Grid container direction="column" spacing={12} className={classes.container} style={{color: primary_25, marginTop: '5vh'}}>
+            <Grid container direction="column" className={classes.container} style={{color: primary_25}}>
                 <Typography variant="body2" style={{marginBottom: '3vh'}}>1.&emsp;&emsp;Beta-tested BookMyShow’s Partner App</Typography>
                 <Typography variant="body2" style={{marginBottom: '3vh'}}>2.&emsp;&emsp;Analysed the software frameworks and libraries used by BookMyShow</Typography>
                 <Typography variant="body2" style={{marginBottom: '3vh'}}>3.&emsp;&emsp;Submitted a paper about BookMyShow’s technology stack</Typography>
