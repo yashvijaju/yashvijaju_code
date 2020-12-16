@@ -309,10 +309,64 @@ export default function Story() {
                 
                 <DividerLeft text="DESIGN" borderColor={tertiary} textColor={secondary}/>
                 <Grid container className={classes.container}>
-                    <Grid item xs={12}>
+                    <Grid item xs={12} container direction="column">
                         <Typography variant="body1" className={{classes.title}}>
                             <u>1. High-Level Designs</u>
                         </Typography>
+                        <Typography variant="body1" className={{classes.text}}>
+                            Before designing the product, I first mapped the high-level volunteer journey:
+                        </Typography>
+                        <img src="" className={classes.image}/>
+                    </Grid>
+                    <Grid item xs={12} container>
+                        <Typography variant="body1" className={{classes.text}}>
+                            The VFC volunteer flow:
+                        </Typography>
+                        <Grid item xs={12} container direction="row">
+                            <Grid item xs={4} container direction="column">
+                                <Typography variant="body1" className={{classes.text}}>
+                                    1. Find volunteer in database
+                                </Typography>
+                                <img src="" className={classes.image}/>
+                            </Grid>
+                            <Grid item xs={4} container direction="column">
+                                <Typography variant="body1" className={{classes.text}}>
+                                    2. Update volunteer status
+                                </Typography>
+                                <img src="" className={classes.image}/>
+                            </Grid>
+                            <Grid item xs={4} container direction="column">
+                                <Typography variant="body1" className={{classes.text}}>
+                                    3. Complete checklist (associate comments / notes with every change in a volunteer's state)
+                                </Typography>
+                                <img src="" className={classes.image}/>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid item xs={12} container>
+                        <Typography variant="body1" className={{classes.text}}>
+                            The regular volunteer flow:
+                        </Typography>
+                        <Grid item xs={12} container direction="row">
+                            <Grid item xs={4} container direction="column">
+                                <Typography variant="body1" className={{classes.text}}>
+                                    1. Find volunteer in database
+                                </Typography>
+                                <img src="" className={classes.image}/>
+                            </Grid>
+                            <Grid item xs={4} container direction="column">
+                                <Typography variant="body1" className={{classes.text}}>
+                                    2. Filter by active volunteers, expertise, location, etc
+                                </Typography>
+                                <img src="" className={classes.image}/>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid item xs={12} container direction="column">
+                        <Typography variant="body1" className={{classes.title}}>
+                            <u>2. Figma</u>
+                        </Typography>
+                        <iframe src="https://www.figma.com/proto/J8QNI1GivY4xJtMK59GkVT/Zastra?scaling=min-zoom&node-id=17%3A232"/>
                     </Grid>
                 </Grid>
 
