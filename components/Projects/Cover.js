@@ -57,7 +57,7 @@ export function Cover(props) {
                                 {props.project_name}
                             </b></Typography>
                         </Hidden>
-                        <Hidden smDown>
+                        <Hidden xsDown>
                             <Typography variant="h3" className={classes.title} style={{color: title}}><b>
                                 {props.project_name}
                             </b></Typography>

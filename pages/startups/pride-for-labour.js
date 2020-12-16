@@ -64,6 +64,10 @@ const useStyles = makeStyles((theme) => ({
     },
     poster_image: {
       width: '40%',
+      [theme.breakpoints.only('sm')]: {
+        width: '60%',
+        margin: '0 0 1vh',
+      },
       height: 'auto',
       border: '1px solid #9E0D1B',
       borderRadius: '20px',
