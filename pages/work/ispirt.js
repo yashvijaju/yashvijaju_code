@@ -1,5 +1,5 @@
-import React from 'react';
-import { Grid, Divider, Typography, Hidden, Tooltip, Tabs, Tab } from '@material-ui/core';
+import React, { useState } from 'react';
+import { Grid, Divider, Typography } from '@material-ui/core';
 
 import { makeStyles } from '@material-ui/core/styles'
 // Components
@@ -25,6 +25,12 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('xs')]: {
             margin: '5vh 5vw 5vh',
         },
+    },
+    inner_nav: {
+        cursor: 'pointer',
+        margin: '0 0 5vh',
+        color: primary,
+        // borderBottom: '1px solid #9E0D1B',
     },
     text_container: {
         padding: '3vw',
@@ -118,17 +124,22 @@ export default function Story() {
 
             <Divider className={classes.divider}/>
 
-            <Tabs
-                value={value}
-                onChange={handleChange}
-                indicatorColor={primary}
-                textColor={primary}
-                centered
-                >
-                <Tab label="Project 1: Predictive Covid Model"/>
-                <Tab label="Project 2: Volunteer Management Tool"/>
-            </Tabs>
-            <TabPanel value={value} index={0}>
+
+            <Grid container justify="space-between" className={classes.container}>
+                <Grid item xs={5} container justify="flex-end">
+                    <Typography variant="body2" className={classes.inner_nav} style={{borderBottom: (value===0) ? '1px solid #9E0D1B' : '0px solid #9E0D1B'}} onClick={()=>setValue(0)}>
+                        Project 1: Predictive Covid Model
+                    </Typography>
+                </Grid>
+                <Grid item xs={5} container justify="flex-start">
+                    <Typography variant="body2" className={classes.inner_nav} style={{borderBottom: (value===1) ? '1px solid #9E0D1B' : '0px solid #9E0D1B'}} onClick={()=>setValue(1)}>
+                        Project 2: Volunteer Management Tool
+                    </Typography>
+                </Grid>
+            </Grid>
+
+            {(value === 0) && 
+            <>
                 <Grid container className={classes.container}>
                     <ProblemStatement text="When India locked down back in March, there was just one question on everyone’s mind: How can we flatten the curve? Public data allowed us insights into the past trend for the coronavirus, but this didn’t help individuals and governments, alike, to plan for the future. Will it be safe to travel next week? Which city is expected to see a spike in fatal cases? Can we reallocate resources and efforts to contain the virus?" title_color={secondary} text_color={primary} bg_color={tertiary}/>
 
@@ -233,8 +244,11 @@ export default function Story() {
                         </Grid>
                     </Grid>
                 </Grid>
-            </TabPanel>
-            <TabPanel value={value} index={1}>
+            </>
+            }
+
+            {(value === 1) && 
+            <>
                 <Grid container className={classes.container}>
                     <ProblemStatement text="The iSPIRT team comprises of an approximate ~100 active volunteers at any given time. However, the cumulative number of individuals who have contributed to iSPIRT’s efforts over the years, without filtering against length of commitment, is much larger. Currently, the volunteers are identified via a Google Sheets database. However, this makes it impossible to track volunteer movements across the plethora of projects and internal roles over a long period of time." title_color={secondary} text_color={primary} bg_color={tertiary}/>
 
@@ -243,7 +257,7 @@ export default function Story() {
                         <u><b>SOLUTION OVERVIEW</b></u>
                         </Typography>
                         <Typography className={classes.text} variant="body2">
-                        To solve for the lack of an internal database, I developed a volunteer management system for the iSPIRT team. The tool is currently undergoing extensive beta-testing.
+                        To solve for the lack of an internal database, I developed a volunteer management system for the iSPIRT team. The tool is currently undergoing extensive beta-testing. <br/><br/>
                         </Typography>
                     </Grid>
 
@@ -310,60 +324,60 @@ export default function Story() {
                 <DividerLeft text="DESIGN" borderColor={tertiary} textColor={secondary}/>
                 <Grid container className={classes.container}>
                     <Grid item xs={12} container direction="column">
-                        <Typography variant="body1" className={{classes.title}}>
+                        <Typography variant="body1" className={classes.title}>
                             <u>1. High-Level Designs</u>
                         </Typography>
-                        <Typography variant="body1" className={{classes.text}}>
+                        <Typography variant="body1" className={classes.text}>
                             Before designing the product, I first mapped the high-level volunteer journey:
                         </Typography>
-                        <img src="" className={classes.image}/>
+                        <img src="/assets/projects/ispirt/high_level.jpg" className={classes.image}/>
                     </Grid>
                     <Grid item xs={12} container>
-                        <Typography variant="body1" className={{classes.text}}>
+                        <Typography variant="body1" className={classes.text}>
                             The VFC volunteer flow:
                         </Typography>
                         <Grid item xs={12} container direction="row">
                             <Grid item xs={4} container direction="column">
-                                <Typography variant="body1" className={{classes.text}}>
+                                <Typography variant="body1" className={classes.text}>
                                     1. Find volunteer in database
                                 </Typography>
                                 <img src="" className={classes.image}/>
                             </Grid>
                             <Grid item xs={4} container direction="column">
-                                <Typography variant="body1" className={{classes.text}}>
+                                <Typography variant="body1" className={classes.text}>
                                     2. Update volunteer status
                                 </Typography>
                                 <img src="" className={classes.image}/>
                             </Grid>
                             <Grid item xs={4} container direction="column">
-                                <Typography variant="body1" className={{classes.text}}>
+                                <Typography variant="body1" className={classes.text}>
                                     3. Complete checklist (associate comments / notes with every change in a volunteer's state)
                                 </Typography>
-                                <img src="" className={classes.image}/>
+                                <img src="/assets/projects/ispirt/reg_1.jpg" className={classes.image}/>
                             </Grid>
                         </Grid>
                     </Grid>
                     <Grid item xs={12} container>
-                        <Typography variant="body1" className={{classes.text}}>
+                        <Typography variant="body1" className={classes.text}>
                             The regular volunteer flow:
                         </Typography>
                         <Grid item xs={12} container direction="row">
                             <Grid item xs={4} container direction="column">
-                                <Typography variant="body1" className={{classes.text}}>
+                                <Typography variant="body1" className={classes.text}>
                                     1. Find volunteer in database
                                 </Typography>
-                                <img src="" className={classes.image}/>
+                                <img src="/assets/projects/ispirt/reg_1.jpg" className={classes.image}/>
                             </Grid>
                             <Grid item xs={4} container direction="column">
-                                <Typography variant="body1" className={{classes.text}}>
+                                <Typography variant="body1" className={classes.text}>
                                     2. Filter by active volunteers, expertise, location, etc
                                 </Typography>
-                                <img src="" className={classes.image}/>
+                                <img src="/assets/projects/ispirt/reg_2.jpg" className={classes.image}/>
                             </Grid>
                         </Grid>
                     </Grid>
                     <Grid item xs={12} container direction="column">
-                        <Typography variant="body1" className={{classes.title}}>
+                        <Typography variant="body1" className={classes.title}>
                             <u>2. Figma</u>
                         </Typography>
                         <iframe src="https://www.figma.com/proto/J8QNI1GivY4xJtMK59GkVT/Zastra?scaling=min-zoom&node-id=17%3A232"/>
@@ -405,9 +419,8 @@ export default function Story() {
                         </Grid>
                     </Grid>
                 </Grid>
-            </TabPanel>
-
-            
+            </>
+            }            
         </>
     )
 }
