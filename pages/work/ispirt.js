@@ -297,7 +297,7 @@ export default function Story() {
                         <Nav text="Reflection" link="#reflection"/>
                     </Grid>
                 </Grid>
-                
+
                 <DividerLeft text="WORK SUMMARY" borderColor={tertiary} textColor={secondary}/>
                 <Grid container direction="column" className={classes.container} style={{color: primary}}>
                     <Typography variant="body2" style={{marginBottom: '3vh'}}>1.&emsp;&emsp;Understood the logistics and design behind the iSPIRT system</Typography>
@@ -348,7 +348,7 @@ export default function Story() {
                     </Grid>
                     
                 </Grid>
-                
+
                 <DividerLeft text="DESIGN" borderColor={tertiary} textColor={secondary}/>
                 <Grid container className={classes.container}>
                     <Grid item xs={12} container direction="column">
@@ -621,7 +621,7 @@ export default function Story() {
                         </Typography>
                     </Grid>
                 </Grid>
-    
+
                 <DividerLeft text="REFLECTION" borderColor={tertiary} textColor={secondary}/>  
                 <Grid container className={classes.container}>
                     <Grid container direction="row" justify="space-between" item xs={12} className={classes.product_container}>
@@ -653,7 +653,7 @@ export default function Story() {
                     </Grid>
                 </Grid>
             </>
-            }            
+            }
         </>
     )
 }
