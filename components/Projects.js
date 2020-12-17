@@ -217,7 +217,7 @@ export default function Story() {
         </Link>
         <Link href="/art/quilling">
           <Grid className="Startups" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}}>
-            <img id="Quilling" src={"/assets/quilling3.jpg"} alt="Quilling" title="Quilling" style={imageStyle}/>
+            <img id="Quilling" src={"/assets/projects/quilling/quilling_10.jpg"} alt="Quilling" title="Quilling" style={imageStyle}/>
             <Typography variant="body1" style={titleStyle}>
               Quilling: Artist, Startup
             </Typography>
@@ -250,7 +250,7 @@ export default function Story() {
         </Link>
         <Link href="/art/animation">
           <Grid className="Digital Art" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}}>
-            <img id="Photoshop Animation" src="/assets/animationImg.jpg" alt="Photoshop Animation" title="Photoshop Animation" style={imageStyle}/>
+            <img id="Photoshop Animation" src="/assets/projects/keyframe-animation/animationImg.jpg" alt="Photoshop Animation" title="Photoshop Animation" style={imageStyle}/>
             <Typography variant="body1" style={titleStyle}>
             Keyframe Animation: Artist
             </Typography>
