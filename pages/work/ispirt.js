@@ -205,6 +205,8 @@ export default function Story() {
     const [volOpsIndex, setVolOpsIndex] = useState(0);
     const [vfcIndex, setVfcIndex] = useState(0);
 
+    const [nextImgExists, setNextImgExists] = useState(true);
+
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };    
@@ -389,23 +391,23 @@ export default function Story() {
                     setGeneralIndex(0)
                 }
             }
-            if (nextjsVal === 1) {
+            else if (nextjsVal === 1) {
                 if (volOpsIndex === 0) {
-                    setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_onboarding_directory_2.jpg")
+                    setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_directory_2.jpg")
                     setVolOpsIndex(1)
                 }
                 else if (volOpsIndex === 1) {
-                    setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_onboarding_directory.jpg")
+                    setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_directory.jpg")
                     setVolOpsIndex(0)
                 }
             }
-            if (nextjsVal === 2) {
+            else if (nextjsVal === 2) {
                 if (vfcIndex === 0) {
-                    setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_onboarding_directory_2.jpg")
+                    setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_directory_2.jpg")
                     setVfcIndex(1)
                 }
                 else if (vfcIndex === 1) {
-                    setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_onboarding_directory.jpg")
+                    setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_directory.jpg")
                     setVfcIndex(0)
                 }
             }
@@ -570,23 +572,50 @@ export default function Story() {
             if (nextjsVal === 0) {
             }
             if (nextjsVal === 1) {
-                setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_settings_2.jpg")
+                if (volOpsIndex === 0) {
+                    setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_settings_2.jpg")
+                    setVolOpsIndex(1)
+                }
+                else if (volOpsIndex === 1) {
+                    setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_settings.jpg")
+                    setVolOpsIndex(0)
+                }
             }
             if (nextjsVal === 2) {
-                setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_settings_2.jpg")
+                if (vfcIndex === 0) {
+                    setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_settings_2.jpg")
+                    setVfcIndex(1)
+                }
+                else if (vfcIndex === 1) {
+                    setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_settings.jpg")
+                    setVfcIndex(0)
+                }
             }
         }
         else if (typeSrc === "> admin > new_volunteer_profile") {
             if (nextjsVal === 0) {
             }
             if (nextjsVal === 1) {
-                setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_new_volunteer_2.jpg")
+                if (volOpsIndex === 0) {
+                    setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_new_volunteer_2.jpg")
+                    setVolOpsIndex(1)
+                }
+                else if (volOpsIndex === 1) {
+                    setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_new_volunteer.jpg")
+                    setVolOpsIndex(0)
+                }
             }
             if (nextjsVal === 2) {
-                setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_new_volunteer_2.jpg")
+                if (vfcIndex === 0) {
+                    setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_new_volunteer_2.jpg")
+                    setVfcIndex(1)
+                }
+                else if (vfcIndex === 1) {
+                    setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_new_volunteer.jpg")
+                    setVfcIndex(0)
+                }
             }
         }
-        
     }
 
     return(
@@ -597,7 +626,6 @@ export default function Story() {
             </Grid>
 
             <Divider className={classes.divider}/>
-
 
             <Grid container justify="space-between" className={classes.container}>
                 <Grid item xs={5} container justify="flex-end">
@@ -883,59 +911,59 @@ export default function Story() {
                                 <Typography variant="body2" className={classes.text}>
                                    <b>Pages (click to see a screenshot of the page)</b><br/><br/>
                                 </Typography>
-                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_login.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_login.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_login.jpg"); setTypeSrc("> login"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0); setTypeDesc("This is the landing screen for Zastra, the volunteer management tool. The OAuth 2.0 protocol has been used for authorization. Azure's Active Directory is the identity and access management service used with OAuth.")}}>
+                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_login.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_login.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_login.jpg"); setTypeSrc("> login"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0); setTypeDesc("This is the landing screen for Zastra, the volunteer management tool. The OAuth 2.0 protocol has been used for authorization. Azure's Active Directory is the identity and access management service used with OAuth."); setNextImgExists(true)}}>
                                     > login
                                 </Typography>
                                 <br/>
-                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_onboarding.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_onboarding.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_onboarding.jpg"); setTypeSrc("> onboarding"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0); setTypeDesc("This is the first onboarding screen. When a volunteer enters Zastra for the first time, this screen is displayed. This screen is also triggered when a returning volunteer clicks the 'help' button on the home screen.")}}>
+                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_onboarding.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_onboarding.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_onboarding.jpg"); setTypeSrc("> onboarding"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0); setTypeDesc("This is the first onboarding screen. When a volunteer enters Zastra for the first time, this screen is displayed. This screen is also triggered when a returning volunteer clicks the 'help' button on the home screen."); setNextImgExists(false)}}>
                                     > onboarding
                                 </Typography>
-                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_onboarding_home.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_onboarding_home.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_onboarding_home.jpg"); setTypeSrc("> onboarding > home"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0); setTypeDesc("This is the first onboarding screen. When a volunteer enters Zastra for the first time, this screen is displayed. This screen is also triggered when a returning volunteer clicks the 'help' button on the home screen.")}}>
+                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_onboarding_home.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_onboarding_home.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_onboarding_home.jpg"); setTypeSrc("> onboarding > home"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0); setTypeDesc("This is the first onboarding screen. When a volunteer enters Zastra for the first time, this screen is displayed. This screen is also triggered when a returning volunteer clicks the 'help' button on the home screen."); setNextImgExists(false)}}>
                                     > onboarding > home
                                 </Typography>
-                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_onboarding_directory.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_onboarding_directory.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_onboarding_directory.jpg"); setTypeSrc("> onboarding > volunteer_directory"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0); setTypeDesc("This is the second part of the onboarding deck. It tours volunteers around the volunteer directory (an internal yellow-book, if you' like).")}}>
+                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_onboarding_directory.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_onboarding_directory.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_onboarding_directory.jpg"); setTypeSrc("> onboarding > volunteer_directory"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0); setTypeDesc("This is the second part of the onboarding deck. It tours volunteers around the volunteer directory (an internal yellow-book, if you' like)."); setNextImgExists(true)}}>
                                     > onboarding > volunteer_directory
                                 </Typography>
-                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_onboarding_profile.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_onboarding_profile.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_onboarding_profile.jpg"); setTypeSrc("> onboarding > volunteer_profile"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0); setTypeDesc("This is the third part of the onboarding deck. It tours volunteers around an example volunteer's profile.")}}>
+                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_onboarding_profile.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_onboarding_profile.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_onboarding_profile.jpg"); setTypeSrc("> onboarding > volunteer_profile"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0); setTypeDesc("This is the third part of the onboarding deck. It tours volunteers around an example volunteer's profile."); setNextImgExists(true)}}>
                                     > onboarding > volunteer_profile
                                 </Typography>
-                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_onboarding_personal.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_onboarding_personal.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_onboarding_personal.jpg"); setTypeSrc("> onboarding > personal_profile"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0); setTypeDesc("This is the final part of the onboarding deck. It tours volunteers around their personal profile, guiding them to create their wiki. It then navigates to the volunteer's personal profile.")}}>
+                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_onboarding_personal.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_onboarding_personal.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_onboarding_personal.jpg"); setTypeSrc("> onboarding > personal_profile"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0); setTypeDesc("This is the final part of the onboarding deck. It tours volunteers around their personal profile, guiding them to create their wiki. It then navigates to the volunteer's personal profile."); setNextImgExists(false)}}>
                                     > onboarding > personal_profile
                                 </Typography>
                                 <br/>
-                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_home.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_home.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_home.jpg"); setTypeSrc("> home"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0); setTypeDesc("This is the home screen. It functions as a dashboard for all iSPIRT apps and resources, including Google Suite and the iSPIRT blog.")}}>
+                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_home.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_home.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_home.jpg"); setTypeSrc("> home"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0); setTypeDesc("This is the home screen. It functions as a dashboard for all iSPIRT apps and resources, including Google Suite and the iSPIRT blog."); setNextImgExists(false)}}>
                                     > home
                                 </Typography>
-                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_directory.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_directory.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_directory.jpg"); setTypeSrc("> volunteer_directory"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0); setTypeDesc("This is the volunteer directory. The default view is the icon view, but a toggle allows navigation between the icon and list views. A sort, filter, and search-bar make it easier to search, filter, and organize volunteers. The search functionality has been enhanced to not just search for volunteers via name, but locations, areas of expertise, mentors, etc. Admins can initialise and invite new volunteers to Zastra from this screen.")}}>
+                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_directory.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_directory.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_directory.jpg"); setTypeSrc("> volunteer_directory"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0); setTypeDesc("This is the volunteer directory. The default view is the icon view, but a toggle allows navigation between the icon and list views. A sort, filter, and search-bar make it easier to search, filter, and organize volunteers. The search functionality has been enhanced to not just search for volunteers via name, but locations, areas of expertise, mentors, etc. Admins can initialise and invite new volunteers to Zastra from this screen. All volunteers' names have been erased for purposes of confidentiality."); setNextImgExists(true)}}>
                                     > volunteer_directory
                                 </Typography>
-                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_profile.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_volunteer_profile.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_volunteer_profile.jpg"); setTypeSrc("> volunteer_profile"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0); setTypeDesc("This is the volunteer profile. Regular volunteers can see details about another volunteer's mentors, mentees, areas of expertise, etc. Admins and mentors can make edits to the volunteer's private data, including volunteer type, areas of expertise, and code of ethics level. Admins can also create private admin-level tags for volunteers, view a volunteer's historical journey with iSPIRT, and log comments.")}}>
+                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_profile.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_volunteer_profile.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_volunteer_profile.jpg"); setTypeSrc("> volunteer_profile"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0); setTypeDesc("This is the volunteer profile. Regular volunteers can see details about another volunteer's mentors, mentees, areas of expertise, etc. Admins and mentors can make edits to the volunteer's private data, including volunteer type, areas of expertise, and code of ethics level. Admins can also create private admin-level tags for volunteers, view a volunteer's historical journey with iSPIRT, and log comments."); setNextImgExists(true)}}>
                                     > volunteer_profile
                                 </Typography>
                                 <br/>
-                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_personal.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_personal.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_personal.jpg"); setTypeSrc("> personal_profile"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0); setTypeDesc("This is a volunteer personal profile, comparable to a volunteer's private wiki. Here, volunteers can add or remove mentors, mentees, rooms, and tags. Volunteers can also edit their bio.")}}>
+                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_personal.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_personal.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_personal.jpg"); setTypeSrc("> personal_profile"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0); setTypeDesc("This is a volunteer personal profile, comparable to a volunteer's private wiki. Here, volunteers can add or remove mentors, mentees, rooms, and tags. Volunteers can also edit their bio."); setNextImgExists(true)}}>
                                     > personal_profile
                                 </Typography>
-                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_handbook.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_handbook.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_handbook.jpg"); setTypeSrc("> volunteer_handbook"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0); setTypeDesc("This is the volunteer handbook, a fundamental component of iSPIRT's foundation. ")}}>
+                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_handbook.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_handbook.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_handbook.jpg"); setTypeSrc("> volunteer_handbook"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0); setTypeDesc("This is the volunteer handbook, a fundamental component of iSPIRT's foundation. "); setNextImgExists(false)}}>
                                     > volunteer_handbook
                                 </Typography>
                                 <br/>
-                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_login.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_activity.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_activity.jpg"); setTypeSrc("> admin > analytics_activity"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0); setTypeDesc("This is the admin-only analytics and activity screen. If regular volunteers attempt to access this via the url, they would be redirected to the login screen. Admins are able to view their activity on Zastra, with data including comments, approvals, edits to volunteer states, and edits to global settings.")}}>
+                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_login.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_activity.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_activity.jpg"); setTypeSrc("> admin > analytics_activity"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0); setTypeDesc("This is the admin-only analytics and activity screen. If regular volunteers attempt to access this via the url, they would be redirected to the login screen. Admins are able to view their activity on Zastra, with data including comments, approvals, edits to volunteer states, and edits to global settings."); setNextImgExists(true)}}>
                                     > admin > analytics_activity
                                 </Typography>
-                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_login.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_approvals.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_approvals.jpg"); setTypeSrc("> admin > approvals"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0); setTypeDesc("This is the vfc-only approvals screen. If regular volunteers or admins attempt to access this via the url, they would be redirected to the login screen. VFC Admins are able to view pending approvals (any change in a volunteer's state ie type of volunteer requires approval from all VFC members). Here, VFC Admins can view details about the volunteer, including comments added by other VFC Admins.")}}>
+                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_login.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_approvals.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_approvals.jpg"); setTypeSrc("> admin > approvals"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0); setTypeDesc("This is the vfc-only approvals screen. If regular volunteers or admins attempt to access this via the url, they would be redirected to the login screen. VFC Admins are able to view pending approvals (any change in a volunteer's state ie type of volunteer requires approval from all VFC members). Here, VFC Admins can view details about the volunteer, including comments added by other VFC Admins."); setNextImgExists(false)}}>
                                     > admin > approvals
                                 </Typography>
-                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_login.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_settings.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_settings.jpg"); setTypeSrc("> admin > global_settings"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0); setTypeDesc("This is the admin-only global settings screen. If regular volunteers attempt to access this via the url, they would be redirected to the login screen. Admins are able to edit global settings from this screen. The global settings control all the dropdowns, so any and all dropdown menu can be updated from this screen. The global settings also allow new labels for volunteer data to be created (e.g. city / age) with a default value for existing volunteers.")}}>
+                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_login.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_settings.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_settings.jpg"); setTypeSrc("> admin > global_settings"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0); setTypeDesc("This is the admin-only global settings screen. If regular volunteers attempt to access this via the url, they would be redirected to the login screen. Admins are able to edit global settings from this screen. The global settings control all the dropdowns, so any and all dropdown menu can be updated from this screen. The global settings also allow new labels for volunteer data to be created (e.g. city / age) with a default value for existing volunteers."); setNextImgExists(true)}}>
                                     > admin > global_settings
                                 </Typography>
-                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_login.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_settings_email.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_settings_email.jpg"); setTypeSrc("> admin > global_settings_email_template"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0); setTypeDesc("This is the admin-only email templates screen. If regular volunteers attempt to access this via the url, they would be redirected to the login screen. Admins are able to edit email templates from this screen. The email templates are used to automatically send emails to volunteers when they are initiated on the platform, their volunteer status is updated, or they leave iSPIRT. Send-Grid has been used to send these emails from a monitored iSPIRT Admin email account.")}}>
+                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_login.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_settings_email.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_settings_email.jpg"); setTypeSrc("> admin > global_settings_email_template"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0); setTypeDesc("This is the admin-only email templates screen. If regular volunteers attempt to access this via the url, they would be redirected to the login screen. Admins are able to edit email templates from this screen. The email templates are used to automatically send emails to volunteers when they are initiated on the platform, their volunteer status is updated, or they leave iSPIRT. Send-Grid has been used to send these emails from a monitored iSPIRT Admin email account."); setNextImgExists(false)}}>
                                     > admin > global_settings_email_template
                                 </Typography>
-                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_login.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_new_volunteer.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_new_volunteer.jpg"); setTypeSrc("> admin > new_volunteer_profile"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0); setTypeDesc("This is the admin-only new volunteer screen. If regular volunteers attempt to access this via the url, they would be redirected to the login screen. Admins are able to initialize new volunteers from this screen. Volunteer details have been divided into two sections: the required and optional details. If the required details are missing, the form is unable to submit. Smart checks have been implemented to ensure the mobile numbers and email addresses are valid. Additional check boxes control the requirement for VFC approvals and sending of emails and handbooks to new volunteers.")}}>
+                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_login.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_new_volunteer.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_new_volunteer.jpg"); setTypeSrc("> admin > new_volunteer_profile"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0); setTypeDesc("This is the admin-only new volunteer screen. If regular volunteers attempt to access this via the url, they would be redirected to the login screen. Admins are able to initialize new volunteers from this screen. Volunteer details have been divided into two sections: the required and optional details. If the required details are missing, the form is unable to submit. Smart checks have been implemented to ensure the mobile numbers and email addresses are valid. Additional check boxes control the requirement for VFC approvals and sending of emails and handbooks to new volunteers."); setNextImgExists(true)}}>
                                     > admin > new_volunteer_profile
                                 </Typography>
-                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_logout.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_logout.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_logout.jpg"); setTypeSrc("> logout"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0); setTypeDesc("This is how volunteers log-out from Zastra. The application deletes all pre-existing authentication JSON web tokens upon this event.")}}>
+                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_logout.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_logout.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_logout.jpg"); setTypeSrc("> logout"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0); setTypeDesc("This is the screen that allows volunteers to log-out from Zastra. The application deletes all pre-existing authentication JSON web tokens upon this event."); setNextImgExists(false)}}>
                                     > logout
                                 </Typography>
                                 <br/>
@@ -986,7 +1014,7 @@ export default function Story() {
                                         <img src={generalSrc} className={classes.image_rounded_nextjs} style={{display: (nextjsVal===0) ? 'block' : 'none'}}/>
                                         <img src={volOpsSrc} className={classes.image_rounded_nextjs} style={{display: (nextjsVal===1) ? 'block' : 'none'}}/>
                                         <img src={vfcSrc} className={classes.image_rounded_nextjs} style={{display: (nextjsVal===2) ? 'block' : 'none'}}/>
-                                        <ArrowForwardIosIcon fontSize="small" style={{color: primary, cursor: 'pointer'}} onClick={()=>nextJsImages()}/>
+                                        <ArrowForwardIosIcon fontSize="small" style={{color: primary, cursor: 'pointer', display: nextImgExists ? 'block' : 'none'}} onClick={()=>nextJsImages()}/>
                                     </Grid>
                                 </Grid>
                             </Grid>
