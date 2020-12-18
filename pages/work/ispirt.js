@@ -183,10 +183,158 @@ export default function Story() {
     const [generalSrc, setGeneralSrc] = useState("/assets/projects/ispirt/ispirt-zastra/general/general_login.jpg");
     const [volOpsSrc, setVolOpsSrc] = useState("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_login.jpg");
     const [vfcSrc, setVfcSrc] = useState("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_login.jpg");
+    const [generalIndex, setGeneralIndex] = useState(0);
+    const [volOpsIndex, setVolOpsIndex] = useState(0);
+    const [vfcIndex, setVfcIndex] = useState(0);
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };    
+
+    //                     general:
+    //                     directory_3
+    //                     onboarding_directory_3
+    //                     onboarding_home_3
+    //                     onboarding_profile_3
+    //                     personal_3
+
+    //                     vol_ops:
+    //                     activity_3
+    //                     activity_4
+    //                     onboarding_directory_3
+    //                     onboarding_home_3
+    //                     onboarding_profile_3
+    //                     personal_3
+    //                     volunteer_profile_3
+    //                     volunteer_profile_4
+    //                     volunteer_profile_5
+    //                     volunteer_profile_6
+    //                     volunteer_profile_7
+    //                     volunteer_profile_8
+
+    //                     vfc:
+    //                     activity_3
+    //                     activity_4
+    //                     onboarding_directory_3
+    //                     onboarding_home_3
+    //                     onboarding_profile_3
+    //                     personal_3
+    //                     volunteer_profile_3
+    //                     volunteer_profile_4
+    //                     volunteer_profile_5
+    //                     volunteer_profile_6
+    //                     volunteer_profile_7
+    //                     volunteer_profile_8
+
+    function nextJsImages() {
+        if (typeSrc === "> login") {
+            if (nextjsVal === 0) {
+                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_login_2.jpg")
+            }
+            if (nextjsVal === 1) {
+                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/vol-ops_login_2.jpg")
+            }
+            if (nextjsVal === 2) {
+                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/vfc_login_2.jpg")
+            }
+        }
+        else if (typeSrc === "> onboarding > home") {
+            if (nextjsVal === 0) {
+                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_onboarding_home_2.jpg")
+            }
+            if (nextjsVal === 1) {
+                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/vol-ops_onboarding_home_2.jpg")
+            }
+            if (nextjsVal === 2) {
+                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/vfc_onboarding_home_2.jpg")
+            }
+        }
+        else if (typeSrc === "> onboarding > volunteer_directory") {
+            if (nextjsVal === 0) {
+                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_onboarding_directory_2.jpg")
+            }
+            if (nextjsVal === 1) {
+                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/vol-ops_onboarding_directory_2.jpg")
+            }
+            if (nextjsVal === 2) {
+                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/vfc_onboarding_directory_2.jpg")
+            }
+        }
+        else if (typeSrc === "> onboarding > volunteer_profile") {
+            if (nextjsVal === 0) {
+                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_onboarding_profile_2.jpg")
+            }
+            if (nextjsVal === 1) {
+                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/vol-ops_onboarding_profile_2.jpg")
+            }
+            if (nextjsVal === 2) {
+                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/vfc_onboarding_profile_2.jpg")
+            }
+        }
+        else if (typeSrc === "> volunteer_directory") {
+            if (nextjsVal === 0) {
+                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_directory_2.jpg")
+            }
+            if (nextjsVal === 1) {
+                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/vol-ops_onboarding_directory_2.jpg")
+            }
+            if (nextjsVal === 2) {
+                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/vfc_onboarding_directory_2.jpg")
+            }
+        }
+        else if (typeSrc === "> volunteer_profile") {
+            if (nextjsVal === 0) {
+            }
+            if (nextjsVal === 1) {
+                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/vol-ops_volunteer_profile_2.jpg")
+            }
+            if (nextjsVal === 2) {
+                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/vfc_volunteer_profile_2.jpg")
+            }
+        }
+        else if (typeSrc === "> personal_profile") {
+            if (nextjsVal === 0) {
+                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_personal_2.jpg")
+            }
+            if (nextjsVal === 1) {
+                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/vol-ops_personal_2.jpg")
+            }
+            if (nextjsVal === 2) {
+                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/vfc_personal_2.jpg")
+            }
+        }
+        else if (typeSrc === "> admin > analytics_activity") {
+            if (nextjsVal === 0) {
+            }
+            if (nextjsVal === 1) {
+                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/vol-ops_activity_2.jpg")
+            }
+            if (nextjsVal === 2) {
+                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/vfc_activity_2.jpg")
+            }
+        }
+        else if (typeSrc === "> admin > global_settings") {
+            if (nextjsVal === 0) {
+            }
+            if (nextjsVal === 1) {
+                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/vol-ops_settings_2.jpg")
+            }
+            if (nextjsVal === 2) {
+                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/vfc_settings_2.jpg")
+            }
+        }
+        else if (typeSrc === "> admin > new_volunteer_profile") {
+            if (nextjsVal === 0) {
+            }
+            if (nextjsVal === 1) {
+                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/vol-ops_new_volunteer_2.jpg")
+            }
+            if (nextjsVal === 2) {
+                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/vfc_new_volunteer_2.jpg")
+            }
+        }
+        
+    }
 
     return(
         <>
@@ -257,15 +405,15 @@ export default function Story() {
                     </Grid>
                 </Grid>
                 
-                <DividerLeft text="TECH SPECS" borderColor={tertiary} textColor={secondary}/>
+                <DividerLeft text="TECH SPECS" id="tech_specs" borderColor={tertiary} textColor={secondary}/>
                 <Grid container className={classes.container}>
                     <Grid item xs={12}>
                         <iframe src="http://indiacovidmodel.in/tech-specs/" className={classes.iframe}/>
                     </Grid>
                 </Grid>
 
-                <DividerLeft text="USE CASES" borderColor={tertiary} textColor={secondary}/>
-                <Grid container className={classes.container} spacing={3}>
+                <DividerLeft text="USE CASES" id="use_cases" borderColor={tertiary} textColor={secondary}/>
+                <Grid container className={classes.container} spacing={3} id="reflection">
                     <Grid item xs={12} sm={4}>
                         <a href="https://indiacovidmodel.in/wp-content/uploads/2020/06/User-Individuals-Businesses.pdf" target="_blank" rel="noreferrer noopener">
                             <div className={classes.case_box}>
@@ -371,7 +519,7 @@ export default function Story() {
                     </Grid>
                     <Grid container direction="row" justify="space-between" item xs={12} className={classes.product_container} style={{marginTop: '7vh'}}>
                         <Grid item xs={12} sm={2}>
-                            <Typography variant="body2" style={{color: secondary}}><u>Pain Points (for the VFC)</u><br/><br/></Typography>
+                            <Typography variant="body2" style={{color: secondary}} id="design"><u>Pain Points (for the VFC)</u><br/><br/></Typography>
                         </Grid>
                         <Grid item xs={12} sm={10}>
                             <Typography variant="body2" style={{color: primary}}>1. No data is present to track a volunteer’s history ie the volunteer’s journey through the different states, code of ethics levels, rooms, pillars, and playgrounds over time. <br/>
@@ -460,7 +608,7 @@ export default function Story() {
                             </Grid>
                             <Grid item xs={12} sm={4} container direction="column" justify="space-between" style={{padding: '3vw', backgroundColor: tertiary_25, borderRadius: '20px'}}>
                                 <img src="/assets/projects/ispirt/figma_1.jpg" className={classes.image_rounded}/>
-                                <img src="/assets/projects/ispirt/figma_3.jpg" className={classes.image_rounded}/>
+                                <img src="/assets/projects/ispirt/figma_3.jpg" id="development" className={classes.image_rounded}/>
                             </Grid>
                         </Grid>
                     </Grid>
@@ -478,68 +626,13 @@ export default function Story() {
                             <b><u>1. Next.js: frontend and backend solution</u></b>
                         </Typography>
                         {/* 
-                        general:
-                        directory_2
-                        directory_3
-                        handbook
-                        login_2
-                        onboarding_directory_2
-                        onboarding_directory_3
-                        onboarding_home_2
-                        onboarding_home_3
-                        onboarding_profile_2
-                        onboarding_profile_3
-                        personal_2
-                        personal_3
+                        edit directory images: blur the names
+
+
+                        
                         
 
-                        vol_ops:
-                        activity_2
-                        activity_3
-                        activity_4
-                        directory_2
-                        login_2
-                        new_volunteer_2
-                        onboarding_directory_2
-                        onboarding_directory_3
-                        onboarding_home_2
-                        onboarding_home_3
-                        onboarding_profile_2
-                        onboarding_profile_3
-                        personal_2
-                        personal_3
-                        settings_2
-                        volunteer_profile_2
-                        volunteer_profile_3
-                        volunteer_profile_4
-                        volunteer_profile_5
-                        volunteer_profile_6
-                        volunteer_profile_7
-                        volunteer_profile_8
-
-                        vfc:
-                        activity_2
-                        activity_3
-                        activity_4
-                        directory_2
-                        login_2
-                        new_volunteer_2
-                        onboarding_directory_2
-                        onboarding_directory_3
-                        onboarding_home_2
-                        onboarding_home_3
-                        onboarding_profile_2
-                        onboarding_profile_3
-                        personal_2
-                        personal_3
-                        settings_2
-                        volunteer_profile_2
-                        volunteer_profile_3
-                        volunteer_profile_4
-                        volunteer_profile_5
-                        volunteer_profile_6
-                        volunteer_profile_7
-                        volunteer_profile_8
+                        
                         
                         */}
                         <Grid container direction="row" justify="space-between">
@@ -648,6 +741,14 @@ export default function Story() {
                                 <img src={generalSrc} style={{display: (nextjsVal===0) ? 'block' : 'none'}} className={classes.image_rounded}/>
                                 <img src={volOpsSrc} style={{display: (nextjsVal===1) ? 'block' : 'none'}} className={classes.image_rounded}/>
                                 <img src={vfcSrc} style={{display: (nextjsVal===2) ? 'block' : 'none'}} className={classes.image_rounded}/>
+                                <Grid container direction="row" justify="space-between">
+                                    <Typography variant="caption">
+                                        ↫ Prev
+                                    </Typography>
+                                    <Typography variant="caption">
+                                        Next ↬
+                                    </Typography>
+                                </Grid>
                             </Grid>
                         </Grid>
                     </Grid>
@@ -832,7 +933,7 @@ export default function Story() {
                         </Hidden>
                     </Grid>
                     <Grid item xs={12} id="active_directory">
-                        <Typography variant="body2" className={classes.title} style={{margin: '7vh 0 1vh'}}>
+                        <Typography variant="body2" className={classes.title} style={{margin: '7vh 0 1vh'}} id="reflection">
                             <b><u>3. Active Directory: sso & identity and access management solution</u></b>
                         </Typography>
                         <Typography variant="body2" className={classes.text}>
