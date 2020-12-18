@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Grid, Divider, Typography, Hidden } from '@material-ui/core';
-
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import { makeStyles } from '@material-ui/core/styles'
 // Components
 import { Cover } from '../../components/Projects/Cover'
 import { Intro } from '../../components/Projects/Intro'
 import { DividerLeft } from '../../components/Partials/Divider'
 import { ProblemStatement } from '../../components/Projects/Problem_Statement'
+
 
 const primary = '#9E0D1B';
 const primary_25 = '#F5C9C6';
@@ -191,146 +192,381 @@ export default function Story() {
         setValue(newValue);
     };    
 
-    //                     general:
-    //                     directory_3
-    //                     onboarding_directory_3
-    //                     onboarding_home_3
-    //                     onboarding_profile_3
-    //                     personal_3
-
-    //                     vol_ops:
-    //                     activity_3
-    //                     activity_4
-    //                     onboarding_directory_3
-    //                     onboarding_home_3
-    //                     onboarding_profile_3
-    //                     personal_3
-    //                     volunteer_profile_3
-    //                     volunteer_profile_4
-    //                     volunteer_profile_5
-    //                     volunteer_profile_6
-    //                     volunteer_profile_7
-    //                     volunteer_profile_8
-
-    //                     vfc:
-    //                     activity_3
-    //                     activity_4
-    //                     onboarding_directory_3
-    //                     onboarding_home_3
-    //                     onboarding_profile_3
-    //                     personal_3
-    //                     volunteer_profile_3
-    //                     volunteer_profile_4
-    //                     volunteer_profile_5
-    //                     volunteer_profile_6
-    //                     volunteer_profile_7
-    //                     volunteer_profile_8
-
     function nextJsImages() {
         if (typeSrc === "> login") {
             if (nextjsVal === 0) {
-                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_login_2.jpg")
+                if (generalIndex === 0) {
+                    setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_login_2.jpg")
+                    setGeneralIndex(1)
+                }
+                else if (generalIndex === 1) {
+                    setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_login.jpg")
+                    setGeneralIndex(0)
+                }
             }
             if (nextjsVal === 1) {
-                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/vol-ops_login_2.jpg")
+                if (volOpsIndex === 0) {
+                    setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_login_2.jpg")
+                    setVolOpsIndex(1)
+                }
+                else if (volOpsIndex === 1) {
+                    setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_login.jpg")
+                    setVolOpsIndex(0)
+                }
             }
             if (nextjsVal === 2) {
-                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/vfc_login_2.jpg")
+                if (vfcIndex === 0) {
+                    setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_login_2.jpg")
+                    setVfcIndex(1)
+                }
+                else if (vfcIndex === 1) {
+                    setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_login.jpg")
+                    setVfcIndex(0)
+                }
             }
         }
         else if (typeSrc === "> onboarding > home") {
             if (nextjsVal === 0) {
-                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_onboarding_home_2.jpg")
+                if (generalIndex === 0) {
+                    setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_onboarding_home_2.jpg")
+                    setGeneralIndex(1)
+                }
+                else if (generalIndex === 1) {
+                    setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_onboarding_home_3.jpg")
+                    setGeneralIndex(2)
+                }
+                else if (generalIndex === 2) {
+                    setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_onboarding_home.jpg")
+                    setGeneralIndex(0)
+                }
             }
             if (nextjsVal === 1) {
-                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/vol-ops_onboarding_home_2.jpg")
+                if (volOpsIndex === 0) {
+                    setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_onboarding_home_2.jpg")
+                    setVolOpsIndex(1)
+                }
+                else if (volOpsIndex === 1) {
+                    setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_onboarding_home_3.jpg")
+                    setVolOpsIndex(2)
+                }
+                else if (volOpsIndex === 2) {
+                    setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_onboarding_home.jpg")
+                    setVolOpsIndex(0)
+                }
             }
             if (nextjsVal === 2) {
-                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/vfc_onboarding_home_2.jpg")
+                if (vfcIndex === 0) {
+                    setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_onboarding_home_2.jpg")
+                    setVfcIndex(1)
+                }
+                else if (vfcIndex === 1) {
+                    setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_onboarding_home_3.jpg")
+                    setVfcIndex(2)
+                }
+                else if (vfcIndex === 2) {
+                    setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_onboarding_home.jpg")
+                    setVfcIndex(0)
+                }
             }
         }
         else if (typeSrc === "> onboarding > volunteer_directory") {
             if (nextjsVal === 0) {
-                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_onboarding_directory_2.jpg")
+                if (generalIndex === 0) {
+                    setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_onboarding_directory_2.jpg")
+                    setGeneralIndex(1)
+                }
+                else if (generalIndex === 1) {
+                    setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_onboarding_directory_3.jpg")
+                    setGeneralIndex(2)
+                }
+                else if (generalIndex === 2) {
+                    setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_onboarding_directory.jpg")
+                    setGeneralIndex(0)
+                }
             }
             if (nextjsVal === 1) {
-                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/vol-ops_onboarding_directory_2.jpg")
+                if (volOpsIndex === 0) {
+                    setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_onboarding_directory_2.jpg")
+                    setVolOpsIndex(1)
+                }
+                else if (volOpsIndex === 1) {
+                    setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_onboarding_directory_3.jpg")
+                    setVolOpsIndex(2)
+                }
+                else if (volOpsIndex === 2) {
+                    setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_onboarding_directory.jpg")
+                    setVolOpsIndex(0)
+                }
             }
             if (nextjsVal === 2) {
-                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/vfc_onboarding_directory_2.jpg")
+                if (vfcIndex === 0) {
+                    setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_onboarding_directory_2.jpg")
+                    setVfcIndex(1)
+                }
+                else if (vfcIndex === 1) {
+                    setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_onboarding_directory_3.jpg")
+                    setVfcIndex(2)
+                }
+                else if (vfcIndex === 2) {
+                    setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_onboarding_directory.jpg")
+                    setVfcIndex(0)
+                }
             }
         }
         else if (typeSrc === "> onboarding > volunteer_profile") {
             if (nextjsVal === 0) {
-                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_onboarding_profile_2.jpg")
+                if (generalIndex === 0) {
+                    setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_onboarding_profile_2.jpg")
+                    setGeneralIndex(1)
+                }
+                else if (generalIndex === 1) {
+                    setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_onboarding_profile_3.jpg")
+                    setGeneralIndex(2)
+                }
+                else if (generalIndex === 2) {
+                    setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_onboarding_profile.jpg")
+                    setGeneralIndex(0)
+                }
             }
             if (nextjsVal === 1) {
-                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/vol-ops_onboarding_profile_2.jpg")
+                if (volOpsIndex === 0) {
+                    setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_onboarding_profile_2.jpg")
+                    setVolOpsIndex(1)
+                }
+                else if (volOpsIndex === 1) {
+                    setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_onboarding_profile_3.jpg")
+                    setVolOpsIndex(2)
+                }
+                else if (volOpsIndex === 2) {
+                    setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_onboarding_profile.jpg")
+                    setVolOpsIndex(0)
+                }
             }
             if (nextjsVal === 2) {
-                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/vfc_onboarding_profile_2.jpg")
+                if (vfcIndex === 0) {
+                    setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_onboarding_profile_2.jpg")
+                    setVfcIndex(1)
+                }
+                else if (vfcIndex === 1) {
+                    setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_onboarding_profile_3.jpg")
+                    setVfcIndex(2)
+                }
+                else if (vfcIndex === 2) {
+                    setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_onboarding_profile.jpg")
+                    setVfcIndex(0)
+                }
             }
         }
         else if (typeSrc === "> volunteer_directory") {
             if (nextjsVal === 0) {
-                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_directory_2.jpg")
+                if (generalIndex === 0) {
+                    setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_directory_2.jpg")
+                    setGeneralIndex(1)
+                }
+                else if (generalIndex === 1) {
+                    setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_directory_3.jpg")
+                    setGeneralIndex(2)
+                }
+                else if (generalIndex === 2) {
+                    setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_directory.jpg")
+                    setGeneralIndex(0)
+                }
             }
             if (nextjsVal === 1) {
-                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/vol-ops_onboarding_directory_2.jpg")
+                if (volOpsIndex === 0) {
+                    setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_onboarding_directory_2.jpg")
+                    setVolOpsIndex(1)
+                }
+                else if (volOpsIndex === 1) {
+                    setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_onboarding_directory.jpg")
+                    setVolOpsIndex(0)
+                }
             }
             if (nextjsVal === 2) {
-                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/vfc_onboarding_directory_2.jpg")
+                if (vfcIndex === 0) {
+                    setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_onboarding_directory_2.jpg")
+                    setVfcIndex(1)
+                }
+                else if (vfcIndex === 1) {
+                    setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_onboarding_directory.jpg")
+                    setVfcIndex(0)
+                }
             }
         }
         else if (typeSrc === "> volunteer_profile") {
             if (nextjsVal === 0) {
             }
             if (nextjsVal === 1) {
-                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/vol-ops_volunteer_profile_2.jpg")
+                if (volOpsIndex === 0) {
+                    setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_volunteer_profile_2.jpg")
+                    setVolOpsIndex(1)
+                }
+                else if (volOpsIndex === 1) {
+                    setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_volunteer_profile_3.jpg")
+                    setVolOpsIndex(2)
+                }
+                else if (volOpsIndex === 2) {
+                    setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_volunteer_profile_4.jpg")
+                    setVolOpsIndex(3)
+                }
+                else if (volOpsIndex === 3) {
+                    setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_volunteer_profile_5.jpg")
+                    setVolOpsIndex(4)
+                }
+                else if (volOpsIndex === 4) {
+                    setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_volunteer_profile_6.jpg")
+                    setVolOpsIndex(5)
+                }
+                else if (volOpsIndex === 5) {
+                    setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_volunteer_profile_7.jpg")
+                    setVolOpsIndex(6)
+                }
+                else if (volOpsIndex === 6) {
+                    setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_volunteer_profile_8.jpg")
+                    setVolOpsIndex(7)
+                }
+                else if (volOpsIndex === 7) {
+                    setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_volunteer_profile.jpg")
+                    setVolOpsIndex(0)
+                }
             }
             if (nextjsVal === 2) {
-                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/vfc_volunteer_profile_2.jpg")
+                if (vfcIndex === 0) {
+                    setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_volunteer_profile_2.jpg")
+                    setVfcIndex(1)
+                }
+                else if (vfcIndex === 1) {
+                    setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_volunteer_profile_3.jpg")
+                    setVfcIndex(2)
+                }
+                else if (vfcIndex === 2) {
+                    setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_volunteer_profile_4.jpg")
+                    setVfcIndex(3)
+                }
+                else if (vfcIndex === 3) {
+                    setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_volunteer_profile_5.jpg")
+                    setVfcIndex(4)
+                }
+                else if (vfcIndex === 4) {
+                    setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_volunteer_profile_6.jpg")
+                    setVfcIndex(5)
+                }
+                else if (vfcIndex === 5) {
+                    setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_volunteer_profile_7.jpg")
+                    setVfcIndex(6)
+                }
+                else if (vfcIndex === 6) {
+                    setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_volunteer_profile_8.jpg")
+                    setVfcIndex(7)
+                }
+                else if (vfcIndex === 7) {
+                    setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_volunteer_profile.jpg")
+                    setVfcIndex(0)
+                }
             }
         }
         else if (typeSrc === "> personal_profile") {
             if (nextjsVal === 0) {
-                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_personal_2.jpg")
+                if (generalIndex === 0) {
+                    setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_personal_2.jpg")
+                    setGeneralIndex(1)
+                }
+                else if (generalIndex === 1) {
+                    setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_personal_3.jpg")
+                    setGeneralIndex(2)
+                }
+                else if (generalIndex === 2) {
+                    setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_personal.jpg")
+                    setGeneralIndex(0)
+                }
             }
             if (nextjsVal === 1) {
-                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/vol-ops_personal_2.jpg")
+                if (volOpsIndex === 0) {
+                    setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_personal_2.jpg")
+                    setVolOpsIndex(1)
+                }
+                else if (volOpsIndex === 1) {
+                    setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_personal_3.jpg")
+                    setVolOpsIndex(2)
+                }
+                else if (volOpsIndex === 2) {
+                    setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_personal.jpg")
+                    setVolOpsIndex(0)
+                }
             }
             if (nextjsVal === 2) {
-                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/vfc_personal_2.jpg")
+                if (vfcIndex === 0) {
+                    setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_personal_2.jpg")
+                    setVfcIndex(1)
+                }
+                else if (vfcIndex === 1) {
+                    setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_personal_3.jpg")
+                    setVfcIndex(2)
+                }
+                else if (vfcIndex === 2) {
+                    setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_personal.jpg")
+                    setVfcIndex(0)
+                }
             }
         }
         else if (typeSrc === "> admin > analytics_activity") {
             if (nextjsVal === 0) {
             }
             if (nextjsVal === 1) {
-                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/vol-ops_activity_2.jpg")
+                if (volOpsIndex === 0) {
+                    setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_activity_2.jpg")
+                    setVolOpsIndex(1)
+                }
+                else if (volOpsIndex === 1) {
+                    setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_activity_3.jpg")
+                    setVolOpsIndex(2)
+                }
+                else if (volOpsIndex === 2) {
+                    setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_activity_4.jpg")
+                    setVolOpsIndex(3)
+                }
+                else if (volOpsIndex === 3) {
+                    setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_activity.jpg")
+                    setVolOpsIndex(0)
+                }
             }
             if (nextjsVal === 2) {
-                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/vfc_activity_2.jpg")
+                if (vfcIndex === 0) {
+                    setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_activity_2.jpg")
+                    setVfcIndex(1)
+                }
+                else if (vfcIndex === 1) {
+                    setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_activity_3.jpg")
+                    setVfcIndex(2)
+                }
+                else if (vfcIndex === 2) {
+                    setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_activity_4.jpg")
+                    setVfcIndex(3)
+                }
+                else if (vfcIndex === 3) {
+                    setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_activity.jpg")
+                    setVfcIndex(0)
+                }
             }
         }
         else if (typeSrc === "> admin > global_settings") {
             if (nextjsVal === 0) {
             }
             if (nextjsVal === 1) {
-                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/vol-ops_settings_2.jpg")
+                setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_settings_2.jpg")
             }
             if (nextjsVal === 2) {
-                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/vfc_settings_2.jpg")
+                setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_settings_2.jpg")
             }
         }
         else if (typeSrc === "> admin > new_volunteer_profile") {
             if (nextjsVal === 0) {
             }
             if (nextjsVal === 1) {
-                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/vol-ops_new_volunteer_2.jpg")
+                setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_new_volunteer_2.jpg")
             }
             if (nextjsVal === 2) {
-                setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/vfc_new_volunteer_2.jpg")
+                setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_new_volunteer_2.jpg")
             }
         }
         
@@ -616,87 +852,77 @@ export default function Story() {
 
                 <DividerLeft text="DEVELOPMENT" borderColor={tertiary} textColor={secondary}/>
                 <Grid container className={classes.container}>
-                    <Grid container direction="row" justify="space-between">
+                    <Grid container direction="row" justify="space-between" id="next.js">
                         <TechNav text="Next.js" subtitle="frontend & backend" link="#next.js"/>
                         <TechNav text="MongoDB" subtitle="database" link="#mongodb"/>
                         <TechNav text="Active Directory" subtitle="sso & identity and access management" link="#active_directory"/>
                     </Grid>
-                    <Grid container item xs={12} id="next.js">
+                    <Grid container item xs={12}>
                         <Typography variant="body2" className={classes.title} style={{margin: '4vh 0 1vh'}}>
                             <b><u>1. Next.js: frontend and backend solution</u></b>
                         </Typography>
-                        {/* 
-                        edit directory images: blur the names
-
-
-                        
-                        
-
-                        
-                        
-                        */}
                         <Grid container direction="row" justify="space-between">
                             <Grid item xs={12} sm={4} container direction="column">
                                 <Typography variant="body2" className={classes.text}>
                                    <b>Pages (click to see a screenshot of the page)</b><br/><br/>
                                 </Typography>
-                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_login.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_login.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_login.jpg"); setTypeSrc("> login")}}>
+                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_login.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_login.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_login.jpg"); setTypeSrc("> login"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0)}}>
                                     > login
                                 </Typography>
                                 <br/>
-                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_onboarding.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_onboarding.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_onboarding.jpg"); setTypeSrc("> onboarding")}}>
+                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_onboarding.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_onboarding.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_onboarding.jpg"); setTypeSrc("> onboarding"); setTypeSrc("> login"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0)}}>
                                     > onboarding
                                 </Typography>
-                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_onboarding_home.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_onboarding_home.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_onboarding_home.jpg"); setTypeSrc("> onboarding > home")}}>
+                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_onboarding_home.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_onboarding_home.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_onboarding_home.jpg"); setTypeSrc("> onboarding > home"); setTypeSrc("> login"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0)}}>
                                     > onboarding > home
                                 </Typography>
-                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_onboarding_personal.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_onboarding_personal.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_onboarding_personal.jpg"); setTypeSrc("> onboarding > personal_profile")}}>
+                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_onboarding_personal.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_onboarding_personal.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_onboarding_personal.jpg"); setTypeSrc("> onboarding > personal_profile"); setTypeSrc("> login"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0)}}>
                                     > onboarding > personal_profile
                                 </Typography>
-                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_onboarding_directory.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_onboarding_directory.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_onboarding_directory.jpg"); setTypeSrc("> onboarding > volunteer_directory")}}>
+                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_onboarding_directory.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_onboarding_directory.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_onboarding_directory.jpg"); setTypeSrc("> onboarding > volunteer_directory"); setTypeSrc("> login"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0)}}>
                                     > onboarding > volunteer_directory
                                 </Typography>
-                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_onboarding_profile.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_onboarding_profile.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_onboarding_profile.jpg"); setTypeSrc("> onboarding > volunteer_profile")}}>
+                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_onboarding_profile.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_onboarding_profile.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_onboarding_profile.jpg"); setTypeSrc("> onboarding > volunteer_profile"); setTypeSrc("> login"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0)}}>
                                     > onboarding > volunteer_profile
                                 </Typography>
                                 <br/>
-                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_home.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_home.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_home.jpg"); setTypeSrc("> home")}}>
+                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_home.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_home.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_home.jpg"); setTypeSrc("> home"); setTypeSrc("> login"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0)}}>
                                     > home
                                 </Typography>
-                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_directory.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_directory.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_directory.jpg"); setTypeSrc("> volunteer_directory")}}>
+                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_directory.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_directory.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_directory.jpg"); setTypeSrc("> volunteer_directory"); setTypeSrc("> login"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0)}}>
                                     > volunteer_directory
                                 </Typography>
-                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_profile.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_volunteer_profile.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_volunteer_profile.jpg"); setTypeSrc("> volunteer_profile")}}>
+                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_profile.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_volunteer_profile.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_volunteer_profile.jpg"); setTypeSrc("> volunteer_profile"); setTypeSrc("> login"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0)}}>
                                     > volunteer_profile
                                 </Typography>
                                 <br/>
-                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_personal.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_personal.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_personal.jpg"); setTypeSrc("> personal_profile")}}>
+                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_personal.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_personal.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_personal.jpg"); setTypeSrc("> personal_profile"); setTypeSrc("> login"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0)}}>
                                     > personal_profile
                                 </Typography>
-                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_handbook.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_handbook.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_handbook.jpg"); setTypeSrc("> volunteer_handbook")}}>
+                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_handbook.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_handbook.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_handbook.jpg"); setTypeSrc("> volunteer_handbook"); setTypeSrc("> login"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0)}}>
                                     > volunteer_handbook
                                 </Typography>
                                 <br/>
-                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_login.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_activity.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_activity.jpg"); setTypeSrc("> admin > analytics_activity")}}>
+                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_login.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_activity.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_activity.jpg"); setTypeSrc("> admin > analytics_activity"); setTypeSrc("> login"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0)}}>
                                     > admin > analytics_activity
                                 </Typography>
-                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_login.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_approvals.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_approvals.jpg"); setTypeSrc("> admin > approvals")}}>
+                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_login.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_approvals.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_approvals.jpg"); setTypeSrc("> admin > approvals"); setTypeSrc("> login"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0)}}>
                                     > admin > approvals
                                 </Typography>
-                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_login.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_settings.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_settings.jpg"); setTypeSrc("> admin > global_settings")}}>
+                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_login.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_settings.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_settings.jpg"); setTypeSrc("> admin > global_settings"); setTypeSrc("> login"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0)}}>
                                     > admin > global_settings
                                 </Typography>
-                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_login.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_settings_email.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_settings_email.jpg"); setTypeSrc("> admin > global_settings_email_template")}}>
+                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_login.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_settings_email.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_settings_email.jpg"); setTypeSrc("> admin > global_settings_email_template"); setTypeSrc("> login"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0)}}>
                                     > admin > global_settings_email_template
                                 </Typography>
-                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_login.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_new_volunteer.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_new_volunteer.jpg"); setTypeSrc("> admin > new_volunteer_profile")}}>
+                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_login.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_new_volunteer.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_new_volunteer.jpg"); setTypeSrc("> admin > new_volunteer_profile"); setTypeSrc("> login"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0)}}>
                                     > admin > new_volunteer_profile
                                 </Typography>
-                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_logout.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_logout.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_logout.jpg"); setTypeSrc("> logout")}}>
+                                <Typography variant="body2" className={classes.nextjs_nav} onClick={()=>{setGeneralSrc("/assets/projects/ispirt/ispirt-zastra/general/general_logout.jpg"); setVolOpsSrc("/assets/projects/ispirt/ispirt-zastra/volunteer_operations/vol-ops_logout.jpg"); setVfcSrc("/assets/projects/ispirt/ispirt-zastra/vfc/vfc_logout.jpg"); setTypeSrc("> logout"); setTypeSrc("> login"); setGeneralIndex(0); setVolOpsIndex(0); setVfcIndex(0)}}>
                                     > logout
                                 </Typography>
                                 <br/>
-                                <Typography variant="body2" className={classes.nextjs_nav}>
+                                <Typography variant="body2" id="mongodb" className={classes.nextjs_nav} style={{cursor: 'not-allowed'}}>
                                     > api (hidden)
                                 </Typography>
                             </Grid>
@@ -714,7 +940,7 @@ export default function Story() {
                                     </Typography>
                                 </Hidden>
                                 
-                                <Grid container direction="row" justify="space-evenly" style={{marginTop: '5vh'}}>
+                                <Grid container direction="row" justify="space-evenly" style={{marginTop: '8vh'}}>
                                     <Hidden xsDown>
                                         <Typography variant="body2" className={classes.inner_nav} style={{borderBottom: (nextjsVal===0) ? '5px solid #FFE295' : '0px solid #9E0D1B'}} onClick={()=>setNextjsValue(0)}>
                                             Volunteer
@@ -738,21 +964,16 @@ export default function Story() {
                                         </Typography>
                                     </Hidden>
                                 </Grid>
-                                <img src={generalSrc} style={{display: (nextjsVal===0) ? 'block' : 'none'}} className={classes.image_rounded}/>
-                                <img src={volOpsSrc} style={{display: (nextjsVal===1) ? 'block' : 'none'}} className={classes.image_rounded}/>
-                                <img src={vfcSrc} style={{display: (nextjsVal===2) ? 'block' : 'none'}} className={classes.image_rounded}/>
-                                <Grid container direction="row" justify="space-between">
-                                    <Typography variant="caption" className={classes.text} style={{cursor: 'pointer'}} onClick={()=>nextJsImages()}>
-                                        ↫ Prev
-                                    </Typography>
-                                    <Typography variant="caption" className={classes.text} style={{cursor: 'pointer'}} onClick={()=>nextJsImages()}>
-                                        Next ↬
-                                    </Typography>
+                                <Grid container direction="row" justify="space-between" alignItems="center">
+                                    <img src={generalSrc} className={classes.image_rounded} style={{display: (nextjsVal===0) ? 'block' : 'none', width: '95%'}} />
+                                    <img src={volOpsSrc} className={classes.image_rounded} style={{display: (nextjsVal===1) ? 'block' : 'none', width: '95%'}}/>
+                                    <img src={vfcSrc} className={classes.image_rounded} style={{display: (nextjsVal===2) ? 'block' : 'none', width: '95%'}}/>
+                                    <ArrowForwardIosIcon fontSize="small" style={{color: primary, cursor: 'pointer'}} onClick={()=>nextJsImages()}/>
                                 </Grid>
                             </Grid>
                         </Grid>
                     </Grid>
-                    <Grid item xs={12} id="mongodb">
+                    <Grid item xs={12}>
                         <Typography variant="body2" className={classes.title} style={{margin: '7vh 0 1vh'}}>
                             <b><u>2. MongoDB: database solution</u></b>
                         </Typography>
@@ -914,7 +1135,7 @@ export default function Story() {
                                             &emsp;1 : “None” <br/>
                                         </Typography>
                                     </Grid>
-                                    <Grid item style={{margin: '2vh 0 0', backgroundColor: tertiary_25, borderRadius: '20px', padding: '2vh'}}>
+                                    <Grid item style={{margin: '2vh 0 0', backgroundColor: tertiary_25, borderRadius: '20px', padding: '2vh'}} id="active_directory">
                                         <Typography variant="body2" className={classes.text}>
                                             <b>Admin Control:</b> <br/><br/>
                                         </Typography>
@@ -932,7 +1153,7 @@ export default function Story() {
                             </Grid>
                         </Hidden>
                     </Grid>
-                    <Grid item xs={12} id="active_directory">
+                    <Grid item xs={12}>
                         <Typography variant="body2" className={classes.title} style={{margin: '7vh 0 1vh'}} id="reflection">
                             <b><u>3. Active Directory: sso & identity and access management solution</u></b>
                         </Typography>
