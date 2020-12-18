@@ -742,10 +742,10 @@ export default function Story() {
                                 <img src={volOpsSrc} style={{display: (nextjsVal===1) ? 'block' : 'none'}} className={classes.image_rounded}/>
                                 <img src={vfcSrc} style={{display: (nextjsVal===2) ? 'block' : 'none'}} className={classes.image_rounded}/>
                                 <Grid container direction="row" justify="space-between">
-                                    <Typography variant="caption">
+                                    <Typography variant="caption" className={classes.text} style={{cursor: 'pointer'}} onClick={()=>nextJsImages()}>
                                         ↫ Prev
                                     </Typography>
-                                    <Typography variant="caption">
+                                    <Typography variant="caption" className={classes.text} style={{cursor: 'pointer'}} onClick={()=>nextJsImages()}>
                                         Next ↬
                                     </Typography>
                                 </Grid>
