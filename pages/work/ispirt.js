@@ -134,6 +134,16 @@ const useStyles = makeStyles((theme) => ({
             marginBottom: '2vh',
         },
     },
+    image_rounded_nextjs: {
+        width: '95%', 
+        height: 'auto',
+        border: '1px solid #9E0D1B',
+        borderRadius: '20px',
+        [theme.breakpoints.down('xs')]: {
+            marginBottom: '2vh',
+            width: '90%',
+        },
+    }
 }));
 
 function Nav(props) {
@@ -576,7 +586,7 @@ export default function Story() {
         <>
             <Cover project_name="iSPIRT : (Balloon) Volunteer" bg_color={tertiary} title_color={secondary}></Cover>
             <Grid container className={classes.container}>
-                <Intro title_color={primary_25} text_color={primary} company={<div>iSPIRT</div>} role={"(Balloon) Volunteer"} year={"June 2020-ongoing"} category={"Work"} team={<div>N/A</div>} tools={<div>Python, Flask, Plotly, Wordpress, Flourish, AWS (S3, EC2), Google Analytics, Next.js, MongoDB, Active Directory, OAuth 2.0, Figma, Adobe CC </div>} tools1={<div>Python, Flask <br/>Plotly <br/>Wordpress<br/>Flourish<br/>AWS (S3, EC2)<br/>Google Analytics</div>} tools2={<div>Next.js <br/>MongoDB<br/>Active Directory<br/>OAuth 2.0<br/>Figma<br/>Adobe CC </div>} introduction={<div>iSPIRT is a not-for-profit think tank that evangelises and develops societal tech platforms such as IndiaStack to transform India by solving some of her hard problems by addressing financial inclusion, affordable healthcare and access to education. The iSPIRT team includes volunteers that created Aadhar, the largest public identity database in the world. <br/>My first project was with the India COVID-19 SEIR Model: a predictive model for districts in India. My second project was with the iSPIRT Leadership: I created a volunteer management tool for the team.</div>}/>
+                <Intro title_color={primary_25} text_color={primary} company={<div>iSPIRT</div>} role={"(Balloon) Volunteer"} year={"June 2020-ongoing"} category={"Work"} team={<div>N/A</div>} tools={<div>Python, Flask, Plotly, Wordpress, Flourish, AWS (S3, EC2), Google Analytics, Next.js, MongoDB, Active Directory, OAuth 2.0, Figma, Adobe CC </div>} tools1={<div>Python, Flask <br/> Plotly <br/> Flourish <br/> AWS (S3, EC2) <br/> Google Analytics <br/> Active Directory </div>} tools2={<div>Next.js <br/> MongoDB <br/> OAuth 2.0 <br/> Wordpress <br/> Figma <br/> Adobe CC</div>} introduction={<div>iSPIRT is a not-for-profit think tank that evangelises and develops societal tech platforms such as IndiaStack to transform India by solving some of her hard problems by addressing financial inclusion, affordable healthcare and access to education. The iSPIRT team includes volunteers that created Aadhar, the largest public identity database in the world. <br/>My first project was with the India COVID-19 SEIR Model: a predictive model for districts in India. My second project was with the iSPIRT Leadership: I created a volunteer management tool for the team.</div>}/>
             </Grid>
 
             <Divider className={classes.divider}/>
@@ -649,7 +659,7 @@ export default function Story() {
                 </Grid>
 
                 <DividerLeft text="USE CASES" id="use_cases" borderColor={tertiary} textColor={secondary}/>
-                <Grid container className={classes.container} spacing={3} id="reflection">
+                <Grid container className={classes.container} direction="row" justify="space-between" id="reflection">
                     <Grid item xs={12} sm={4}>
                         <a href="https://indiacovidmodel.in/wp-content/uploads/2020/06/User-Individuals-Businesses.pdf" target="_blank" rel="noreferrer noopener">
                             <div className={classes.case_box}>
@@ -657,17 +667,17 @@ export default function Story() {
                             </div>
                         </a>
                     </Grid>
-                    <Grid item xs={12} sm={4}>
-                        <a href="https://indiacovidmodel.in/wp-content/uploads/2020/06/User-Scientists.pdf" target="_blank" rel="noreferrer noopener">
+                    <Grid item xs={12} sm={3}>
+                        <a href="https://indiacovidmodel.in/wp-content/uploads/2020/06/User-Policy-Makers.pdf" target="_blank" rel="noreferrer noopener">
                             <div className={classes.case_box}>
-                                <Typography variant="body1" align="center">Scientists & Researchers</Typography>
+                                <Typography variant="body1" align="center">Policy-Makers</Typography>
                             </div>
                         </a>
                     </Grid>
                     <Grid item xs={12} sm={4}>
-                        <a href="https://indiacovidmodel.in/wp-content/uploads/2020/06/User-Policy-Makers.pdf" target="_blank" rel="noreferrer noopener">
+                        <a href="https://indiacovidmodel.in/wp-content/uploads/2020/06/User-Scientists.pdf" target="_blank" rel="noreferrer noopener">
                             <div className={classes.case_box}>
-                                <Typography variant="body1" align="center">Policy-Makers</Typography>
+                                <Typography variant="body1" align="center">Scientists & Researchers</Typography>
                             </div>
                         </a>
                     </Grid>
@@ -965,9 +975,9 @@ export default function Story() {
                                     </Hidden>
                                 </Grid>
                                 <Grid container direction="row" justify="space-between" alignItems="center">
-                                    <img src={generalSrc} className={classes.image_rounded} style={{display: (nextjsVal===0) ? 'block' : 'none', width: '95%'}} />
-                                    <img src={volOpsSrc} className={classes.image_rounded} style={{display: (nextjsVal===1) ? 'block' : 'none', width: '95%'}}/>
-                                    <img src={vfcSrc} className={classes.image_rounded} style={{display: (nextjsVal===2) ? 'block' : 'none', width: '95%'}}/>
+                                    <img src={generalSrc} className={classes.image_rounded_nextjs} style={{display: (nextjsVal===0) ? 'block' : 'none'}}/>
+                                    <img src={volOpsSrc} className={classes.image_rounded_nextjs} style={{display: (nextjsVal===1) ? 'block' : 'none'}}/>
+                                    <img src={vfcSrc} className={classes.image_rounded_nextjs} style={{display: (nextjsVal===2) ? 'block' : 'none'}}/>
                                     <ArrowForwardIosIcon fontSize="small" style={{color: primary, cursor: 'pointer'}} onClick={()=>nextJsImages()}/>
                                 </Grid>
                             </Grid>
