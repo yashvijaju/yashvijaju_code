@@ -184,7 +184,7 @@ export default function Story() {
         </Link>
         <Link href="/startups/a2z">
           <Grid className="Startups" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}}>
-            <img id="A2Z" src="/assets/a2z.jpg" alt="A2Z" title="A2Z" style={imageStyle}/>
+            <img id="A2Z" src="/assets/projects/a2z/a2z_2_1.jpg" alt="A2Z" title="A2Z" style={imageStyle}/>
             <Typography variant="body1" style={titleStyle}>
             A2Z: Founder, Co-Editor
             </Typography>
@@ -316,7 +316,7 @@ export default function Story() {
         </Link>
         <Link href="/tech/metta-capital">
           <Grid className="Web-Dev" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}}>
-            <img id="Metta" src="/assets/Metta.jpg" alt="Metta Capital Advisors LLP" title="Metta Capital Advisors LLP" style={imageStyle}/>
+            <img id="Metta" src="/assets/metta.jpg" alt="Metta Capital Advisors LLP" title="Metta Capital Advisors LLP" style={imageStyle}/>
             <Typography variant="body1" style={titleStyle}>
               MettaCapital: Web Developer, Designer
             </Typography>
