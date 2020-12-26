@@ -692,7 +692,7 @@ export default function Story() {
                 <DividerLeft text="TECH SPECS" id="tech_specs" borderColor={tertiary} textColor={secondary}/>
                 <Grid container className={classes.container}>
                     <Grid item xs={12}>
-                        <iframe src="http://indiacovidmodel.in/tech-specs/" className={classes.iframe}/>
+                        <iframe src="https://web.archive.org/web/20200927203551/https://indiacovidmodel.in/tech-specs/" className={classes.iframe}/>
                     </Grid>
                 </Grid>
 
