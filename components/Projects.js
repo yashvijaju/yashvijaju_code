@@ -312,7 +312,7 @@ export default function Story() {
         </Link>
         <Link href="/tech/metta-capital">
           <Grid className="item" id="Web-Dev, Professional" item xs={10} sm={5} md={3} style={{backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}}>
-            <img id="Metta" src="/assets/metta.jpg" alt="Metta Capital Advisors LLP" title="Metta Capital Advisors LLP" className={classes.image}/>
+            <img id="Metta" src="/assets/projects/metta/metta.jpg" alt="Metta Capital Advisors LLP" title="Metta Capital Advisors LLP" className={classes.image}/>
             <Typography variant="body1" className={classes.item_title}>
               MettaCapital: Web Developer, Designer
             </Typography>
