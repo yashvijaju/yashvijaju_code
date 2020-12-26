@@ -777,28 +777,28 @@ export default function Story() {
 
                 <DividerLeft text="WORK SUMMARY" borderColor={tertiary} textColor={secondary}/>
                 <Grid container direction="column" className={classes.container} style={{color: primary}}>
-                    <Typography variant="body2" style={{marginBottom: '3vh'}}>1.&emsp;&emsp;Understood the logistics and design behind the iSPIRT system</Typography>
+                    <Typography variant="body2" style={{marginBottom: '3vh'}}>1.&emsp;&emsp;Understood the logistics and design behind the iSPIRT Volunteer Platform</Typography>
                     <Typography variant="body2" style={{marginBottom: '3vh'}}>2.&emsp;&emsp;Noted the pain points in the current system and outlined a high-level design for the tool via Trello Boards. The outline was edited and re-edited with feedback from the iSPIRT Leadership.</Typography>
                     <Typography variant="body2" style={{marginBottom: '3vh'}}>3.&emsp;&emsp;Designed a working prototype of the tool on Figma. This, too, was edited time and again with feedback from the iSPIRT Leadership and UI / UX specialists</Typography>
                     <Typography variant="body2" style={{marginBottom: '3vh'}}>4.&emsp;&emsp;Identified and researched the technology stack (Next.js, MongoDB, Azure Active Directory, OAuth 2.0) to build the volunteer management system</Typography>
                     <Typography variant="body2" style={{marginBottom: '3vh'}}>5.&emsp;&emsp;Developed the frontend in accordance with the Figma prototype</Typography>
                     <Typography variant="body2" style={{marginBottom: '3vh'}}>6.&emsp;&emsp;Designed the database schema and mapping between the frontend and backend (highlighting the backend process triggered when interacting with each component in the frontend)</Typography>
                     <Typography variant="body2" style={{marginBottom: '3vh'}} id="current_system">7.&emsp;&emsp;Developed the backend in accordance with the frontend-backend map and database schema</Typography>
-                    <Typography variant="body2" style={{marginBottom: '3vh'}} id="current_system">8.&emsp;&emsp;Beta tested with iSPIRT Leadership (ongoing). Developing iterations with added features and edits to the system based on feedback received.</Typography>
+                    <Typography variant="body2" style={{marginBottom: '3vh'}}>8.&emsp;&emsp;Beta tested with iSPIRT Leadership (ongoing). Developing iterations with added features and edits to the system based on feedback received.</Typography>
                 </Grid>
 
                 <DividerLeft text="CURRENT SYSTEM" borderColor={tertiary} textColor={secondary}/>
                 <Grid container direction="column" className={classes.container}>
                     <Grid container direction="row" justify="space-between" item xs={12} className={classes.product_container} style={{marginTop: '2vh'}}>
                         <Grid item xs={12} sm={2}>
-                            <Typography variant="body2" style={{color: secondary}}><u>iSPIRT System</u><br/><br/></Typography>
+                            <Typography variant="body2" style={{color: secondary}}><u>iSPIRT Volunteer Platform</u><br/><br/></Typography>
                         </Grid>
                         <Grid item xs={12} sm={10}>
                             <Typography variant="body2" style={{color: primary}}>iSPIRT is a not-for-profit think-tank where volunteers come together to build public goods for India. To maintain and manage a volunteer system, iSPIRT classifies its volunteers based on volunteer type, code of ethic level, rooms, pillars, and playgrounds to list a few. <br/><br/>
                             The volunteer types used by iSPIRT include: 1. Balloon Volunteer, 2. Balloon Volunteer Alumni, 3. Volunteer, 4. Core Volunteer, 5. Anchor Volunteer, and 6. Volunteer Alumni. These are “states” a volunteer can go through during their iSPIRT journey.<br/><br/>
                             There are 4 code of ethics levels: 1, 2, 3, and 4. These are analogous to security clearances that determine which “room” a volunteer can volunteer in, and are used to ensure the community’s interests are placed above any volunteer’s private interests.<br/><br/>
                             Rooms, pillars, and playgrounds are metaphors used to classify projects. Volunteers work in rooms — this is where public goods are built. Each room is divided into four pillars (policy, market catalysts, playbooks, platforms). Playgrounds are where entrepreneurs use the public goods built in each of the four pillars.<br/><br/>
-                            The system is governed by the Volunteer Fellowship Council (VFC).</Typography>
+                            The platform is governed by the Volunteer Fellowship Council (VFC).</Typography>
                         </Grid>
                     </Grid>
                     <Grid container direction="row" justify="space-between" item xs={12} className={classes.product_container} style={{marginTop: '7vh'}}>
@@ -810,7 +810,7 @@ export default function Story() {
                             2. Changes in a volunteer’s state need to be manually updated on the excel database and on the iSPIRT website.<br/>
                             3. Every state change needs to be approved by each member of the VFC. This is done via social media channels before any edits are made to the database.<br/>
                             4. Comments can’t be associated with a volunteer’s progress.<br/>
-                            5. The excel database captures only active volunteers and alumni. The system does not track balloon volunteer alumni.</Typography>
+                            5. The excel database captures only active volunteers and alumni. The platform does not track balloon volunteer alumni.</Typography>
                         </Grid>
                     </Grid>
                     <Grid container direction="row" justify="space-between" item xs={12} className={classes.product_container} style={{marginTop: '7vh'}}>
@@ -820,7 +820,7 @@ export default function Story() {
                         <Grid item xs={12} sm={10}>
                             <Typography variant="body2" style={{color: primary}}>1. No public database is available that captures all the active and inactive volunteers. This makes it difficult to network with other volunteers when assistance is required. <br/>
                             2. No data is available surrounding volunteers’ expertise and specializations. This makes it difficult to network with other volunteers when assistance is required.<br/>
-                            3. No single-sign-on (SSO) system across the iSPIRT resources</Typography>
+                            3. No single-sign-on (SSO) across the iSPIRT resources</Typography>
                         </Grid>
                     </Grid>
                     
