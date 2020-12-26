@@ -92,6 +92,9 @@ const useStyles = makeStyles((theme) => ({
             backgroundColor: primary,
             color: tertiary,
         },
+        [theme.breakpoints.down('xs')]: {
+            marginBottom: '1vh',
+        },
     },
     iframe: {
         width: "100%",
