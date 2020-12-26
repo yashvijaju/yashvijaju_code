@@ -127,7 +127,7 @@ export default function Story() {
       <Grid container direction="row" justify="center" style={{padding: '0 4vw 0 4vw'}}>
         <Chip className="filterProjects" id="Featured" variant="outlined" label="Featured" clickable={true} style={(lastFilter==="Featured") ? chipStyleSelected : chipStyle} onClick={()=>filter("Featured","Featured")} icon={<StarOutlineRounded style={{color: (lastFilter==="Featured") ? 'grey' : 'white'}} />}/>
         <Chip className="filterProjects" id="All" variant="outlined" label="All" clickable={true} style={(lastFilter==="All") ? chipStyleSelected : chipStyle} onClick={()=>filter("All","All")}/>
-        <Chip className="filterProjects" id="Web Dev" variant="outlined" label="Web Dev" clickable={true} style={(lastFilter==="Web Dev") ? chipStyleSelected : chipStyle} onClick={()=>filter("Web-Dev","Web Dev")} icon={<LaptopChromebookRounded style={{color: (lastFilter==="Web Dev") ? 'grey' : 'white'}} />} />
+        <Chip className="filterProjects" id="Tech" variant="outlined" label="Tech" clickable={true} style={(lastFilter==="Tech") ? chipStyleSelected : chipStyle} onClick={()=>filter("Tech","Tech")} icon={<LaptopChromebookRounded style={{color: (lastFilter==="Tech") ? 'grey' : 'white'}} />} />
         <Chip className="filterProjects" id="Startups" variant="outlined" label="Startups" clickable={true} style={(lastFilter==="Startups") ? chipStyleSelected : chipStyle} onClick={()=>filter("Startups","Startups")} icon={<SearchRounded style={{color: (lastFilter==="Startups") ? 'grey' : 'white'}} />}/>
         <Chip className="filterProjects" id="Digital Art" variant="outlined" label="Digital Art" clickable={true} style={(lastFilter==="Digital Art") ? chipStyleSelected : chipStyle} onClick={()=>filter("Digital Art","Digital Art")} icon={<FormatSizeRounded style={{color: (lastFilter==="Digital Art") ? 'grey' : 'white'}} />}/>
         <Chip className="filterProjects" id="Traditional Art" variant="outlined" label="Traditional Art" clickable={true} style={(lastFilter==="Traditional Art") ? chipStyleSelected : chipStyle} onClick={()=>filter("Traditional Art","Traditional Art")}  icon={<ColorLensRounded style={{color: (lastFilter==="Traditional Art") ? 'grey' : 'white'}} />} />
@@ -136,13 +136,13 @@ export default function Story() {
       </Grid>
       <Grid container direction="row" justify="center" style={{marginTop: '1vh'}}>
         <Link href="/startups/crave">
-          <Grid className="item" id="Web-Dev, Startups, Featured" item xs={10} sm={5} md={3} style={itemStyle}>
+          <Grid className="item" id="Tech, Startups, Featured" item xs={10} sm={5} md={3} style={itemStyle}>
             <img id="Crave" src="/assets/projects/crave/crave.jpg" alt="Crave" title="Crave" className={classes.image}/>
             <Typography variant="body1" className={classes.item_title}>
               Crave: Front-End Developer, Founder
             </Typography>
             <Typography variant="caption" className={classes.item_desc}>
-            Crave is a delivery service specialising in bringing international food to university students at affordable rates. I specialised as the front-end web-developer, using the ReactJS library with a Materialize framework to build a Progressive Web Application. The website was locally hosted fo...
+            Crave is a delivery service specialising in bringing international food to university students at affordable rates. I specialised as the front-end Techeloper, using the ReactJS library with a Materialize framework to build a Progressive Web Application. The website was locally hosted fo...
             </Typography>
           </Grid>
         </Link>
@@ -202,10 +202,10 @@ export default function Story() {
           </Grid>
         </Link>
         <Link href="/tech/portfolio">
-          <Grid className="item" id="Web-Dev, Digital Art, Featured" item xs={10} sm={5} md={3} style={itemStyle}>
+          <Grid className="item" id="Tech, Digital Art, Featured" item xs={10} sm={5} md={3} style={itemStyle}>
             <img id="Portfolio" src="/assets/projects/portfolio/portfolio1_0.jpg" alt="Portfolio" title="Portfolio" className={classes.image}/>
             <Typography variant="body1" className={classes.item_title}>
-              (this): Web Developer, Designer
+              (this): Techeloper, Designer
             </Typography>
             <Typography variant="caption" className={classes.item_desc}>
             I designed this website to document my projects, including and extending beyond the realms of Computer Science. I developed this website via the ReactJS library and a Material UI framewo...
@@ -312,13 +312,13 @@ export default function Story() {
           </Grid>
         </Link>
         <Link href="/tech/metta-capital">
-          <Grid className="item" id="Web-Dev, Professional" item xs={10} sm={5} md={3} style={itemStyle}>
+          <Grid className="item" id="Tech, Professional" item xs={10} sm={5} md={3} style={itemStyle}>
             <img id="Metta" src="/assets/projects/metta/metta.jpg" alt="Metta Capital Advisors LLP" title="Metta Capital Advisors LLP" className={classes.image}/>
             <Typography variant="body1" className={classes.item_title}>
-              MettaCapital: Web Developer, Designer
+              MettaCapital: Techeloper, Designer
             </Typography>
             <Typography variant="caption" className={classes.item_desc}>
-            MettaCapital is a boutique investment bank. I specialised as the sole web-developer, using the ReactJS library with a Material UI framework to develop their website from the ground u...
+            MettaCapital is a boutique investment bank. I specialised as the sole Techeloper, using the ReactJS library with a Material UI framework to develop their website from the ground u...
             </Typography>
           </Grid>
         </Link>
