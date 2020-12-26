@@ -33,6 +33,9 @@ const useStyles = makeStyles((theme) => ({
         padding: '0 0 1vh',
         margin: '0 0 5vh',
         color: primary,
+        '&:hover': {
+            color: secondary,
+        }
     },
     text_container: {
         padding: '3vw',
@@ -193,7 +196,7 @@ function TechNav(props) {
 export default function Story() {
     const classes = useStyles();
 
-    const [value, setValue] = useState(0);
+    const [value, setValue] = useState(1);
 
     const [nextjsVal, setNextjsValue] = useState(0);
     const [typeSrc, setTypeSrc] = useState("> login")
@@ -629,12 +632,12 @@ export default function Story() {
 
             <Grid container justify="space-between" className={classes.container}>
                 <Grid item xs={5} container justify="flex-end">
-                    <Typography variant="body2" className={classes.inner_nav} style={{borderBottom: (value===0) ? '5px solid #9E0D1B' : '0px solid #9E0D1B'}} onClick={()=>setValue(0)}>
+                    <Typography variant="body2" style={{borderBottom: (value===0) ? '5px solid #9E0D1B' : '0px solid #9E0D1B', fontWeight: (value===0) ? 'bold' : 'normal'}} className={classes.inner_nav} onClick={()=>setValue(0)}>
                         Project 1 : Predictive Covid Model
                     </Typography>
                 </Grid>
                 <Grid item xs={5} container justify="flex-start">
-                    <Typography variant="body2" className={classes.inner_nav} style={{borderBottom: (value===1) ? '5px solid #9E0D1B' : '0px solid #9E0D1B'}} onClick={()=>setValue(1)}>
+                    <Typography variant="body2" style={{borderBottom: (value===1) ? '5px solid #9E0D1B' : '0px solid #9E0D1B', fontWeight: (value===1) ? 'bold' : 'normal'}} className={classes.inner_nav} onClick={()=>setValue(1)}>
                         Project 2 : Volunteer Management Tool
                     </Typography>
                 </Grid>
@@ -1034,84 +1037,87 @@ export default function Story() {
                         </Typography>
 
                         <Hidden xsDown>
-                            <Grid container direction="row" justify="space-between" spacing={5} style={{margin: '2vh 0 0'}}>
-                                <Grid item xs={6} style={{margin: '2vh 0 0', backgroundColor: tertiary_25, borderRadius: '20px', padding: '2vh'}}>
-                                    <Typography variant="body2" className={classes.text}>
-                                        <b>Volunteer Schema:</b> <br/><br/>
-                                    </Typography>
-                                    <Typography variant="caption" className={classes.text}>
-                                        “_id” : “Yashvi-Jaju” <br/>
-                                        “Name” : “Yashvi Jaju” <br/>
-                                        “First Name” : “Yashvi” <br/>
-                                        “Last Name” : “Jaju” <br/>
-                                        “User ID” : “YashviJaju@ispirt.in” <br/>
-                                        “Admin Settings Public” :  <br/>
-                                        &emsp;“Volunteer Type” : “Balloon Volunteer” <br/>
-                                        &emsp;“Code of Ethics Level” : “1” <br/>
-                                        &emsp;“Status” : “Active” <br/>
-                                        &emsp;“External Positioning Title” : “None” <br/>
-                                        &emsp;“Email Address” : “yashvi@ispirt.in” <br/>
-                                        &emsp;“Mobile Number” : “123456789” <br/>
-                                        &emsp;“Location” : “Mumbai” <br/>
-                                        “Admin Settings Private” : <br/>
-                                        &emsp;“New User” : “true” <br/>
-                                        &emsp;“Google Group Membership” : “volunteer@ispirt.in” <br/>
-                                        &emsp;“Google Sub-Group Membership” : “None” <br/>
-                                        &emsp;“Auth” : “VFC” <br/>
-                                        &emsp;“History” : <br/>
-                                        &emsp;&emsp; 0 : “Date” : “21/9/2020” <br/>
-                                        &emsp;&emsp;&emsp;“From” : “Non Volunteer” <br/>
-                                        &emsp;&emsp;&emsp;“To” : “Core Volunteer” <br/>
-                                        &emsp;&emsp;&emsp;“Suggested By” : “Z Admin” <br/>
-                                        &emsp;&emsp;&emsp;“Approval Count” : “0” <br/>
-                                        &emsp;&emsp;&emsp;“Comments” : “Added to the iSPIRT community on 21/9/2020” <br/>
-                                        &emsp;“VFC Approvals” : <br/>
-                                        &emsp;&emsp; 0 :  <br/>
-                                        &emsp;“VFC Activity” : <br/>
-                                        &emsp;&emsp; 0 : “Volunteer Name” : “Volunteer One” <br/>
-                                        &emsp;&emsp;&emsp;“Volunteer ID” : “Volunteer-One” <br/>
-                                        &emsp;&emsp;&emsp;“Volunteer Type” : “Balloon Volunteer” <br/>
-                                        &emsp;&emsp;&emsp;“Date” : “28/9/2020” <br/>
-                                        &emsp;&emsp;&emsp;“Type” : “create new user” <br/>
-                                        &emsp;&emsp; 1 : “Volunteer Name” : “Volunteer Two” <br/>
-                                        &emsp;&emsp;&emsp;“Volunteer ID” : “Volunteer-Two” <br/>
-                                        &emsp;&emsp;&emsp;“Updated Content” : “None” <br/>
-                                        &emsp;&emsp;&emsp;“Original Content” : “Temp-Volunteer” <br/>
-                                        &emsp;&emsp;&emsp;“Tag” : “Mentees” <br/>
-                                        &emsp;&emsp;&emsp;“Date” : “1/10/2020” <br/>
-                                        &emsp;&emsp;&emsp;“Type” : “edit volunteer details” <br/>
-                                        &emsp;&emsp; 2 : “Volunteer Type” : “Non Volunteer” <br/>
-                                        &emsp;&emsp;&emsp;“Updated Content” : “There has been an update in your iSPIRT volunteer status.” <br/>
-                                        &emsp;&emsp;&emsp;“Original Content” : “Namaste” <br/>
-                                        &emsp;&emsp;&emsp;“Category” : “State Change” <br/>
-                                        &emsp;&emsp;&emsp;“Date” : “1/10/2020” <br/>
-                                        &emsp;&emsp;&emsp;“Type” : “edit global email settings <br/>
-                                        &emsp;“Labels” :  <br/>
-                                        &emsp;&emsp; 0 : “Balloon Volunteer” <br/>
-                                        &emsp;&emsp; 1 : “Yellow” <br/>
-                                        “Personal Profile” : <br/>
-                                        &emsp;“Mentees” :  <br/>
-                                        &emsp;&emsp; 0 : “_id” : “Volunteer-One” <br/>
-                                        &emsp;&emsp;&emsp;“Name” : “Volunteer One” <br/>
-                                        &emsp;&emsp; 1 : “_id” : “Volunteer-Two” <br/>
-                                        &emsp;&emsp;&emsp;“Name” : “Volunteer Two” <br/>
-                                        &emsp;“Mentors” :  <br/>
-                                        &emsp;&emsp; 0 : “_id” : “Volunteer-Three” <br/>
-                                        &emsp;&emsp;&emsp;“Name” : “Volunteer Three” <br/>
-                                        &emsp;&emsp; 1 : “_id” : “Volunteer-Four” <br/>
-                                        &emsp;&emsp;&emsp;“Name” : “Volunteer Four” <br/>
-                                        &emsp;“Rooms” :  <br/>
-                                        &emsp;&emsp; 0 : “Zastra” <br/>
-                                        &emsp;&emsp; 1 : “India Covid Model” <br/>
-                                        &emsp;“Labels” :  <br/>
-                                        &emsp;&emsp; 0 : “Developer” <br/>
-                                        &emsp;&emsp; 1 : “UI / UX Designer” <br/>
-                                        &emsp;&emsp; 2 : “Kathak” <br/>
-                                        &emsp;“Profile Image” :  <br/>
-                                        &emsp;&emsp; “Small” : “/images/ispirt_small.svg” <br/>
-                                        &emsp;&emsp; “HD” : “/images/ispirt_hd.svg” <br/>
-                                        &emsp;“About Me” : “Hi! I am Yashvi Jaju, a balloon volunteer with iSPIRT.” <br/>
-                                    </Typography>
+                            <Grid container direction="row" spacing={3} style={{margin: '2vh 0 0'}}>
+                                <Grid item xs={6} container direction="column" style={{marginLeft: '-1vw'}}>
+                                    <Grid style={{margin: '0vh 0 0', backgroundColor: tertiary_25, borderRadius: '20px', padding: '2vh'}}>
+                                        <Typography variant="body2" className={classes.text}>
+                                            <b>Volunteer Schema:</b> <br/><br/>
+                                        </Typography>
+                                        <Typography variant="caption" className={classes.text}>
+                                            “_id” : “Yashvi-Jaju” <br/>
+                                            “Name” : “Yashvi Jaju” <br/>
+                                            “First Name” : “Yashvi” <br/>
+                                            “Last Name” : “Jaju” <br/>
+                                            “User ID” : “YashviJaju@ispirt.in” <br/>
+                                            “Admin Settings Public” :  <br/>
+                                            &emsp;“Volunteer Type” : “Balloon Volunteer” <br/>
+                                            &emsp;“Code of Ethics Level” : “1” <br/>
+                                            &emsp;“Status” : “Active” <br/>
+                                            &emsp;“External Positioning Title” : “None” <br/>
+                                            &emsp;“Email Address” : “yashvi@ispirt.in” <br/>
+                                            &emsp;“Mobile Number” : “123456789” <br/>
+                                            &emsp;“Location” : “Mumbai” <br/>
+                                            “Admin Settings Private” : <br/>
+                                            &emsp;“New User” : “true” <br/>
+                                            &emsp;“Google Group Membership” : “volunteer@ispirt.in” <br/>
+                                            &emsp;“Google Sub-Group Membership” : “None” <br/>
+                                            &emsp;“Auth” : “VFC” <br/>
+                                            &emsp;“History” : <br/>
+                                            &emsp;&emsp; 0 : “Date” : “21/9/2020” <br/>
+                                            &emsp;&emsp;&emsp;“From” : “Non Volunteer” <br/>
+                                            &emsp;&emsp;&emsp;“To” : “Core Volunteer” <br/>
+                                            &emsp;&emsp;&emsp;“Suggested By” : “Z Admin” <br/>
+                                            &emsp;&emsp;&emsp;“Approval Count” : “0” <br/>
+                                            &emsp;&emsp;&emsp;“Comments” : “Added to the iSPIRT community on 21/9/2020” <br/>
+                                            &emsp;“VFC Approvals” : <br/>
+                                            &emsp;&emsp; 0 :  <br/>
+                                            &emsp;“VFC Activity” : <br/>
+                                            &emsp;&emsp; 0 : “Volunteer Name” : “Volunteer One” <br/>
+                                            &emsp;&emsp;&emsp;“Volunteer ID” : “Volunteer-One” <br/>
+                                            &emsp;&emsp;&emsp;“Volunteer Type” : “Balloon Volunteer” <br/>
+                                            &emsp;&emsp;&emsp;“Date” : “28/9/2020” <br/>
+                                            &emsp;&emsp;&emsp;“Type” : “create new user” <br/>
+                                            &emsp;&emsp; 1 : “Volunteer Name” : “Volunteer Two” <br/>
+                                            &emsp;&emsp;&emsp;“Volunteer ID” : “Volunteer-Two” <br/>
+                                            &emsp;&emsp;&emsp;“Updated Content” : “None” <br/>
+                                            &emsp;&emsp;&emsp;“Original Content” : “Temp-Volunteer” <br/>
+                                            &emsp;&emsp;&emsp;“Tag” : “Mentees” <br/>
+                                            &emsp;&emsp;&emsp;“Date” : “1/10/2020” <br/>
+                                            &emsp;&emsp;&emsp;“Type” : “edit volunteer details” <br/>
+                                            &emsp;&emsp; 2 : “Volunteer Type” : “Non Volunteer” <br/>
+                                            &emsp;&emsp;&emsp;“Updated Content” : “There has been an update in your iSPIRT volunteer status.” <br/>
+                                            &emsp;&emsp;&emsp;“Original Content” : “Namaste” <br/>
+                                            &emsp;&emsp;&emsp;“Category” : “State Change” <br/>
+                                            &emsp;&emsp;&emsp;“Date” : “1/10/2020” <br/>
+                                            &emsp;&emsp;&emsp;“Type” : “edit global email settings <br/>
+                                            &emsp;“Labels” :  <br/>
+                                            &emsp;&emsp; 0 : “Balloon Volunteer” <br/>
+                                            &emsp;&emsp; 1 : “Yellow” <br/>
+                                            “Personal Profile” : <br/>
+                                            &emsp;“Mentees” :  <br/>
+                                            &emsp;&emsp; 0 : “_id” : “Volunteer-One” <br/>
+                                            &emsp;&emsp;&emsp;“Name” : “Volunteer One” <br/>
+                                            &emsp;&emsp; 1 : “_id” : “Volunteer-Two” <br/>
+                                            &emsp;&emsp;&emsp;“Name” : “Volunteer Two” <br/>
+                                            &emsp;“Mentors” :  <br/>
+                                            &emsp;&emsp; 0 : “_id” : “Volunteer-Three” <br/>
+                                            &emsp;&emsp;&emsp;“Name” : “Volunteer Three” <br/>
+                                            &emsp;&emsp; 1 : “_id” : “Volunteer-Four” <br/>
+                                            &emsp;&emsp;&emsp;“Name” : “Volunteer Four” <br/>
+                                            &emsp;“Rooms” :  <br/>
+                                            &emsp;&emsp; 0 : “Zastra” <br/>
+                                            &emsp;&emsp; 1 : “India Covid Model” <br/>
+                                            &emsp;“Labels” :  <br/>
+                                            &emsp;&emsp; 0 : “Developer” <br/>
+                                            &emsp;&emsp; 1 : “UI / UX Designer” <br/>
+                                            &emsp;&emsp; 2 : “Kathak” <br/>
+                                            &emsp;“Profile Image” :  <br/>
+                                            &emsp;&emsp; “Small” : “/images/ispirt_small.svg” <br/>
+                                            &emsp;&emsp; “HD” : “/images/ispirt_hd.svg” <br/>
+                                            &emsp;“About Me” : “Hi! I am Yashvi Jaju, a balloon volunteer with iSPIRT.” <br/>
+                                            <br/>
+                                        </Typography>
+                                    </Grid>
                                 </Grid>
                                 <Grid item xs={6} container direction="column">
                                     <Grid item style={{margin: '0vh 0 0', backgroundColor: tertiary_25, borderRadius: '20px', padding: '2vh'}}>
