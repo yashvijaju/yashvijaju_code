@@ -22,19 +22,20 @@ export default function AboutMe() {
                             &emsp; &emsp;> Innovator* Yashvi = new Innovator(); <br/>
                             &emsp; &emsp;> Yashvi-><span style={descriptor}>lastName</span> = Jaju; <br/> 
                             <br/>
-                            &emsp; &emsp;> Yashvi-><span style={descriptor}>university</span> = University of <br/> &emsp; &emsp; Southern California '23; <br/>
-                            &emsp; &emsp;> Yashvi-><span style={descriptor}>major</span> = Computer Science and <br/> &emsp; &emsp; Business Administration; <br/>
+                            &emsp; &emsp;> Yashvi-><span style={descriptor}>university</span> = University of <br/> &emsp; &emsp; Southern California '24 <br/> &emsp; &emsp; (rising sophomore, but on a gap year); <br/>
+                            &emsp; &emsp;> Yashvi-><span style={descriptor}>major</span> = Computer Science <br/> &emsp; &emsp; and Business Administration; <br/>
                             &emsp; &emsp;> Yashvi-><span style={descriptor}>minor</span> = Entrepreneurship; <br/>
                             <br/>
-                            
-                            &emsp; &emsp;> Yashvi-><span style={descriptor}>skills</span> = ["C++", "ReactJs", <br/> &emsp; &emsp; "Material UI", "Git", "Adobe Photoshop", <br/> &emsp; &emsp; "Typography"]; <br/>
-                            &emsp; &emsp;> Yashvi-><span style={descriptor}>interests</span> = ["Code", "Create", <br/> &emsp; &emsp;"Bake", "Quill", "Paint", "Kathak", <br/> &emsp; &emsp;"Volunteer", "Learn", "Photo Diaries"]; <br/>
+                            &emsp; &emsp;> Yashvi-><span style={descriptor}>skills</span> = ["C++", "JavaScript", <br/> &emsp; &emsp; "React", "Next.js", "MongoDB", <br/> &emsp; &emsp; "Active Directory", "Material UI", "Git", <br/> &emsp; &emsp; "Adobe CC", "Typography"]; <br/>
+                            &emsp; &emsp;> Yashvi-><span style={descriptor}>interests</span> = ["Code", "Bake", <br/> &emsp; &emsp;"Create", "Paint", "Learn", "Read", <br/> &emsp; &emsp;"Write", "Dance (Kathak)", "Volunteer", <br/> &emsp; &emsp; "Save Photo Diaries"]; <br/>
                             <br/>
-                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyReading</span> = When <br/> &emsp; &emsp; Breath Becomes Air; <br/>
-                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyLearning</span> = Web-<br/> &emsp; &emsp;Development and UI-UX frameworks; <br/>
-                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyBuilding</span> = Flask <br/> &emsp; &emsp;-based Dash website for COVID-19; <br/>
-                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyDesigning</span> = 100 <br/> &emsp; &emsp;Days of Design (buttons); <br/>
+                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyReading</span> = Atlas <br/> &emsp; &emsp; Shrugged (Ayn Rand); <br/>
+                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyLearning</span> = Full<br/> &emsp; &emsp;Stack Development; <br/>
+                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyBuilding</span> = iSPIRT <br/> &emsp; &emsp;Volunteer Management Tool; <br/>
+                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyDesigning</span> = My <br/> &emsp; &emsp;Portfolio (this); <br/>
+                            <br/>
                             &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyInterningAt</span> = iSPIRT <br/> &emsp; &emsp;(think-tank); <br/>
+                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyActiveAt</span> = USC <br/> &emsp; &emsp; WorkBench (venture studio), <br/> &emsp; &emsp; USC Makers (engineering), <br/> &emsp; &emsp; USC LavaLab (entrepreneurship); <br/>
                             <br/>
                             &emsp; &emsp;> Yashvi-><span style={descriptor}>Resume</span> = <a href="https://drive.google.com/file/d/1UYa99LI9qB2Mj7QITz1ezya8gDcA9Bd7" target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none', fontWeight: 'lighter', fontFamily: font, color: 'black'}}><AttachFile fontSize="small" style={{color:'grey'}}/> click to open; <br/>
                             </a>
@@ -52,19 +53,22 @@ export default function AboutMe() {
                             &emsp; &emsp;> Innovator* Yashvi = new Innovator(); <br/>
                             &emsp; &emsp;> Yashvi-><span style={descriptor}>lastName</span> = Jaju; <br/> 
                             <br/>
-                            &emsp; &emsp;> Yashvi-><span style={descriptor}>university</span> = University of Southern California '23; <br/>
+                            &emsp; &emsp;> Yashvi-><span style={descriptor}>university</span> = University of Southern California '24 (rising sophomore, but on a gap year); <br/>
                             &emsp; &emsp;> Yashvi-><span style={descriptor}>major</span> = Computer Science and Business Administration; <br/>
                             &emsp; &emsp;> Yashvi-><span style={descriptor}>minor</span> = Entrepreneurship; <br/>
                             <br/>
                             
-                            &emsp; &emsp;> Yashvi-><span style={descriptor}>skills</span> = ["C++", "ReactJs", "Material UI", "Git", "Adobe Photoshop", "Typography"]; <br/>
-                            &emsp; &emsp;> Yashvi-><span style={descriptor}>interests</span> = ["Code", "Create", "Bake", "Quill", "Paint", "Kathak", "Social Volunteer", "Learn", "Photo Diaries"]; <br/>
+                            &emsp; &emsp;> Yashvi-><span style={descriptor}>skills</span> = ["C++", "JavaScript", "React", "Next.js", "MongoDB", "Active Directory", "Material UI", "Git", "Adobe CC", "Typography"]; <br/>
+                            &emsp; &emsp;> Yashvi-><span style={descriptor}>interests</span> = ["Coding", "Creating", "Baking", "Painting", "Learning", "Reading", "Writing", "Dancing (Kathak)", "Volunteering", "Saving Photo Diaries"]; <br/>
                             <br/>
-                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyReading</span> = When Breath Becomes Air; <br/>
-                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyLearning</span> = Data-Visualisation Tools (Plotly: Dash); <br/>
-                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyBuilding</span> = Flask-based Dash website for COVID-19; <br/>
-                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyDesigning</span> = 100 Days of Design (buttons); <br/>
+                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyReading</span> = Atlas Shrugged (Ayn Rand); <br/>
+                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyLearning</span> = Full Stack Development; <br/>
+                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyBuilding</span> = iSPIRT Volunteer Management Tool; <br/>
+                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyDesigning</span> = My Portfolio (this); <br/>
+                            <br/>
                             &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyInterningAt</span> = iSPIRT (think-tank); <br/>
+                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyActiveAt</span> = USC WorkBench (venture studio), USC Makers (engineering), USC LavaLab (entrepreneurship); <br/>
+
                             <br/>
                             &emsp; &emsp;> Yashvi-><span style={descriptor}>Resume</span> = <a href="https://drive.google.com/file/d/1UYa99LI9qB2Mj7QITz1ezya8gDcA9Bd7" target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none', fontWeight: 'lighter', fontFamily: font, color: 'black'}}><AttachFile fontSize="small" style={{color:'grey'}}/> click to open; <br/>
                             </a>
