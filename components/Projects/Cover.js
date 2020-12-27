@@ -74,3 +74,17 @@ export function Cover(props) {
         </>
     )
 }; 
+
+export function CustomCover(props) {       
+    background = props.bg_color;
+
+    const classes = useStyles();
+
+    return(
+        <>
+            <Grid className={classes.container} container direction="column" justify="center" style={{backgroundColor: background}}>
+                {props.content}
+            </Grid>
+        </>
+    )
+}; 

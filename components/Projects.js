@@ -128,7 +128,7 @@ export default function Story() {
         <Chip className="filterProjects" id="Featured" variant="outlined" label="Featured" clickable={true} style={(lastFilter==="Featured") ? chipStyleSelected : chipStyle} onClick={()=>filter("Featured","Featured")} icon={<StarOutlineRounded style={{color: (lastFilter==="Featured") ? 'grey' : 'white'}} />}/>
         <Chip className="filterProjects" id="All" variant="outlined" label="All" clickable={true} style={(lastFilter==="All") ? chipStyleSelected : chipStyle} onClick={()=>filter("All","All")}/>
         <Chip className="filterProjects" id="Tech" variant="outlined" label="Tech" clickable={true} style={(lastFilter==="Tech") ? chipStyleSelected : chipStyle} onClick={()=>filter("Tech","Tech")} icon={<LaptopChromebookRounded style={{color: (lastFilter==="Tech") ? 'grey' : 'white'}} />} />
-        <Chip className="filterProjects" id="Startups" variant="outlined" label="Startups" clickable={true} style={(lastFilter==="Startups") ? chipStyleSelected : chipStyle} onClick={()=>filter("Startups","Startups")} icon={<SearchRounded style={{color: (lastFilter==="Startups") ? 'grey' : 'white'}} />}/>
+        <Chip className="filterProjects" id="Entrepreneurship" variant="outlined" label="Entrepreneurship" clickable={true} style={(lastFilter==="Entrepreneurship") ? chipStyleSelected : chipStyle} onClick={()=>filter("Entrepreneurship","Entrepreneurship")} icon={<SearchRounded style={{color: (lastFilter==="Entrepreneurship") ? 'grey' : 'white'}} />}/>
         <Chip className="filterProjects" id="Digital Art" variant="outlined" label="Digital Art" clickable={true} style={(lastFilter==="Digital Art") ? chipStyleSelected : chipStyle} onClick={()=>filter("Digital Art","Digital Art")} icon={<FormatSizeRounded style={{color: (lastFilter==="Digital Art") ? 'grey' : 'white'}} />}/>
         <Chip className="filterProjects" id="Traditional Art" variant="outlined" label="Traditional Art" clickable={true} style={(lastFilter==="Traditional Art") ? chipStyleSelected : chipStyle} onClick={()=>filter("Traditional Art","Traditional Art")}  icon={<ColorLensRounded style={{color: (lastFilter==="Traditional Art") ? 'grey' : 'white'}} />} />
         <Chip className="filterProjects" id="Professional" variant="outlined" label="Professional" clickable={true} style={(lastFilter==="Professional") ? chipStyleSelected : chipStyle} onClick={()=>filter("Professional","Professional")} icon={<WorkOutlineRounded style={{color: (lastFilter==="Professional") ? 'grey' : 'white'}} />}/>
@@ -136,13 +136,13 @@ export default function Story() {
       </Grid>
       <Grid container direction="row" justify="center" style={{marginTop: '1vh'}}>
         <Link href="/startups/crave">
-          <Grid className="item" id="Tech, Startups, Featured" item xs={10} sm={5} md={3} style={itemStyle}>
+          <Grid className="item" id="Tech, Entrepreneurship, Featured" item xs={10} sm={5} md={3} style={itemStyle}>
             <img id="Crave" src="/assets/projects/crave/crave.jpg" alt="Crave" title="Crave" className={classes.image}/>
             <Typography variant="body1" className={classes.item_title}>
               Crave: Front-End Developer, Founder
             </Typography>
             <Typography variant="caption" className={classes.item_desc}>
-            Crave is a delivery service specialising in bringing international food to university students at affordable rates. I specialised as the front-end Techeloper, using the ReactJS library with a Materialize framework to build a Progressive Web Application. The website was locally hosted fo...
+            Crave is a delivery service specialising in bringing international food to university students at affordable rates. I specialised as the front-end Developer, using the ReactJS library with a Materialize framework to build a Progressive Web Application. The website was locally hosted fo...
             </Typography>
           </Grid>
         </Link>
@@ -158,7 +158,7 @@ export default function Story() {
           </Grid>
         </Link>
         <Link href="/startups/pride-for-labour">
-          <Grid className="item" id="Startups" item xs={10} sm={5} md={3} style={itemStyle}>
+          <Grid className="item" id="Entrepreneurship, Featured" item xs={10} sm={5} md={3} style={itemStyle}>
             <img id="Pride For Labor" src="/assets/projects/pride-for-labour/gratitude_4.jpg" alt="Pride For Labour" title="Pride For Labour" className={classes.image}/>
             <Typography variant="body1" className={classes.item_title}>
             Pride For Labour: Founder
@@ -180,7 +180,7 @@ export default function Story() {
           </Grid>
         </Link>
         <Link href="/startups/a2z">
-          <Grid className="item" id="Startups" item xs={10} sm={5} md={3} style={itemStyle}>
+          <Grid className="item" id="Entrepreneurship" item xs={10} sm={5} md={3} style={itemStyle}>
             <img id="A2Z" src="/assets/projects/a2z/a2z_2_1.jpg" alt="A2Z" title="A2Z" className={classes.image}/>
             <Typography variant="body1" className={classes.item_title}>
             A2Z: Founder, Co-Editor
@@ -205,7 +205,7 @@ export default function Story() {
           <Grid className="item" id="Tech, Digital Art, Featured" item xs={10} sm={5} md={3} style={itemStyle}>
             <img id="Portfolio" src="/assets/projects/portfolio/portfolio1_0.jpg" alt="Portfolio" title="Portfolio" className={classes.image}/>
             <Typography variant="body1" className={classes.item_title}>
-              (this): Techeloper, Designer
+              (this): Developer, Designer
             </Typography>
             <Typography variant="caption" className={classes.item_desc}>
             I designed this website to document my projects, including and extending beyond the realms of Computer Science. I developed this website via the ReactJS library and a Material UI framewo...
@@ -213,7 +213,7 @@ export default function Story() {
           </Grid>
         </Link>
         <Link href="/art/quilling">
-          <Grid className="item" id="Startups, Traditional Art" item xs={10} sm={5} md={3} style={itemStyle}>
+          <Grid className="item" id="Entrepreneurship, Traditional Art" item xs={10} sm={5} md={3} style={itemStyle}>
             <img id="Quilling" src={"/assets/projects/quilling/quilling_10.jpg"} alt="Quilling" title="Quilling" className={classes.image}/>
             <Typography variant="body1" className={classes.item_title}>
               Quilling: Artist, Startup
@@ -224,7 +224,7 @@ export default function Story() {
           </Grid>
         </Link>
         <Link href="/tech/schedule-generator">
-          <Grid className="item" id="Side Projects, Featured" item xs={10} sm={5} md={3} style={itemStyle}>
+          <Grid className="item" id="Side Projects, Featured, Tech" item xs={10} sm={5} md={3} style={itemStyle}>
             <img id="Trojan Hacks Schedule Generator" src="/assets/projects/schedule-generator/schedule-generator1.png" alt="Trojan Hacks Schedule Generator" title="Trojan Hacks Schedule Generator" className={classes.image}/>
             <Typography variant="body1" className={classes.item_title}>
               Automated Schedule Generator: Developer
@@ -268,7 +268,7 @@ export default function Story() {
           </Grid>
         </Link>
         <Link href="/work/ispirt">
-          <Grid className="item" id="Professional, Featured" item xs={10} sm={5} md={3} style={itemStyle}>
+          <Grid className="item" id="Professional, Tech, Featured" item xs={10} sm={5} md={3} style={itemStyle}>
             <img id="iSPIRT" src="/assets/ispirt.jpg" alt="iSPIRT" title="iSPIRT" className={classes.image}/>
             <Typography variant="body1" className={classes.item_title}>
               iSPIRT: Software Intern
@@ -290,7 +290,7 @@ export default function Story() {
           </Grid>
         </Link>
         <Link href="/tech/first-robotics-competition">
-          <Grid className="item" id="Side Projects" item xs={10} sm={5} md={3} style={itemStyle}>
+          <Grid className="item" id="Tech, Side Projects" item xs={10} sm={5} md={3} style={itemStyle}>
             <img id="FRC" src="/assets/projects/first-robotics-competiton/frc.jpg" alt="FRC" title="FRC" className={classes.image}/>
             <Typography variant="body1" className={classes.item_title}>
               First Robotics Competition: Member, Safety Captain 
@@ -301,7 +301,7 @@ export default function Story() {
           </Grid>
         </Link>
         <Link href="/work/mcdonald">
-          <Grid className="item" id="Professional" item xs={10} sm={5} md={3} style={itemStyle}>
+          <Grid className="item" id="Professional, Tech" item xs={10} sm={5} md={3} style={itemStyle}>
             <img id="McDonald's Hardcastle Restaurants Private Limited" src="/assets/mcdonald.png" alt="McDonald's Hardcastle Restaurants Private Limited" title="McDonald's Hardcastle Restaurants Private Limited" className={classes.image}/>
             <Typography variant="body1" className={classes.item_title}>
               McDonald's Hardcastle Restaurants Private Limited: Product Development Intern
@@ -312,18 +312,18 @@ export default function Story() {
           </Grid>
         </Link>
         <Link href="/tech/metta-capital">
-          <Grid className="item" id="Tech, Professional" item xs={10} sm={5} md={3} style={itemStyle}>
+          <Grid className="item" id="Tech, Professional, Digital Art" item xs={10} sm={5} md={3} style={itemStyle}>
             <img id="Metta" src="/assets/projects/metta/metta.jpg" alt="Metta Capital Advisors LLP" title="Metta Capital Advisors LLP" className={classes.image}/>
             <Typography variant="body1" className={classes.item_title}>
-              MettaCapital: Techeloper, Designer
+              Metta Capital: Developer, Designer
             </Typography>
             <Typography variant="caption" className={classes.item_desc}>
-            MettaCapital is a boutique investment bank. I specialised as the sole Techeloper, using the ReactJS library with a Material UI framework to develop their website from the ground u...
+            Metta Capital is a boutique investment bank. I specialised as the sole Developer, using the ReactJS library with a Material UI framework to develop their website from the ground u...
             </Typography>
           </Grid>
         </Link>
         <Link href="/work/bookmyshow">
-          <Grid className="item" id="Professional" item xs={10} sm={5} md={3} style={itemStyle}>
+          <Grid className="item" id="Professional, Tech" item xs={10} sm={5} md={3} style={itemStyle}>
             <img id="BookMyShow" src="/assets/bms.png" alt="BookMyShow" title="BookMyShow" className={classes.image}/>
             <Typography variant="body1" className={classes.item_title}>
               BookMyShow: Software Analyst Intern
