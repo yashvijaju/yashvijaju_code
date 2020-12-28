@@ -74,7 +74,6 @@ export default function Story() {
     else {
       x = document.getElementsByClassName("item");
       for (j = 0; j < x.length; j++) {
-        console.log(x[j]);
         if (x[j].id.includes(props)) {
           x[j].style.display = 'inline';
         }
