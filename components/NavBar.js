@@ -52,9 +52,23 @@ export default function NavBar() {
                                 <Typography variant="caption" style={{color:"#000000", fontFamily: font, cursor: 'pointer', paddingRight: '4vw', fontWeight:'lighter'}} onClick={()=>handleScroll(window.innerHeight * 0.4)}>
                                     About Me
                                 </Typography>
-                                <Typography variant="caption" style={{color:"#000000", fontFamily: font, cursor: 'pointer', paddingRight: '4vw', fontWeight:'lighter'}} onClick={()=>handleScroll(window.innerHeight * 1.4)}>
+                                <Typography variant="caption" style={{color:"#000000", fontFamily: font, cursor: 'pointer', paddingRight: '4vw', fontWeight:'lighter'}} onClick={(e)=>setAnchorEl(e.currentTarget)}>
                                     Projects
                                 </Typography>
+                                <Menu anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={()=>setAnchorEl(null)} style={{opacity: '50%', marginTop: '3vh', marginLeft: '-3.5vw'}} elevation={0}>
+                                    <MenuItem onClick={()=>{handleScroll(window.innerHeight * 1.4);setAnchorEl(null)}} selected={true} dense={true}>
+                                        <Typography variant="caption" style={{color:"#000000", cursor: 'pointer', fontWeight:'lighter'}}>
+                                            All Projects
+                                        </Typography>
+                                    </MenuItem>
+                                    <MenuItem onClick={()=>setAnchorEl(null)} dense={true}>
+                                        <Link href="/projects/art-and-design">
+                                            <Typography variant="caption" style={{color:"#000000", cursor: 'pointer', fontWeight:'lighter'}}>
+                                                Art & Design
+                                            </Typography>
+                                        </Link>
+                                    </MenuItem>
+                                </Menu>
                                 <Typography variant="caption" style={{color:"#000000",fontFamily: font, cursor: 'pointer', paddingRight: '4vw'}}>
                                     <a href="https://drive.google.com/file/d/1UYa99LI9qB2Mj7QITz1ezya8gDcA9Bd7" target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none', fontFamily: font, color: 'black', fontWeight:'lighter'}}>Resume</a>
                                 </Typography>
@@ -81,12 +95,12 @@ export default function NavBar() {
                                     Projects
                                 </Typography>
                                 <Menu anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={()=>setAnchorEl(null)} style={{opacity: '50%', marginTop: '3vh', marginLeft: '-1.05vw'}} elevation={0}>
-                                    <MenuItem onClick={()=>{handleScroll(window.innerHeight * 1.4);setAnchorEl(null)}} selected={true}>
+                                    <MenuItem onClick={()=>{handleScroll(window.innerHeight * 1.4);setAnchorEl(null)}} selected={true} dense={true}>
                                         <Typography variant="caption" style={{color:"#000000", cursor: 'pointer'}}>
                                             All Projects
                                         </Typography>
                                     </MenuItem>
-                                    <MenuItem onClick={()=>setAnchorEl(null)}>
+                                    <MenuItem onClick={()=>setAnchorEl(null)} dense={true}>
                                         <Link href="/projects/art-and-design">
                                             <Typography variant="caption" style={{color:"#000000", cursor: 'pointer'}}>
                                                 Art & Design
