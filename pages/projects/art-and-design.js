@@ -148,7 +148,7 @@ export default function Story() {
                             </Typography>
                         </Grid>
                     </Link>
-                    <Link href="/art/tshirt-logo-design">
+                    <Link href="/art/tshirt-logo">
                         <Grid item container direction="column" alignItems="center" className={classes.item}>
                             <img src="/assets/projects/tshirt-logo-design/tshirt-logo-design.png" className={classes.image} id="DIGITAL ART" style={{padding: '1vh 1vw'}}/>
                             <Typography variant="body1" className={classes.item_title}>
@@ -172,7 +172,7 @@ export default function Story() {
                     </Link>
                 </Grid>
                 <Grid container direction="column" item xs={12} sm={5} md={4}>
-                    <Link href="/art/keyframe-animation">
+                    <Link href="/art/animation">
                         <Grid item container direction="column" alignItems="center" className={classes.item} id="DIGITAL ART" >
                             <img src="/assets/projects/keyframe-animation/animationImg.jpg" className={classes.image}/>
                             <Typography variant="body1" className={classes.item_title}>

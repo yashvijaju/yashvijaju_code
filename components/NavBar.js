@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { Typography, Hidden, Toolbar, AppBar, Fade, Grid } from '@material-ui/core'
+import { Typography, Hidden, Toolbar, AppBar, Fade, Grid, Menu, MenuItem } from '@material-ui/core'
 import { EmailOutlined, LinkedIn } from '@material-ui/icons';
 
 
@@ -9,6 +9,7 @@ const font = 'Segoe UI';
 
 export default function NavBar() {
     const router = useRouter()
+    const [anchorEl, setAnchorEl] = React.useState(null);
 
     function handleScroll(props) {
         if (router.pathname !== "/") {
@@ -76,9 +77,23 @@ export default function NavBar() {
                                 <Typography variant="caption" style={{color:"#000000", fontFamily: font, cursor: 'pointer', paddingRight: '4vw'}} onClick={()=>handleScroll(window.innerHeight * 0.75)}>
                                     About Me
                                 </Typography>
-                                <Typography variant="caption" style={{color:"#000000", fontFamily: font, cursor: 'pointer', paddingRight: '4vw'}} onClick={()=>handleScroll(window.innerHeight * 1.4)}>
+                                <Typography variant="caption" style={{color:"#000000", fontFamily: font, cursor: 'pointer', paddingRight: '4vw'}} onClick={(e)=>setAnchorEl(e.currentTarget)}>
                                     Projects
                                 </Typography>
+                                <Menu anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={()=>setAnchorEl(null)} style={{opacity: '50%', marginTop: '3vh', marginLeft: '-1.05vw'}} elevation={0}>
+                                    <MenuItem onClick={()=>{handleScroll(window.innerHeight * 1.4);setAnchorEl(null)}} selected={true}>
+                                        <Typography variant="caption" style={{color:"#000000", cursor: 'pointer'}}>
+                                            All Projects
+                                        </Typography>
+                                    </MenuItem>
+                                    <MenuItem onClick={()=>setAnchorEl(null)}>
+                                        <Link href="/projects/art-and-design">
+                                            <Typography variant="caption" style={{color:"#000000", cursor: 'pointer'}}>
+                                                Art & Design
+                                            </Typography>
+                                        </Link>
+                                    </MenuItem>
+                                </Menu>
                                 <Typography variant="caption" style={{color:"#000000",fontFamily: font, cursor: 'pointer', paddingRight: '4vw'}}>
                                     <a href="https://drive.google.com/file/d/1UYa99LI9qB2Mj7QITz1ezya8gDcA9Bd7" target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none', fontFamily: font, color: 'black'}}>Resume</a>
                                 </Typography>
