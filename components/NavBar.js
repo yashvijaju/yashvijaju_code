@@ -7,7 +7,7 @@ import { EmailOutlined, LinkedIn } from '@material-ui/icons';
 
 const font = 'Segoe UI';
 
-export default function NavBar() {
+export default function NavBar(props) {
     const router = useRouter()
     const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -40,7 +40,7 @@ export default function NavBar() {
         }
     }
     return(
-        <div style={{height: '5vh', position: 'absolute', top: '0'}}>
+        <div style={{height: '5vh', position: 'absolute', top: '0'}} id={props.id}>
             <Fade in={true} timeout={16000}>
                 <AppBar elevation={0} style={{'backgroundColor': "white", opacity: '0.5', padding: '0vh 2vw 0vh 2vw'}}>
                     <Toolbar>
