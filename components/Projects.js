@@ -268,7 +268,7 @@ export default function Story() {
         </Link>
         <Link href="/work/ispirt">
           <Grid className="item" id="Professional, Tech, Featured" item xs={10} sm={5} md={3} style={itemStyle}>
-            <img id="iSPIRT" src="/assets/ispirt.jpg" alt="iSPIRT" title="iSPIRT" className={classes.image}/>
+            <img id="iSPIRT" src="/assets/covers/ispirt.jpg" alt="iSPIRT" title="iSPIRT" className={classes.image}/>
             <Typography variant="body1" className={classes.item_title}>
               iSPIRT: Software Intern
             </Typography>
@@ -301,7 +301,7 @@ export default function Story() {
         </Link>
         <Link href="/work/mcdonald">
           <Grid className="item" id="Professional, Tech" item xs={10} sm={5} md={3} style={itemStyle}>
-            <img id="McDonald's Hardcastle Restaurants Private Limited" src="/assets/mcdonald.png" alt="McDonald's Hardcastle Restaurants Private Limited" title="McDonald's Hardcastle Restaurants Private Limited" className={classes.image}/>
+            <img id="McDonald's Hardcastle Restaurants Private Limited" src="/assets/covers/mcdonald.png" alt="McDonald's Hardcastle Restaurants Private Limited" title="McDonald's Hardcastle Restaurants Private Limited" className={classes.image}/>
             <Typography variant="body1" className={classes.item_title}>
               McDonald's Hardcastle Restaurants Private Limited: Product Development Intern
             </Typography>
@@ -323,12 +323,23 @@ export default function Story() {
         </Link>
         <Link href="/work/bookmyshow">
           <Grid className="item" id="Professional, Tech" item xs={10} sm={5} md={3} style={itemStyle}>
-            <img id="BookMyShow" src="/assets/bms.png" alt="BookMyShow" title="BookMyShow" className={classes.image}/>
+            <img id="BookMyShow" src="/assets/covers/bms.png" alt="BookMyShow" title="BookMyShow" className={classes.image}/>
             <Typography variant="body1" className={classes.item_title}>
               BookMyShow: Software Analyst Intern
             </Typography>
             <Typography variant="caption" className={classes.item_desc}>
             BookMyShow is a digital ticketing company with a dominant share of events and entertainment ticketing in India. I interned as a software analyst in July 2018, and assisted with beta-testi...
+            </Typography>
+          </Grid>
+        </Link>
+        <Link href="/art/100-days-of-buttons">
+          <Grid className="item" id="Digital Art, Featured, Side Projects" item xs={10} sm={5} md={3} style={itemStyle}>
+            <img id="Manifesto Design" src="/assets/projects/100-days-of-buttons/100_days_of_des-page-006.jpg" alt="100 Days of Buttons Design" title="100 Days of Buttons Design" className={classes.image}/>
+            <Typography variant="body1" className={classes.item_title}>
+            100 Days of Buttons: Artist
+            </Typography>
+            <Typography variant="caption" className={classes.item_desc}>
+            A button is the most simple component on any user interface. It serves only one function — to allow a user to navigate to their desired outcome. Thus, it is both, easy and difficult, to design a button. Every button should stand out and prompt the user to act, while not detracting away from the rest of the UI. These thoughts...
             </Typography>
           </Grid>
         </Link>

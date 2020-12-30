@@ -205,6 +205,17 @@ export default function Story() {
                             </Typography>
                         </Grid>
                     </Link>
+                    <Link href="/art/100-days-of-buttons">
+                        <Grid item container direction="column" alignItems="center" className={classes.item} id="DIGITAL ART">
+                            <img src="/assets/projects/100-days-of-buttons/100_days_of_des-page-006.jpg" className={classes.image}/>
+                            <Typography variant="body1" className={classes.item_title}>
+                                <b>100 DAYS OF DESIGN : BUTTONS</b>
+                            </Typography>
+                            <Typography variant="caption">
+                                DIGITAL ART
+                            </Typography>
+                        </Grid>
+                    </Link>
                 </Grid>
                 <Grid container direction="column" item xs={12} sm={5} md={4}>
                     <Link href="/art/dancing-on-the-moon">
