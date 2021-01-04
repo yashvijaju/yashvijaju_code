@@ -310,7 +310,7 @@ export default function Story() {
           </Grid>
         </Link>
         <Link href="/tech/first-robotics-competition">
-          <Grid className="item" id="Tech, Side Projects" item xs={10} sm={5} md={3} style={itemStyle}>
+          <Grid className="item" id="Side Projects" item xs={10} sm={5} md={3} style={itemStyle}>
             <img id="FRC" src="/assets/covers/frc.png" alt="FRC" title="FRC" className={classes.image}/>
             <Typography variant="body1" className={classes.item_title}>
               First Robotics Competition: Member, Safety Captain 
@@ -321,7 +321,7 @@ export default function Story() {
           </Grid>
         </Link>
         <Link href="/work/mcdonald">
-          <Grid className="item" id="Professional, Tech" item xs={10} sm={5} md={3} style={itemStyle}>
+          <Grid className="item" id="Professional" item xs={10} sm={5} md={3} style={itemStyle}>
             <img id="McDonald's Hardcastle Restaurants Private Limited" src="/assets/covers/mcdonald.png" alt="McDonald's Hardcastle Restaurants Private Limited" title="McDonald's Hardcastle Restaurants Private Limited" className={classes.image}/>
             <Typography variant="body1" className={classes.item_title}>
               McDonald's Hardcastle Restaurants: Product Development Intern
