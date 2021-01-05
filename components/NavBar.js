@@ -62,6 +62,13 @@ export default function NavBar(props) {
                                         </Typography>
                                     </MenuItem>
                                     <MenuItem onClick={()=>setAnchorEl(null)} dense={true}>
+                                        <Link href="/projects/tech">
+                                            <Typography variant="caption" style={{color:"#000000", cursor: 'pointer', fontWeight:'lighter'}}>
+                                                Tech
+                                            </Typography>
+                                        </Link>
+                                    </MenuItem>
+                                    <MenuItem onClick={()=>setAnchorEl(null)} dense={true}>
                                         <Link href="/projects/art-and-design">
                                             <Typography variant="caption" style={{color:"#000000", cursor: 'pointer', fontWeight:'lighter'}}>
                                                 Art & Design
@@ -99,6 +106,13 @@ export default function NavBar(props) {
                                         <Typography variant="caption" style={{color:"#000000", cursor: 'pointer'}}>
                                             All Projects
                                         </Typography>
+                                    </MenuItem>
+                                    <MenuItem onClick={()=>setAnchorEl(null)} dense={true}>
+                                        <Link href="/projects/tech">
+                                            <Typography variant="caption" style={{color:"#000000", cursor: 'pointer'}}>
+                                                Tech
+                                            </Typography>
+                                        </Link>
                                     </MenuItem>
                                     <MenuItem onClick={()=>setAnchorEl(null)} dense={true}>
                                         <Link href="/projects/art-and-design">

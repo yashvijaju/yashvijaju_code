@@ -4,7 +4,6 @@ import { Grid, Divider, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles'
 // Components
 import { Cover } from '../../components/Projects/Cover'
-import { PersonPinSharp } from '@material-ui/icons';
 
 const primary = '#4E4E4E';
 const primary_25 = '#72D77C';
@@ -172,9 +171,9 @@ export default function Story() {
 
                 <ProjectCard title="ISPIRT — INDIA COVID MODEL" text="An epidemiological SEIR model to predict coronavirus infection trends in different districts and states in India over the next 15-30 days." tags={["python","flask","plotly","flourish","numpy","aws(s3,ec2","google analytics","wordpress"]} link="/work/ispirt"/>
 
-                <ProjectCard title="iSPIRT — VOLUNTEER MANAGEMENT TOOL" text="A custom LinkedIn-style directory for the internal team, with volunteer journeys mapped for admins." tags={["javascript xml","next.js","mongodb","oauth 2.0","active directory","sso"]} link="/work/ispirt"/>
+                <ProjectCard title="iSPIRT — VOLUNTEER MANAGEMENT TOOL" text="A custom LinkedIn-style directory for the internal team, with volunteer journeys mapped for admin use." tags={["javascript xml","next.js","mongodb","oauth 2.0","active directory","sso"]} link="/work/ispirt"/>
 
-                <ProjectCard title="CLIENT WEBSITE — METTA CAPITAL" text="A static, responsive website designed and developed for a client (Metta Capital, a boutique investment and consulting bank)." tags={["javascript xml","react.js","godaddy","github pages"]} link="/tech/metta-capital"/>
+                <ProjectCard title="CLIENT WEBSITE — METTA CAPITAL" text="A static responsive website designed and developed for a client." tags={["javascript xml","react.js","godaddy","github pages"]} link="/tech/metta-capital"/>
             </Grid>
         </>
     )
