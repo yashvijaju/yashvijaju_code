@@ -7,6 +7,7 @@ import { Cover } from '../../components/Projects/Cover'
 import { Intro } from '../../components/Projects/Intro'
 import { DividerLeft } from '../../components/Partials/Divider'
 import { ProblemStatement } from '../../components/Projects/Problem_Statement'
+import { Footer } from '../../components/Projects/Footer'
 
 
 const primary = '#9E0D1B';
@@ -1252,6 +1253,9 @@ export default function Story() {
                 </Grid>
             </>
             }
+
+            <Footer prev="CIRCLE OF LIGHT" prev_link="/art/circle-of-light" prev_category="traditional art" next="KATHAK" next_link="/art/kathak" next_category="traditional art" title={secondary} subtitle={primary} divider={primary_25}/>
+
         </>
     )
 }

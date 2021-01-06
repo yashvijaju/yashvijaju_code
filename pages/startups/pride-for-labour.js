@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import { Cover } from '../../components/Projects/Cover'
 import { Intro } from '../../components/Projects/Intro'
 import { ProblemStatement } from '../../components/Projects/Problem_Statement'
+import { Footer } from '../../components/Projects/Footer'
 
 const primary = '#9E0D1B';
 const primary_25 = '#E6C2C6';
@@ -194,6 +195,9 @@ export default function Story() {
           </Grid>
         </Grid>
         </div>}></EmptyContainer>
+
+        <Footer prev="DANCING ON THE MOON" prev_link="/art/dancing-on-the-moon" prev_category="traditional art" next="CARTOON PORTRAIT" next_link="/art/cartoon-portrait" next_category="digital art" title={secondary} subtitle={primary} divider={primary_25}/>
+
 
         {/* The lift's doors stretched wide open <br/>
         <span style={{fontStyle: 'italic'}}>6th floor</span> <br/>

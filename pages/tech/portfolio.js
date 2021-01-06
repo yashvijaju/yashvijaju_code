@@ -11,6 +11,7 @@ import TimelineConnector from '@material-ui/lab/TimelineConnector';
 import TimelineContent from '@material-ui/lab/TimelineContent';
 import TimelineDot from '@material-ui/lab/TimelineDot';
 import TimelineOppositeContent from '@material-ui/lab/TimelineOppositeContent';
+import { Footer } from '../../components/Projects/Footer'
 
 
 const primary = '#206CA3';
@@ -105,6 +106,7 @@ export default function Story() {
         
       </Timeline>
     </Grid>
+    <Footer prev="MANIFESTO" prev_link="/art/manifesto" prev_category="digital art" next="QUILLING" next_link="/art/quilling" next_category="traditional art" title={secondary} subtitle={primary} divider={primary_25}/>
     </>
     )
 }

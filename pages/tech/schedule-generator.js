@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import { Cover } from '../../components/Projects/Cover'
 import { Intro } from '../../components/Projects/Intro'
 import { ProblemStatement } from '../../components/Projects/Problem_Statement'
+import { Footer } from '../../components/Projects/Footer'
 
 const primary = '#9E0D1B';
 const primary_25 = '#E6C2C6';
@@ -87,7 +88,8 @@ export default function Story() {
 
             <Step_Component step_num="4" text="Using all this data, the program then generates all the possible schedules for the student. These are optimised to divide class-hours evenly over the week. The schedules can then be viewed through the Tkinter graphic user interface." images={<><Hidden xsDown><img className={classes.image} src="/assets/projects/schedule-generator/schedule-generator4.png"/></Hidden><Hidden xsDown><img className={classes.image} src="/assets/projects/schedule-generator/schedule-generator5.png" style={{'width': '20vw', height: '16.34vw'}}/></Hidden><Hidden smUp><img className={classes.image} src="/assets/projects/schedule-generator/schedule-generator5.png"/></Hidden><img className={classes.image} src="/assets/projects/schedule-generator/schedule-generator6.png"/></>}/>
         </Grid>
-        
+
+        <Footer prev="QUILLING" prev_link="/art/quilling" prev_category="traditional art" next="TSHIRT LOGO" next_link="/art/tshirt-logo" next_category="digital art" title={secondary} subtitle={primary} divider={primary_25}/>
         </>
     )
 }

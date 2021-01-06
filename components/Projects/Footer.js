@@ -1,7 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { makeStyles } from '@material-ui/core/styles'
-import { Typography, Grid, Divider } from '@material-ui/core'
+import { Typography, Grid, Divider, Hidden } from '@material-ui/core'
 import { ArrowForwardIos, ArrowBackIos, Apps } from '@material-ui/icons'
 
 const useStyles = makeStyles((theme) => ({
@@ -40,6 +41,7 @@ const useStyles = makeStyles((theme) => ({
 
 export function Footer(props) {
     const classes = useStyles(props);
+    const router = useRouter()
 
     function handleScroll(props) {
         if (router.pathname !== "/") {

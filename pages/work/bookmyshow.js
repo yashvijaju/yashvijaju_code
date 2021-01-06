@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import { Cover } from '../../components/Projects/Cover'
 import { Intro } from '../../components/Projects/Intro'
 import { DividerLeft } from '../../components/Partials/Divider'
+import { Footer } from '../../components/Projects/Footer'
 
 const primary = '#DF1827';
 const primary_25 = '#30475E';
@@ -63,6 +64,8 @@ export default function Story() {
                 <Typography variant="body2" style={{marginBottom: '3vh'}}>3.&emsp;&emsp;Submitted a paper about BookMyShow’s technology stack</Typography>
                 <Typography variant="body2" style={{marginBottom: '3vh'}}>Unfortunately, any further disclosure of information would lead to a breach of the confidentiality agreement.</Typography>
             </Grid>
+
+            <Footer prev="PRODUCT DEVELOPMENT INTERN : MCDONALD's" prev_link="/work/mcdonald" prev_category="work" next="WEB DEVELOPER : CLIENT" next_link="/tech/metta-capital" next_category="work, tech" title={secondary} subtitle={primary} divider={primary_25}/>
         </>
     )
 }

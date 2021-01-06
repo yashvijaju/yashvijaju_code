@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import { Cover } from '../../components/Projects/Cover'
 import { Intro } from '../../components/Projects/Intro'
 import { ProblemStatement } from '../../components/Projects/Problem_Statement'
+import { Footer } from '../../components/Projects/Footer'
 
 const primary = '#9E0D1B';
 const primary_25 = '#E6C2C6';
@@ -122,6 +123,8 @@ export default function Story() {
 
             <ContentItemText text={<div>I then began work on my third coat, focused on perfecting and finely detailing the portrait’s main object - the Buddha’s face. This was by far the most difficult aspect of the painting - especially the eyes - as I had to be doubly careful to ensure that the features radiated serenity while also ensuring that my brush strokes did, at no point, touch the surrounding background.<br/><br/> Only after painting this layer and allowing it to dry completely was I able to add the final finishing touches to the painting. I ensured that not only was the border between the Buddha and the background sharp, but also painted the sides of the canvas with a dark bluish-black paint to cover any strokes that went astray down the sides. <br/><br/>To mark my painting’s completion, I then used a thin brush to paint my name in the right-hand corner in white.</div>}/>
         </Grid>
+
+        <Footer prev="KEYFRAME ANIMATION" prev_link="/art/animation" prev_category="digitl art" next="SOFTWARE ENGINEER INTERN : iSPIRT" next_link="/work/ispirt" next_category="tech, work" title={secondary} subtitle={primary} divider={primary_25}/>
         </>
     )
 }

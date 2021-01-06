@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/core/styles'
 // Components
 import { Cover } from '../../components/Projects/Cover'
 import { Intro } from '../../components/Projects/Intro'
+import { Footer } from '../../components/Projects/Footer'
 
 const primary = '#298FD7';
 const primary_25 = '#B0D9F7';
@@ -207,7 +208,8 @@ export default function Story() {
       </Grid>
 
       <Divider className={classes.content_divider_right}/>
-      
+      <Footer prev="A2Z" prev_link="/startups/a2z" prev_category="entrepreneurship" next="PORTFOLIO" next_link="/tech/portfolio" next_category="tech, digital art" title={secondary} subtitle={primary} divider={primary_25}/>
+
     </>
 
     

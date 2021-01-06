@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/core/styles'
 // Components
 import { Cover } from '../../components/Projects/Cover'
 import { Intro } from '../../components/Projects/Intro'
+import { Footer } from '../../components/Projects/Footer'
 
 const primary = '#298FD7';
 const primary_25 = '#B0D9F7';
@@ -271,6 +272,7 @@ export default function Story() {
 
       <Divider className={classes.content_divider_right}/>
       
+      <Footer prev="WEB DEVELOPER : CLIENT" prev_link="/tech/metta-capital" prev_category="tech, work" next="CRAVE" next_link="/startups/crave" next_category="tech, entrepreneurship" title={secondary} subtitle={primary} divider={primary_25}/>
     </> 
     )
 }

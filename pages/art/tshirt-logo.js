@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import { Cover } from '../../components/Projects/Cover'
 import { Intro } from '../../components/Projects/Intro'
 import { ProblemStatement } from '../../components/Projects/Problem_Statement'
+import { Footer } from '../../components/Projects/Footer'
 
 const primary = '#9E0D1B';
 const primary_25 = '#E6C2C6';
@@ -85,6 +86,8 @@ export default function Story() {
                 <ImageCaption image="/assets/projects/tshirt-logo-design/tshirt-logo-design-tshirt.jpg" caption="T-Shirt with Logo Design"/>
             </Grid>
         </Grid>
+
+        <Footer prev="SCHEDULE GENERATOR" prev_link="/tech/schedule-generator" prev_category="tech, side projects" next="KEYFRAME ANIMATION" next_link="/art/animation" next_category="digital art" title={secondary} subtitle={primary} divider={primary_25}/>
         </>
     )
 }

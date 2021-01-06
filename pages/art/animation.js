@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import { Cover } from '../../components/Projects/Cover'
 import { Intro } from '../../components/Projects/Intro'
 import { ProblemStatement } from '../../components/Projects/Problem_Statement'
+import { Footer } from '../../components/Projects/Footer'
 
 const primary = '#000000';
 const primary_25 = '#979797';
@@ -86,6 +87,8 @@ export default function Story() {
           </Grid>
         </Grid>
       </Grid>
+
+      <Footer prev="TSHIRT LOGO" prev_link="/art/tshirt-logo" prev_category="digital art" next="CIRCLE OF LIGHT" next_link="/art/circle-of-light" next_category="traditional art" title={secondary} subtitle={primary} divider={primary_25}/>
       </>
   )
 }

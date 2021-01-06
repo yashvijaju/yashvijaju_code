@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import { Cover } from '../../components/Projects/Cover'
 import { Intro } from '../../components/Projects/Intro'
 import { ProblemStatement } from '../../components/Projects/Problem_Statement'
+import { Footer } from '../../components/Projects/Footer'
 
 const primary = '#9E0D1B';
 const primary_25 = '#E6C2C6';
@@ -132,6 +133,8 @@ export default function Story() {
                 </Typography>
             </Grid>
         </Grid>
+
+        <Footer prev="KATHAK" prev_link="/art/kathak" prev_category="traditional art" next="PRODUCT DEVELOPMENT INTERN : MCDONALD's" next_link="/work/mcdonald" next_category="work" title={secondary} subtitle={primary} divider={primary_25}/>
         </>
     )
 }

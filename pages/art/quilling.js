@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import { Cover } from '../../components/Projects/Cover'
 import { Intro } from '../../components/Projects/Intro'
 import { ProblemStatement } from '../../components/Projects/Problem_Statement'
+import { Footer } from '../../components/Projects/Footer'
 
 const primary = '#206CA3';
 const primary_25 = '#B0D9F7';
@@ -167,67 +168,7 @@ export default function Story() {
         </Grid> 
       </Grid>
 
-      {/* <Grid container className={classes.container} justify="space-between">
-        <Grid item xs={12}>
-          <Typography variant="body1" className={classes.title}>
-          <b>The Puppet Show — </b><br/>
-          </Typography>
-        </Grid>
-        <Grid item xs={3}>
-          <Typography variant="body2" className={classes.text} align="right">
-            The strip of paper <br/>
-            Is a puppet <br/>
-            And the tool <br/>
-            The string <br/>
-            <br/>
-            The string twists <br/>
-            And the puppet rotates <br/>
-            The strip becomes <br/>
-            A tight coil <br/>
-            Unable to move <br/>
-            As if <br/>
-            Chained <br/>
-            <br/>
-            <img src="/assets/projects/quilling/quilling_7.jpg" className={classes.image}/>
-            <img src="/assets/projects/quilling/quilling_4.jpg" className={classes.image}/>
-          </Typography>
-        </Grid>
-        <Grid item xs={3} container direction="column">
-          <Typography variant="body2" className={classes.text} align="center">
-            <br/> <br/>
-            The strings are cut <br/>
-            The puppet stretches <br/>
-            The coil becomes <br/>
-            Loose <br/>
-            <br/>
-            But <br/>
-            I am there <br/>
-            The puppeteer <br/> <br/> <br/>
-          </Typography>
-          <img src="/assets/projects/quilling/quilling_1.jpg" className={classes.image}/>
-          <img src="/assets/projects/quilling/quilling_6.jpg" className={classes.image}/>
-          <img src="/assets/projects/quilling/quilling_3.jpg" className={classes.image}/>
-        </Grid> 
-        <Grid item xs={3} container direction="column">
-          <Typography variant="body2" className={classes.text}>
-            I pinch the coil <br/>
-            Bend it to my will <br/>
-            The loose coil becomes <br/>
-            A teardrop <br/>
-            A dimaond <br/>
-            A victim of my imagination <br/>
-            <br/>
-            Glued in place <br/>
-            All the puppets <br/>
-            Together <br/>
-            Become <br/>
-            The Puppet Show <br/>
-          </Typography>
-          <img src="/assets/projects/quilling/quilling_5.jpg" className={classes.image}/>
-          <img src="/assets/projects/quilling/quilling_9.jpg" className={classes.image}/>
-          
-        </Grid> 
-      </Grid> */}
+      <Footer prev="PORTFOLIO" prev_link="/tech/portfolio" prev_category="tech" next="SCHEDULE GENERATOR" next_link="/tech/schedule-generator" next_category="tech, side projects" title={secondary} subtitle={primary} divider={primary_25}/>
     </>
   )
 }

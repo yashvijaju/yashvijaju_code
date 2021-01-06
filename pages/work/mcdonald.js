@@ -6,6 +6,7 @@ import { Cover } from '../../components/Projects/Cover'
 import { Intro } from '../../components/Projects/Intro'
 import { DividerLeft } from '../../components/Partials/Divider'
 import { ProblemStatement } from '../../components/Projects/Problem_Statement'
+import { Footer } from '../../components/Projects/Footer'
 
 const primary = '#9E0D1B';
 const primary_25 = '#F5C9C6';
@@ -391,6 +392,8 @@ export default function Story() {
                     </Grid>
                 </Grid>
             </Grid>
+
+            <Footer prev="FIRST ROBOTICS COMPETITION" prev_link="/tech/first-robotics-competition" prev_category="tech, side projects" next="SOFTWARE ENGINEER INTERN : BOOKMYSHOW" next_link="/work/bookmyshow" next_category="tech, work" title={secondary} subtitle={primary} divider={primary_25}/>
         </>
     )
 }

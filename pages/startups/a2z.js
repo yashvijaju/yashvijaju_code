@@ -6,6 +6,7 @@ import {Timeline, TimelineItem, TimelineSeparator, TimelineConnector, TimelineCo
 import { Cover } from '../../components/Projects/Cover'
 import { Intro } from '../../components/Projects/Intro'
 import { ProblemStatement } from '../../components/Projects/Problem_Statement'
+import { Footer } from '../../components/Projects/Footer'
 
 const primary = '#9E0D1B';
 const primary_25 = '#E6C2C6';
@@ -93,7 +94,7 @@ function TimelineEvent(props) {
               {props.content}
               <br/><br/>
             </Typography>
-            <Grid container xs={12} justify="space-between">
+            <Grid container item xs={12} justify="space-between">
               {props.images}
             </Grid>
           </Grid>
@@ -127,6 +128,8 @@ export default function Story() {
             
           </Timeline>
         </Grid>
+
+        <Footer prev="CARTOON PORTRAIT" prev_link="/art/cartoon-portrait" prev_category="digital art" next="MANIFESTO" next_link="/art/manifesto" next_category="digital art" title={secondary} subtitle={primary} divider={primary_25}/>
 
         {/* 
           I remember <br/>
