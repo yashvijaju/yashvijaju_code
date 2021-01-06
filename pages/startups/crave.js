@@ -6,6 +6,7 @@ import TrackVisibility from 'react-on-screen'
 import { Cover } from '../../components/Projects/Cover'
 import { Intro } from '../../components/Projects/Intro'
 import { ProblemStatement } from '../../components/Projects/Problem_Statement'
+import { Footer } from '../../components/Projects/Footer'
 
 const primary = '#9E0D1B';
 const primary_25 = '#E6C2C6';
@@ -147,6 +148,8 @@ export default function Crave() {
                     </TrackVisibility>
                 </Grid>
             </Grid>
+
+            <Footer prev="100 DAYS OF BUTTONS" prev_link="/art/100-days-of-buttons" prev_category="digital art, side project" next="DANCING ON THE MOON" next_link="/art/dancing-on-the-moon" next_category="traditional art" title={secondary} subtitle={primary} divider={primary_25}/>
         </>
     )
 }
