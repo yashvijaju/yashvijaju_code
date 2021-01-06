@@ -12,6 +12,9 @@ const useStyles = makeStyles((theme) => ({
             margin: '0 0 5vh 0',
             padding: '0 5vw',
         },
+        [theme.breakpoints.down('xs')]: {
+            margin: '-5vh 0 5vh 0',
+        },
     },
     divider: {
         margin: '15vh 5vw 5vh',
@@ -28,6 +31,9 @@ const useStyles = makeStyles((theme) => ({
             color: props => props.title,
         },
         cursor: 'pointer',
+        [theme.breakpoints.down('xs')]: {
+            display: 'none',
+        },
     },
     icon: {
         color: props => props.title,
@@ -36,6 +42,20 @@ const useStyles = makeStyles((theme) => ({
     title: {
         color:  props => props.title, 
         cursor: 'pointer',
+        [theme.breakpoints.down('xs')]: {
+            fontSize: '0.75rem',
+        },
+    },
+    subtitle: {
+        color: props => props.subtitle,
+        [theme.breakpoints.down('xs')]: {
+            fontSize: '0.5rem',
+        },
+    },
+    rightNav: {
+        [theme.breakpoints.down('xs')]: {
+            paddingTop: '10vh',
+        },
     }
 }));
 
@@ -90,7 +110,7 @@ export function Footer(props) {
                                         <b>{props.prev}</b>
                                     </Typography>
                                 </Link>
-                                <Typography variant="body2" style={{color: props.subtitle}}>
+                                <Typography variant="body2" className={classes.subtitle}>
                                     {props.prev_category}
                                 </Typography>
                             </Grid>
@@ -100,7 +120,7 @@ export function Footer(props) {
                 <Grid item>
                     <Apps className={classes.menu} onClick={()=>handleScroll(window.innerHeight * 1.4)}/>
                 </Grid>
-                <Grid item>
+                <Grid item className={classes.rightNav}>
                     <Grid container direction="row" alignItems="center">
                         <Grid item style={{marginRight: '2vw'}}>
                             <Grid container direction="column">
@@ -109,7 +129,7 @@ export function Footer(props) {
                                         <b>{props.next}</b>
                                     </Typography>
                                 </Link>
-                                <Typography variant="body2" align="right" style={{color: props.subtitle}}>
+                                <Typography variant="body2" align="right" className={classes.subtitle}>
                                     {props.next_category}
                                 </Typography>
                             </Grid>
