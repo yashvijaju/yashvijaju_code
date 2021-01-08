@@ -94,7 +94,9 @@ const useStyles = makeStyles((theme) => ({
             color: tertiary,
         },
         [theme.breakpoints.down('xs')]: {
-            marginBottom: '1vh',
+            height: 'auto',
+            marginBottom: '2vh',
+            borderRadius: '20px',
         },
     },
     iframe: {
