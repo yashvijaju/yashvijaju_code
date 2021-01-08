@@ -189,7 +189,7 @@ export default function Story() {
           </Grid>
         </Link>
         <Link href="/art/cartoon-portrait">
-          <Grid className="item" id="Digital Art" item xs={10} sm={5} md={3} style={itemStyle}>
+          <Grid className="item" id="Digital Art, Featured" item xs={10} sm={5} md={3} style={itemStyle}>
             <img id="Adjustment Layers" src="/assets/covers/cartoon-portrait.png" alt="Adjustment Layers" title="Adjustment Layers" className={classes.image}/>
             <Typography variant="body1" className={classes.item_title}>
               Cartoon Portrait: Artist
