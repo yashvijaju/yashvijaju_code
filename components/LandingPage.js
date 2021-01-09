@@ -220,7 +220,7 @@ export default function Animation() {
             <div className={classes.container_100vh}/>
             <div className={classes.container_50vh}/>
             <Grid container direction="row" justify="center" className={classes.container_text}>
-                <div className="col offset-l5" style={{'border': '2px solid #bee3f1', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                <div className="col offset-l5" style={{'border': '2px solid #bee3f1', borderColor: blue, display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                     <div className={classes.text}>
                     <p>{curr}</p>
                     </div>
