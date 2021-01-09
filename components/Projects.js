@@ -3,7 +3,8 @@ import Link from 'next/link'
 import { Grid, Typography, Hidden, Chip, Snackbar } from '@material-ui/core';
 import { CancelOutlined,LaptopChromebookRounded, ColorLensRounded, WorkOutlineRounded, SearchRounded, FormatSizeRounded, EmojiSymbolsRounded, StarOutlineRounded } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles'
-
+import { Fade } from 'react-reveal';
+import VisibilitySensor from "react-visibility-sensor"
 
 const pink='#F7CAC9'; 
 const blue='#bee3f1';

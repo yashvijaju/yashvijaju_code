@@ -6,6 +6,8 @@ import { makeStyles } from '@material-ui/core/styles'
 import { Cover } from '../../components/Projects/Cover'
 import { Intro } from '../../components/Projects/Intro'
 import { Footer } from '../../components/Projects/Footer'
+// Animations
+import { Fade } from 'react-reveal';
 
 const primary = '#298FD7';
 const primary_25 = '#B0D9F7';
@@ -111,6 +113,7 @@ export default function Story() {
 
       <Divider className={classes.divider}/>
 
+      <Fade bottom>
       <Grid container direction="column" className={classes.container}>
         <Grid item xs={12} container direction="row" alignItems="center" className={classes.spacing}>
           <Typography variant="caption" className={classes.title_rotated_text}>one-five<br/><br/></Typography>
@@ -272,6 +275,7 @@ export default function Story() {
 
       <Divider className={classes.content_divider_right}/>
       
+      </Fade>
       <Footer prev="WEB DEVELOPER : CLIENT" prev_link="/tech/metta-capital" prev_category="tech, work" next="CRAVE" next_link="/startups/crave" next_category="tech, entrepreneurship" title={secondary} subtitle={primary} divider={primary_25}/>
     </> 
     )

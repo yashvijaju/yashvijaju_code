@@ -1,6 +1,7 @@
 import React  from 'react';
 import { Grid, Typography, Hidden } from '@material-ui/core';
 import { AttachFile } from '@material-ui/icons';
+import { Fade } from 'react-reveal';
 
 const grey = '#efefef'
 const font = 'Segoe UI';
@@ -10,6 +11,7 @@ const descriptor = {color: '#43b14e', fontWeight: '600'}
 export default function AboutMe() {
     return(
         <div>
+            <Fade bottom>
             <Grid container direction="row" style={{'padding': '10vh 2vw 5vh 2vw'}}>
                 <Grid item xs={1}/>
                 <Hidden smUp>
@@ -77,6 +79,7 @@ export default function AboutMe() {
                     </Grid>
                 </Hidden>
             </Grid>
+            </Fade>
         </div>
     )
 }
