@@ -4,7 +4,6 @@ import { Grid, Typography, Hidden, Chip, Snackbar } from '@material-ui/core';
 import { CancelOutlined,LaptopChromebookRounded, ColorLensRounded, WorkOutlineRounded, SearchRounded, FormatSizeRounded, EmojiSymbolsRounded, StarOutlineRounded } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles'
 import { Fade } from 'react-reveal';
-import VisibilitySensor from "react-visibility-sensor"
 
 const pink='#F7CAC9'; 
 const blue='#bee3f1';
@@ -98,52 +97,55 @@ export default function Story() {
 
   return (
     <div style={{'padding': '5vh 0vw 2vh 0vw', backgroundColor: blue}}>
-      <Typography variant="h5" style={{paddingBottom: '1vh', fontWeight: 'bolder', color: title, textAlign: 'center'}}>
-          &#123; My Projects &#125;
-      </Typography>
-      <Typography variant="body1" style={{paddingBottom: '3vh', fontWeight: 'normal', color: title, textAlign: 'center'}}>
-          click on a project to learn more
-      </Typography>
-      <Hidden mdUp>
+      <Fade bottom>
+        <Typography variant="h5" style={{paddingBottom: '1vh', fontWeight: 'bolder', color: title, textAlign: 'center'}}>
+            &#123; My Projects &#125;
+        </Typography>
+        <Typography variant="body1" style={{paddingBottom: '3vh', fontWeight: 'normal', color: title, textAlign: 'center'}}>
+            click on a project to learn more
+        </Typography>
+      
+        <Hidden mdUp>
+          <Snackbar
+            anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              open={openNotifs}
+              autoHideDuration={4000}
+              onClose={handleCloseNotif}
+              message="Viewing this on a laptop is highly recommended"
+              id="notif1"
+              action={
+                <CancelOutlined size="small" aria-label="close" color="inherit" style={{cursor: 'pointer'}} onClick={handleCloseNotif}/>
+              }
+          />
+        </Hidden>
         <Snackbar
           anchorOrigin={{
               vertical: 'bottom',
               horizontal: 'left',
-            }}
-            open={openNotifs}
-            autoHideDuration={4000}
-            onClose={handleCloseNotif}
-            message="Viewing this on a laptop is highly recommended"
-            id="notif1"
-            action={
-              <CancelOutlined size="small" aria-label="close" color="inherit" style={{cursor: 'pointer'}} onClick={handleCloseNotif}/>
-            }
+          }}
+          open={openFilterNotifs}
+          autoHideDuration={4000}
+          onClose={handleCloseNotif}
+          message="Tip: use the filter buttons (:"
+          id="notif1"
+          action={
+            <CancelOutlined size="small" aria-label="close" color="inherit" style={{cursor: 'pointer'}} onClick={handleCloseNotif}/>
+          }
         />
-      </Hidden>
-      <Snackbar
-        anchorOrigin={{
-            vertical: 'bottom',
-            horizontal: 'left',
-        }}
-        open={openFilterNotifs}
-        autoHideDuration={4000}
-        onClose={handleCloseNotif}
-        message="Tip: use the filter buttons (:"
-        id="notif1"
-        action={
-          <CancelOutlined size="small" aria-label="close" color="inherit" style={{cursor: 'pointer'}} onClick={handleCloseNotif}/>
-        }
-      />
-      <Grid container direction="row" justify="center" style={{padding: '2vh 4vw 0 4vw'}}>
-        <Chip className="filterProjects" id="Featured" variant="outlined" label="Featured" clickable={true} style={(lastFilter==="Featured") ? chipStyleSelected : chipStyle} onClick={()=>filter("Featured","Featured")} icon={<StarOutlineRounded style={{color: (lastFilter==="Featured") ? 'grey' : 'grey'}} />}/>
-        <Chip className="filterProjects" id="All" variant="outlined" label="All" clickable={true} style={(lastFilter==="All") ? chipStyleSelected : chipStyle} onClick={()=>filter("All","All")}/>
-        <Chip className="filterProjects" id="Tech" variant="outlined" label="Tech" clickable={true} style={(lastFilter==="Tech") ? chipStyleSelected : chipStyle} onClick={()=>filter("Tech","Tech")} icon={<LaptopChromebookRounded style={{color: (lastFilter==="Tech") ? 'grey' : 'grey'}} />} />
-        <Chip className="filterProjects" id="Entrepreneurship" variant="outlined" label="Entrepreneurship" clickable={true} style={(lastFilter==="Entrepreneurship") ? chipStyleSelected : chipStyle} onClick={()=>filter("Entrepreneurship","Entrepreneurship")} icon={<SearchRounded style={{color: (lastFilter==="Entrepreneurship") ? 'grey' : 'grey'}} />}/>
-        <Chip className="filterProjects" id="Digital Art" variant="outlined" label="Digital Art" clickable={true} style={(lastFilter==="Digital Art") ? chipStyleSelected : chipStyle} onClick={()=>filter("Digital Art","Digital Art")} icon={<FormatSizeRounded style={{color: (lastFilter==="Digital Art") ? 'grey' : 'grey'}} />}/>
-        <Chip className="filterProjects" id="Traditional Art" variant="outlined" label="Traditional Art" clickable={true} style={(lastFilter==="Traditional Art") ? chipStyleSelected : chipStyle} onClick={()=>filter("Traditional Art","Traditional Art")}  icon={<ColorLensRounded style={{color: (lastFilter==="Traditional Art") ? 'grey' : 'grey'}} />} />
-        <Chip className="filterProjects" id="Professional" variant="outlined" label="Professional" clickable={true} style={(lastFilter==="Professional") ? chipStyleSelected : chipStyle} onClick={()=>filter("Professional","Professional")} icon={<WorkOutlineRounded style={{color: (lastFilter==="Professional") ? 'grey' : 'grey'}} />}/>
-        <Chip className="filterProjects" id="Side Projects" variant="outlined" label="Side Projects" clickable={true} style={(lastFilter==="Side Projects") ? chipStyleSelected : chipStyle} onClick={()=>filter("Side Projects","Side Projects")} icon={<EmojiSymbolsRounded style={{color: (lastFilter==="Side Projects") ? 'grey' : 'grey'}} />}/>
-      </Grid>
+        <Grid container direction="row" justify="center" style={{padding: '2vh 4vw 0 4vw'}}>
+          <Chip className="filterProjects" id="Featured" variant="outlined" label="Featured" clickable={true} style={(lastFilter==="Featured") ? chipStyleSelected : chipStyle} onClick={()=>filter("Featured","Featured")} icon={<StarOutlineRounded style={{color: (lastFilter==="Featured") ? 'grey' : 'grey'}} />}/>
+          <Chip className="filterProjects" id="All" variant="outlined" label="All" clickable={true} style={(lastFilter==="All") ? chipStyleSelected : chipStyle} onClick={()=>filter("All","All")}/>
+          <Chip className="filterProjects" id="Tech" variant="outlined" label="Tech" clickable={true} style={(lastFilter==="Tech") ? chipStyleSelected : chipStyle} onClick={()=>filter("Tech","Tech")} icon={<LaptopChromebookRounded style={{color: (lastFilter==="Tech") ? 'grey' : 'grey'}} />} />
+          <Chip className="filterProjects" id="Entrepreneurship" variant="outlined" label="Entrepreneurship" clickable={true} style={(lastFilter==="Entrepreneurship") ? chipStyleSelected : chipStyle} onClick={()=>filter("Entrepreneurship","Entrepreneurship")} icon={<SearchRounded style={{color: (lastFilter==="Entrepreneurship") ? 'grey' : 'grey'}} />}/>
+          <Chip className="filterProjects" id="Digital Art" variant="outlined" label="Digital Art" clickable={true} style={(lastFilter==="Digital Art") ? chipStyleSelected : chipStyle} onClick={()=>filter("Digital Art","Digital Art")} icon={<FormatSizeRounded style={{color: (lastFilter==="Digital Art") ? 'grey' : 'grey'}} />}/>
+          <Chip className="filterProjects" id="Traditional Art" variant="outlined" label="Traditional Art" clickable={true} style={(lastFilter==="Traditional Art") ? chipStyleSelected : chipStyle} onClick={()=>filter("Traditional Art","Traditional Art")}  icon={<ColorLensRounded style={{color: (lastFilter==="Traditional Art") ? 'grey' : 'grey'}} />} />
+          <Chip className="filterProjects" id="Professional" variant="outlined" label="Professional" clickable={true} style={(lastFilter==="Professional") ? chipStyleSelected : chipStyle} onClick={()=>filter("Professional","Professional")} icon={<WorkOutlineRounded style={{color: (lastFilter==="Professional") ? 'grey' : 'grey'}} />}/>
+          <Chip className="filterProjects" id="Side Projects" variant="outlined" label="Side Projects" clickable={true} style={(lastFilter==="Side Projects") ? chipStyleSelected : chipStyle} onClick={()=>filter("Side Projects","Side Projects")} icon={<EmojiSymbolsRounded style={{color: (lastFilter==="Side Projects") ? 'grey' : 'grey'}} />}/>
+        </Grid>
+      </Fade>
       <Grid container direction="row" justify="center" style={{marginTop: '3vh'}}>
         <Link href="/art/100-days-of-buttons">
           <Grid className="item" id="Digital Art, Featured, Side Projects" item xs={10} sm={5} md={3} style={itemStyle}>
