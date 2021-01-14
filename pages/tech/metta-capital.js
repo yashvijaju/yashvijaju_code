@@ -78,7 +78,7 @@ export default function Story() {
                 <b>Notable Features</b>
             </Typography>
             
-            <ListItem step="1" text="The website is fully responsive -- three different designs were created for the team modals to adapt to the standard mobile phone, tablet, and laptop/desktop screen sizes"/>
+            <ListItem step="1" text="The website is fully responsive — three different designs were created for the team modals to adapt to the standard mobile phone, tablet, and laptop/desktop screen sizes"/>
             <ListItem step="2" text="The color of the navigation bar (on the homepage) is modified depending on scroll position"/>
             <ListItem step="3" text="The transactions gallery is updated via arrays"/>
             <ListItem step="4" text="The Google Maps API was initially integrated with the contact page, but public github hosting required the key to be removed from the repository."/>

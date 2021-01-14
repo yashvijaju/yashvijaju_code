@@ -95,19 +95,9 @@ export default function Story() {
             Together <br/>
             Become <br/>
             The Puppet Show <br/>
-            --
+            —
           </Typography>
         </Grid>
-        <Grid item xs={4} container direction="column">
-          <img src="/assets/projects/quilling/quilling_1.jpg" className={classes.image}/>
-          <img src="/assets/projects/quilling/quilling_4.jpg" className={classes.image}/>
-          <img src="/assets/projects/quilling/quilling_6.jpg" className={classes.image}/>
-        </Grid> 
-        <Grid item xs={4} container direction="column">
-          <img src="/assets/projects/quilling/quilling_5.jpg" className={classes.image}/>
-          <img src="/assets/projects/quilling/quilling_3.jpg" className={classes.image}/>
-          <img src="/assets/projects/quilling/quilling_9.jpg" className={classes.image}/>
-        </Grid> 
       </Grid> */}
 
       <Grid container className={classes.container} justify="space-between">

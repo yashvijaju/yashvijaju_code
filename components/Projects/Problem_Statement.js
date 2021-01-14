@@ -2,7 +2,6 @@ import React from 'react';
 import { Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles'
 
-
 var title = '#000000'; 
 var text = '#000000';
 var background = '#000000';

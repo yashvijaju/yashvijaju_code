@@ -1,6 +1,8 @@
 import React from 'react';
 import { Grid, Typography, TextField, Hidden, Divider } from '@material-ui/core';
 import { EmailOutlined, LinkedIn, Instagram, Facebook, GitHub } from '@material-ui/icons';
+import { makeStyles } from '@material-ui/core/styles'
+import { Fade } from 'react-reveal';
 
 
 const blue='#bee3f1';
@@ -8,7 +10,15 @@ const grey = '#000000';
 const greyy = '#efefef';
 const font = 'Segoe UI';
 
+const useStyles = makeStyles((theme) => ({
+  container: {
+    padding: '5vh 2vw 2vh 2vw',
+  },
+}));
+
 export default function Contact() {
+  const classes = useStyles();
+
   const [bodyText,setBodyText] = React.useState("");
 
   function handleClick() {
@@ -59,7 +69,7 @@ export default function Contact() {
       </Hidden>
       
       <Hidden smDown>
-        <Grid container direction="row" alignItems="center" style={{'padding': '5vh 2vw 2vh 2vw'}}>
+        <Grid container direction="row" alignItems="center" className={classes.container}>
             <Grid item xs={1}/>
             <Grid item xs={4} style={{display:'flex',flexDirection:'column'}}>
               <Typography variant="h3" style={{color:blue, fontFamily: font, fontWeight: 'bold'}}>

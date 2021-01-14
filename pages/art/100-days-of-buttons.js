@@ -113,7 +113,7 @@ export default function Story() {
 
       <Divider className={classes.divider}/>
 
-      <Fade bottom>
+      <Fade>
       <Grid container direction="column" className={classes.container}>
         <Grid item xs={12} container direction="row" alignItems="center" className={classes.spacing}>
           <Typography variant="caption" className={classes.title_rotated_text}>one-five<br/><br/></Typography>

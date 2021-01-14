@@ -2,6 +2,7 @@ import React from 'react';
 import { Grid, Divider, Typography, Hidden, Tooltip } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles'
 import TrackVisibility from 'react-on-screen'
+import { Fade } from 'react-reveal';
 // Components
 import { Cover } from '../../components/Projects/Cover'
 import { Intro } from '../../components/Projects/Intro'
@@ -119,9 +120,11 @@ export default function Crave() {
 
             <Grid container className={classes.container} id="container">
                 <ProblemStatement title_color={secondary} text_color={primary} bg_color={tertiary} text={<div>Purchasing international snacks poses a huge pain point — shipping fares are exceptionally high and deliveries take very long.<br/>According to our survey conducted with ~100 international students at the University of Southern California, 90% of international students crave food from home.<br/><br/></div>} media={<div className={classes.problem_statement}>
-                    <img className={classes.pitch_image} src="/assets/projects/crave/pitchdeck_0.jpg"/>
-                    <img className={classes.pitch_image} src="/assets/projects/crave/pitchdeck_1.jpg"/>
-                    <img className={classes.pitch_image} src="/assets/projects/crave/pitchdeck_2.jpg"/>
+                    <Fade>
+                        <img className={classes.pitch_image} src="/assets/projects/crave/pitchdeck_0.jpg"/>
+                        <img className={classes.pitch_image} src="/assets/projects/crave/pitchdeck_1.jpg"/>
+                        <img className={classes.pitch_image} src="/assets/projects/crave/pitchdeck_2.jpg"/>
+                    </Fade>
                 </div>}/>
                 
                 <Grid item xs container direction="row" justify="space-between">

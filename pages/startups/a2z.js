@@ -163,7 +163,7 @@ export default function Story() {
           Motivation enough <br/>
           <br/>
           We kept going <br/>
-          --
+          —
         */}
 
       </>

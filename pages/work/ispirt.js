@@ -1037,7 +1037,7 @@ export default function Story() {
                         A NoSQL database has been used to store the variety of data available. Given below are a few schemas used to store data. <br/>
                         The volunteer schema is used to store volunteer information. The data format is slightly different depending on volunteer authentication (VFC Activity is shown solely for Volunteer Operations and VFC members). <br/>
                         The email templates are used to automate emails sent to volunteers when certain events occur. <br/>
-                        The general settings allow dropdown options to be easily modified -- a single modification to the settings updates the dropdown menus throughout the application.<br/>
+                        The general settings allow dropdown options to be easily modified — a single modification to the settings updates the dropdown menus throughout the application.<br/>
                         The rooms are used to autocomplete volunteer rooms. <br/>
                         The admin control keeps track of users with admin access.
                         </Typography>

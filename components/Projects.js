@@ -97,7 +97,7 @@ export default function Story() {
 
   return (
     <div style={{'padding': '5vh 0vw 2vh 0vw', backgroundColor: blue}}>
-      <Fade bottom>
+      {/* <Fade bottom> */}
         <Typography variant="h5" style={{paddingBottom: '1vh', fontWeight: 'bolder', color: title, textAlign: 'center'}}>
             &#123; My Projects &#125;
         </Typography>
@@ -145,7 +145,7 @@ export default function Story() {
           <Chip className="filterProjects" id="Professional" variant="outlined" label="Professional" clickable={true} style={(lastFilter==="Professional") ? chipStyleSelected : chipStyle} onClick={()=>filter("Professional","Professional")} icon={<WorkOutlineRounded style={{color: (lastFilter==="Professional") ? 'grey' : 'grey'}} />}/>
           <Chip className="filterProjects" id="Side Projects" variant="outlined" label="Side Projects" clickable={true} style={(lastFilter==="Side Projects") ? chipStyleSelected : chipStyle} onClick={()=>filter("Side Projects","Side Projects")} icon={<EmojiSymbolsRounded style={{color: (lastFilter==="Side Projects") ? 'grey' : 'grey'}} />}/>
         </Grid>
-      </Fade>
+      {/* </Fade> */}
       <Grid container direction="row" justify="center" style={{marginTop: '3vh'}}>
         <Link href="/art/100-days-of-buttons">
           <Grid className="item" id="Digital Art, Featured, Side Projects" item xs={10} sm={5} md={3} style={itemStyle}>
