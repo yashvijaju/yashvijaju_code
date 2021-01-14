@@ -1,6 +1,7 @@
 import React from 'react';
 import { Grid, Divider, Typography, Hidden, Tooltip } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles'
+import { Fade } from 'react-reveal';
 // Components
 import { Cover } from '../../components/Projects/Cover'
 import { Intro } from '../../components/Projects/Intro'
@@ -30,6 +31,11 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: '20px',
         height: 'auto',
         width: '100%',
+        transition: 'all .5s ease-in-out', 
+        '&:hover': {
+            cursor: 'pointer',
+            transform: 'scale(1.15)',
+        }
     },
     container_content: {
         margin: '0 0 3vh',
@@ -54,97 +60,101 @@ export default function Story() {
 
         <Grid container direction="row" justify="space-between" className={classes.container}>
             <Grid item xs={6} container direction="column">
-                <Grid container direction="row" justify="space-between" alignItems="center" className={classes.container_content}>
-                    <Grid item xs={7}>
-                        <img className={classes.image} src="/assets/projects/kathak/kathak1.jpg"/>
+                <Fade>
+                    <Grid container direction="row" justify="space-between" alignItems="center" className={classes.container_content}>
+                        <Grid item xs={7}>
+                            <img className={classes.image} src="/assets/projects/kathak/kathak1.jpg"/>
+                        </Grid>
+                        <Grid item xs={4}>
+                            <Typography variant="body2" className={classes.text}>
+                                When I look down <br/>
+                                I see a bunch of <span style={{fontStyle: 'italic'}}>ghungroos</span> <br/>
+                                Adorning my feet <br/>
+                            </Typography>
+                        </Grid>
                     </Grid>
-                    <Grid item xs={4}>
-                        <Typography variant="body2" className={classes.text}>
-                            When I look down <br/>
-                            I see a bunch of <span style={{fontStyle: 'italic'}}>ghungroos</span> <br/>
-                            Adorning my feet <br/>
-                        </Typography>
+                    <Grid container direction="row" justify="space-between" alignItems="center" className={classes.container_content}>
+                        <Grid item xs={7}>
+                            <img className={classes.image} src="/assets/projects/kathak/kathak3.jpg"/>
+                        </Grid>
+                        <Grid item xs={4}>
+                            <Typography variant="body2" className={classes.text}>
+                                When I dance <br/>
+                                My <span style={{fontStyle: 'italic'}}>ghungroos</span> sound like <br/>
+                                Chains breaking <br/>
+                                And music coming to life <br/>
+                            </Typography>
+                        </Grid>
                     </Grid>
-                </Grid>
-                <Grid container direction="row" justify="space-between" alignItems="center" className={classes.container_content}>
-                    <Grid item xs={7}>
-                        <img className={classes.image} src="/assets/projects/kathak/kathak3.jpg"/>
+                    <Grid container direction="row" justify="space-between" alignItems="center" className={classes.container_content}>
+                        <Grid item xs={7}>
+                            <img className={classes.image} src="/assets/projects/kathak/kathak5.jpg"/>
+                        </Grid>
+                        <Grid item xs={4}>
+                            <Typography variant="body2" className={classes.text}>
+                            Time slows down <br/>
+                            But I don't <br/>
+                            </Typography>
+                        </Grid>
                     </Grid>
-                    <Grid item xs={4}>
-                        <Typography variant="body2" className={classes.text}>
-                            When I dance <br/>
-                            My <span style={{fontStyle: 'italic'}}>ghungroos</span> sound like <br/>
-                            Chains breaking <br/>
-                            And music coming to life <br/>
-                        </Typography>
+                    <Grid container direction="row" justify="space-between" alignItems="center" className={classes.container_content}>
+                        <Grid item xs={7}>
+                            <img className={classes.image} src="/assets/projects/kathak/kathak7.jpg"/>
+                        </Grid>
+                        <Grid item xs={4}>
+                            <Typography variant="body2" className={classes.text}>
+                                And when I look up <br/>
+                                I am the wind <br/> 
+                            </Typography>
+                        </Grid>
                     </Grid>
-                </Grid>
-                <Grid container direction="row" justify="space-between" alignItems="center" className={classes.container_content}>
-                    <Grid item xs={7}>
-                        <img className={classes.image} src="/assets/projects/kathak/kathak5.jpg"/>
-                    </Grid>
-                    <Grid item xs={4}>
-                        <Typography variant="body2" className={classes.text}>
-                        Time slows down <br/>
-                        But I don't <br/>
-                        </Typography>
-                    </Grid>
-                </Grid>
-                <Grid container direction="row" justify="space-between" alignItems="center" className={classes.container_content}>
-                    <Grid item xs={7}>
-                        <img className={classes.image} src="/assets/projects/kathak/kathak7.jpg"/>
-                    </Grid>
-                    <Grid item xs={4}>
-                        <Typography variant="body2" className={classes.text}>
-                            And when I look up <br/>
-                            I am the wind <br/> 
-                        </Typography>
-                    </Grid>
-                </Grid>
+                </Fade>
             </Grid>
             <Grid item xs={6} container direction="column" style={{paddingTop: '20vh'}}>
-                <Grid container direction="row" justify="space-between" alignItems="center" className={classes.container_content}>
-                    <Grid item xs={4}>
-                        <Typography variant="body2" className={classes.text} align="right">
-                            It has been 14 years <br/>
-                            Since I wore 10 <span style={{fontStyle: 'italic'}}>ghungroos</span> <br/>
-                            Tiny bells tied together with a red thread <br/>
-                            Today I wear 150 <br/>
-                            But I feel light <br/>
-                        </Typography>
+                <Fade>
+                    <Grid container direction="row" justify="space-between" alignItems="center" className={classes.container_content}>
+                        <Grid item xs={4}>
+                            <Typography variant="body2" className={classes.text} align="right">
+                                It has been 14 years <br/>
+                                Since I wore 10 <span style={{fontStyle: 'italic'}}>ghungroos</span> <br/>
+                                Tiny bells tied together with a red thread <br/>
+                                Today I wear 150 <br/>
+                                But I feel light <br/>
+                            </Typography>
+                        </Grid>
+                        <Grid item xs={7}>
+                            <img className={classes.image} src="/assets/projects/kathak/kathak2.jpg"/>
+                        </Grid>
                     </Grid>
-                    <Grid item xs={7}>
-                        <img className={classes.image} src="/assets/projects/kathak/kathak2.jpg"/>
+                    <Grid container direction="row" justify="space-between" alignItems="center" className={classes.container_content}>
+                        <Grid item xs={4}>
+                            <Typography variant="body2" className={classes.text} align="right">
+                                I stare at one spot <br/> 
+                                And spin <br/>
+                                One <br/>
+                                Two <br/>
+                                Three <br/>
+                                Forty <br/>
+                                Hundred <br/>
+                            </Typography>
+                        </Grid>
+                        <Grid item xs={7}>
+                            <img className={classes.image} src="/assets/projects/kathak/kathak4.jpg"/>
+                        </Grid>
                     </Grid>
-                </Grid>
-                <Grid container direction="row" justify="space-between" alignItems="center" className={classes.container_content}>
-                    <Grid item xs={4}>
-                        <Typography variant="body2" className={classes.text} align="right">
-                            I stare at one spot <br/> 
-                            And spin <br/>
-                            One <br/>
-                            Two <br/>
-                            Three <br/>
-                            Forty <br/>
-                            Hundred <br/>
-                        </Typography>
+                    <Grid container direction="row" justify="space-between" alignItems="center" className={classes.container_content}>
+                        <Grid item xs={4}>
+                            <Typography variant="body2" className={classes.text} align="right">
+                                I am unstoppable <br/>
+                                Like the wind <br/>
+                                A force to be reckoned with <br/>
+                            </Typography>
+                        </Grid>
+                        <Grid item xs={7}>
+                            <img className={classes.image} src="/assets/projects/kathak/kathak6.jpg"/>
+                        </Grid>
                     </Grid>
-                    <Grid item xs={7}>
-                        <img className={classes.image} src="/assets/projects/kathak/kathak4.jpg"/>
-                    </Grid>
-                </Grid>
-                <Grid container direction="row" justify="space-between" alignItems="center" className={classes.container_content}>
-                    <Grid item xs={4}>
-                        <Typography variant="body2" className={classes.text} align="right">
-                            I am unstoppable <br/>
-                            Like the wind <br/>
-                            A force to be reckoned with <br/>
-                        </Typography>
-                    </Grid>
-                    <Grid item xs={7}>
-                        <img className={classes.image} src="/assets/projects/kathak/kathak6.jpg"/>
-                    </Grid>
-                </Grid>
+                </Fade>
             </Grid>
         </Grid>
 

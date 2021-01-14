@@ -1,6 +1,7 @@
 import React from 'react';
 import { Grid, Divider, Typography, Hidden, Tooltip } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles'
+import { Fade } from 'react-reveal';
 // Components
 import { Cover } from '../../components/Projects/Cover'
 import { Intro } from '../../components/Projects/Intro'
@@ -58,12 +59,14 @@ export default function Story() {
 
             <DividerLeft text="WORK SUMMARY" borderColor={primary_25} textColor={primary}/>
 
-            <Grid container direction="column" className={classes.container} style={{color: primary_25}}>
-                <Typography variant="body2" style={{marginBottom: '3vh'}}>1.&emsp;&emsp;Beta-tested BookMyShow’s Partner App</Typography>
-                <Typography variant="body2" style={{marginBottom: '3vh'}}>2.&emsp;&emsp;Analysed the software frameworks and libraries used by BookMyShow</Typography>
-                <Typography variant="body2" style={{marginBottom: '3vh'}}>3.&emsp;&emsp;Submitted a paper about BookMyShow’s technology stack</Typography>
-                <Typography variant="body2" style={{marginBottom: '3vh'}}>Unfortunately, any further disclosure of information would lead to a breach of the confidentiality agreement.</Typography>
-            </Grid>
+            <Fade>
+                <Grid container direction="column" className={classes.container} style={{color: primary_25}}>
+                    <Typography variant="body2" style={{marginBottom: '3vh'}}>1.&emsp;&emsp;Beta-tested BookMyShow’s Partner App</Typography>
+                    <Typography variant="body2" style={{marginBottom: '3vh'}}>2.&emsp;&emsp;Analysed the software frameworks and libraries used by BookMyShow</Typography>
+                    <Typography variant="body2" style={{marginBottom: '3vh'}}>3.&emsp;&emsp;Submitted a paper about BookMyShow’s technology stack</Typography>
+                    <Typography variant="body2" style={{marginBottom: '3vh'}}>Unfortunately, any further disclosure of information would lead to a breach of the confidentiality agreement.</Typography>
+                </Grid>
+            </Fade>
 
             <Footer prev="PRODUCT DEVELOPMENT INTERN : MCDONALD's" prev_link="/work/mcdonald" prev_category="work" next="WEB DEVELOPER : CLIENT" next_link="/tech/metta-capital" next_category="work, tech" title={secondary} subtitle={primary} divider={primary_25}/>
         </>

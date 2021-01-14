@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { Grid, Divider, Typography, Hidden, Tooltip } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles'
+import { Fade } from 'react-reveal';
 // Components
 import { Cover } from '../../components/Projects/Cover'
 import { Intro } from '../../components/Projects/Intro'
@@ -31,6 +32,11 @@ const useStyles = makeStyles((theme) => ({
       height: 'auto',
       width: '100%',
       margin: '0 0 1vh',
+      transition: 'all .5s ease-in-out', 
+      '&:hover': {
+        cursor: 'pointer',
+        transform: 'scale(1.15)',
+      }
   }
 }));
 
@@ -47,48 +53,52 @@ export default function Story() {
       <Divider className={classes.divider}/>
 
       <Hidden smUp>
-        <Grid container className={classes.container} direction="column" spacing={3}>
-          <Grid item xs={12} sm={4} container direction="column">
-            <img className={classes.image} src="/assets/projects/cartoon-portrait/ref.jpg"/>
-            <Typography variant="caption">
-            1: Original Photo
-            </Typography>
+        <Fade>
+          <Grid container className={classes.container} direction="column" spacing={3}>
+            <Grid item xs={12} sm={4} container direction="column">
+              <img className={classes.image} src="/assets/projects/cartoon-portrait/ref.jpg"/>
+              <Typography variant="caption">
+              1: Original Photo
+              </Typography>
+            </Grid>
+            <Grid item xs={12} sm={4} container direction="column">
+              <img className={classes.image} src="/assets/projects/cartoon-portrait/ps1.png"/>
+              <Typography variant="caption">
+              2: Cartoon created on Photoshop
+              </Typography>
+            </Grid>
+            <Grid item xs={12} sm={4} container direction="column">
+              <img className={classes.image} src="/assets/projects/cartoon-portrait/ps2.jpg"/>
+              <Typography variant="caption">
+              3: Cartoon transposed on original photo
+              </Typography>
+            </Grid>
           </Grid>
-          <Grid item xs={12} sm={4} container direction="column">
-            <img className={classes.image} src="/assets/projects/cartoon-portrait/ps1.png"/>
-            <Typography variant="caption">
-            2: Cartoon created on Photoshop
-            </Typography>
-          </Grid>
-          <Grid item xs={12} sm={4} container direction="column">
-            <img className={classes.image} src="/assets/projects/cartoon-portrait/ps2.jpg"/>
-            <Typography variant="caption">
-            3: Cartoon transposed on original photo
-            </Typography>
-          </Grid>
-        </Grid>
+        </Fade>
       </Hidden>
       <Hidden xsDown>
-        <Grid container className={classes.container} direction="row" spacing={3}>
-          <Grid item xs={12} sm={4} container direction="column">
-            <img className={classes.image} src="/assets/projects/cartoon-portrait/ref.jpg"/>
-            <Typography variant="caption">
-            1: Original Photo
-            </Typography>
+        <Fade bottom>
+          <Grid container className={classes.container} direction="row" spacing={3}>
+            <Grid item xs={12} sm={4} container direction="column">
+              <img className={classes.image} src="/assets/projects/cartoon-portrait/ref.jpg"/>
+              <Typography variant="caption">
+              1: Original Photo
+              </Typography>
+            </Grid>
+            <Grid item xs={12} sm={4} container direction="column">
+              <img className={classes.image} src="/assets/projects/cartoon-portrait/ps1.png"/>
+              <Typography variant="caption">
+              2: Cartoon created on Photoshop
+              </Typography>
+            </Grid>
+            <Grid item xs={12} sm={4} container direction="column">
+              <img className={classes.image} src="/assets/projects/cartoon-portrait/ps2.jpg"/>
+              <Typography variant="caption">
+              3: Cartoon transposed on original photo
+              </Typography>
+            </Grid>
           </Grid>
-          <Grid item xs={12} sm={4} container direction="column">
-            <img className={classes.image} src="/assets/projects/cartoon-portrait/ps1.png"/>
-            <Typography variant="caption">
-            2: Cartoon created on Photoshop
-            </Typography>
-          </Grid>
-          <Grid item xs={12} sm={4} container direction="column">
-            <img className={classes.image} src="/assets/projects/cartoon-portrait/ps2.jpg"/>
-            <Typography variant="caption">
-            3: Cartoon transposed on original photo
-            </Typography>
-          </Grid>
-        </Grid>
+        </Fade>
       </Hidden>
 
       <Footer prev="PRIDE FOR LABOUR" prev_link="/startups/pride-for-labour" prev_category="entrepreneurship" next="A2Z" next_link="/startups/a2z" next_category="entrepreneurship" title={secondary} subtitle={primary} divider={primary_25}/>

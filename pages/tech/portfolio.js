@@ -1,6 +1,7 @@
 import React from 'react';
 import { Grid, Divider, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles' 
+import { Fade } from 'react-reveal';
 // Components
 import { Cover } from '../../components/Projects/Cover'
 import { Intro } from '../../components/Projects/Intro'
@@ -46,6 +47,11 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
         margin: '0 0 2.5vh',
       },
+      transition: 'all .5s ease-in-out', 
+      '&:hover': {
+        cursor: 'pointer',
+        transform: 'scale(1.15)',
+      }
   },
   timeline_item: {
     margin: '0 0 5vh',
@@ -64,22 +70,24 @@ function TimelineEvent(props) {
         <TimelineConnector style={{backgroundColor: primary_25}}/>
       </TimelineSeparator>
       <TimelineContent className={classes.timeline_item}>
-        <Grid container justify="space-between">
-          <Grid item xs={12} sm={1}>
-            {props.time}
-          </Grid>
-          <Grid item xs={12} sm={10}>
-            <Typography variant="body2">
-              <u>Iteration {props.iteration}:</u>
-              <br/>
-              {props.content}
-              <br/><br/>
-            </Typography>
-            <Grid container xs={12} justify="space-between">
-              {props.images}
+        <Fade>
+          <Grid container justify="space-between">
+            <Grid item xs={12} sm={1}>
+              {props.time}
+            </Grid>
+            <Grid item xs={12} sm={10}>
+              <Typography variant="body2">
+                <u>Iteration {props.iteration}:</u>
+                <br/>
+                {props.content}
+                <br/><br/>
+              </Typography>
+              <Grid container item xs={12} justify="space-between">
+                {props.images}
+              </Grid>
             </Grid>
           </Grid>
-        </Grid>
+        </Fade>
       </TimelineContent>
     </TimelineItem>
   )

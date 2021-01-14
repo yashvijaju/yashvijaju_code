@@ -2,6 +2,7 @@ import React from 'react';
 import { Grid, Divider, Typography, Hidden } from '@material-ui/core';
 import { KeyboardArrowLeftOutlined, KeyboardArrowRightOutlined } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles'
+import { Fade } from 'react-reveal';
 // Components
 import { Cover } from '../../components/Projects/Cover'
 import { Intro } from '../../components/Projects/Intro'
@@ -49,6 +50,11 @@ const useStyles = makeStyles((theme) => ({
       height: 'auto',
       width: '30%',
       margin: '0 0 1vh',
+      transition: 'all .5s ease-in-out', 
+      '&:hover': {
+        cursor: 'pointer',
+        transform: 'scale(1.15)',
+      }
   },
   title_rotated_text: {
     transform: 'rotate(-90deg)',
@@ -96,6 +102,7 @@ export default function Story() {
 
       <Divider className={classes.divider}/>
 
+      <Fade>
       <Grid container direction="column" className={classes.container}>
         <Grid item xs={12} container direction="row" alignItems="center" className={classes.spacing}>
           <Typography variant="caption" className={classes.title_rotated_text}>iteration<br/><br/></Typography>
@@ -208,6 +215,8 @@ export default function Story() {
       </Grid>
 
       <Divider className={classes.content_divider_right}/>
+
+      </Fade>
       <Footer prev="A2Z" prev_link="/startups/a2z" prev_category="entrepreneurship" next="PORTFOLIO" next_link="/tech/portfolio" next_category="tech, digital art" title={secondary} subtitle={primary} divider={primary_25}/>
 
     </>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Grid, Divider, Typography, Hidden, Tooltip } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles'
+import { Fade } from 'react-reveal';
 // Components
 import { Cover } from '../../components/Projects/Cover'
 import { Intro } from '../../components/Projects/Intro'
@@ -43,6 +44,11 @@ const useStyles = makeStyles((theme) => ({
       border: '1.5px solid #000000',
       borderColor: primary,
       borderRadius: '20px',
+      transition: 'all .5s ease-in-out', 
+      '&:hover': {
+        cursor: 'pointer',
+        transform: 'scale(1.15)',
+      }
     }
 }));
 
@@ -107,54 +113,60 @@ export default function Story() {
           </Typography>
         </Grid>
         <Grid item xs={12} sm={3}>
-          <Typography variant="body2" align="right" className={classes.text}>
-            The strip of paper <br/>
-            Is a puppet <br/>
-            And the tool <br/>
-            The string <br/>
-            <br/>
-            The string twists <br/>
-            And the puppet rotates <br/>
-            The strip becomes <br/>
-            A tight coil <br/>
-            <br/>
-            <img src="/assets/projects/quilling/quilling_7.jpg" className={classes.image}/>
-            <img src="/assets/projects/quilling/quilling_4.jpg" className={classes.image}/>
-          </Typography>
+          <Fade>
+            <Typography variant="body2" align="right" className={classes.text}>
+              The strip of paper <br/>
+              Is a puppet <br/>
+              And the tool <br/>
+              The string <br/>
+              <br/>
+              The string twists <br/>
+              And the puppet rotates <br/>
+              The strip becomes <br/>
+              A tight coil <br/>
+              <br/>
+              <img src="/assets/projects/quilling/quilling_7.jpg" className={classes.image}/>
+              <img src="/assets/projects/quilling/quilling_4.jpg" className={classes.image}/>
+            </Typography>
+          </Fade>
         </Grid>
         <Grid item xs={12} sm={3} container direction="column">
           <img src="/assets/projects/quilling/quilling_1.jpg" className={classes.image}/>
           <img src="/assets/projects/quilling/quilling_3.jpg" className={classes.image}/>
-          <Typography variant="body2" className={classes.text} align="center">
-            The strings are cut <br/>
-            The puppet stretches <br/>
-            The coil becomes <br/>
-            Loose <br/>
-            <br/>
-            But <br/>
-            I am there <br/>
-            The puppeteer <br/>
-          </Typography>
+          <Fade>
+            <Typography variant="body2" className={classes.text} align="center">
+              The strings are cut <br/>
+              The puppet stretches <br/>
+              The coil becomes <br/>
+              Loose <br/>
+              <br/>
+              But <br/>
+              I am there <br/>
+              The puppeteer <br/>
+            </Typography>
+            </Fade>
           <img src="/assets/projects/quilling/quilling_6.jpg" className={classes.image}/>
         </Grid> 
         <Grid item xs={12} sm={3} container direction="column">
           <img src="/assets/projects/quilling/quilling_5.jpg" className={classes.image}/>
           <img src="/assets/projects/quilling/quilling_9.jpg" className={classes.image}/>
-          <Typography variant="body2" className={classes.text}>
-            I pinch the coil <br/>
-            Bend it to my will <br/>
-            The loose coil becomes <br/>
-            A teardrop <br/>
-            A dimaond <br/>
-            A victim of my imagination <br/>
-            <br/>
-            Glued in place <br/>
-            All the puppets <br/>
-            Together <br/>
-            Become <br/>
-            The Puppet Show <br/>
-            --
-          </Typography>
+          <Fade>
+            <Typography variant="body2" className={classes.text}>
+              I pinch the coil <br/>
+              Bend it to my will <br/>
+              The loose coil becomes <br/>
+              A teardrop <br/>
+              A dimaond <br/>
+              A victim of my imagination <br/>
+              <br/>
+              Glued in place <br/>
+              All the puppets <br/>
+              Together <br/>
+              Become <br/>
+              The Puppet Show <br/>
+              --
+            </Typography>
+          </Fade>
         </Grid> 
       </Grid>
 

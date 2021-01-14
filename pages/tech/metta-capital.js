@@ -1,6 +1,7 @@
 import React from 'react';
 import { Grid, Divider, Typography, Hidden, Tooltip } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles'
+import { Fade } from 'react-reveal';
 // Components
 import { Cover } from '../../components/Projects/Cover'
 import { Intro } from '../../components/Projects/Intro'
@@ -77,11 +78,13 @@ export default function Story() {
             <Typography variant="h5" className={classes.title}>
                 <b>Notable Features</b>
             </Typography>
-            
-            <ListItem step="1" text="The website is fully responsive — three different designs were created for the team modals to adapt to the standard mobile phone, tablet, and laptop/desktop screen sizes"/>
-            <ListItem step="2" text="The color of the navigation bar (on the homepage) is modified depending on scroll position"/>
-            <ListItem step="3" text="The transactions gallery is updated via arrays"/>
-            <ListItem step="4" text="The Google Maps API was initially integrated with the contact page, but public github hosting required the key to be removed from the repository."/>
+
+            <Fade>
+                <ListItem step="1" text="The website is fully responsive — three different designs were created for the team modals to adapt to the standard mobile phone, tablet, and laptop/desktop screen sizes"/>
+                <ListItem step="2" text="The color of the navigation bar (on the homepage) is modified depending on scroll position"/>
+                <ListItem step="3" text="The transactions gallery is updated via arrays"/>
+                <ListItem step="4" text="The Google Maps API was initially integrated with the contact page, but public github hosting required the key to be removed from the repository."/>
+            </Fade>
         </Grid>
 
         <Footer prev="SOFTWARE ENGINEER INTERN : BOOKMYSHOW" prev_link="/work/bookmyshow" prev_category="work, tech" next="100 DAYS OF BUTTONS" next_link="/art/100-days-of-buttons" next_category="digital art" title={secondary} subtitle={primary} divider={primary_25}/>

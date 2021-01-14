@@ -1,6 +1,7 @@
 import React from 'react';
 import { Grid, Divider, Typography, Hidden, Tooltip } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles'
+import { Fade } from 'react-reveal';
 // Components
 import { Cover } from '../../components/Projects/Cover'
 import { Intro } from '../../components/Projects/Intro'
@@ -51,9 +52,11 @@ export default function Story() {
 
         <Grid container justify="space-between" className={classes.container}>
             <Grid item xs={12} sm={7} container direction="column" justify="space-between">
-                <img className={classes.image} src="/assets/projects/first-robotics-competiton/frc.jpg"/>
-                <img className={classes.image} src="/assets/projects/first-robotics-competiton/frc2.jpg"/>
-                <img className={classes.image} src="/assets/projects/first-robotics-competiton/frc3.jpg"/>
+                <Fade>
+                    <img className={classes.image} src="/assets/projects/first-robotics-competiton/frc.jpg"/>
+                    <img className={classes.image} src="/assets/projects/first-robotics-competiton/frc2.jpg"/>
+                    <img className={classes.image} src="/assets/projects/first-robotics-competiton/frc3.jpg"/>
+                </Fade>
             </Grid>
             <Grid item xs={12} sm={4}>
                 <Typography variant="body2" style={{color: primary}}>

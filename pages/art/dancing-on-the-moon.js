@@ -1,6 +1,7 @@
 import React from 'react';
 import { Grid, Divider, Typography, Hidden, Tooltip } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles'
+import { Fade } from 'react-reveal';
 // Components
 import { Cover } from '../../components/Projects/Cover'
 import { Intro } from '../../components/Projects/Intro'
@@ -26,6 +27,11 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     width: '100%',
+    transition: 'all .5s ease-in-out', 
+    '&:hover': {
+      cursor: 'pointer',
+      transform: 'scale(1.15)',
+    }
   },
   text: {
       color: primary,
@@ -46,7 +52,9 @@ export default function Story() {
 
           <Grid container direction="row" justify="space-between" alignItems="center" className={classes.container}>
             <Grid item xs={12} sm={8}>
-              <img className={classes.image} src="/assets/projects/dancing-on-the-moon/dancing-on-the-moon.jpg" alt="Dancing on the Moon" title="Dancing on the Moon"/>
+              {/* <Fade> */}
+                <img className={classes.image} src="/assets/projects/dancing-on-the-moon/dancing-on-the-moon.jpg" alt="Dancing on the Moon" title="Dancing on the Moon"/>
+              {/* </Fade> */}
             </Grid>
             <Hidden smUp>
               <Grid item xs={12} sm={3} container justify="center" align="center" style={{margin: '5vh 0 0'}}>

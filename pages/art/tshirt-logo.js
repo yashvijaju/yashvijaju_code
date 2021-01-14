@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Grid, Divider, Typography, Hidden, Tooltip } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles'
+import { Fade } from 'react-reveal'
 // Components
 import { Cover } from '../../components/Projects/Cover'
 import { Intro } from '../../components/Projects/Intro'
@@ -29,6 +30,11 @@ const useStyles = makeStyles((theme) => ({
         // border: '1px solid #9E0D1B',
         height: 'auto',
         width: '100%',
+        transition: 'all .5s ease-in-out', 
+        '&:hover': {
+            cursor: 'pointer',
+            transform: 'scale(1.15)',
+        }
     },
     caption: {
         transform: 'rotate(90deg)',
@@ -77,16 +83,18 @@ export default function Story() {
 
         <Divider className={classes.divider}/>
 
-        <Grid container direction="row" justify="space-between" className={classes.container}>
-            <Grid item xs={7}>
-                <ImageCaption image="/assets/projects/tshirt-logo-design/tshirt-logo-design.png" caption="Logo Design"/>
+        <Fade>
+            <Grid container direction="row" justify="space-between" className={classes.container}>
+                <Grid item xs={7}>
+                    <ImageCaption image="/assets/projects/tshirt-logo-design/tshirt-logo-design.png" caption="Logo Design"/>
+                </Grid>
+                <Grid item xs={3} container direction="column" justify="space-between">
+                    <ImageCaption image="/assets/projects/tshirt-logo-design/tshirt-logo-design-ref.jpg" caption="Original Photo: Reference"/>
+                    <ImageCaption image="/assets/projects/tshirt-logo-design/tshirt-logo-design-tshirt.jpg" caption="T-Shirt with Logo Design"/>
+                </Grid>
             </Grid>
-            <Grid item xs={3} container direction="column" justify="space-between">
-                <ImageCaption image="/assets/projects/tshirt-logo-design/tshirt-logo-design-ref.jpg" caption="Original Photo: Reference"/>
-                <ImageCaption image="/assets/projects/tshirt-logo-design/tshirt-logo-design-tshirt.jpg" caption="T-Shirt with Logo Design"/>
-            </Grid>
-        </Grid>
-
+        </Fade>
+         
         <Footer prev="SCHEDULE GENERATOR" prev_link="/tech/schedule-generator" prev_category="tech, side projects" next="KEYFRAME ANIMATION" next_link="/art/animation" next_category="digital art" title={secondary} subtitle={primary} divider={primary_25}/>
         </>
     )

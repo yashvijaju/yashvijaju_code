@@ -1,6 +1,7 @@
 import React from 'react';
 import { Grid, Divider, Typography, Hidden, Tooltip } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles'
+import { Fade } from 'react-reveal'
 // Components
 import { Cover } from '../../components/Projects/Cover'
 import { Intro } from '../../components/Projects/Intro'
@@ -39,6 +40,11 @@ const useStyles = makeStyles((theme) => ({
             maxHeight: '50vh',
             margin: '0 0 1vh 0',
         },
+        transition: 'all .5s ease-in-out', 
+        '&:hover': {
+            cursor: 'pointer',
+            transform: 'scale(1.15)',
+        }
     },
 }));
 
@@ -80,13 +86,15 @@ export default function Story() {
         <Divider className={classes.divider}/>
 
         <Grid container direction="column" className={classes.container}>
-            <Step_Component step_num="1" text="The program receives the student’s list of classes as an input, and generates optimized schedules as output." images={<><img className={classes.image} src="/assets/projects/schedule-generator/schedule-generator1.png"/></>}/>
+            <Fade bottom>
+                <Step_Component step_num="1" text="The program receives the student’s list of classes as an input, and generates optimized schedules as output." images={<><img className={classes.image} src="/assets/projects/schedule-generator/schedule-generator1.png"/></>}/>
 
-            <Step_Component step_num="2" text="To generate the schedules, the program utilizes the Beautiful Soup API to scrape data for the student’s classes from USC’s Web Registration platform. A .csv file is created with each class’s data to improve the program’s efficiency — the local storage is searched before the API runs." images={<><img className={classes.image} src="/assets/projects/schedule-generator/schedule-generator2.png"/><img className={classes.image} src="/assets/projects/schedule-generator/schedule-generator3.png"/></>}/>
+                <Step_Component step_num="2" text="To generate the schedules, the program utilizes the Beautiful Soup API to scrape data for the student’s classes from USC’s Web Registration platform. A .csv file is created with each class’s data to improve the program’s efficiency — the local storage is searched before the API runs." images={<><img className={classes.image} src="/assets/projects/schedule-generator/schedule-generator2.png"/><img className={classes.image} src="/assets/projects/schedule-generator/schedule-generator3.png"/></>}/>
 
-            <Step_Component step_num="3" text="The program also allows students to filter and customise their schedules by defining constraints on class timings. These constraints can include upper and lower bounds for class timings, minimum break between two classes, no classes on specific weekdays, etc."/>
+                <Step_Component step_num="3" text="The program also allows students to filter and customise their schedules by defining constraints on class timings. These constraints can include upper and lower bounds for class timings, minimum break between two classes, no classes on specific weekdays, etc."/>
 
-            <Step_Component step_num="4" text="Using all this data, the program then generates all the possible schedules for the student. These are optimised to divide class-hours evenly over the week. The schedules can then be viewed through the Tkinter graphic user interface." images={<><Hidden xsDown><img className={classes.image} src="/assets/projects/schedule-generator/schedule-generator4.png"/></Hidden><Hidden xsDown><img className={classes.image} src="/assets/projects/schedule-generator/schedule-generator5.png" style={{'width': '20vw', height: '16.34vw'}}/></Hidden><Hidden smUp><img className={classes.image} src="/assets/projects/schedule-generator/schedule-generator5.png"/></Hidden><img className={classes.image} src="/assets/projects/schedule-generator/schedule-generator6.png"/></>}/>
+                <Step_Component step_num="4" text="Using all this data, the program then generates all the possible schedules for the student. These are optimised to divide class-hours evenly over the week. The schedules can then be viewed through the Tkinter graphic user interface." images={<><Hidden xsDown><img className={classes.image} src="/assets/projects/schedule-generator/schedule-generator4.png"/></Hidden><Hidden xsDown><img className={classes.image} src="/assets/projects/schedule-generator/schedule-generator5.png" style={{'width': '20vw', height: '16.34vw'}}/></Hidden><Hidden smUp><img className={classes.image} src="/assets/projects/schedule-generator/schedule-generator5.png"/></Hidden><img className={classes.image} src="/assets/projects/schedule-generator/schedule-generator6.png"/></>}/>
+            </Fade>
         </Grid>
 
         <Footer prev="QUILLING" prev_link="/art/quilling" prev_category="traditional art" next="TSHIRT LOGO" next_link="/art/tshirt-logo" next_category="digital art" title={secondary} subtitle={primary} divider={primary_25}/>

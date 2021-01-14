@@ -1,6 +1,7 @@
 import React from 'react';
 import { Grid, Divider, Typography, Hidden, Tooltip } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles'
+import { Fade, Zoom } from 'react-reveal';
 // Components
 import { Cover } from '../../components/Projects/Cover'
 import { Intro } from '../../components/Projects/Intro'
@@ -94,7 +95,9 @@ function EmptyContainer(props) {
 function Title(props) {
   const classes = useStyles();
   return(
-    <Typography variant="body1" className={classes.title} style={{color: primary}}><b>{props.title}</b></Typography>
+    <Fade>
+      <Typography variant="body1" className={classes.title} style={{color: primary}}><b>{props.title}</b></Typography>
+    </Fade>
   )
 }
 
@@ -120,12 +123,14 @@ export default function Story() {
           <ProblemStatement title_color={secondary} text_color={primary} bg_color={tertiary} text={<div>Domestic labour is one of the most under-respected occupations, especially in developing economies. Poor legal protection, illteracy, poverty, and exploitation, amongst numerous other factors, prevent domestic workers from standing up to demand respect from society. <br/><br/>In India, for example, domestic workers are asked to use bathrooms built outside of households, eat meals on the kitchen floor, live in extremely small houses, use different lifts than those used by building society residents, and work 15-17 hours daily — all while earning less than 200$ every month.</div>} media={<div className={classes.problem_statement}></div>}/>
           
           <Grid container className={classes.text_container}>
-            <Typography className={classes.solution_overview} variant="body1">
-              <u><b>SOLUTION OVERVIEW</b></u>
-            </Typography>
-            <Typography className={classes.text} variant="body2">
-            I co-founded Pride For Labour in Grade 10 with two of my highschool friends, Dipanjli Murarka and Rhea Mathias. Pride For Labour started as a school assignment, but grew into a larger initiatve over the years and, today, truly defines who I am as an individual. <br/> <br/> Over the years, we developed Pride For Labour into a multi-phased program, securing school support and participation from hundreds of members of our school community.
-            </Typography>
+            <Fade>
+              <Typography className={classes.solution_overview} variant="body1">
+                <u><b>SOLUTION OVERVIEW</b></u>
+              </Typography>
+              <Typography className={classes.text} variant="body2">
+              I co-founded Pride For Labour in Grade 10 with two of my highschool friends, Dipanjli Murarka and Rhea Mathias. Pride For Labour started as a school assignment, but grew into a larger initiatve over the years and, today, truly defines who I am as an individual. <br/> <br/> Over the years, we developed Pride For Labour into a multi-phased program, securing school support and participation from hundreds of members of our school community.
+              </Typography>
+            </Fade>
           </Grid>
         </Grid>
 

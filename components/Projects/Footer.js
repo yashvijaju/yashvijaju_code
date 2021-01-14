@@ -27,8 +27,10 @@ const useStyles = makeStyles((theme) => ({
     },
     menu: {
         color: props => props.divider,
+        transition: '0.25s ease-in-out',
         '&:hover': {
             color: props => props.title,
+            transform: 'scale(1.25)',
         },
         cursor: 'pointer',
         [theme.breakpoints.down('xs')]: {
@@ -38,6 +40,10 @@ const useStyles = makeStyles((theme) => ({
     icon: {
         color: props => props.title,
         cursor: 'pointer',
+        transition: '0.25s ease-in-out',
+        '&:hover': {
+            transform: 'scale(1.25)',
+        }
     },
     title: {
         color:  props => props.title, 
@@ -45,6 +51,10 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('xs')]: {
             fontSize: '0.75rem',
         },
+        transition: '0.25s ease-in-out',
+        '&:hover': {
+            transform: 'scale(1.25)',
+        }
     },
     subtitle: {
         color: props => props.subtitle,
@@ -142,6 +152,46 @@ export function Footer(props) {
                     </Grid>
                 </Grid>
             </Grid>
+        </>
+    )
+}
+
+export function FooterAll(props) {
+    const classes = useStyles(props);
+    const router = useRouter()
+
+    function handleScroll(props) {
+        if (router.pathname !== "/") {
+            router.push('/');
+            window.scrollTo(0,0);
+            // return;
+        }
+        window.scrollTo(0,props);
+        if (props === 0) {
+            var x = document.getElementById("scroll up");
+            if (x !== null) {
+                x.style.display = 'none';
+            }
+            var y = document.getElementById("scroll down");
+            if (y !== null) {
+                y.style.display = 'inline';
+            }
+        }
+        else {
+            x = document.getElementById("scroll up");
+            if (x !== null) {
+                x.style.display = 'inline';
+            }
+            y = document.getElementById("scroll down");
+            if (y !== null) {
+                y.style.display = 'none';
+            }
+        }
+    }
+
+    return(
+        <>
+            <Divider className={classes.divider} style={{backgroundColor: props.divider}}/>
         </>
     )
 }
