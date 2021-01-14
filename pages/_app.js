@@ -90,7 +90,6 @@ export default function MyApp({ Component, pageProps, props }) {
             <KeyboardArrowUpIcon />
           </Fab>
         </ScrollTop>
-        <div style={{height: '10vh', width: '100vw'}}></div>
       </ThemeProvider>
     </React.Fragment>
   );
