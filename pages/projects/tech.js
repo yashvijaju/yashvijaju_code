@@ -2,8 +2,10 @@ import React from 'react';
 import Link from 'next/link';
 import { Grid, Divider, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles'
+import { Fade } from 'react-reveal';
 // Components
 import { Cover } from '../../components/Projects/Cover'
+import { FooterAll } from '../../components/Projects/Footer'
 
 const primary = '#4E4E4E';
 const primary_25 = '#72D77C';
@@ -89,7 +91,7 @@ function ProjectCard(props) {
                 </Typography>
             </Grid>
             <Grid container direction="row" style={{marginBottom: '5vh'}}>
-                {props.tags.map(tag => <ProjectTag tag={tag}/>)}
+                {props.tags.map(tag => <ProjectTag tag={tag} key={tag}/>)}
             </Grid>
         </>
     )
@@ -103,61 +105,62 @@ export default function Story() {
         <>
             <Cover project_name="<tech>" bg_color={tertiary} title_color={secondary}></Cover>
 
-            <Grid container className={classes.container}>
-                <Typography variant="h5" className={classes.text} style={{margin: '5vh 0'}}>
-                    tech-><b>skills</b>
-                </Typography>
-                <Grid item xs={12} container direction="row" justify="space-between" className={classes.skills}>
-                    <Grid item className={classes.skills_content}>
-                        <Typography variant="body2" color="inherit">
-                            skills-><b>Programming Languages</b> <br/>
-                            <br/>
-                            C++ ***<br/>
-                            JavaScript ***<br/>
-                            Python *
-                        </Typography>
-                    </Grid>
-                    <Grid item className={classes.skills_content}>
-                        <Typography variant="body2" color="inherit">
-                            skills-><b>Frontend</b><br/>
-                            <br/>
-                            JavaScript ***<br/>
-                            HTML ***<br/>
-                            CSS ***<br/>
-                            SASS **
-                            jQuery *<br/>
-                            Material UI **<br/>
-                            Bootstrap *<br/>
-                            React ***<br/>
-                            Redux **<br/>
-                            Wordpress **<br/>
-                        </Typography>
-                    </Grid>
-                    <Grid item className={classes.skills_content}>
-                        <Typography variant="body2" color="inherit">
-                            skills-><b>Backend</b><br/>
-                            <br/>
-                            Next.js ***<br/>
-                            MongoDB ** <br/>
-                            Flask *<br/>
-                            PHP *<br/>
-                            REST APIs **<br/>
-                        </Typography>
-                    </Grid>
-                    <Grid item className={classes.skills_content}>
-                        <Typography variant="body2" color="inherit">
-                            skills-><b>Tools and Protocols</b><br/>
-                            <br/>
-                            Git and GitHub *** <br/>
-                            Azure * <br/>
-                            Active Directory ** <br/>
-                            AWS * <br/>
-                            OAuth 2.0 ** <br/>
-                        </Typography>
+            <Fade>
+                <Grid container className={classes.container}>
+                    <Typography variant="h5" className={classes.text} style={{margin: '5vh 0'}}>
+                        tech-><b>skills</b>
+                    </Typography>
+                    <Grid item xs={12} container direction="row" justify="space-between" className={classes.skills}>
+                        <Grid item className={classes.skills_content}>
+                            <Typography variant="body2" color="inherit">
+                                skills-><b>Programming Languages</b> <br/>
+                                <br/>
+                                C++ ***<br/>
+                                JavaScript ***<br/>
+                                Python *
+                            </Typography>
+                        </Grid>
+                        <Grid item className={classes.skills_content}>
+                            <Typography variant="body2" color="inherit">
+                                skills-><b>Frontend</b><br/>
+                                <br/>
+                                JavaScript ***<br/>
+                                HTML ***<br/>
+                                CSS ***<br/>
+                                SASS **
+                                jQuery *<br/>
+                                Material UI **<br/>
+                                Bootstrap *<br/>
+                                React ***<br/>
+                                Redux **<br/>
+                                Wordpress **<br/>
+                            </Typography>
+                        </Grid>
+                        <Grid item className={classes.skills_content}>
+                            <Typography variant="body2" color="inherit">
+                                skills-><b>Backend</b><br/>
+                                <br/>
+                                Next.js ***<br/>
+                                MongoDB ** <br/>
+                                Flask *<br/>
+                                PHP *<br/>
+                                REST APIs **<br/>
+                            </Typography>
+                        </Grid>
+                        <Grid item className={classes.skills_content}>
+                            <Typography variant="body2" color="inherit">
+                                skills-><b>Tools and Protocols</b><br/>
+                                <br/>
+                                Git and GitHub *** <br/>
+                                Azure * <br/>
+                                Active Directory ** <br/>
+                                AWS * <br/>
+                                OAuth 2.0 ** <br/>
+                            </Typography>
+                        </Grid>
                     </Grid>
                 </Grid>
-            </Grid>
-
+            </Fade>
             <Grid container className={classes.container}>
                 <Typography variant="h5" className={classes.text} style={{margin: '5vh 0'}}>
                     tech-><b>projects</b>
@@ -165,6 +168,7 @@ export default function Story() {
 
                 <ProjectCard title="CRAVE" text="A progressive web app that delivers international, exotic snacks to students on campuses at affordable rates, on demand." tags={["javascript xml","react","redux","materialize"]} link="/startups/crave"/>
 
+                <Fade bottom>
                 <ProjectCard title="PORTFOLIO" text="A documentation of my projects in software engineering, art and design, and entrepreneurship." tags={["javascript xml","next.js","material ui"]} link="/tech/portfolio"/>
 
                 <ProjectCard title="SCHEDULE GENERATOR" text="An automated solution for the creation and optimization of a USC student's class schedule based on the student’s list of proespective classes." tags={["python","c++","beautiful soup 4", "tkinter"]} link="/tech/schedule-generator"/>
@@ -174,7 +178,10 @@ export default function Story() {
                 <ProjectCard title="iSPIRT — VOLUNTEER MANAGEMENT TOOL" text="A custom LinkedIn-style directory for the internal team, with volunteer journeys mapped for admin use." tags={["javascript xml","next.js","mongodb","oauth 2.0","active directory","sso"]} link="/work/ispirt"/>
 
                 <ProjectCard title="CLIENT WEBSITE — METTA CAPITAL" text="A static responsive website designed and developed for a client." tags={["javascript xml","react.js","godaddy","github pages"]} link="/tech/metta-capital"/>
+                </Fade>
             </Grid>
+
+            <FooterAll divider={tertiary_25} title={primary} subtitle={secondary}/>
         </>
     )
 }

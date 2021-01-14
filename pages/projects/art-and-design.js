@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link'
 import { Grid, Hidden, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles' 
+import { Fade } from 'react-reveal';
 // Components
 import { CustomCover } from '../../components/Projects/Cover'
+import { FooterAll } from '../../components/Projects/Footer'
 
 const primary = '#360568';
 const secondary = '#6A419D';
@@ -29,6 +31,7 @@ const useStyles = makeStyles((theme) => ({
     '&:hover': {
         color: 'green',
         cursor: 'pointer',
+        transform: 'scale(1.25)',
     },
     [theme.breakpoints.down('xs')]: {
         fontSize: '0.65rem',
@@ -37,6 +40,9 @@ const useStyles = makeStyles((theme) => ({
   item: {
     margin: '5vh 0 0',
     cursor: 'pointer',
+    '&:hover': {
+        transform: 'scale(1.05)',
+    }
   },
   item_title: {
     margin: '3vh 0 0',
@@ -101,28 +107,30 @@ export default function Story() {
                 </>
             }/>
 
-            <Grid container direction="row" justify="space-between" className={classes.filter_container}>
-                <Grid item>
-                    <Typography variant="body2" className={classes.filter_filter} style={{backgroundColor: (filter==="ALL") ? tertiary : 'white'}} onClick={()=>setFilter("ALL")}>
-                        ALL
-                    </Typography>
+            <Fade>
+                <Grid container direction="row" justify="space-between" className={classes.filter_container}>
+                    <Grid item>
+                        <Typography variant="body2" className={classes.filter_filter} style={{backgroundColor: (filter==="ALL") ? tertiary : 'transparent'}} onClick={()=>setFilter("ALL")}>
+                            ALL
+                        </Typography>
+                    </Grid>
+                    <Grid item>
+                        <Typography variant="body2" className={classes.filter_filter} style={{backgroundColor: (filter==="TRADITIONAL ART") ? tertiary : 'transparent'}} onClick={()=>setFilter("TRADITIONAL ART")}>
+                            TRADITIONAL ART
+                        </Typography>
+                    </Grid>
+                    <Grid item>
+                        <Typography variant="body2" className={classes.filter_filter} style={{backgroundColor: (filter==="DIGITAL ART") ? tertiary : 'transparent'}} onClick={()=>setFilter("DIGITAL ART")}>
+                            DIGITAL ART
+                        </Typography>
+                    </Grid>
+                    <Grid item>
+                        <Typography variant="body2" className={classes.filter_filter} style={{backgroundColor: (filter==="DIGITAL DESIGN") ? tertiary : 'transparent'}} onClick={()=>setFilter("DIGITAL DESIGN")}>
+                            DIGITAL DESIGN
+                        </Typography>
+                    </Grid>
                 </Grid>
-                <Grid item>
-                    <Typography variant="body2" className={classes.filter_filter} style={{backgroundColor: (filter==="TRADITIONAL ART") ? tertiary : 'white'}} onClick={()=>setFilter("TRADITIONAL ART")}>
-                        TRADITIONAL ART
-                    </Typography>
-                </Grid>
-                <Grid item>
-                    <Typography variant="body2" className={classes.filter_filter} style={{backgroundColor: (filter==="DIGITAL ART") ? tertiary : 'white'}} onClick={()=>setFilter("DIGITAL ART")}>
-                        DIGITAL ART
-                    </Typography>
-                </Grid>
-                <Grid item>
-                    <Typography variant="body2" className={classes.filter_filter} style={{backgroundColor: (filter==="DIGITAL DESIGN") ? tertiary : 'white'}} onClick={()=>setFilter("DIGITAL DESIGN")}>
-                        DIGITAL DESIGN
-                    </Typography>
-                </Grid>
-            </Grid>
+            </Fade>
 
             <Grid container direction="row" justify="space-between" className={classes.container}>
                 <Grid container direction="column" item xs={12} sm={5} md={4}>
@@ -253,6 +261,8 @@ export default function Story() {
                     </Link>
                 </Grid>
             </Grid>
+
+            <FooterAll divider={tertiary} title={primary} subtitle={secondary}/>
         </>
     )
 }

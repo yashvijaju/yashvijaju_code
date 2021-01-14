@@ -253,10 +253,10 @@ export function FooterAll(props) {
                     <Grid item xs={6} container direction="column" justify="space-between">
                         <Grid container direction="row">
                             <Typography variant="subtitle2" className={classes.link} onClick={()=>handleScroll(0)}>HOME</Typography>
-                            <Typography variant="subtitle2" className={classes.link} onClick={()=>handleScroll(window.innerHeight * 0.4)}>ABOUT ME</Typography>
+                            <Typography variant="subtitle2" className={classes.link} onClick={()=>handleScroll(window.innerHeight * 0.85)}>ABOUT ME</Typography>
                         </Grid>
                         <Grid container direction="row">
-                            <Typography variant="subtitle2" className={classes.link} onClick={()=>handleScroll(0)}>ALL PROJECTS</Typography>
+                            <Typography variant="subtitle2" className={classes.link} onClick={()=>handleScroll(window.innerHeight * 1.7)}>ALL PROJECTS</Typography>
                             <Link href="/projects/art-and-design">
                                 <Typography variant="subtitle2" className={classes.link}>ART & DESIGN</Typography>
                             </Link>

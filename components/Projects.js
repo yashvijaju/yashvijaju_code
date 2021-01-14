@@ -19,6 +19,12 @@ const useStyles = makeStyles((theme) => ({
   container: {
       padding: '0 5vw',
   },
+  // item: {
+  //   cursor: 'pointer',
+  //   '&:hover': {
+  //       transform: 'scale(1.05)',
+  //   }
+  // },
   item_desc: {
     fontWeight: 'lighter',
     '&:hover' : {
@@ -36,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
     width: '100%', 
     marginBottom: '1vh',
     '&:hover' : {
-      opacity: '50%',
+      transform: 'scale(1.05)',
     }
   },
 }));
