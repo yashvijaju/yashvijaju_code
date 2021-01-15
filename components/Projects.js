@@ -4,50 +4,62 @@ import { Grid, Typography, Hidden, Chip, Snackbar } from '@material-ui/core';
 import { CancelOutlined,LaptopChromebookRounded, ColorLensRounded, WorkOutlineRounded, SearchRounded, FormatSizeRounded, EmojiSymbolsRounded, StarOutlineRounded } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles'
 import { Fade } from 'react-reveal';
+import clsx from 'clsx';
 
 const pink='#F7CAC9'; 
 const blue='#bee3f1';
 const grey = '#efefef'; 
 const title = 'grey';
 
-const chipStyle = {color: 'grey', border: '2.5px solid grey', borderRadius: '20px', marginRight: '1vw', fontWeight: 'bolder', fontSize: '2vh', marginBottom: '1vh', paddingBottom: '1.5vh', paddingTop: '1.5vh'};
-const chipStyleSelected = {color: title, border: '2.5px solid grey', backgroundColor: 'white' , borderRadius: '20px', marginRight: '1vw', fontWeight: 'bolder', fontSize: '2vh', marginBottom: '1vh', paddingBottom: '1.5vh', paddingTop: '1.5vh'};
-
-const itemStyle = {backgroundColor: 'white', padding: '2.5vh 2.5vw 2.5vh 2.5vw', 'borderRadius': '15px', 'marginRight': '1vw', 'marginLeft': '1vw', cursor: 'pointer', marginBottom: '2vh'}
+const chipStyle = {};
+const chipStyleSelected = {color: 'black', border: '2.5px solid grey', backgroundColor: 'white' , borderRadius: '20px', marginRight: '1vw', fontWeight: 'bolder', fontSize: '2vh', marginBottom: '1vh', paddingBottom: '1.5vh', paddingTop: '1.5vh'};
 
 const useStyles = makeStyles((theme) => ({
   container: {
       padding: '0 5vw',
   },
-  // item: {
-  //   cursor: 'pointer',
-  //   '&:hover': {
-  //       transform: 'scale(1.05)',
-  //   }
-  // },
+  item: {
+    backgroundColor: 'white', 
+    padding: '2.5vh 2.5vw 2.5vh 2.5vw', 
+    borderRadius: '15px',
+    margin: '0 1vw 2vh',
+    transition: '0.25s',
+    '&:hover': {
+        transform: 'scale(1.05)',
+        cursor: 'pointer',
+        color: 'red',
+    }
+  },
   item_desc: {
     fontWeight: 'lighter',
-    '&:hover' : {
-      color: 'red',
-    }
   },
   item_title: {
     fontWeight: '500',
     margin: '0.5vh 0',
-    '&:hover' : {
-      color: 'red',
-    }
   },
   image: {
     width: '100%', 
     marginBottom: '1vh',
-    '&:hover' : {
-      transform: 'scale(1.05)',
-    }
   },
+  filter: {
+    color: 'grey', 
+    border: '2.5px solid grey', 
+    borderRadius: '20px', 
+    marginRight: '1vw', 
+    fontWeight: 'bolder', 
+    fontSize: '2vh', 
+    marginBottom: '1vh', 
+    padding: '1.5vh 0',
+    transition: '0.2s',
+    '&:hover': {
+      transform: 'scale(1.1)',
+      color: 'black',
+    }
+  }
 }));
 
 export default function Story() {
+
   const classes = useStyles();
 
   const [lastFilter, setLastFilter] = React.useState("All");
@@ -101,6 +113,9 @@ export default function Story() {
     setLastFilter(chip);
   }
 
+  const className_item = clsx("item", classes.item);
+  const className_filter = clsx("filterProjects", classes.filter);
+
   return (
     <div style={{'padding': '5vh 0vw 2vh 0vw', backgroundColor: blue}}>
       {/* <Fade bottom> */}
@@ -142,20 +157,20 @@ export default function Story() {
           }
         />
         <Grid container direction="row" justify="center" style={{padding: '2vh 4vw 0 4vw'}}>
-          <Chip className="filterProjects" id="Featured" variant="outlined" label="Featured" clickable={true} style={(lastFilter==="Featured") ? chipStyleSelected : chipStyle} onClick={()=>filter("Featured","Featured")} icon={<StarOutlineRounded style={{color: (lastFilter==="Featured") ? 'grey' : 'grey'}} />}/>
-          <Chip className="filterProjects" id="All" variant="outlined" label="All" clickable={true} style={(lastFilter==="All") ? chipStyleSelected : chipStyle} onClick={()=>filter("All","All")}/>
-          <Chip className="filterProjects" id="Tech" variant="outlined" label="Tech" clickable={true} style={(lastFilter==="Tech") ? chipStyleSelected : chipStyle} onClick={()=>filter("Tech","Tech")} icon={<LaptopChromebookRounded style={{color: (lastFilter==="Tech") ? 'grey' : 'grey'}} />} />
-          <Chip className="filterProjects" id="Entrepreneurship" variant="outlined" label="Entrepreneurship" clickable={true} style={(lastFilter==="Entrepreneurship") ? chipStyleSelected : chipStyle} onClick={()=>filter("Entrepreneurship","Entrepreneurship")} icon={<SearchRounded style={{color: (lastFilter==="Entrepreneurship") ? 'grey' : 'grey'}} />}/>
-          <Chip className="filterProjects" id="Digital Art" variant="outlined" label="Digital Art" clickable={true} style={(lastFilter==="Digital Art") ? chipStyleSelected : chipStyle} onClick={()=>filter("Digital Art","Digital Art")} icon={<FormatSizeRounded style={{color: (lastFilter==="Digital Art") ? 'grey' : 'grey'}} />}/>
-          <Chip className="filterProjects" id="Traditional Art" variant="outlined" label="Traditional Art" clickable={true} style={(lastFilter==="Traditional Art") ? chipStyleSelected : chipStyle} onClick={()=>filter("Traditional Art","Traditional Art")}  icon={<ColorLensRounded style={{color: (lastFilter==="Traditional Art") ? 'grey' : 'grey'}} />} />
-          <Chip className="filterProjects" id="Professional" variant="outlined" label="Professional" clickable={true} style={(lastFilter==="Professional") ? chipStyleSelected : chipStyle} onClick={()=>filter("Professional","Professional")} icon={<WorkOutlineRounded style={{color: (lastFilter==="Professional") ? 'grey' : 'grey'}} />}/>
-          <Chip className="filterProjects" id="Side Projects" variant="outlined" label="Side Projects" clickable={true} style={(lastFilter==="Side Projects") ? chipStyleSelected : chipStyle} onClick={()=>filter("Side Projects","Side Projects")} icon={<EmojiSymbolsRounded style={{color: (lastFilter==="Side Projects") ? 'grey' : 'grey'}} />}/>
+          <Chip className={className_filter} id="Featured" variant="outlined" label="Featured" clickable={true} style={(lastFilter==="Featured") ? chipStyleSelected : chipStyle} onClick={()=>filter("Featured","Featured")} icon={<StarOutlineRounded style={{color: 'inherit'}} />}/>
+          <Chip className={className_filter} id="All" variant="outlined" label="All" clickable={true} style={(lastFilter==="All") ? chipStyleSelected : chipStyle} onClick={()=>filter("All","All")}/>
+          <Chip className={className_filter} id="Tech" variant="outlined" label="Tech" clickable={true} style={(lastFilter==="Tech") ? chipStyleSelected : chipStyle} onClick={()=>filter("Tech","Tech")} icon={<LaptopChromebookRounded style={{color: 'inherit'}} />} />
+          <Chip className={className_filter} id="Entrepreneurship" variant="outlined" label="Entrepreneurship" clickable={true} style={(lastFilter==="Entrepreneurship") ? chipStyleSelected : chipStyle} onClick={()=>filter("Entrepreneurship","Entrepreneurship")} icon={<SearchRounded style={{color: 'inherit'}} />}/>
+          <Chip className={className_filter} id="Digital Art" variant="outlined" label="Digital Art" clickable={true} style={(lastFilter==="Digital Art") ? chipStyleSelected : chipStyle} onClick={()=>filter("Digital Art","Digital Art")} icon={<FormatSizeRounded style={{color: 'inherit'}} />}/>
+          <Chip className={className_filter} id="Traditional Art" variant="outlined" label="Traditional Art" clickable={true} style={(lastFilter==="Traditional Art") ? chipStyleSelected : chipStyle} onClick={()=>filter("Traditional Art","Traditional Art")}  icon={<ColorLensRounded style={{color: 'inherit'}} />} />
+          <Chip className={className_filter} id="Professional" variant="outlined" label="Professional" clickable={true} style={(lastFilter==="Professional") ? chipStyleSelected : chipStyle} onClick={()=>filter("Professional","Professional")} icon={<WorkOutlineRounded style={{color: 'inherit'}} />}/>
+          <Chip className={className_filter} id="Side Projects" variant="outlined" label="Side Projects" clickable={true} style={(lastFilter==="Side Projects") ? chipStyleSelected : chipStyle} onClick={()=>filter("Side Projects","Side Projects")} icon={<EmojiSymbolsRounded style={{color: 'inherit'}} />}/>
         </Grid>
       {/* </Fade> */}
       <Grid container direction="row" justify="center" style={{marginTop: '3vh'}}>
         <Link href="/art/100-days-of-buttons">
-          <Grid className="item" id="Digital Art, Featured, Side Projects" item xs={10} sm={5} md={3} style={itemStyle}>
-            <img id="Manifesto Design" src="/assets/covers/100-days-of-des.png" alt="100 Days of Buttons Design" title="100 Days of Buttons Design" className={classes.image}/>
+          <Grid className={className_item} id="Digital Art, Featured, Side Projects" item xs={10} sm={5} md={3} >
+            <img id="100 Days of Buttons" src="/assets/covers/100-days-of-des.png" alt="100 Days of Buttons" title="100 Days of Buttons" className={classes.image}/>
             <Typography variant="body1" className={classes.item_title}>
             100 Days of Buttons: Artist
             </Typography>
@@ -165,7 +180,7 @@ export default function Story() {
           </Grid>
         </Link>
         <Link href="/startups/crave">
-          <Grid className="item" id="Tech, Entrepreneurship, Featured" item xs={10} sm={5} md={3} style={itemStyle}>
+          <Grid className={className_item} id="Tech, Entrepreneurship, Featured" item xs={10} sm={5} md={3} >
             <img id="Crave" src="/assets/covers/crave.png" alt="Crave" title="Crave" className={classes.image}/>
             <Typography variant="body1" className={classes.item_title}>
               Crave: Front-End Developer, Founder
@@ -176,7 +191,7 @@ export default function Story() {
           </Grid>
         </Link>
         <Link href="/art/dancing-on-the-moon">
-          <Grid className="item" id="Traditional Art, Featured" item xs={10} sm={5} md={3} style={itemStyle}>
+          <Grid className={className_item} id="Traditional Art, Featured" item xs={10} sm={5} md={3} >
             <img id="Dancing on the Moon" src="/assets/covers/dancing-on-the-moon.png" alt="Dancing on the Moon" title="Dancing on the Moon" className={classes.image}/>
             <Typography variant="body1" className={classes.item_title}>
             'Dancing on the Moon': Artist
@@ -187,7 +202,7 @@ export default function Story() {
           </Grid>
         </Link>
         <Link href="/startups/pride-for-labour">
-          <Grid className="item" id="Entrepreneurship, Featured" item xs={10} sm={5} md={3} style={itemStyle}>
+          <Grid className={className_item} id="Entrepreneurship, Featured" item xs={10} sm={5} md={3} >
             <img id="Pride For Labor" src="/assets/covers/pfl.png" alt="Pride For Labour" title="Pride For Labour" className={classes.image}/>
             <Typography variant="body1" className={classes.item_title}>
             Pride For Labour: Founder
@@ -198,8 +213,8 @@ export default function Story() {
           </Grid>
         </Link>
         <Link href="/art/cartoon-portrait">
-          <Grid className="item" id="Digital Art, Featured" item xs={10} sm={5} md={3} style={itemStyle}>
-            <img id="Adjustment Layers" src="/assets/covers/cartoon-portrait.png" alt="Adjustment Layers" title="Adjustment Layers" className={classes.image}/>
+          <Grid className={className_item} id="Digital Art, Featured" item xs={10} sm={5} md={3} >
+            <img id="Cartoon Portrait" src="/assets/covers/cartoon-portrait.png" alt="Cartoon Portrait" title="Cartoon Portrait" className={classes.image}/>
             <Typography variant="body1" className={classes.item_title}>
               Cartoon Portrait: Artist
             </Typography>
@@ -209,7 +224,7 @@ export default function Story() {
           </Grid>
         </Link>
         <Link href="/startups/a2z">
-          <Grid className="item" id="Entrepreneurship" item xs={10} sm={5} md={3} style={itemStyle}>
+          <Grid className={className_item} id="Entrepreneurship" item xs={10} sm={5} md={3} >
             <img id="A2Z" src="/assets/covers/a2z.png" alt="A2Z" title="A2Z" className={classes.image}/>
             <Typography variant="body1" className={classes.item_title}>
             A2Z: Founder, Co-Editor
@@ -220,8 +235,8 @@ export default function Story() {
           </Grid>
         </Link>
         <Link href="/art/manifesto">
-          <Grid className="item" id="Digital Art, Featured" item xs={10} sm={5} md={3} style={itemStyle}>
-            <img id="Manifesto Design" src="/assets/covers/manifesto.png" alt="Manifesto Design" title="Manifesto Design" className={classes.image}/>
+          <Grid className={className_item} id="Digital Art, Featured" item xs={10} sm={5} md={3} >
+            <img id="Manifesto" src="/assets/covers/manifesto.png" alt="Manifesto" title="Manifesto" className={classes.image}/>
             <Typography variant="body1" className={classes.item_title}>
             Manifesto: Artist
             </Typography>
@@ -231,7 +246,7 @@ export default function Story() {
           </Grid>
         </Link>
         <Link href="/tech/portfolio">
-          <Grid className="item" id="Tech, Digital Art, Featured" item xs={10} sm={5} md={3} style={itemStyle}>
+          <Grid className={className_item} id="Tech, Digital Art, Featured" item xs={10} sm={5} md={3} >
             <img id="Portfolio" src="/assets/covers/portfolio.png" alt="Portfolio" title="Portfolio" className={classes.image}/>
             <Typography variant="body1" className={classes.item_title}>
               (this): Developer, Designer
@@ -242,7 +257,7 @@ export default function Story() {
           </Grid>
         </Link>
         <Link href="/art/quilling">
-          <Grid className="item" id="Entrepreneurship, Traditional Art" item xs={10} sm={5} md={3} style={itemStyle}>
+          <Grid className={className_item} id="Entrepreneurship, Traditional Art" item xs={10} sm={5} md={3} >
             <img id="Quilling" src={"/assets/covers/quilling.png"} alt="Quilling" title="Quilling" className={classes.image}/>
             <Typography variant="body1" className={classes.item_title}>
               Quilling: Artist, Startup
@@ -253,8 +268,8 @@ export default function Story() {
           </Grid>
         </Link>
         <Link href="/tech/schedule-generator">
-          <Grid className="item" id="Side Projects, Featured, Tech" item xs={10} sm={5} md={3} style={itemStyle}>
-            <img id="Trojan Hacks Schedule Generator" src="/assets/covers/schedule-generator.png" alt="Trojan Hacks Schedule Generator" title="Trojan Hacks Schedule Generator" className={classes.image}/>
+          <Grid className={className_item} id="Side Projects, Featured, Tech" item xs={10} sm={5} md={3} >
+            <img id="Schedule Generator" src="/assets/covers/schedule-generator.png" alt="Schedule Generator" title="Schedule Generator" className={classes.image}/>
             <Typography variant="body1" className={classes.item_title}>
               Schedule Generator: Developer
             </Typography>
@@ -264,8 +279,8 @@ export default function Story() {
           </Grid>
         </Link>
         <Link href="/art/tshirt-logo">
-          <Grid className="item" id="Digital Art" item xs={10} sm={5} md={3} style={itemStyle}>
-            <img id="T-Shirt Design" src="/assets/covers/tshirt-logo.png" alt="T-Shirt Design" title="T-Shirt Design" className={classes.image}/>
+          <Grid className={className_item} id="Digital Art" item xs={10} sm={5} md={3} >
+            <img id="T-Shirt Logo" src="/assets/covers/tshirt-logo.png" alt="T-Shirt Logo" title="T-Shirt Logo" className={classes.image}/>
             <Typography variant="body1" className={classes.item_title}>
             T-Shirt Logo: Artist
             </Typography>
@@ -275,8 +290,8 @@ export default function Story() {
           </Grid>
         </Link>
         <Link href="/art/animation">
-          <Grid className="item" id="Digital Art" item xs={10} sm={5} md={3} style={itemStyle}>
-            <img id="Photoshop Animation" src="/assets/covers/animation.png" alt="Photoshop Animation" title="Photoshop Animation" className={classes.image}/>
+          <Grid className={className_item} id="Digital Art" item xs={10} sm={5} md={3} >
+            <img id="Keyframe Animation" src="/assets/covers/animation.png" alt="Keyframe Animation" title="Keyframe Animation" className={classes.image}/>
             <Typography variant="body1" className={classes.item_title}>
             Keyframe Animation: Artist
             </Typography>
@@ -286,8 +301,8 @@ export default function Story() {
           </Grid>
         </Link>
         <Link href="/art/circle-of-light">
-          <Grid className="item" id="Traditional Art" item xs={10} sm={5} md={3} style={itemStyle}>
-            <img id="Gautam Buddha" src="/assets/covers/circle-of-light.png" alt="Gautam Buddha" title="Gautam Buddha" className={classes.image}/>
+          <Grid className={className_item} id="Traditional Art" item xs={10} sm={5} md={3} >
+            <img id="Circle of Light" src="/assets/covers/circle-of-light.png" alt="Circle of Light" title="Circle of Light" className={classes.image}/>
             <Typography variant="body1" className={classes.item_title}>
             'Circle of Light': Artist 
             </Typography>
@@ -297,7 +312,7 @@ export default function Story() {
           </Grid>
         </Link>
         <Link href="/work/ispirt">
-          <Grid className="item" id="Professional, Tech, Featured" item xs={10} sm={5} md={3} style={itemStyle}>
+          <Grid className={className_item} id="Professional, Tech, Featured" item xs={10} sm={5} md={3} >
             <img id="iSPIRT" src="/assets/covers/ispirt.png" alt="iSPIRT" title="iSPIRT" className={classes.image}/>
             <Typography variant="body1" className={classes.item_title}>
               iSPIRT: Software Intern
@@ -308,7 +323,7 @@ export default function Story() {
           </Grid>
         </Link>
         <Link href="/art/kathak">
-          <Grid className="item" id="Traditional Art" item xs={10} sm={5} md={3} style={itemStyle}>
+          <Grid className={className_item} id="Traditional Art" item xs={10} sm={5} md={3} >
             <img id="Kathak" src="/assets/covers/kathak.png" alt="Kathak" title="Kathak" className={classes.image}/>
             <Typography variant="body1" className={classes.item_title}>
               Kathak: Artist
@@ -319,8 +334,8 @@ export default function Story() {
           </Grid>
         </Link>
         <Link href="/tech/first-robotics-competition">
-          <Grid className="item" id="Side Projects" item xs={10} sm={5} md={3} style={itemStyle}>
-            <img id="FRC" src="/assets/covers/frc.png" alt="FRC" title="FRC" className={classes.image}/>
+          <Grid className={className_item} id="Side Projects" item xs={10} sm={5} md={3} >
+            <img id="First Robotics Competition" src="/assets/covers/frc.png" alt="First Robotics Competition" title="First Robotics Competition" className={classes.image}/>
             <Typography variant="body1" className={classes.item_title}>
               First Robotics Competition: Member, Safety Captain 
             </Typography>
@@ -330,7 +345,7 @@ export default function Story() {
           </Grid>
         </Link>
         <Link href="/work/mcdonald">
-          <Grid className="item" id="Professional" item xs={10} sm={5} md={3} style={itemStyle}>
+          <Grid className={className_item} id="Professional" item xs={10} sm={5} md={3} >
             <img id="McDonald's Hardcastle Restaurants Private Limited" src="/assets/covers/mcdonald.png" alt="McDonald's Hardcastle Restaurants Private Limited" title="McDonald's Hardcastle Restaurants Private Limited" className={classes.image}/>
             <Typography variant="body1" className={classes.item_title}>
               McDonald's Hardcastle Restaurants: Product Development Intern
@@ -341,7 +356,7 @@ export default function Story() {
           </Grid>
         </Link>
         <Link href="/work/bookmyshow">
-          <Grid className="item" id="Professional, Tech" item xs={10} sm={5} md={3} style={itemStyle}>
+          <Grid className={className_item} id="Professional, Tech" item xs={10} sm={5} md={3} >
             <img id="BookMyShow" src="/assets/covers/bms.png" alt="BookMyShow" title="BookMyShow" className={classes.image}/>
             <Typography variant="body1" className={classes.item_title}>
               BookMyShow: Software Analyst Intern
@@ -352,8 +367,8 @@ export default function Story() {
           </Grid>
         </Link>
         <Link href="/tech/metta-capital">
-          <Grid className="item" id="Tech, Professional, Digital Art" item xs={10} sm={5} md={3} style={itemStyle}>
-            <img id="Metta" src="/assets/covers/metta-capital.png" alt="Metta Capital Advisors LLP" title="Metta Capital Advisors LLP" className={classes.image}/>
+          <Grid className={className_item} id="Tech, Professional, Digital Art" item xs={10} sm={5} md={3} >
+            <img id="Metta Capital Advisors LLP" src="/assets/covers/metta-capital.png" alt="Metta Capital Advisors LLP" title="Metta Capital Advisors LLP" className={classes.image}/>
             <Typography variant="body1" className={classes.item_title}>
               Metta Capital: Developer, Designer
             </Typography>
