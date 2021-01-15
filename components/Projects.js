@@ -28,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
         transform: 'scale(1.05)',
         cursor: 'pointer',
         color: 'red',
+        border: '1px solid grey',
     }
   },
   item_desc: {
@@ -175,7 +176,7 @@ export default function Story() {
             100 Days of Buttons: Artist
             </Typography>
             <Typography variant="caption" className={classes.item_desc}>
-            I undertook the 100 Days of Design challenge; every day, I designed a button along with developing its corresponding css stylesheet.
+            I undertook the 100 Days of Design challenge; every day, I designed a button along and developed its corresponding css stylesheet.
             </Typography>
           </Grid>
         </Link>
@@ -197,7 +198,7 @@ export default function Story() {
             'Dancing on the Moon': Artist
             </Typography>
             <Typography variant="caption" className={classes.item_desc}>
-            ‘Dancing on the Moon’ is a four-piece oil painting of two dancers caught mid-motion that illustrates how time slows down for the dancers.
+            ‘Dancing on the Moon’ is a four-piece oil painting of two dancers caught mid-motion that illustrates the expansion of time and space.
             </Typography>
           </Grid>
         </Link>
@@ -208,7 +209,7 @@ export default function Story() {
             Pride For Labour: Founder
             </Typography>
             <Typography variant="caption" className={classes.item_desc}>
-            I founded Pride For Labour (PFL) in grade 10, with a mission to empower domestic labour and instil pride and respect in the occupation.
+            Pride For Labour (PFL) was founded in 2016 with a mission to empower domestic labour and instil pride and respect in the occupation.
             </Typography>
           </Grid>
         </Link>
@@ -260,7 +261,7 @@ export default function Story() {
           <Grid className={className_item} id="Entrepreneurship, Traditional Art" item xs={10} sm={5} md={3} >
             <img id="Quilling" src={"/assets/covers/quilling.png"} alt="Quilling" title="Quilling" className={classes.image}/>
             <Typography variant="body1" className={classes.item_title}>
-              Quilling: Artist, Startup
+              Quilling: Artist, Entrepreneur
             </Typography>
             <Typography variant="caption" className={classes.item_desc}>
             Quilling is an art style where paper is rolled into different shapes; I designed and sold hand-made goods at boutique exhibitions in India.
@@ -296,7 +297,7 @@ export default function Story() {
             Keyframe Animation: Artist
             </Typography>
             <Typography variant="caption" className={classes.item_desc}>
-            This keyframe animation was inspired by Bruce Mau’s Incomplete Manifesto for Growth. Created using Adobe Photoshop's animation tools.
+            Inspired by Bruce Mau’s Incomplete Manifesto for Growth, this keyframe animation was created with Adobe Photoshop.
             </Typography>
           </Grid>
         </Link>
