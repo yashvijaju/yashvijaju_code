@@ -42,7 +42,7 @@ export default function NavBar(props) {
     return(
         <div style={{height: '5vh', position: 'absolute', top: '0'}} id={props.id}>
             <Fade in={true} timeout={16000}>
-                <AppBar elevation={0} style={{'backgroundColor': "white", opacity: '0.5', padding: '0vh 2vw 0vh 2vw'}}>
+                <AppBar elevation={0} style={{'backgroundColor': "white", opacity: '0.8', padding: '0vh 2vw 0vh 2vw'}}>
                     <Toolbar>
                         <Hidden smUp>
                             <Grid item xs={3} style={{display:'flex', flexDirection:'row',justifyContent:'start', alignItems:'center'}}>
@@ -55,7 +55,7 @@ export default function NavBar(props) {
                                 <Typography variant="caption" style={{color:"#000000", fontFamily: font, cursor: 'pointer', paddingRight: '4vw', fontWeight:'lighter'}} onClick={(e)=>setAnchorEl(e.currentTarget)}>
                                     Projects
                                 </Typography>
-                                <Menu anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={()=>setAnchorEl(null)} style={{opacity: '50%', marginTop: '3vh', marginLeft: '-3.5vw'}} elevation={0}>
+                                <Menu anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={()=>setAnchorEl(null)} style={{opacity: '0.9', marginTop: '3vh', marginLeft: '-3.5vw'}} elevation={0}>
                                     <MenuItem onClick={()=>{handleScroll(window.innerHeight * 1.7);setAnchorEl(null)}} selected={true} dense={true}>
                                         <Typography variant="caption" style={{color:"#000000", cursor: 'pointer', fontWeight:'lighter'}}>
                                             All Projects
@@ -101,7 +101,7 @@ export default function NavBar(props) {
                                 <Typography variant="caption" style={{color:"#000000", fontFamily: font, cursor: 'pointer', paddingRight: '4vw'}} onClick={(e)=>setAnchorEl(e.currentTarget)}>
                                     Projects
                                 </Typography>
-                                <Menu anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={()=>setAnchorEl(null)} style={{opacity: '50%', marginTop: '3vh', marginLeft: '-1.05vw'}} elevation={0}>
+                                <Menu anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={()=>setAnchorEl(null)} style={{opacity: '0.9', marginTop: '3vh', marginLeft: '-1.05vw'}} elevation={0}>
                                     <MenuItem onClick={()=>{handleScroll(window.innerHeight * 1.7);setAnchorEl(null)}} selected={true} dense={true}>
                                         <Typography variant="caption" style={{color:"#000000", cursor: 'pointer'}}>
                                             All Projects
