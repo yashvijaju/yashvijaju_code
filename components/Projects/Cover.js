@@ -21,6 +21,10 @@ const useStyles = makeStyles((theme) => ({
     },
     title: {
         margin: '0 0 1vh',
+        textShadow: '2.5px 2.5px black',
+        [theme.breakpoints.down('xs')]: {
+            textShadow: '1px 1px black',
+        },
     },
     logo_image: {
         height: 'auto',
