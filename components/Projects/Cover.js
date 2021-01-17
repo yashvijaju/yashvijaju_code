@@ -11,12 +11,12 @@ var background = '#000000';
 
 const useStyles = makeStyles((theme) => ({
     container: {
-        padding: '5vw',
-        height: '50vh',
+        padding: '0vh 5vw 5vw',
+        height: '45vh',
         [theme.breakpoints.down('sm')]: {
             height: '25vh',
             margin: '0 0 5vh 0',
-            padding: '10vw 5vw 5vw',
+            padding: '0vh 5vw 5vw',
         },
     },
     title: {
@@ -36,6 +36,11 @@ const useStyles = makeStyles((theme) => ({
         },
         padding: '0',
     },
+    image: {
+        width: 'calc(100% - 48px)',
+        height: 'auto',
+        cursor: 'pointer',
+    }
 }));
 
 // Props:
@@ -48,32 +53,47 @@ export function Cover(props) {
 
     const classes = useStyles();
 
+    function handleMouseOver() {
+        // document.getElementById("bookmark").src = props.bookmarkTitle;
+    }
+
+    function handleMouseOut() {
+        // document.getElementById("bookmark").src = props.bookmark;
+    }
+
     return(
         <>
-            <Grid className={classes.container} container direction="column" justify="center" style={{backgroundColor: background}}>
-                {props.project_logo && 
-                    <img className={classes.logo_image} src={props.project_logo}></img>
-                }
-                {props.project_name && 
-                    <>
-                        <Hidden smUp>
-                            <Typography variant="h5" className={classes.title} style={{color: title}}><b>
-                                {props.project_name}
-                            </b></Typography>
-                        </Hidden>
-                        <Hidden xsDown>
-                            <Typography variant="h3" className={classes.title} style={{color: title}}><b>
-                                {props.project_name}
-                            </b></Typography>
-                        </Hidden>
-                    </>
-                    
-                }
-                {props.project_subheading &&
-                    <Typography className={classes.text} variant="body1" style={{color: title}}>
-                        {props.project_subheading}
-                    </Typography>
-                }
+            <Grid className={classes.container} container direction="row" justify="space-between" style={{backgroundColor: background}}>
+                <Grid item xs={8} sm={10} container direction="column" justify="center" >
+                    {props.project_logo && 
+                        <img className={classes.logo_image} src={props.project_logo}></img>
+                    }
+                    {props.project_name && 
+                        <>
+                            <Hidden smUp>
+                                <Typography variant="h5" className={classes.title} style={{color: title}}><b>
+                                    {props.project_name}
+                                </b></Typography>
+                            </Hidden>
+                            <Hidden xsDown>
+                                <Typography variant="h3" className={classes.title} style={{color: title}}><b>
+                                    {props.project_name}
+                                </b></Typography>
+                            </Hidden>
+                        </>
+                        
+                    }
+                    {props.project_subheading &&
+                        <Typography className={classes.text} variant="body1" style={{color: title}}>
+                            {props.project_subheading}
+                        </Typography>
+                    }
+                </Grid>
+                <Grid item xs={4} sm={2} container direction="row" justify="flex-end" alignItems="flex-start" >
+                    {props.bookmark && 
+                        <img id="bookmark" src={props.bookmark} className={classes.image} onMouseOver={()=>handleMouseOver()} onMouseOut={()=>handleMouseOut()}/>
+                    }
+                </Grid>
             </Grid>
         </>
     )

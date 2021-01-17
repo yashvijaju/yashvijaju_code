@@ -56,19 +56,18 @@ export default function NavBar(props) {
         }
     }
     return(
-        <div style={{height: '5vh', position: 'absolute', top: '0'}} id={props.id}>
+        <>
+        <div style={{height: 'auto'}} id={props.id}>
             <Fade in={true} timeout={16000}>
-                <AppBar elevation={0} style={{'backgroundColor': "white", opacity: '0.8', padding: '0vh 2vw 0vh 2vw'}}>
+                <AppBar elevation={0} position="sticky" style={{'backgroundColor': "white", opacity: '0.8', padding: '0vh 2vw'}}>
                     <Toolbar>
                         <Hidden smUp>
-                            <Grid item xs={3} style={{display:'flex', flexDirection:'row',justifyContent:'start', alignItems:'center'}}>
+                            <Grid container direction="row" justify="space-between" alignItems="center">
                                 <Typography variant="caption" style={{color:"#000000", fontFamily: font, cursor: 'pointer', fontWeight:'lighter'}} onClick={()=>handleScroll(0)}> Yashvi Jaju &nbsp; | </Typography>
-                            </Grid>
-                            <Grid item xs={10} style={{display:'flex', flexDirection:'row',justifyContent:'flex-end', alignItems:'center'}}>
-                                <Typography variant="caption" style={{color:"#000000", fontFamily: font, cursor: 'pointer', paddingRight: '4vw', fontWeight:'lighter'}} onClick={()=>handleScroll(window.innerHeight * 0.5)}>
+                                <Typography variant="caption" style={{color:"#000000", fontFamily: font, cursor: 'pointer', fontWeight:'lighter'}} onClick={()=>handleScroll(window.innerHeight * 0.5)}>
                                     About Me
                                 </Typography>
-                                <Typography variant="caption" style={{color:"#000000", fontFamily: font, cursor: 'pointer', paddingRight: '4vw', fontWeight:'lighter'}} onClick={(e)=>setAnchorEl(e.currentTarget)}>
+                                <Typography variant="caption" style={{color:"#000000", fontFamily: font, cursor: 'pointer', fontWeight:'lighter'}} onClick={(e)=>setAnchorEl(e.currentTarget)}>
                                     Projects
                                 </Typography>
                                 <Menu anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={()=>setAnchorEl(null)} style={{opacity: '0.9', marginTop: '3vh', marginLeft: '-3.5vw'}} elevation={0}>
@@ -92,7 +91,7 @@ export default function NavBar(props) {
                                         </Link>
                                     </MenuItem>
                                 </Menu>
-                                <Typography variant="caption" style={{color:"#000000",fontFamily: font, cursor: 'pointer', paddingRight: '4vw'}}>
+                                <Typography variant="caption" style={{color:"#000000",fontFamily: font, cursor: 'pointer'}}>
                                     <a href="https://drive.google.com/file/d/1UYa99LI9qB2Mj7QITz1ezya8gDcA9Bd7" target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none', fontFamily: font, color: 'black', fontWeight:'lighter'}}>Resume</a>
                                 </Typography>
                                 <Typography variant="caption" style={{color:"#000000", fontFamily: font, cursor: 'pointer', fontWeight:'lighter'}} onClick={()=>handleScroll(window.innerHeight * 20)}>
@@ -151,5 +150,6 @@ export default function NavBar(props) {
                 </AppBar>
             </Fade>
         </div>
+        </>
     );
 }
