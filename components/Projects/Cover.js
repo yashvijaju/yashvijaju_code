@@ -54,11 +54,11 @@ export function Cover(props) {
     const classes = useStyles();
 
     function handleMouseOver() {
-        // document.getElementById("bookmark").src = props.bookmarkTitle;
+        document.getElementById("bookmark").src = props.bookmarkTitle;
     }
 
     function handleMouseOut() {
-        // document.getElementById("bookmark").src = props.bookmark;
+        document.getElementById("bookmark").src = props.bookmark;
     }
 
     return(
