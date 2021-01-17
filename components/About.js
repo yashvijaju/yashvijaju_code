@@ -1,4 +1,5 @@
 import React  from 'react';
+import Link from 'next/link';
 import { Grid, Typography, Hidden } from '@material-ui/core';
 import { AttachFile } from '@material-ui/icons';
 import { Fade } from 'react-reveal';
@@ -33,13 +34,13 @@ export default function AboutMe() {
                             <br/>
                             &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyReading</span> = Atlas <br/> &emsp; &emsp; Shrugged (Ayn Rand); <br/>
                             &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyLearning</span> = Full<br/> &emsp; &emsp;Stack Development; <br/>
-                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyBuilding</span> = iSPIRT <br/> &emsp; &emsp;Volunteer Management Tool; <br/>
-                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyDesigning</span> = My <br/> &emsp; &emsp;Portfolio (this); <br/>
+                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyBuilding</span> = <Link href="/work/ispirt"><span style={{color: '#0000EE'}}>iSPIRT <br/> &emsp; &emsp;Volunteer Management Tool</span></Link>; <br/>
+                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyDesigning</span> = <Link href="/tech/portfolio"><span style={{color: '#0000EE'}}>My <br/> &emsp; &emsp;Portfolio (this)</span></Link>; <br/>
                             <br/>
-                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyInterningAt</span> = iSPIRT <br/> &emsp; &emsp;(think-tank); <br/>
-                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyActiveAt</span> = USC <br/> &emsp; &emsp; WorkBench (venture studio), <br/> &emsp; &emsp; USC Makers (engineering), <br/> &emsp; &emsp; USC LavaLab (entrepreneurship); <br/>
+                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyInterningAt</span> = <a href="https://ispirt.in/" target="_blank" rel="noopener noreferrer" style={{color: '#0000EE'}}>iSPIRT <br/> &emsp; &emsp;(think-tank)</a>; <br/>
+                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyActiveAt</span> = <a href="http://workbenchsc.com/" target="_blank" rel="noopener noreferrer" style={{color: '#0000EE'}}>USC <br/> &emsp; &emsp; WorkBench (venture studio)</a>, <br/> &emsp; &emsp; <a href="http://viterbimakers.usc.edu/" target="_blank" rel="noopener noreferrer" style={{color: '#0000EE'}}>USC Makers (engineering)</a>, <br/> &emsp; &emsp; <a href="https://usclavalab.org/" target="_blank" rel="noopener noreferrer" style={{color: '#0000EE'}}>USC LavaLab (entrepreneurship)</a>; <br/>
                             <br/>
-                            &emsp; &emsp;> Yashvi-><span style={descriptor}>Resume</span> = <a href="https://drive.google.com/file/d/1UYa99LI9qB2Mj7QITz1ezya8gDcA9Bd7" target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none', fontWeight: 'lighter', fontFamily: font, color: 'black'}}><AttachFile fontSize="small" style={{color:'grey'}}/> click to open; <br/>
+                            &emsp; &emsp;> Yashvi-><span style={descriptor}>Resume</span> = <a href="https://drive.google.com/file/d/1UYa99LI9qB2Mj7QITz1ezya8gDcA9Bd7" target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none', fontWeight: 'lighter', fontFamily: font, color: '#0000EE'}}><AttachFile fontSize="small" style={{color:'grey'}}/> click to open; <br/>
                             </a>
                             &#125;
                         </Typography>
@@ -65,14 +66,14 @@ export default function AboutMe() {
                             <br/>
                             &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyReading</span> = Atlas Shrugged (Ayn Rand); <br/>
                             &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyLearning</span> = Full Stack Development; <br/>
-                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyBuilding</span> = iSPIRT Volunteer Management Tool; <br/>
-                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyDesigning</span> = My Portfolio (this); <br/>
+                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyBuilding</span> = <Link href="/work/ispirt"><span style={{color: '#0000EE', cursor: 'pointer'}}>iSPIRT Volunteer Management Tool</span></Link>; <br/>
+                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyDesigning</span> = <Link href="/tech/portfolio"><span style={{color: '#0000EE', cursor: 'pointer'}}>My Portfolio (this)</span></Link>; <br/>
                             <br/>
-                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyInterningAt</span> = iSPIRT (think-tank); <br/>
-                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyActiveAt</span> = USC WorkBench (venture studio), USC Makers (engineering), USC LavaLab (entrepreneurship); <br/>
+                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyInterningAt</span> = <a href="https://ispirt.in/" target="_blank" rel="noopener noreferrer" style={{color: '#0000EE'}}>iSPIRT (think-tank)</a>; <br/>
+                            &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyActiveAt</span> = <a href="http://workbenchsc.com/" target="_blank" rel="noopener noreferrer" style={{color: '#0000EE'}}>USC WorkBench (venture studio)</a>, <a href="http://viterbimakers.usc.edu/" target="_blank" rel="noopener noreferrer" style={{color: '#0000EE'}}>USC Makers (engineering)</a>, <a href="https://usclavalab.org/" target="_blank" rel="noopener noreferrer" style={{color: '#0000EE'}}>USC LavaLab (entrepreneurship)</a>; <br/>
 
                             <br/>
-                            &emsp; &emsp;> Yashvi-><span style={descriptor}>Resume</span> = <a href="https://drive.google.com/file/d/1UYa99LI9qB2Mj7QITz1ezya8gDcA9Bd7" target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none', fontWeight: 'lighter', fontFamily: font, color: 'black'}}><AttachFile fontSize="small" style={{color:'grey'}}/> click to open; <br/>
+                            &emsp; &emsp;> Yashvi-><span style={descriptor}>Resume</span> = <a href="https://drive.google.com/file/d/1UYa99LI9qB2Mj7QITz1ezya8gDcA9Bd7" target="_blank" rel="noopener noreferrer" style={{color: '#0000EE', fontWeight: 'lighter', fontFamily: font,}}><AttachFile fontSize="small" style={{color:'grey'}}/> click to open; <br/>
                             </a>
                             &#125;
                         </Typography>

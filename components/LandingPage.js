@@ -1,6 +1,6 @@
 import React from 'react';
-import { Grid, Hidden } from '@material-ui/core';
-import { ExpandMore, ExpandLess } from '@material-ui/icons';
+import { Grid, Hidden, Typography } from '@material-ui/core';
+import { KeyboardArrowDown, ExpandLess } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles'
 
 const blue='#bee3f1';
@@ -48,12 +48,47 @@ const useStyles = makeStyles((theme) => ({
             letterSpacing: '0.5px', 
         }
     },
+    icon_label_down: {
+        color: 'grey',
+        position: 'absolute', 
+        top: '90vh', 
+        [theme.breakpoints.down('xs')]: {
+            display: 'none',
+        }
+    },
+    icon_label_up: {
+        color: 'grey',
+        position: 'absolute', 
+        top: '93vh', 
+        [theme.breakpoints.down('xs')]: {
+            display: 'none',
+        }
+    },
     icon: {
         position: 'absolute', 
         top: '93vh', 
-        left: '49.5vw',
         [theme.breakpoints.down('xs')]: {
             display: 'none',
+        }
+    },
+    icon_arrow_down: {
+        color:'grey', 
+        cursor: 'pointer', 
+        transition: '0.25s',
+        '&:hover': {
+           transform: 'translate(0, 10px)', 
+           color: 'black',
+        }
+    },
+    icon_arrow_up: {
+        position: 'relative', 
+        top: '-4vh', 
+        color:'grey', 
+        cursor: 'pointer', 
+        transition: '0.25s',
+        '&:hover': {
+           transform: 'translate(0, -10px)', 
+           color: 'black',
         }
     }
   }));  
@@ -68,14 +103,22 @@ export default function Animation() {
         if (props === 0) {
             var x = document.getElementById("scroll up");
             x.style.display = 'none';
+            var xa = document.getElementById("scroll up label");
+            xa.style.display = 'none';
             var y = document.getElementById("scroll down");
             y.style.display = 'inline';
+            var ya = document.getElementById("scroll down label");
+            ya.style.display = 'inline';
         }
         else {
             x = document.getElementById("scroll up");
             x.style.display = 'inline';
+            xa = document.getElementById("scroll up label");
+            xa.style.display = 'inline';
             y = document.getElementById("scroll down");
             y.style.display = 'none';
+            ya = document.getElementById("scroll down label");
+            ya.style.display = 'none';
         }
     }
 
@@ -226,10 +269,16 @@ export default function Animation() {
                     </div>
                 </div>
             </Grid>
-            <div className={classes.icon}>
-                <ExpandMore id="scroll down" fontSize="large" style={{color:'grey', cursor: 'pointer'}} onClick={()=>handleScroll(window.innerHeight * 0.75)} />
-                <ExpandLess id="scroll up" fontSize="large" style={{color:'grey', cursor: 'pointer', display:'none'}} onClick={()=>handleScroll(0)} />
-            </div> 
+            <Grid container justify="center" className={classes.icon_label_down}>
+                <Typography variant="body2" id="scroll down label">SCROLL DOWN</Typography>
+            </Grid>
+            <Grid container justify="center" className={classes.icon}>
+                <KeyboardArrowDown id="scroll down" fontSize="large" className={classes.icon_arrow_down} onClick={()=>handleScroll(window.innerHeight * 0.85)} />
+                <ExpandLess id="scroll up" fontSize="large" className={classes.icon_arrow_up} style={{display:'none'}} onClick={()=>handleScroll(0)} />
+            </Grid> 
+            <Grid container justify="center" className={classes.icon_label_up}>
+                <Typography variant="body2" id="scroll up label" style={{display:'none'}}>SCROLL UP</Typography>
+            </Grid>
         </div>
     )
 }

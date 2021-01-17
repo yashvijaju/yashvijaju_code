@@ -23,9 +23,17 @@ export default function NavBar(props) {
             if (x !== null) {
                 x.style.display = 'none';
             }
+            var xa = document.getElementById("scroll up label");
+            if (xa !== null) {
+                xa.style.display = 'none';
+            }
             var y = document.getElementById("scroll down");
             if (y !== null) {
                 y.style.display = 'inline';
+            }
+            var ya = document.getElementById("scroll down label");
+            if (ya !== null) {
+                ya.style.display = 'inline';
             }
         }
         else {
@@ -33,9 +41,17 @@ export default function NavBar(props) {
             if (x !== null) {
                 x.style.display = 'inline';
             }
+            xa = document.getElementById("scroll up label");
+            if (xa !== null) {
+                xa.style.display = 'inline';
+            }
             y = document.getElementById("scroll down");
             if (y !== null) {
                 y.style.display = 'none';
+            }
+            ya = document.getElementById("scroll down label");
+            if (ya !== null) {
+                ya.style.display = 'none';
             }
         }
     }

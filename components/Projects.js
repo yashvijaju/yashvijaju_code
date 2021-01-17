@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link'
 import { Grid, Typography, Hidden, Chip, Snackbar } from '@material-ui/core';
 import { CancelOutlined,LaptopChromebookRounded, ColorLensRounded, WorkOutlineRounded, SearchRounded, FormatSizeRounded, EmojiSymbolsRounded, StarOutlineRounded } from '@material-ui/icons';
@@ -114,6 +114,19 @@ export default function Story() {
     setLastFilter(chip);
   }
 
+  useEffect(() => {
+    var x = document.getElementsByClassName("item");
+    for (var j = 0; j < x.length; j++) {
+      if (x[j].id.includes("Featured")) {
+        x[j].style.display = 'inline';
+      }
+      else {
+        x[j].style.display = 'none';
+      }
+    }
+    setLastFilter("Featured");
+  }, []); 
+
   const className_item = clsx("item", classes.item);
   const className_filter = clsx("filterProjects", classes.filter);
 
@@ -127,22 +140,6 @@ export default function Story() {
             click on a project to learn more
         </Typography>
       
-        <Hidden mdUp>
-          <Snackbar
-            anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              open={openNotifs}
-              autoHideDuration={4000}
-              onClose={handleCloseNotif}
-              message="Viewing this on a laptop is highly recommended"
-              id="notif1"
-              action={
-                <CancelOutlined size="small" aria-label="close" color="inherit" style={{cursor: 'pointer'}} onClick={handleCloseNotif}/>
-              }
-          />
-        </Hidden>
         <Snackbar
           anchorOrigin={{
               vertical: 'bottom',
@@ -158,8 +155,8 @@ export default function Story() {
           }
         />
         <Grid container direction="row" justify="center" style={{padding: '2vh 4vw 0 4vw'}}>
-          <Chip className={className_filter} id="Featured" variant="outlined" label="Featured" clickable={true} style={(lastFilter==="Featured") ? chipStyleSelected : chipStyle} onClick={()=>filter("Featured","Featured")} icon={<StarOutlineRounded style={{color: 'inherit'}} />}/>
           <Chip className={className_filter} id="All" variant="outlined" label="All" clickable={true} style={(lastFilter==="All") ? chipStyleSelected : chipStyle} onClick={()=>filter("All","All")}/>
+          <Chip className={className_filter} id="Featured" variant="outlined" label="Featured" clickable={true} style={(lastFilter==="Featured") ? chipStyleSelected : chipStyle} onClick={()=>filter("Featured","Featured")} icon={<StarOutlineRounded style={{color: 'inherit'}} />}/>
           <Chip className={className_filter} id="Tech" variant="outlined" label="Tech" clickable={true} style={(lastFilter==="Tech") ? chipStyleSelected : chipStyle} onClick={()=>filter("Tech","Tech")} icon={<LaptopChromebookRounded style={{color: 'inherit'}} />} />
           <Chip className={className_filter} id="Entrepreneurship" variant="outlined" label="Entrepreneurship" clickable={true} style={(lastFilter==="Entrepreneurship") ? chipStyleSelected : chipStyle} onClick={()=>filter("Entrepreneurship","Entrepreneurship")} icon={<SearchRounded style={{color: 'inherit'}} />}/>
           <Chip className={className_filter} id="Digital Art" variant="outlined" label="Digital Art" clickable={true} style={(lastFilter==="Digital Art") ? chipStyleSelected : chipStyle} onClick={()=>filter("Digital Art","Digital Art")} icon={<FormatSizeRounded style={{color: 'inherit'}} />}/>
@@ -221,6 +218,17 @@ export default function Story() {
             </Typography>
             <Typography variant="caption" className={classes.item_desc}>
             I designed this cartoon illustration using Adobe Photoshop's various tools, such as adjustment layers, paths, and layer masks.
+            </Typography>
+          </Grid>
+        </Link>
+        <Link href="/work/ispirt">
+          <Grid className={className_item} id="Professional, Tech, Featured" item xs={10} sm={5} md={3} >
+            <img id="iSPIRT" src="/assets/covers/ispirt.png" alt="iSPIRT" title="iSPIRT" className={classes.image}/>
+            <Typography variant="body1" className={classes.item_title}>
+              iSPIRT: Software Intern
+            </Typography>
+            <Typography variant="caption" className={classes.item_desc}>
+            iSPIRT is a think tank that develops societal platforms in India. I have worked on multiple projects, including the India Covid Model.
             </Typography>
           </Grid>
         </Link>
@@ -309,17 +317,6 @@ export default function Story() {
             </Typography>
             <Typography variant="caption" className={classes.item_desc}>
             'Circle of Light' is a 43-by-39 inch oil portrait of the Gautam Buddha that portrays his state of enlightenment and widespread teachings.
-            </Typography>
-          </Grid>
-        </Link>
-        <Link href="/work/ispirt">
-          <Grid className={className_item} id="Professional, Tech, Featured" item xs={10} sm={5} md={3} >
-            <img id="iSPIRT" src="/assets/covers/ispirt.png" alt="iSPIRT" title="iSPIRT" className={classes.image}/>
-            <Typography variant="body1" className={classes.item_title}>
-              iSPIRT: Software Intern
-            </Typography>
-            <Typography variant="caption" className={classes.item_desc}>
-            iSPIRT is a think tank that develops societal platforms in India. I have worked on multiple projects, including the India Covid Model.
             </Typography>
           </Grid>
         </Link>
