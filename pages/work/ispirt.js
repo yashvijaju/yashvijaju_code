@@ -632,7 +632,7 @@ export default function Story() {
 
     return(
         <>
-            <Cover project_name="iSPIRT : (Balloon) Volunteer" bg_color={tertiary} title_color={secondary}></Cover>
+            <Cover project_name="iSPIRT : (Balloon) Volunteer" bookmark="/assets/bookmarks/bookmark-ispirt.svg"  bookmarkTitle="/assets/bookmarks/bookmark-ispirt-title.svg" bg_color={tertiary} title_color={secondary}></Cover>
             <Grid container className={classes.container}>
                 <Intro title_color={primary_25} text_color={primary} company={<div>iSPIRT</div>} role={"(Balloon) Volunteer"} year={"June 2020-ongoing"} category={"Work"} team={<div>N/A</div>} tools={<div>Python, Flask, Plotly, Wordpress, Flourish, AWS (S3, EC2), Google Analytics, Next.js, MongoDB, Active Directory, OAuth 2.0, Figma, Adobe CC </div>} tools1={<div>Python, Flask <br/> Plotly <br/> Flourish <br/> AWS (S3, EC2) <br/> Google Analytics <br/> Active Directory </div>} tools2={<div>Next.js <br/> MongoDB <br/> OAuth 2.0 <br/> Wordpress <br/> Figma <br/> Adobe CC</div>} introduction={<div>iSPIRT is a not-for-profit think tank that evangelises and develops societal tech platforms such as IndiaStack to transform India by solving some of her hard problems by addressing financial inclusion, affordable healthcare and access to education. The iSPIRT team includes volunteers that created Aadhar, the largest public identity database in the world. <br/>My first project was with the India COVID-19 SEIR Model: a predictive model for districts in India. My second project was with the iSPIRT Leadership: I created a volunteer management tool for the team.</div>}/>
             </Grid>

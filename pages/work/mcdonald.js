@@ -12,7 +12,7 @@ import { Footer } from '../../components/Projects/Footer'
 const primary = '#9E0D1B';
 const primary_25 = '#F5C9C6';
 const secondary = '#DA291C';
-const tertiary = '#FFE295';
+const tertiary = '#FFCC00';
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -163,7 +163,7 @@ export default function Story() {
 
     return(
         <>
-            <Cover project_name="McDonald's : Product Development Intern" bg_color={tertiary} title_color={secondary}></Cover>
+            <Cover project_name="McDonald's : Product Development Intern" bookmark="/assets/bookmarks/bookmark-mcdonald.svg"  bookmarkTitle="/assets/bookmarks/bookmark-mcdonald-title.svg"  bg_color={tertiary} title_color={secondary}></Cover>
             <Grid container className={classes.container}>
                 <Intro title_color={primary_25} text_color={primary} company={<div>McDonald's Hardcastle Restaurants <br/> Pvt Ltd</div>} role={"Product Development Intern"} year={"July 2019"} category={"Work"} team={<div>N/A <br/> <br/></div>} tools={<div>N/A</div>} tools1={<div>N/A</div>} tools2={<div></div>} introduction={<div>Hardcastle Restaurants Private Limited operates the West and South franchises of McDonald's in India. <br/>I interned as a Product Developer at McDonald’s in July 2019, where I assisted with beta-testing, analyzing, and improving the  pilot feature “On The Go”. On The Go was conceptualised to deliver food to customers en-route. </div>}/>
             </Grid>

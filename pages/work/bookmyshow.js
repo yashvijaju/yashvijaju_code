@@ -50,9 +50,9 @@ export default function Story() {
 
     return(
         <>
-            <Cover project_name="BookMyShow : Software Analyst Intern" bg_color={tertiary} title_color={secondary}></Cover>
+            <Cover project_name="BookMyShow : Software Analyst Intern" bookmark="/assets/bookmarks/bookmark-bookmyshow.svg"  bookmarkTitle="/assets/bookmarks/bookmark-bookmyshow-title.svg" bg_color={tertiary} title_color={secondary}></Cover>
             <Grid container className={classes.container}>
-                <Intro title_color={primary_25} text_color={primary} company={"BookMyShow"} role={"Software Analyst"} year={"July 2018"} category={"Work"} team={"N/A"} tools={<div>N/A</div>} tools1={<div>N/A</div>} tools2={<div></div>} introduction={<div>BookMyShow is a digital ticketing company with a dominant share of events and entertainment ticketing in India. <br/>I interned as a Software Analyst at BookMyShow in July 2018, where I assisted with beta-testing the BookMyShow Partner App and analysing the software frameworks and libraries in use.</div>}/>
+                <Intro title_color={primary_25} text_color={primary} company={"BookMyShow"} role={"Software Analyst Intern"} year={"July 2018"} category={"Work"} team={"N/A"} tools={<div>N/A</div>} tools1={<div>N/A</div>} tools2={<div></div>} introduction={<div>BookMyShow is a digital ticketing company with a dominant share of events and entertainment ticketing in India. <br/>I interned as a Software Analyst at BookMyShow in July 2018, where I assisted with beta-testing the BookMyShow Partner App and analysing the software frameworks and libraries in use.</div>}/>
             </Grid>
 
             <Divider className={classes.divider}/>

@@ -112,7 +112,7 @@ export default function Story() {
   const classes = useStyles();
     return(
       <>
-        <Cover project_name="Pride For Labour" bg_color={tertiary} title_color={secondary}></Cover>
+        <Cover project_name="Pride For Labour" bookmark="/assets/bookmarks/bookmark-pride-for-labour.svg"  bookmarkTitle="/assets/bookmarks/bookmark-pride-for-labour-title.svg" bg_color={tertiary} title_color={secondary}></Cover>
         <Grid container className={classes.container}>
             <Intro title_color={primary_25} text_color={primary} company={"Pride For Labour"} role={"Co-Founder"} year={"2016-2019"} category={"Social Entrepreneurship"} team={"Oberoi Intl School Community"} tools={<div>N/A</div>} tools1={<div>N/A</div>} tools2={<div></div>} introduction={<div>"I believe in the dignity of labor, whether with head or hand; that the world owes no man a living but that it owes every man an opportunity to make a living." –John Rockefeller. <br/>Domestic labour isn’t a respected occupation, but that has to change. To solve this, I founded Pride For Labour (PFL) in grade 10, with a mission to empower domestic labour and instil pride and respect in the occupation.</div>}/>
         </Grid>

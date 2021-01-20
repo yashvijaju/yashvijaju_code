@@ -43,7 +43,7 @@ export default function Story() {
 
   return(
     <>
-          <Cover project_name="Dancing on the Moon" bg_color={tertiary} title_color={secondary}></Cover>
+          <Cover project_name="Dancing on the Moon" bookmark="/assets/bookmarks/bookmark-dancing-on-the-moon.svg"  bookmarkTitle="/assets/bookmarks/bookmark-dancing-on-the-moon-title.svg" bg_color={tertiary} title_color={secondary}></Cover>
           <Grid container className={classes.container}>
               <Intro title_color={primary_25} text_color={primary} company={"N/A"} role={"Artist"} year={"2016"} category={"Traditional Art"} team={"Personal Project"} tools={<div>Oil Paints <br/>Texture Paint, Palette Knife <br/>Canvases</div>} tools1={<div>Oil Paints <br/>Texture Paint, Palette Knife <br/>Canvases</div>} tools2={<div></div>} introduction={<div>‘Dancing on the Moon’ is an oil painting of two dancers caught mid-motion. <br/>This piece illustrates how although time doesn’t stop, our emotions and actions influence our perceptions of the speed of time. In this instant, time “slows down” for both dancers as they perform their dance routine, each moment stretched as wide as their bodies.</div>}/>
           </Grid>
