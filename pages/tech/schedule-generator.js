@@ -8,10 +8,10 @@ import { Intro } from '../../components/Projects/Intro'
 import { ProblemStatement } from '../../components/Projects/Problem_Statement'
 import { Footer } from '../../components/Projects/Footer'
 
-const primary = '#9E0D1B';
-const primary_25 = '#E6C2C6';
-const secondary = '#F23838';
-const tertiary = '#FFDCD0';
+const primary = '#3B3B3B';
+const primary_25 = '#43B14E';
+const secondary = '#3B3B3B';
+const tertiary = '#43B14E';
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -28,6 +28,8 @@ const useStyles = makeStyles((theme) => ({
     },
     image: {
         border: '1px solid #9E0D1B',
+        borderColor: primary,
+        borderRadius: '10px',
         height: 'auto',
         width: 'auto',
         maxWidth: '40vw',
@@ -55,7 +57,7 @@ function Step_Component(props) {
     return (
         <Grid item xs container direction="row" justify="space-between" style={{marginBottom: '10vh'}}>
             <Grid item xs={12} sm={2}>
-                <Typography variant="h5" style={{color: primary}}>
+                <Typography variant="h5" style={{color: '#05602F'}}>
                     <b>Step {props.step_num}</b>
                 </Typography>
                 
@@ -78,7 +80,7 @@ export default function Story() {
     
     return(
         <>
-        <Cover project_name="Automated Schedule Generator" bg_color={tertiary} title_color={secondary}></Cover>
+        <Cover project_name="Automated Schedule Generator" bookmark="/assets/bookmarks/bookmark-schedule-generator.svg"  bookmarkTitle="/assets/bookmarks/bookmark-schedule-generator-title.svg"bg_color={tertiary} title_color={secondary}></Cover>
         <Grid container className={classes.container}>
             <Intro title_color={primary_25} text_color={primary} company={"N/A"} role={"Developer"} year={"November 2019"} category={<div>Tech <br/> <br/></div>} team={<div>Team Project, <br/> TrojanHacks 2019</div>} tools={<div><u>Software:</u> Beautiful Soup 4, Tkinter <br/><u>Languages:</u> Python, C++</div>} tools1={<div><u>Software:</u> <br/> Beautiful Soup 4 <br/> Tkinter <br/></div>} tools2={<div><u>Languages:</u> <br/>  Python <br/> C++</div>} introduction={<div>In under 18 hours, at TrojanHacks, we automated the process of generating schedules for school. <br/>The program receives the student’s list of classes as an input, and generates optimized schedules as output. <br/>Submitted on <a href="https://devpost.com/software/usc-schedule-maker-t6zf70" target="_blank" rel="noreferrer noopener"><u>Devpost</u></a>, ranked 3rd at the hackathon.</div>}/>
         </Grid>
