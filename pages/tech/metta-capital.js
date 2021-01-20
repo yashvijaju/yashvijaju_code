@@ -8,10 +8,10 @@ import { Intro } from '../../components/Projects/Intro'
 import { ProblemStatement } from '../../components/Projects/Problem_Statement'
 import { Footer } from '../../components/Projects/Footer'
 
-const primary = '#9E0D1B';
-const primary_25 = '#E6C2C6';
-const secondary = '#F23838';
-const tertiary = '#FFDCD0';
+const primary = '#3A393E';
+const primary_25 = '#8C827C';
+const secondary = '#3A393E';
+const tertiary = '#F7AF4A';
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -30,7 +30,8 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
         height: '75vh', 
         border: '3px solid #9E0D1B',
-        margin: '0 0 10vh 0',
+        borderColor: secondary,
+        // margin: '0 0 10vh 0',
     },
     title: {
         color: secondary,
@@ -64,7 +65,7 @@ export default function Story() {
 
     return(
         <>
-        <Cover project_name="Metta Capital : Web Developer" bg_color={tertiary} title_color={secondary}></Cover>
+        <Cover project_name="Metta Capital : Web Developer" bookmark="/assets/bookmarks/bookmark-metta-capital.svg"  bookmarkTitle="/assets/bookmarks/bookmark-metta-capital-title.svg" bg_color={tertiary} title_color={secondary}></Cover>
         <Grid container className={classes.container}>
             <Intro title_color={primary_25} text_color={primary} company={"Metta Capital Advisors LLP"} role={"UI / UX Designer, Web Developer"} year={"May-June 2020"} category={<div>Tech<br/></div>} team={"Independent Project"} tools={<div><u>Software:</u> React.Js, Hosted on Github Pages, Domain via GoDaddy <br/><u>UI / UX:</u> Figma, Material UI</div>} tools1={<div><u>Software:</u> <br/>React.Js <br/>Hosted on Github Pages <br/>Domain via GoDaddy <br/></div>} tools2={<div><u>UI / UX:</u> <br/>Figma <br/>Material UI <br/></div>} introduction={<div>Metta Capital Advisors LLP is a boutique investment bank in India. <br/>I worked closely with the CEO to design and develop the company’s website from scratch. The website is also fully responsive.<br/>Available on <a href="https://mettacapital.in" target="_blank" rel="noopener noreferrer"><u>https://mettacapital.in</u></a></div>}/>
         </Grid>
@@ -75,10 +76,14 @@ export default function Story() {
             <Grid item xs={12}>
                 <iframe src="https://mettacapital.in" title="Metta Capital Advisors LLP" allowFullScreen={true} className={classes.embed}/>
             </Grid>
+        </Grid>
+
+        <Divider className={classes.divider} style={{marginTop: '7.5vh'}}/>
+
+        <Grid container direction="column" className={classes.container}>
             <Typography variant="h5" className={classes.title}>
                 <b>Notable Features</b>
             </Typography>
-
             <Fade>
                 <ListItem step="1" text="The website is fully responsive — three different designs were created for the team modals to adapt to the standard mobile phone, tablet, and laptop/desktop screen sizes"/>
                 <ListItem step="2" text="The color of the navigation bar (on the homepage) is modified depending on scroll position"/>
@@ -87,7 +92,7 @@ export default function Story() {
             </Fade>
         </Grid>
 
-        <Footer prev="SOFTWARE ENGINEER INTERN : BOOKMYSHOW" prev_link="/work/bookmyshow" prev_category="work, tech" next="100 DAYS OF BUTTONS" next_link="/art/100-days-of-buttons" next_category="digital art" title={secondary} subtitle={primary} divider={primary_25}/>
+        <Footer prev="SOFTWARE ANALYST INTERN : BOOKMYSHOW" prev_link="/work/bookmyshow" prev_category="work, tech" next="100 DAYS OF BUTTONS" next_link="/art/100-days-of-buttons" next_category="digital art" title={secondary} subtitle={primary} divider={primary_25}/>
         </>
     )         
 }
