@@ -8,12 +8,12 @@ const font = 'Segoe UI';
 
 const useStyles = makeStyles((theme) => ({
     container_100vh: {
-        height: '100vh', 
+        height: '90vh', 
         width: '100%', 
         backgroundColor: '#FFFFFF', 
         zIndex: '-1',
         [theme.breakpoints.down('xs')]: {
-            height: '50vh', 
+            height: '40vh', 
         }
     },
     container_50vh: {
@@ -53,6 +53,7 @@ const useStyles = makeStyles((theme) => ({
         position: 'absolute', 
         top: '90vh', 
         [theme.breakpoints.down('xs')]: {
+            top: '43vh',
             display: 'none',
         }
     },
@@ -61,6 +62,7 @@ const useStyles = makeStyles((theme) => ({
         position: 'absolute', 
         top: '93vh', 
         [theme.breakpoints.down('xs')]: {
+            top: '45vh',
             display: 'none',
         }
     },
@@ -68,6 +70,7 @@ const useStyles = makeStyles((theme) => ({
         position: 'absolute', 
         top: '93vh', 
         [theme.breakpoints.down('xs')]: {
+            top: '45vh',
             display: 'none',
         }
     },
