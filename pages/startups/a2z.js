@@ -9,10 +9,10 @@ import { Intro } from '../../components/Projects/Intro'
 import { ProblemStatement } from '../../components/Projects/Problem_Statement'
 import { Footer } from '../../components/Projects/Footer'
 
-const primary = '#9E0D1B';
-const primary_25 = '#E6C2C6';
-const secondary = '#F23838';
-const tertiary = '#FFDCD0';
+const primary = '#20639B';
+const primary_25 = '#108690';
+const secondary = '#108690';
+const tertiary = '#FFE169';
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -53,6 +53,7 @@ const useStyles = makeStyles((theme) => ({
   image: {
     borderRadius: '20px',
     border: '1px solid #9E0D1B',
+    borderColor: primary,
     height: 'auto',
     width: '32%',
     [theme.breakpoints.down('xs')]: {
