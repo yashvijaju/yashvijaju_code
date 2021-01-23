@@ -80,7 +80,7 @@ export default function Story() {
     
     return(
         <>
-        <Cover project_name="Automated Schedule Generator" bookmark="/assets/bookmarks/bookmark-schedule-generator.svg"  bookmarkTitle="/assets/bookmarks/bookmark-schedule-generator-title.svg"bg_color={tertiary} title_color={secondary}></Cover>
+        <Cover project_name="Automated Schedule Generator" bookmark="/assets/bookmarks/bookmark-schedule-generator.svg" bookmarkTitle="/assets/bookmarks/bookmark-schedule-generator-title.svg" bg_color={tertiary} title_color={secondary}></Cover>
         <Grid container className={classes.container}>
             <Intro title_color={primary_25} text_color={primary} company={"N/A"} role={"Developer"} year={"November 2019"} category={<div>Tech <br/> <br/></div>} team={<div>Team Project, <br/> TrojanHacks 2019</div>} tools={<div><u>Software:</u> Beautiful Soup 4, Tkinter <br/><u>Languages:</u> Python, C++</div>} tools1={<div><u>Software:</u> <br/> Beautiful Soup 4 <br/> Tkinter <br/></div>} tools2={<div><u>Languages:</u> <br/>  Python <br/> C++</div>} introduction={<div>In under 18 hours, at TrojanHacks, we automated the process of generating schedules for school. <br/>The program receives the student’s list of classes as an input, and generates optimized schedules as output. <br/>Submitted on <a href="https://devpost.com/software/usc-schedule-maker-t6zf70" target="_blank" rel="noreferrer noopener"><u>Devpost</u></a>, ranked 3rd at the hackathon.</div>}/>
         </Grid>

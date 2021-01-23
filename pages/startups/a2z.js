@@ -118,7 +118,7 @@ export default function Story() {
 
     return(
       <>
-        <Cover project_name="A2Z" bg_color={tertiary} title_color={secondary}></Cover>
+        <Cover project_name="A2Z" bookmark="/assets/bookmarks/bookmark-a2z.svg" bookmarkTitle="/assets/bookmarks/bookmark-a2z-title.svg" bg_color={tertiary} title_color={secondary}></Cover>
         <Grid container className={classes.container}>
             <Intro title_color={primary_25} text_color={primary} company={"A2Z"} role={"Co-Founder"} year={"May 2014 - May 2015"} category={"Writing, Entrepreneurship"} team={"5 Friends, aged 9-12"} tools={<div><u>Design, Editing:</u> <br/>Apple Pages <br/></div>} tools1={<div><u>Design, Editing:</u> <br/> Apple Pages <br/></div>} tools2={<div></div>} introduction={<div>At the age of 12, I founded A2Z as a backyard summer project with 5 friends. A2Z started as a pay-per-copy magazine that quickly converted into an advertisement-driven bi-monthly magazine distributed to 400+ flats in my housing society free of cost. <br/>As the founder, I learned to handle finances, seek advertisers, and negotiate costs. <br/>As the editor, I learned to edit articles and images, to create a narrative that strung all the different pieces of the magazine together into a single cohesive structure. <br/>As the co-founder, I learned to understand user markets, adapt models to cater to the target audience, and to choose suppliers at the intersection of price and quality. <br/>As an extremely young entrepreneur, I learned to chase my dreams to fruition and to ride the wave. But, more importantly, I learned failure and understood to withdraw when the tide gets too high.</div>}/>
         </Grid>
