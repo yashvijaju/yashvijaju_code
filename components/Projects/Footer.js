@@ -10,6 +10,7 @@ import { EmailOutlined, LinkedIn, Instagram, Facebook, GitHub } from '@material-
 const useStyles = makeStyles((theme) => ({
     container: {
         padding: '0 5vw',
+        backgroundColor: 'white',
         [theme.breakpoints.down('sm')]: {
             margin: '0 0 5vh 0',
             padding: '0 5vw',
