@@ -30,12 +30,15 @@ const useStyles = makeStyles((theme) => ({
       borderRadius: '20px',
       border: '1px solid #206CA3',
       height: 'auto',
-      width: '100%',
+      width: '95%',
       margin: '0 0 1vh',
       transition: 'all .5s ease-in-out', 
       '&:hover': {
         cursor: 'pointer',
         transform: 'scale(1.15)',
+      },
+      [theme.breakpoints.down('xs')]: {
+        width: '100%'
       }
   }
 }));
@@ -78,7 +81,7 @@ export default function Story() {
       </Hidden>
       <Hidden xsDown>
         <Fade bottom>
-          <Grid container className={classes.container} direction="row" spacing={3}>
+          <Grid container className={classes.container} direction="row">
             <Grid item xs={12} sm={4} container direction="column">
               <img className={classes.image} src="/assets/projects/cartoon-portrait/ref.jpg"/>
               <Typography variant="caption">
