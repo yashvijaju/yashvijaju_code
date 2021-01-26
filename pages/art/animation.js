@@ -9,8 +9,8 @@ import { Footer } from '../../components/Projects/Footer'
 
 const primary = '#000000';
 const primary_25 = '#979797';
-const secondary = '#000000';
-const tertiary = '#FFFAD0';
+const secondary = '#C4242B';
+const tertiary = '#fff57c';
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -47,9 +47,9 @@ export default function Story() {
   
   return(
       <>
-      <Cover project_name="Keyframe Animation" bg_color={tertiary} title_color={secondary}></Cover>
+      <Cover project_name="Keyframe Animation" bookmark="/assets/bookmarks/bookmark-animation.svg"  bookmarkTitle="/assets/bookmarks/bookmark-animation-title.svg" bg_color={tertiary} title_color={secondary}></Cover>
       <Grid container className={classes.container}>
-          <Intro title_color={primary_25} text_color={primary} company={"N/A"} role={"Graphic Designer"} year={"April 2020"} category={<div>Digital Art <br/> <br/></div>} team={"Individual Class Project, Des 332A: Typography"} tools={<div>Adobe Photoshop</div>} tools1={<div>Adobe Photoshop</div>} tools2={<div></div>} introduction={<div>Capture accidents, because “the wrong answer is the right answer in search of a different question.”  <br/>The animation here is inspired by Bruce Mau’s Incomplete Manifesto for Growth. The saturated yellow background with black text visually juxtaposes the conventional signs that warn us against accidents by creating a red “accident” and capturing it inside prison bars made from all the warning signs.</div>}/>
+          <Intro title_color={primary_25} text_color={primary} company={"N/A"} role={"Graphic Designer"} year={"April 2020"} category={<div>Digital Art <br/> <br/></div>} team={"Individual Class Project, Des 332A: Typography"} tools={<div>Adobe Photoshop</div>} tools1={<div>Adobe Photoshop</div>} tools2={<div></div>} introduction={<div>Capture accidents, because “the wrong answer is the right answer in search of a different question.”  <br/>The animation here is inspired by <a href="http://newmediaabington.pbworks.com/f/mau_an_incomplete_manifesto_for_growth.pdf" target="_blank" rel="noreferrer noopener"><u>Bruce Mau's Incomplete Manifesto for Growth</u></a>. Written in 1998, his manifesto outlines 43 "rules" by which one should live their life. <br/><br/>To create this animation, I summaried and encapsulated his ideologies in three simple phrases: 1. Break the rules, 2. Chase the unconventional, and 3. Live in extremes; or don't, and used these phrases to guide the theme of my design.<br/><br/>The saturated yellow background with black text visually juxtaposes the conventional signs that warn us against accidents by creating a red “accident” and capturing it inside prison bars made from all the warning signs.</div>}/>
       </Grid>
 
       <Divider className={classes.divider}/>
