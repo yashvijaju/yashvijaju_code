@@ -43,7 +43,7 @@ export default function Story() {
     
     return(
         <>
-        <Cover project_name="First Robotics Competition" bg_color={tertiary} title_color={secondary}></Cover>
+        <Cover project_name="First Robotics Competition" bookmark="/assets/bookmarks/bookmark-first-robotics-competition.svg"  bookmarkTitle="/assets/bookmarks/bookmark-first-robotics-competition-title.svg" bg_color={tertiary} title_color={secondary}></Cover>
         <Grid container className={classes.container}>
             <Intro title_color={primary_25} text_color={primary} company={"First Robotics Competition"} role={"Mechnical Engineer, Safety-Captain"} year={"December 2017 - May 2018"} category={<div>Tech <br/> <br/></div>} team={"6024, R Factor"} tools={<div>N/A</div>} tools1={<div>N/A</div>} tools2={<div></div>} introduction={<div>The First Robotics Competition is a globally renowned robotics competition that simulates sports-tournaments with industry-grade equipent for high-school students. I was a Mechanical Engineer and Safety Captain for Team 6024-R Factor, the first team from India, for the 2018 season. <br/>We qualified for the First Championship at Houston, 2018 at the Southern Cross Regional (Sydney) tournament, where we won the Chairman’s Award. We also won the Safety Runners-Up Award (FIRST Championship, Houston) Safety Animation Award (pre-season, sponsored by Underwriters Laboratories), Safety Award (Southern Cross Regional), and Safety Runners-Up Award (South Pacific Regional).</div>}/>
         </Grid>
