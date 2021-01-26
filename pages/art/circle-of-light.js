@@ -9,10 +9,10 @@ import { Intro } from '../../components/Projects/Intro'
 import { ProblemStatement } from '../../components/Projects/Problem_Statement'
 import { Footer } from '../../components/Projects/Footer'
 
-const primary = '#9E0D1B';
+const primary = '#4866a6';
 const primary_25 = '#E6C2C6';
-const secondary = '#F23838';
-const tertiary = '#FFDCD0';
+const secondary = '#ff6200';
+const tertiary = '#bdceec';
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -114,9 +114,9 @@ export default function Story() {
     
     return(
         <>
-        <Cover project_name="Circle of Light : Gautam Buddha" bg_color={tertiary} title_color={secondary}></Cover>
+        <Cover project_name="Circle of Light : Gautam Buddha" bookmark="/assets/bookmarks/bookmark-circle-of-light.svg"  bookmarkTitle="/assets/bookmarks/bookmark-circle-of-light-title.svg" bg_color={tertiary} title_color={secondary}></Cover>
         <Grid container className={classes.container}>
-            <Intro title_color={primary_25} text_color={primary} company={"N/A"} role={"Artist"} year={"2014"} category={<div>Traditional Art <br/> <br/></div>} team={"Independent Project"} tools={<div><u>Art Supplies:</u> Oil Paints, Canvas, Frame</div>} tools1={<div><u>Art Supplies:</u> <br/>Oil Paints <br/>Canvas <br/>Frame <br/></div>} tools2={<div></div>} introduction={<div>Circle of Light' is a 43-by-39 inch oil portrait of the Gautam Buddha. The Guatam Buddha is an important figure in Hindu mythology, famous for his surrender of the materialistic world in pursuit of complete enlightenment and self-actualisation. His ideology and way-of-life attracts hundreds of thousands of followers. <br/> This painting is inspired by another artist's work.</div>}/>
+            <Intro title_color={primary_25} text_color={primary} company={"N/A"} role={"Artist"} year={"2015"} category={<div>Traditional Art <br/> <br/></div>} team={"Independent Project"} tools={<div><u>Art Supplies:</u> Oil Paints, Canvas, Frame</div>} tools1={<div><u>Art Supplies:</u> <br/>Oil Paints <br/>Canvas <br/>Frame <br/></div>} tools2={<div></div>} introduction={<div>Circle of Light' is a 43-by-39 inch oil portrait of the Gautam Buddha. The Guatam Buddha is an important figure in Hindu mythology, famous for his surrender of the materialistic world in pursuit of complete enlightenment and self-actualisation. His ideology and way-of-life attracts hundreds of thousands of followers. <br/> This painting is inspired by another artist's work.</div>}/>
         </Grid>
 
         <Divider className={classes.divider}/>

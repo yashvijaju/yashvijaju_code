@@ -8,10 +8,10 @@ import { Intro } from '../../components/Projects/Intro'
 import { ProblemStatement } from '../../components/Projects/Problem_Statement'
 import { Footer } from '../../components/Projects/Footer'
 
-const primary = '#9E0D1B';
-const primary_25 = '#E6C2C6';
-const secondary = '#F23838';
-const tertiary = '#FFDCD0';
+const primary = '#004366';
+const primary_25 = '#8cd2ff';
+const secondary = '#004366';
+const tertiary = '#f9e076';
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -76,7 +76,7 @@ export default function Story() {
 
     return(
         <>
-        <Cover project_name="T-Shirt Logo Design" bg_color={tertiary} title_color={secondary}></Cover>
+        <Cover project_name="T-Shirt Logo Design" bookmark="/assets/bookmarks/bookmark-tshirt-logo.svg"  bookmarkTitle="/assets/bookmarks/bookmark-tshirt-logo-title.svg" bg_color={tertiary} title_color={secondary}></Cover>
         <Grid container className={classes.container}>
             <Intro title_color={primary_25} text_color={primary} company={"N/A"} role={"Graphic Designer"} year={"May 2020"} category={<div>Digital Art<br/><br/><br/></div>} team={"Independent  Class Project, ITP 190: Tools for Digital Graphics"} tools={<div><u>Adobe Photoshop:</u> Adjustment Layers, Masks & Paths, Layer Effects</div>} tools1={<div><u>Adobe Photoshop:</u> <br/>Adjustment Layers<br/>Masks & Paths <br/>Layer Effects <br/></div>} tools2={<div></div>} introduction={<div>I created this tshirt logo for a class project (ITP 190: Tools for Digital Graphics) using Adobe Photoshop. <br/>To design this, I first stacked three adjustment layers (light blue, dark blue, and yellow). Then, I used the pen tool to trace portions of the original image. These tracings were used to create paths, which were converted into selections, inversed, and then deleted from the layer masks in order to display the selection in the adjustment layer.<br/>Following that, I edited the stacking order to hide the sun behind a wave while reflecting it in another. Finally, I created custom vertical and horizontal type paths that wrapped around the wave, rasterised the typograpic layers, applied layer effects, and voila.</div>}/>
         </Grid>

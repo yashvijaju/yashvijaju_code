@@ -27,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
     },
     video: {
         border: '2px solid #000000',
+        borderColor: primary,
         borderRadius: '20px',
         height: 'auto',
         width: '100%',

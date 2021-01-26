@@ -8,10 +8,10 @@ import { Intro } from '../../components/Projects/Intro'
 import { ProblemStatement } from '../../components/Projects/Problem_Statement'
 import { Footer } from '../../components/Projects/Footer'
 
-const primary = '#9E0D1B';
-const primary_25 = '#E6C2C6';
-const secondary = '#F23838';
-const tertiary = '#FFDCD0';
+const primary = '#543884';
+const primary_25 = '#FF6FA5';
+const secondary = '#3C1580';
+const tertiary = '#FFD1DC';
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -28,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
     },
     image: {
         border: '1px solid #9E0D1B',
+        borderColor: primary,
         borderRadius: '20px',
         height: 'auto',
         width: '100%',
@@ -51,7 +52,7 @@ export default function Story() {
 
     return(
         <>
-        <Cover project_name="Kathak" bg_color={tertiary} title_color={secondary}></Cover>
+        <Cover project_name="Kathak" bookmark="/assets/bookmarks/bookmark-kathak.svg"  bookmarkTitle="/assets/bookmarks/bookmark-kathak-title.svg" bg_color={tertiary} title_color={secondary}></Cover>
         <Grid container className={classes.container}>
             <Intro title_color={primary_25} text_color={primary} company={"N/A"} role={"Artist"} year={"2005-ongoing"} category={<div>Traditional Art<br/><br/><br/></div>} team={"Independent Project"} tools={<div>N/A</div>} tools1={<div>N/A</div>} tools2={<div></div>} introduction={<div>Kathak is a popular style of Indian classical dance that combines poetry with rhythmic movement to aid in storytelling.<br/>I have been practicing the Jaipur Gharana of Kathak since the age of 4 under Guru Kakoli, Guru Pavitra, and Guru Mili. Over the years, I have performed on multiple stages around the city and partaked in a handful of competitions as well. </div>}/>
         </Grid>
