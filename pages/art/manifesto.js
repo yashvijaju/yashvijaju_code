@@ -95,7 +95,7 @@ export default function Story() {
 
   return(
     <>
-      <Cover project_name={<span>Redesign for Bruce Mau’s <br/> <i>Incomplete Manifesto for Growth</i></span>} bg_color={tertiary} title_color={secondary}></Cover>
+      <Cover project_name={<span>Redesign for Bruce Mau’s <br/> <i>Incomplete Manifesto for Growth</i></span>} bookmark="/assets/bookmarks/bookmark-manifesto.svg"  bookmarkTitle="/assets/bookmarks/bookmark-manifesto-title.svg" bg_color={tertiary} title_color={secondary}></Cover>
       <Grid container className={classes.container}>
           <Intro title_color={primary_25} text_color={primary} company={"N/A"} role={<div>Graphic Designer<br/><br/></div>} year={"March-April 2020"} category={"Digital Art"} team={<div>Independent Class Project, <br/> Des 332A: Typography</div>} tools={<div>Adobe InDesign <br/> Riso Printer</div>} tools1={<div>Adobe InDesign, Riso Printer</div>} tools2={<div></div>} introduction={<div>This manifesto is inspired by <a href="http://newmediaabington.pbworks.com/f/mau_an_incomplete_manifesto_for_growth.pdf" target="_blank" rel="noreferrer noopener"><u>Bruce Mau's Incomplete Manifesto for Growth</u></a>. Written in 1998, his manifesto outlines 43 "rules" by which one should live their life. To create this manifesto, I summaried and encapsulated his ideologies in three simple phrases: 1. Break the rules, 2. Chase the unconventional, and 3. Live in extremes; or don't, and used these phrases to guide the theme of my design. <br/> This manifesto was designed with the intent to be printed using a Risograph, although the Covid-19 global pandemic prevented this later.</div>}/>
       </Grid>

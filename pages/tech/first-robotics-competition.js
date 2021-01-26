@@ -8,10 +8,10 @@ import { Intro } from '../../components/Projects/Intro'
 import { ProblemStatement } from '../../components/Projects/Problem_Statement'
 import { Footer } from '../../components/Projects/Footer'
 
-const primary = '#9E0D1B';
-const primary_25 = '#E6C2C6';
-const secondary = '#F23838';
-const tertiary = '#FFDCD0';
+const primary = '#fd7c28';
+const primary_25 = '#6EA4BF';
+const secondary = '#27476E';
+const tertiary = '#FF9B71';
 
 const useStyles = makeStyles((theme) => ({
     container: {

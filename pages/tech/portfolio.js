@@ -98,7 +98,7 @@ export default function Story() {
   
   return(
     <>
-    <Cover project_name="Website (*this)" bg_color={tertiary} title_color={secondary}></Cover>
+    <Cover project_name="Website (*this)" bookmark="/assets/bookmarks/bookmark-portfolio.svg"  bookmarkTitle="/assets/bookmarks/bookmark-portfolio-title.svg" bg_color={tertiary} title_color={secondary}></Cover>
     <Grid container className={classes.container}>
         <Intro title_color={primary_25} text_color={primary} company={"N/A"} role={<div>UI/UX Designer, Web Developer</div>} year={"June 2020-ongoing"} category={"Digital Art, Tech"} team={<div>Individual Project</div>} tools={<div><u>Software:</u> Next.js, GitHub Pages <br/> <u>UI / UX:</u> Figma, Material UI</div>} tools1={<div><u>Software:</u> <br/> Next.js <br/> GitHub Pages</div>} tools2={<div><u>UI / UX:</u> <br/> Figma <br/> Material UI</div>} introduction={<div>I designed and developed this website to document my projects in software development, digital and traditional design, and entrepreneurship. First developed in June 2020, this portfolio is constantly undergoing edits and updates. <br/> <br/> This is my story.</div>}/>
     </Grid>
