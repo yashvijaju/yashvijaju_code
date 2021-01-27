@@ -1174,7 +1174,7 @@ export default function Story() {
                                                 &emsp;4 : “Core Volunteer” <br/>
                                                 &emsp;5 : “Anchor Volunteer” <br/>
                                                 &emsp;6 : “Volunteer Alumni” <br/>
-                                                “External Positioining Titles” :  <br/>
+                                                “External Positioning Titles” :  <br/>
                                                 &emsp;0 : “Alumni” <br/>
                                                 &emsp;... <br/>
                                                 &emsp;10 : “None” <br/>
