@@ -8,9 +8,9 @@ import { Intro } from '../../components/Projects/Intro'
 import { ProblemStatement } from '../../components/Projects/Problem_Statement'
 import { Footer } from '../../components/Projects/Footer'
 
-const primary = '#206CA3';
-const primary_25 = '#B0D9F7';
-const secondary = '#298FD7';
+const primary = '#6237a0';
+const primary_25 = '#5c95f8';
+const secondary = '#8c34e4';
 const tertiary = '#CFF4D2';
 
 const useStyles = makeStyles((theme) => ({
@@ -58,7 +58,7 @@ export default function Story() {
   
   return(
     <>
-      <Cover project_name="Quiilling" bookmark="/assets/bookmarks/bookmark-quilling.svg"  bookmarkTitle="/assets/bookmarks/bookmark-quilling-title.svg" bg_color={tertiary} title_color={secondary}></Cover>
+      <Cover project_name="Quilling" bookmark="/assets/bookmarks/bookmark-quilling.svg"  bookmarkTitle="/assets/bookmarks/bookmark-quilling-title.svg" bg_color={tertiary} title_color={secondary}></Cover>
       <Grid container className={classes.container}>
           <Intro title_color={primary_25} text_color={primary} company={"N/A"} role={"Artist"} year={"2013-2016"} category={<div>Traditional Art</div>} team={"Independent Project"} tools={<div>Quilling Needle, Quilling Paper</div>} tools1={<div>Quilling Needle <br/> Quilling Paper</div>} tools2={<div></div>} introduction={<div>Quilling is an art of paper filigree in which strips of paper are rolled using a slitted-tool to create coils of paper. These coils are then shaped as desired, and sealed by glueing the loose end of paper. Put together, beautiful inticrate designs can be made. <br/>I designed and sold envelopes, cards, and boxes, amongst other traditional gift items, at boutique exhibitions in India for a few years.</div>}/>
       </Grid>

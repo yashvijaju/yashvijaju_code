@@ -12,7 +12,7 @@ import { Footer } from '../../components/Projects/Footer'
 const primary = '#20639B';
 const primary_25 = '#108690';
 const secondary = '#108690';
-const tertiary = '#FFE169';
+const tertiary = '#FFFAD0';
 
 const useStyles = makeStyles((theme) => ({
   container: {
