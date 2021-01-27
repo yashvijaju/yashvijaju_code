@@ -12,7 +12,7 @@ import { Footer } from '../../components/Projects/Footer'
 const primary = '#9E0D1B';
 const primary_25 = '#F5C9C6';
 const secondary = '#DA291C';
-const tertiary = '#FFCC00';
+const tertiary = '#ffdd80';
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -178,7 +178,7 @@ export default function Story() {
                     <u><b>SOLUTION OVERVIEW</b></u>
                     </Typography>
                     <Typography className={classes.text} variant="body2">
-                    “On The Go” is a new feature that is under pilot-testing by McDonald's Delivery. This feature would allow customers to order food in advance and have it delivered to their car en-route their commute. This would also simplify store pick-ups for customers as the hassle of parking and waiting in a queue to order would be eradicated.
+                    “On The Go” is a new feature that was under pilot-testing by McDonald's Delivery. This feature would allow customers to order food in advance and have it delivered to their car en-route their commute. This would also simplify store pick-ups for customers as the hassle of parking and waiting in a queue to order would be eradicated.
                     </Typography>
                 </Grid>
 
@@ -192,7 +192,7 @@ export default function Story() {
             </Grid>
 
             <Fade>
-                <DividerLeft text="WORK SUMMARY" borderColor={tertiary} textColor={secondary}/>
+                <DividerLeft text="WORK SUMMARY" borderColor={"#FFC72C"} textColor={secondary}/>
                 <Grid container direction="column" className={classes.container} style={{color: primary}}>
                     <Typography variant="body2" style={{marginBottom: '3vh'}}>1.&emsp;&emsp;Analysed and beta-tested McDonald's pilot feature: On The Go (food delivery en-route).</Typography>
                     <Typography variant="body2" style={{marginBottom: '3vh'}}>2.&emsp;&emsp;Visited McDonald's franchises to conduct market research through interaction and observation of consumers.</Typography>
@@ -201,7 +201,7 @@ export default function Story() {
                     <Typography variant="body2" style={{marginBottom: '3vh'}}>5.&emsp;&emsp;Proposed technological, product, and marketing modifications to existing pilot model to boost success rate.</Typography>
                 </Grid>
 
-                <DividerLeft text="PRODUCT ANALYSIS" borderColor={tertiary} textColor={secondary}/>
+                <DividerLeft text="PRODUCT ANALYSIS" borderColor={"#FFC72C"} textColor={secondary}/>
                 <Grid container direction="column" className={classes.container}>
                     <Grid container direction="row" justify="space-between" item xs={12} className={classes.product_container}>
                         <Grid item xs={12} sm={2}>
@@ -257,9 +257,13 @@ export default function Story() {
                     </Grid>
                 </Grid>
                 
-                <DividerLeft text="BETA TESTING" borderColor={tertiary} textColor={secondary}/>
+                <DividerLeft text="BETA TESTING" borderColor={"#FFC72C"} textColor={secondary}/>
                 <Grid container className={classes.container}>
-                    <Grid item xs={12} style={{margin: '0 0 3vh'}}> 
+                    <Grid item xs={12} style={{margin: '0 0 3vh'}} id="data_analysis">
+                        <Typography variant="body2" style={{color: primary}}>On The Go was beta tested in July 2019 across McDonald’s franchises in South Bombay.
+                        </Typography>
+                    </Grid>
+                    {/* <Grid item xs={12} style={{margin: '0 0 3vh'}}> 
                         <Typography variant="body2" style={{color: primary}}>On The Go was beta tested in July 2019 across five McDonald’s franchises in South Bombay. The infographics below display stats and maps from this pilot run, including consumer data and franchise locations at which On The Go was tested.
                         </Typography>
                     </Grid>
@@ -280,12 +284,18 @@ export default function Story() {
                     </Grid>
                     <Grid item xs={12} sm={7} container direction="row" justify="flex-end">
                         <img src="/assets/projects/mcdonald/beta_map.jpg" className={classes.image} style={{width: '96%'}}/>
-                    </Grid>
+                    </Grid> */}
                 </Grid>
 
-                <DividerLeft text="DATA ANALYSIS" borderColor={tertiary} textColor={secondary}/>
+                <DividerLeft text="DATA ANALYSIS" borderColor={"#FFC72C"} textColor={secondary}/>
                 <Grid container className={classes.container}>
                     <Grid item xs={12} style={{margin: '0 0 3vh'}}> 
+                        <Typography variant="body2" style={{color: primary}}>The five stores that this program is being piloted at are all centered in South Mumbai. However, a study made into the area from which consumers are trying to access this feature displayed different results. <br/> <br/>
+                        For the purpose of the study, an approximate 19,000 API calls were analysed. The consumer’s route’s start and end points were selected and reverse-geocoded using latitudes & longitudes. The data set was then filtered to remove all duplicate calls and limit the calls to those made in Mumbai. <br/> <br/>
+                        These lat-long coordinates were then mapped onto a google-maps layout, and an additional layer comprising a map of all the McDonald’s stores in Mumbai was strewn over this. <br/> <br/>
+                        </Typography>
+                    </Grid>
+                    {/* <Grid item xs={12} style={{margin: '0 0 3vh'}}> 
                         <Typography variant="body2" style={{color: primary}}>The five stores that this program is being piloted at are all centered in South Mumbai. However, a study made into the area from which consumers are trying to access this feature displayed different results. <br/> <br/>
                         A total of about 19,000 API calls were analysed. The consumer’s route’s start and end points were selected and reverse-geocoded (address found using lat & long). This was then filtered down to limit the calls to those made in Mumbai. About 3000 calls, excluding duplicate calls (4000), remained. <br/> <br/>
                         These lat-long coordinates were then mapped onto a google-maps layout, with a map containing all the McDonald’s stores in Mumbai strewn over this. <br/> <br/>
@@ -300,12 +310,16 @@ export default function Story() {
                         <img src="/assets/projects/mcdonald/data_map_4.jpg" className={classes.new_map_image}/>
                     </Grid>
                     <Grid item xs={12} style={{margin: '0 0 3vh'}} id="extension"> 
-                        <Typography variant="body2" style={{color: primary}}><br/> <br/>Using this, different stores can be identified where the pilot-testing might yield better results, with an increased number of GC-calls. For example, Infiniti Mall Malad, Andheri Station, Vile Parle, Nirmal Lifestyle Mulund, and Bandra Linking Road, appear to be McDonald’s franchises around areas that have received greater interest in “On the Go” than South Mumbai stores.
+                        <Typography variant="body2" style={{color: primary}}><br/> <br/>Using this data, different stores were identified where the pilot-testing might yield better results, with an increased number of GC-calls. For example, Infiniti Mall Malad, Andheri Station, Vile Parle, Nirmal Lifestyle Mulund, and Bandra Linking Road, appear to be McDonald’s franchises around areas that have received greater interest in “On the Go” than South Mumbai stores.
+                        </Typography>
+                    </Grid> */}
+                    <Grid item xs={12} style={{margin: '0 0 3vh'}} id="extension">
+                        <Typography variant="body2" style={{color: primary}}>Using this data, five McDonald’s franchises where the pilot-testing might yield better results, with an increased number of GC-calls, were identified.
                         </Typography>
                     </Grid>
                 </Grid>
     
-                <DividerLeft text="EXTENSION" borderColor={tertiary} textColor={secondary}/>  
+                <DividerLeft text="EXTENSION" borderColor={"#FFC72C"} textColor={secondary}/>  
                 <Grid container className={classes.container}>
                     <Grid item xs={12}>
                         <Typography variant="body2" style={{color: primary}}>
@@ -315,13 +329,13 @@ export default function Story() {
                     <Grid container spacing={3} style={{margin: '1vh 0'}}>
                         <Grid item xs={6}>
                             <div className={classes.evaluation_box}>
-                                <Typography variant="h6" align="left" className={classes.text} style={{marginBottom: '1vh'}}><b>Audio Control</b></Typography>
+                                <Typography variant="body1" align="left" className={classes.text} style={{marginBottom: '1vh'}}><b>Audio Control</b></Typography>
                                 <Typography variant="body2" className={classes.text}>Audio control is in accordance with strong safety standards for individuals ordering from McDonald’s On The Go while driving</Typography>
                             </div>
                         </Grid>
                         <Grid item xs={6}>
                             <div className={classes.evaluation_box}>
-                                <Typography variant="h6" align="left" className={classes.text} style={{marginBottom: '1vh'}}><b>Delivery En-Route</b></Typography>
+                                <Typography variant="body1" align="left" className={classes.text} style={{marginBottom: '1vh'}}><b>Delivery En-Route</b></Typography>
                                 <Typography variant="body2" className={classes.text}>Establish delivery locations on roadways within a 1-2 mile radius from the franchise to reduce detours taken by customers</Typography>
                             </div>
                         </Grid>
@@ -334,20 +348,20 @@ export default function Story() {
                     <Grid container spacing={3} style={{margin: '1vh 0'}}>
                         <Grid item xs={6} sm={4}>
                             <div className={classes.evaluation_box}>
-                                <Typography variant="h6" align="left" className={classes.text} style={{marginBottom: '1vh'}}><b>Explain App Persmissions</b></Typography>
+                                <Typography variant="body1" align="left" className={classes.text} style={{marginBottom: '1vh'}}><b>Explain App Persmissions</b></Typography>
                                 <Typography variant="body2" className={classes.text}>When the application is launched, permission is requested to “display over other apps”. If a user doesn’t understand what this means, he/ she may not be able to actually navigate into the McDelivery app</Typography>
-                            </div>
-                        </Grid>
-                        <Grid item xs={6} sm={4}>
-                            <div className={classes.evaluation_box}>
-                                <Typography variant="h6" align="left" className={classes.text} style={{marginBottom: '1vh'}}><b>Multi-Step Onboarding</b></Typography>
-                                <Typography variant="body2" className={classes.text}>A customer needs to zoom in to select a pickup location (location markers overlap: there are two markers per store). This should be broken into two steps, select a store, and then identify a pickup location near the selected store</Typography>
                             </div>
                         </Grid>
                         <Grid item xs={12} sm={4}>
                             <div className={classes.evaluation_box}>
-                                <Typography variant="h6" align="left" className={classes.text} style={{marginBottom: '1vh'}}><b>Convert to PWA</b></Typography>
+                                <Typography variant="body1" align="left" className={classes.text} style={{marginBottom: '1vh'}}><b>Convert to PWA</b></Typography>
                                 <Typography variant="body2" className={classes.text}>Create the McDelivery website as a progressive web application (PWA) since customers may prefer using multi-purpose services such as Uber Eats over installing another application</Typography>
+                            </div>
+                        </Grid>
+                        <Grid item xs={6} sm={4}>
+                            <div className={classes.evaluation_box}>
+                                <Typography variant="body1" align="left" className={classes.text} style={{marginBottom: '1vh'}}><b>Multi-Step Onboarding</b></Typography>
+                                <Typography variant="body2" className={classes.text}>A customer needs to zoom in to select a pickup location (location markers overlap: there are two markers per store). This should be broken into two steps, select a store, and then identify a pickup location near the selected store</Typography>
                             </div>
                         </Grid>
                     </Grid>
@@ -359,37 +373,37 @@ export default function Story() {
                     <Grid container spacing={3} style={{margin: '1vh 0'}}>
                         <Grid item xs={6} sm={4}>
                             <div className={classes.evaluation_box}>
-                                <Typography variant="h6" align="left" className={classes.text} style={{marginBottom: '1vh'}}><b>Loyalty Programme</b></Typography>
+                                <Typography variant="body1" align="left" className={classes.text} style={{marginBottom: '1vh'}}><b>Loyalty Programme</b></Typography>
                                 <Typography variant="body2" className={classes.text}>These should ideally extend beyond monetary benefits, as those can be accrued from third-party services such as Zomato as well, and instead appeal to the customer’s emotions</Typography>
                             </div>
                         </Grid>
                         <Grid item xs={6} sm={4}>
                             <div className={classes.evaluation_box}>
-                                <Typography variant="h6" align="left" className={classes.text} style={{marginBottom: '1vh'}}><b>Subscription Plans</b></Typography>
+                                <Typography variant="body1" align="left" className={classes.text} style={{marginBottom: '1vh'}}><b>Subscription Plans</b></Typography>
                                 <Typography variant="body2" className={classes.text}>Subscriptions to a McDonald’s meal on a weekly / monthly / annual schedule would increase customer retention while exploring a yet-to-be-explored avenue in fast-food</Typography>
                             </div>
                         </Grid>
                         <Grid item xs={6} sm={4}>
                             <div className={classes.evaluation_box}>
-                                <Typography variant="h6" align="left" className={classes.text} style={{marginBottom: '1vh'}}><b>Chatbot</b></Typography>
-                                <Typography variant="body2" className={classes.text}>AI Chatbots are gaining in popularity around the world. Developing a chatbot to assist with e-orders, answering questions and providing FnB recommendations, would enhance the customer experience</Typography>
-                            </div>
-                        </Grid>
-                        <Grid item xs={6} sm={4}>
-                            <div className={classes.evaluation_box}>
-                                <Typography variant="h6" align="left" className={classes.text} style={{marginBottom: '1vh'}}><b>Emoji-based Orders</b></Typography>
-                                <Typography variant="body2" className={classes.text}>Pioneered by Domino’s, customers would first create their “burger profile”, which is their favorite McDonald’s meal, on their McDelivery account. Once the McDelivery and social media accounts are linked, the customer can order food using just emojis</Typography>
-                            </div>
-                        </Grid>
-                        <Grid item xs={6} sm={4}>
-                            <div className={classes.evaluation_box}>
-                                <Typography variant="h6" align="left" className={classes.text} style={{marginBottom: '1vh'}}><b>Real-Time Menu Updates</b></Typography>
+                                <Typography variant="body1" align="left" className={classes.text} style={{marginBottom: '1vh'}}><b>Real-Time Menu Updates</b></Typography>
                                 <Typography variant="body2" className={classes.text}>Allow stores to update the menus based on ingredient availabilities to ensure that orders are not placed for items that are temporarily unavailable</Typography>
                             </div>
                         </Grid>
                         <Grid item xs={6} sm={4}>
                             <div className={classes.evaluation_box}>
-                                <Typography variant="h6" align="left" className={classes.text} style={{marginBottom: '1vh'}}><b>Real-Time Tracking</b></Typography>
+                                <Typography variant="body1" align="left" className={classes.text} style={{marginBottom: '1vh'}}><b>Chatbot</b></Typography>
+                                <Typography variant="body2" className={classes.text}>AI Chatbots are gaining in popularity around the world. Developing a chatbot to assist with e-orders, answering questions and providing FnB recommendations, would enhance the customer experience</Typography>
+                            </div>
+                        </Grid>
+                        <Grid item xs={6} sm={4}>
+                            <div className={classes.evaluation_box}>
+                                <Typography variant="body1" align="left" className={classes.text} style={{marginBottom: '1vh'}}><b>Emoji-based Orders</b></Typography>
+                                <Typography variant="body2" className={classes.text}>Pioneered by Domino’s, customers would first create their “burger profile”, which is their favorite McDonald’s meal, on their McDelivery account. Once the McDelivery and social media accounts are linked, the customer can order food using just emojis</Typography>
+                            </div>
+                        </Grid>
+                        <Grid item xs={6} sm={4}>
+                            <div className={classes.evaluation_box}>
+                                <Typography variant="body1" align="left" className={classes.text} style={{marginBottom: '1vh'}}><b>Real-Time Tracking</b></Typography>
                                 <Typography variant="body2" className={classes.text}>According to the MDS-Complaints for June 2019, a majority of customer were upset with delays in delivery time. Real-time tracking would improve accuracies of delivery ETA while involving the customer in the process</Typography>
                             </div>
                         </Grid>
