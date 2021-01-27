@@ -55,7 +55,7 @@ export default function Story() {
                 <Fade>
                     <img className={classes.image} src="/assets/projects/first-robotics-competiton/frc.jpg"/>
                     <img className={classes.image} src="/assets/projects/first-robotics-competiton/frc2.jpg"/>
-                    <img className={classes.image} src="/assets/projects/first-robotics-competiton/frc3.jpg"/>
+                    <img className={classes.image} src="/assets/projects/first-robotics-competiton/frc3.JPG"/>
                 </Fade>
             </Grid>
             <Grid item xs={12} sm={4}>
