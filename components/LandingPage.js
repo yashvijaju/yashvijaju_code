@@ -4,7 +4,6 @@ import { KeyboardArrowDown, ExpandLess } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles'
 
 const blue='#bee3f1';
-const font = 'Segoe UI';
 
 const useStyles = makeStyles((theme) => ({
     container_100vh: {
@@ -40,7 +39,6 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '2.5vw', 
         padding: '2vh', 
         backgroundColor: '#FFFFFF', 
-        fontFamily: font, 
         letterSpacing: '1px', 
         fontWeight: 'lighter',
         [theme.breakpoints.down('xs')]: {

@@ -5,7 +5,6 @@ import { AttachFile } from '@material-ui/icons';
 import { Fade } from 'react-reveal';
 
 const grey = '#efefef'
-const font = 'Segoe UI';
 
 const descriptor = {color: '#43b14e', fontWeight: '600'}
 
@@ -17,10 +16,10 @@ export default function AboutMe() {
                 <Grid item xs={1}/>
                 <Hidden smUp>
                     <Grid item xs={10} style={{backgroundColor: grey, 'borderRadius': '15px', padding: '4vh 4vw 4vh 4vw'}}>
-                        <Typography variant="h6" style={{'fontFamily': font, paddingBottom: '2vh', fontWeight: 'normal', color: '#43b14e'}}>
+                        <Typography variant="h6" style={{paddingBottom: '2vh', fontWeight: 'normal', color: '#43b14e'}}>
                             &#123; About Me &#125;
                         </Typography>
-                        <Typography variant="caption" style={{'fontFamily': font, fontWeight: 'lighter'}}>
+                        <Typography variant="caption" style={{fontWeight: 'lighter'}}>
                             void aboutMe(int argc, char *argv[]) &#123;  <br/>
                             &emsp; &emsp;> Innovator* Yashvi = new Innovator(); <br/>
                             &emsp; &emsp;> Yashvi-><span style={descriptor}>lastName</span> = Jaju; <br/> 
@@ -40,7 +39,7 @@ export default function AboutMe() {
                             &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyInterningAt</span> = <a href="https://ispirt.in/" target="_blank" rel="noopener noreferrer" style={{color: '#0000EE'}}>iSPIRT <br/> &emsp; &emsp;(think-tank)</a>; <br/>
                             &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyActiveAt</span> = <a href="http://workbenchsc.com/" target="_blank" rel="noopener noreferrer" style={{color: '#0000EE'}}>USC <br/> &emsp; &emsp; WorkBench (venture studio)</a>, <br/> &emsp; &emsp; <a href="http://viterbimakers.usc.edu/" target="_blank" rel="noopener noreferrer" style={{color: '#0000EE'}}>USC Makers (engineering)</a>, <br/> &emsp; &emsp; <a href="https://usclavalab.org/" target="_blank" rel="noopener noreferrer" style={{color: '#0000EE'}}>USC LavaLab (entrepreneurship)</a>; <br/>
                             <br/>
-                            &emsp; &emsp;> Yashvi-><span style={descriptor}>Resume</span> = <a href="https://drive.google.com/file/d/1UYa99LI9qB2Mj7QITz1ezya8gDcA9Bd7" target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none', fontWeight: 'lighter', fontFamily: font, color: '#0000EE'}}><AttachFile fontSize="small" style={{color:'grey'}}/> click to open; <br/>
+                            &emsp; &emsp;> Yashvi-><span style={descriptor}>Resume</span> = <a href="https://drive.google.com/file/d/1UYa99LI9qB2Mj7QITz1ezya8gDcA9Bd7" target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none', fontWeight: 'lighter', color: '#0000EE'}}><AttachFile fontSize="small" style={{color:'grey'}}/> click to open; <br/>
                             </a>
                             &#125;
                         </Typography>
@@ -48,10 +47,10 @@ export default function AboutMe() {
                 </Hidden>
                 <Hidden xsDown>
                     <Grid item xs={10} style={{backgroundColor: grey, 'borderRadius': '15px', padding: '4vh 4vw 4vh 4vw'}}>
-                        <Typography variant="h5" style={{'fontFamily': font, paddingBottom: '2vh', fontWeight: 'normal', color: '#43b14e'}}>
+                        <Typography variant="h5" style={{paddingBottom: '2vh', fontWeight: 'normal', color: '#43b14e'}}>
                             &#123; About Me &#125;
                         </Typography>
-                        <Typography variant="body2" style={{'fontFamily': font, fontWeight: 'lighter'}}>
+                        <Typography variant="body2" style={{fontWeight: 'lighter'}}>
                             void aboutMe(int argc, char *argv[]) &#123;  <br/>
                             &emsp; &emsp;> Innovator* Yashvi = new Innovator(); <br/>
                             &emsp; &emsp;> Yashvi-><span style={descriptor}>lastName</span> = Jaju; <br/> 
@@ -73,7 +72,7 @@ export default function AboutMe() {
                             &emsp; &emsp;> Yashvi-><span style={descriptor}>currentlyActiveAt</span> = <a href="http://workbenchsc.com/" target="_blank" rel="noopener noreferrer" style={{color: '#0000EE'}}>USC WorkBench (venture studio)</a>, <a href="http://viterbimakers.usc.edu/" target="_blank" rel="noopener noreferrer" style={{color: '#0000EE'}}>USC Makers (engineering)</a>, <a href="https://usclavalab.org/" target="_blank" rel="noopener noreferrer" style={{color: '#0000EE'}}>USC LavaLab (entrepreneurship)</a>; <br/>
 
                             <br/>
-                            &emsp; &emsp;> Yashvi-><span style={descriptor}>Resume</span> = <a href="https://drive.google.com/file/d/1UYa99LI9qB2Mj7QITz1ezya8gDcA9Bd7" target="_blank" rel="noopener noreferrer" style={{color: '#0000EE', fontWeight: 'lighter', fontFamily: font,}}><AttachFile fontSize="small" style={{color:'grey'}}/> click to open; <br/>
+                            &emsp; &emsp;> Yashvi-><span style={descriptor}>Resume</span> = <a href="https://drive.google.com/file/d/1UYa99LI9qB2Mj7QITz1ezya8gDcA9Bd7" target="_blank" rel="noopener noreferrer" style={{color: '#0000EE', fontWeight: 'lighter'}}><AttachFile fontSize="small" style={{color:'grey'}}/> click to open; <br/>
                             </a>
                             &#125;
                         </Typography>

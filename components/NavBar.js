@@ -5,7 +5,6 @@ import { Typography, Hidden, Toolbar, AppBar, Fade, Grid, Menu, MenuItem } from 
 import { EmailOutlined, LinkedIn } from '@material-ui/icons';
 
 
-const font = 'Segoe UI';
 
 export default function NavBar(props) {
     const router = useRouter()
@@ -63,11 +62,11 @@ export default function NavBar(props) {
                     <Toolbar>
                         <Hidden smUp>
                             <Grid container direction="row" justify="space-between" alignItems="center">
-                                <Typography variant="caption" style={{color:"#000000", fontFamily: font, cursor: 'pointer', fontWeight:'lighter'}} onClick={()=>handleScroll(0)}> Yashvi Jaju &nbsp; | </Typography>
-                                <Typography variant="caption" style={{color:"#000000", fontFamily: font, cursor: 'pointer', fontWeight:'lighter'}} onClick={()=>handleScroll(window.innerHeight * 0.5)}>
+                                <Typography variant="caption" style={{color:"#000000", cursor: 'pointer', fontWeight:'lighter'}} onClick={()=>handleScroll(0)}> Yashvi Jaju &nbsp; | </Typography>
+                                <Typography variant="caption" style={{color:"#000000", cursor: 'pointer', fontWeight:'lighter'}} onClick={()=>handleScroll(window.innerHeight * 0.5)}>
                                     About Me
                                 </Typography>
-                                <Typography variant="caption" style={{color:"#000000", fontFamily: font, cursor: 'pointer', fontWeight:'lighter'}} onClick={(e)=>setAnchorEl(e.currentTarget)}>
+                                <Typography variant="caption" style={{color:"#000000", cursor: 'pointer', fontWeight:'lighter'}} onClick={(e)=>setAnchorEl(e.currentTarget)}>
                                     Projects
                                 </Typography>
                                 <Menu anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={()=>setAnchorEl(null)} style={{opacity: '0.9', marginTop: '3vh', marginLeft: '-3.5vw'}} elevation={0}>
@@ -91,17 +90,17 @@ export default function NavBar(props) {
                                         </Link>
                                     </MenuItem>
                                 </Menu>
-                                <Typography variant="caption" style={{color:"#000000",fontFamily: font, cursor: 'pointer'}}>
-                                    <a href="https://drive.google.com/file/d/1UYa99LI9qB2Mj7QITz1ezya8gDcA9Bd7" target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none', fontFamily: font, color: 'black', fontWeight:'lighter'}}>Resume</a>
+                                <Typography variant="caption" style={{color:"#000000",cursor: 'pointer'}}>
+                                    <a href="https://drive.google.com/file/d/1UYa99LI9qB2Mj7QITz1ezya8gDcA9Bd7" target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none', color: 'black', fontWeight:'lighter'}}>Resume</a>
                                 </Typography>
-                                <Typography variant="caption" style={{color:"#000000", fontFamily: font, cursor: 'pointer', fontWeight:'lighter'}} onClick={()=>handleScroll(window.innerHeight * 20)}>
+                                <Typography variant="caption" style={{color:"#000000", cursor: 'pointer', fontWeight:'lighter'}} onClick={()=>handleScroll(window.innerHeight * 20)}>
                                     Contact
                                 </Typography>
                             </Grid>
                         </Hidden>
                         <Hidden xsDown>
                             <Grid item xs={5} style={{display:'flex', flexDirection:'row',justifyContent:'start', alignItems:'center'}}>
-                                <Typography variant="caption" style={{color:"#000000", fontFamily: font, cursor: 'pointer'}} onClick={()=>handleScroll(0)}> Yashvi Jaju </Typography>
+                                <Typography variant="caption" style={{color:"#000000", cursor: 'pointer'}} onClick={()=>handleScroll(0)}> Yashvi Jaju </Typography>
                                 <Typography variant="caption" style={{color:'#000000'}}> &nbsp; | &nbsp; </Typography>
                                 <Typography variant="caption" style={{color:'#000000'}}>Developer x Designer</Typography>
                                 <Typography variant="caption" style={{color:'#000000'}}> &nbsp; | &nbsp; </Typography>
@@ -110,10 +109,10 @@ export default function NavBar(props) {
                                 <a href="https://www.linkedin.com/in/yashvi-jaju/" target="_blank" rel="noopener noreferrer"><LinkedIn fontSize="small" style={{color:'#000000'}}/></a>
                             </Grid>
                             <Grid item xs={7} style={{display:'flex', flexDirection:'row',justifyContent:'flex-end', alignItems:'center'}}>
-                                <Typography variant="caption" style={{color:"#000000", fontFamily: font, cursor: 'pointer', paddingRight: '4vw'}} onClick={()=>handleScroll(window.innerHeight * 0.85)}>
+                                <Typography variant="caption" style={{color:"#000000", cursor: 'pointer', paddingRight: '4vw'}} onClick={()=>handleScroll(window.innerHeight * 0.85)}>
                                     About Me
                                 </Typography>
-                                <Typography variant="caption" style={{color:"#000000", fontFamily: font, cursor: 'pointer', paddingRight: '4vw'}} onClick={(e)=>setAnchorEl(e.currentTarget)}>
+                                <Typography variant="caption" style={{color:"#000000", cursor: 'pointer', paddingRight: '4vw'}} onClick={(e)=>setAnchorEl(e.currentTarget)}>
                                     Projects
                                 </Typography>
                                 <Menu anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={()=>setAnchorEl(null)} style={{opacity: '0.9', marginTop: '3vh', marginLeft: '-1.05vw'}} elevation={0}>
@@ -137,10 +136,10 @@ export default function NavBar(props) {
                                         </Link>
                                     </MenuItem>
                                 </Menu>
-                                <Typography variant="caption" style={{color:"#000000",fontFamily: font, cursor: 'pointer', paddingRight: '4vw'}}>
-                                    <a href="https://drive.google.com/file/d/1UYa99LI9qB2Mj7QITz1ezya8gDcA9Bd7" target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none', fontFamily: font, color: 'black'}}>Resume</a>
+                                <Typography variant="caption" style={{color:"#000000",cursor: 'pointer', paddingRight: '4vw'}}>
+                                    <a href="https://drive.google.com/file/d/1UYa99LI9qB2Mj7QITz1ezya8gDcA9Bd7" target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none', color: 'black'}}>Resume</a>
                                 </Typography>
-                                <Typography variant="caption" style={{color:"#000000", fontFamily: font, cursor: 'pointer'}} onClick={()=>handleScroll(window.innerHeight * 10)}>
+                                <Typography variant="caption" style={{color:"#000000", cursor: 'pointer'}} onClick={()=>handleScroll(window.innerHeight * 10)}>
                                     Contact
                                 </Typography>
                             </Grid>
