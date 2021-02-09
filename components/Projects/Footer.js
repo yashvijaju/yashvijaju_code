@@ -247,7 +247,7 @@ export function FooterAll(props) {
 
             <Grid container className={classes.container_footer_all} direction="row" justify="space-between" alignContent="space-between">
                 <Grid item xs={1}>
-                    <img src="/assets/logo.jpg" className={classes.image} style={{marginRight: '1vw'}}/>
+                    <img src="/assets/logo.png" className={classes.image} style={{marginRight: '1vw'}}/>
                 </Grid>
                 <Hidden xsDown>
                     <Grid item xs={6} container direction="column" justify="space-between">
