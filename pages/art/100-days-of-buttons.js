@@ -106,7 +106,7 @@ export default function Story() {
 
   return(
     <>
-      <Cover project_name={<span>100 Days of Design : Buttons</span>} bookmark="/assets/bookmarks/bookmark-100-days-of-buttons.svg"  bookmarkTitle="/assets/bookmarks/bookmark-100-days-of-buttons-title-.svg"  bg_color={tertiary} title_color={secondary}></Cover>
+      <Cover project_name={<span>100 Days of Design : Buttons</span>} bookmark="/assets/bookmarks/bookmark-100-days-of-buttons.svg"  bookmarkTitle="/assets/bookmarks/bookmark-100-days-of-buttons-title.svg"  bg_color={tertiary} title_color={secondary}></Cover>
       <Grid container className={classes.container}>
           <Intro title_color={primary_25} text_color={primary} company={"N/A"} role={<div>Graphic Designer</div>} year={"July - Oct, 2020"} category={"Digital Art"} team={<div>Independent Project</div>} tools={<div>Adobe Illustrator</div>} tools1={<div>Adobe Illustrator</div>} tools2={<div></div>} introduction={<div>A button is the most simple component on any user interface. It serves only one function — to allow a user to navigate to their desired outcome. Thus, it is both, easy and difficult, to design a button. Every button should stand out and prompt the user to act, while not detracting away from the rest of the UI. <br/>These thoughts in mind, I undertook the 100 Days of Design challenge, where, each day, I designed a different button. Through the process, I broke free of my mental barriers in design and pushed my creativity to new heights.<br/>To challenge myself further, I noted the css styles required to create the button design as well.</div>}/>
       </Grid>
