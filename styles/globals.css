@@ -2,8 +2,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: Segoe UI, 'Roboto', Roboto, Oxygen, -apple-system, BlinkMacSystemFont, 
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Segoe UI, 'Roboto' !important;
 }
 
 ::-webkit-scrollbar {
