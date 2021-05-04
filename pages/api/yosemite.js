@@ -24,9 +24,10 @@ export default async (req, res) => {
     await fetch("https://reservations.ahlsmsworld.com/Yosemite/Search/GetInventoryCountData?callback=$.wxa.on_datepicker_general_availability_loaded&CresPropCode=000000&MultiPropCode=B&UnitTypeCode=&StartDate=Tue+Aug+03+2021&EndDate=Sat+Aug+07+2021&_=1620073570940")
     .then(response => response.text())
     .then(data => {
+        console.log("here")
+        console.log(data)
         var temp = data.substr(48);
         temp = temp.substr(0,temp.length-2);
-        console.log(data)
         // var json_temp = JSON.parse(temp)
 
         // for (var i = 0; i < json_temp.length; i++) {
