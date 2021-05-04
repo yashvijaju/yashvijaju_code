@@ -14,7 +14,7 @@ export default async (req, res) => {
 
     const mailData = {
         from: 'yashvijajubot@gmail.com',
-        to: 'yashvijaju@gmail.com',
+        to: ['yashvijaju@gmail.com', 'pankajmili@gmail.com'],
         subject: 'Message From Yashvi Jaju Bot',
         text: "A slot has opened for crater lake or yosemite! book asap",
         html: "<div>A slot has opened for crater lake / yosemite! book asap</div>"
@@ -113,7 +113,7 @@ export default async (req, res) => {
             })
         } 
 
-        if (json_temp[1].AvailableCount > 0) {
+        if (json_temp[1].AvailableCount > 2) {
             transporter.sendMail(mailData, function (err, info) {
                 if(err)
                   console.log(err)
