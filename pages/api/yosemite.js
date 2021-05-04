@@ -26,7 +26,11 @@ export default async (req, res) => {
     .then(data => {
         var temp = data.substr(48);
         temp = temp.substr(0,temp.length-2);
-        res.send(temp);
+        res.send({
+            "code": 200,
+            "message": temp,
+            "error": data,
+        });
         return;
         // var json_temp = JSON.parse(temp)
 
@@ -125,10 +129,10 @@ export default async (req, res) => {
     //     } 
     // })
 
-    res.status(200)
+    // res.status(200)
 
-    res.send({
-        "code": 200,
-        "message": "voila"
-    })
+    // res.send({
+    //     "code": 200,
+    //     "message": "voila"
+    // })
 };
