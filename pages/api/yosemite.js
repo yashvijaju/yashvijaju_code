@@ -26,18 +26,19 @@ export default async (req, res) => {
     .then(data => {
         var temp = data.substr(48);
         temp = temp.substr(0,temp.length-2);
-        var json_temp = JSON.parse(temp)
+        console.log(temp)
+        // var json_temp = JSON.parse(temp)
 
-        for (var i = 0; i < json_temp.length; i++) {
-            if (json_temp[i].AvailableCount > 0) {
-                transporter.sendMail(mailData, function (err, info) {
-                    if(err)
-                      console.log(err)
-                    else
-                      console.log(info)
-                })
-            } 
-        }
+        // for (var i = 0; i < json_temp.length; i++) {
+        //     if (json_temp[i].AvailableCount > 0) {
+        //         transporter.sendMail(mailData, function (err, info) {
+        //             if(err)
+        //               console.log(err)
+        //             else
+        //               console.log(info)
+        //         })
+        //     } 
+        // }
     })
 
     // await fetch("https://reservations.ahlsmsworld.com/Yosemite/Search/GetInventoryCountData?callback=$.wxa.on_datepicker_general_availability_loaded&CresPropCode=000000&MultiPropCode=D&UnitTypeCode=&StartDate=Tue+Aug+03+2021&EndDate=Sat+Aug+07+2021&_=1620073570940")
