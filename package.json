@@ -13,6 +13,7 @@
     "@material-ui/lab": "^4.0.0-alpha.56",
     "next": "10.0.1",
     "node-sass": "4.14.1",
+    "nodemailer": "^6.6.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-on-screen": "^2.1.1",
