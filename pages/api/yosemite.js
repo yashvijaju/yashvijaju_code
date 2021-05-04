@@ -26,7 +26,7 @@ export default async (req, res) => {
     .then(data => {
         var temp = data.substr(48);
         temp = temp.substr(0,temp.length-2);
-        console.log(temp)
+        console.log(data)
         // var json_temp = JSON.parse(temp)
 
         // for (var i = 0; i < json_temp.length; i++) {
