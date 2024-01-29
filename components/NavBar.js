@@ -63,14 +63,14 @@ export default function NavBar(props) {
                         <Hidden smUp>
                             <Grid container direction="row" justifyContent="space-between" alignItems="center">
                                 <Typography variant="caption" style={{color:"#000000", cursor: 'pointer', fontWeight:'lighter'}} onClick={()=>handleScroll(0)}> Yashvi Jaju &nbsp; | </Typography>
-                                <Typography variant="caption" style={{color:"#000000", cursor: 'pointer', fontWeight:'lighter'}} onClick={()=>handleScroll(0)}>
+                                <Typography variant="caption" style={{color:"#000000", cursor: 'pointer', fontWeight:'lighter'}} onClick={()=>handleScroll(window.innerHeight * 0.4)}>
                                     About Me
                                 </Typography>
                                 <Typography variant="caption" style={{color:"#000000", cursor: 'pointer', fontWeight:'lighter'}} onClick={(e)=>setAnchorEl(e.currentTarget)}>
                                     Projects
                                 </Typography>
                                 <Menu anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={()=>setAnchorEl(null)} style={{opacity: '0.9', marginTop: '3vh', marginLeft: '-3.5vw'}} elevation={0}>
-                                    <MenuItem onClick={()=>{handleScroll(window.innerHeight * 1.1);setAnchorEl(null)}} selected={true} dense={true}>
+                                    <MenuItem onClick={()=>{handleScroll(window.innerHeight * 1.3);setAnchorEl(null)}} selected={true} dense={true}>
                                         <Typography variant="caption" style={{color:"#000000", cursor: 'pointer', fontWeight:'lighter'}}>
                                             All Projects
                                         </Typography>
@@ -109,14 +109,14 @@ export default function NavBar(props) {
                                 <a href="https://www.linkedin.com/in/yashvi-jaju/" target="_blank" rel="noopener noreferrer"><LinkedIn fontSize="small" style={{color:'#000000'}}/></a>
                             </Grid>
                             <Grid item xs={7} style={{display:'flex', flexDirection:'row',justifyContent:'flex-end', alignItems:'center'}}>
-                                <Typography variant="caption" style={{color:"#000000", cursor: 'pointer', paddingRight: '4vw'}} onClick={()=>handleScroll(0)}>
+                                <Typography variant="caption" style={{color:"#000000", cursor: 'pointer', paddingRight: '4vw'}} onClick={()=>handleScroll(window.innerHeight * 0.87)}>
                                     About Me
                                 </Typography>
                                 <Typography variant="caption" style={{color:"#000000", cursor: 'pointer', paddingRight: '4vw'}} onClick={(e)=>setAnchorEl(e.currentTarget)}>
                                     Projects
                                 </Typography>
                                 <Menu anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={()=>setAnchorEl(null)} style={{opacity: '0.9', marginTop: '3vh', marginLeft: '-1.05vw'}} elevation={0}>
-                                    <MenuItem onClick={()=>{handleScroll(window.innerHeight * 0.85);setAnchorEl(null)}} selected={true} dense={true}>
+                                    <MenuItem onClick={()=>{handleScroll(window.innerHeight * 1.75);setAnchorEl(null)}} selected={true} dense={true}>
                                         <Typography variant="caption" style={{color:"#000000", cursor: 'pointer'}}>
                                             All Projects
                                         </Typography>

@@ -99,22 +99,7 @@ export default function Story() {
             click on a project to learn more
         </Typography>
       
-        <Hidden mdUp>
-          <Snackbar
-            anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              open={openNotifs}
-              autoHideDuration={4000}
-              onClose={handleCloseNotif}
-              message="Viewing this on a laptop is highly recommended"
-              id="notif1"
-              action={
-                <CancelOutlined size="small" aria-label="close" color="inherit" style={{cursor: 'pointer'}} onClick={handleCloseNotif}/>
-              }
-          />
-        </Hidden>
+        
         <Snackbar
           anchorOrigin={{
               vertical: 'bottom',
@@ -123,7 +108,7 @@ export default function Story() {
           open={openFilterNotifs}
           autoHideDuration={4000}
           onClose={handleCloseNotif}
-          message="Tip: use the filter buttons (:"
+          message="Click on a project to learn more"
           id="notif1"
           action={
             <CancelOutlined size="small" aria-label="close" color="inherit" style={{cursor: 'pointer'}} onClick={handleCloseNotif}/>
