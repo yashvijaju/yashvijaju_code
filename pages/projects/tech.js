@@ -110,7 +110,7 @@ export default function Story() {
                     <Typography variant="h5" className={classes.text} style={{margin: '5vh 0'}}>
                         tech&rarr;<b>skills</b> 
                     </Typography>
-                    <Grid item xs={12} container direction="row" justify="space-between" className={classes.skills}>
+                    <Grid item xs={12} container direction="row" justifyContent="space-between" className={classes.skills}>
                         <Grid item className={classes.skills_content}>
                             <Typography variant="body2" color="inherit">
                                 skills&rarr;<b>Programming Languages</b> <br/>

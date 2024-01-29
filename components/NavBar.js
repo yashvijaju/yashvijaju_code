@@ -61,7 +61,7 @@ export default function NavBar(props) {
                 <AppBar elevation={0} position="sticky" style={{'backgroundColor': "white", opacity: '0.8', padding: '0vh 2vw'}}>
                     <Toolbar>
                         <Hidden smUp>
-                            <Grid container direction="row" justify="space-between" alignItems="center">
+                            <Grid container direction="row" justifyContent="space-between" alignItems="center">
                                 <Typography variant="caption" style={{color:"#000000", cursor: 'pointer', fontWeight:'lighter'}} onClick={()=>handleScroll(0)}> Yashvi Jaju &nbsp; | </Typography>
                                 <Typography variant="caption" style={{color:"#000000", cursor: 'pointer', fontWeight:'lighter'}} onClick={()=>handleScroll(0)}>
                                     About Me

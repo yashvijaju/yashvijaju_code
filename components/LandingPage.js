@@ -263,21 +263,21 @@ export default function Animation() {
         <div>
             <div className={classes.container_100vh}/>
             <div className={classes.container_50vh}/>
-            <Grid container direction="row" justify="center" className={classes.container_text}>
+            <Grid container direction="row" justifyContent="center" className={classes.container_text}>
                 <div className="col offset-l5" style={{'border': '2px solid #bee3f1', borderColor: blue, display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                     <div className={classes.text}>
                     <p>{curr}</p>
                     </div>
                 </div>
             </Grid>
-            <Grid container justify="center" className={classes.icon_label_down}>
+            <Grid container justifyContent="center" className={classes.icon_label_down}>
                 <Typography variant="body2" id="scroll down label">SCROLL DOWN</Typography>
             </Grid>
-            <Grid container justify="center" className={classes.icon}>
+            <Grid container justifyContent="center" className={classes.icon}>
                 <KeyboardArrowDown id="scroll down" fontSize="large" className={classes.icon_arrow_down} onClick={()=>handleScroll(window.innerHeight * 0.85)} />
                 <ExpandLess id="scroll up" fontSize="large" className={classes.icon_arrow_up} style={{display:'none'}} onClick={()=>handleScroll(0)} />
             </Grid> 
-            <Grid container justify="center" className={classes.icon_label_up}>
+            <Grid container justifyContent="center" className={classes.icon_label_up}>
                 <Typography variant="body2" id="scroll up label" style={{display:'none'}}>SCROLL UP</Typography>
             </Grid>
         </div>

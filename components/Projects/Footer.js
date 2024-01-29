@@ -155,7 +155,7 @@ export function Footer(props) {
     return(
         <>
             <Divider className={classes.divider}/>
-            <Grid container className={classes.container} direction="row" justify="space-between" alignItems="center">
+            <Grid container className={classes.container} direction="row" justifyContent="space-between" alignItems="center">
                 <Grid item>
                     <Grid container direction="row" alignItems="center">
                         <Grid item>
@@ -245,12 +245,12 @@ export function FooterAll(props) {
         <>
             <Divider className={classes.divider} style={{marginTop: '5vh'}}/>
 
-            <Grid container className={classes.container_footer_all} direction="row" justify="space-between" alignContent="space-between">
+            <Grid container className={classes.container_footer_all} direction="row" justifyContent="space-between" alignContent="space-between">
                 <Grid item xs={1}>
                     <img src="/assets/logo.png" className={classes.image} style={{marginRight: '1vw'}}/>
                 </Grid>
                 <Hidden xsDown>
-                    <Grid item xs={6} container direction="column" justify="space-between">
+                    <Grid item xs={6} container direction="column" justifyContent="space-between">
                         <Grid container direction="row">
                             <Typography variant="subtitle2" className={classes.link} onClick={()=>handleScroll(0)}>HOME</Typography>
                             <Typography variant="subtitle2" className={classes.link} onClick={()=>handleScroll(window.innerHeight * 0.85)}>ABOUT ME</Typography>
@@ -272,10 +272,10 @@ export function FooterAll(props) {
                         </Grid>
                     </Grid>
                 </Hidden>
-                <Grid item xs={7} sm={5} container direction="column" alignItems="flex-end" justify="space-between">
+                <Grid item xs={7} sm={5} container direction="column" alignItems="flex-end" justifyContent="space-between">
                     <Typography variant="subtitle2" className={classes.text_footer_all}>Email: yjaju@usc.edu</Typography>
                     <Typography variant="subtitle2" className={classes.text_footer_all}>© 2020 Yashvi Jaju</Typography>
-                    <Grid container direction="row" justify="flex-end">
+                    <Grid container direction="row" justifyContent="flex-end">
                         <a href="mailto:yjaju@usc.edu" target="_blank" rel="noopener noreferrer">
                             <EmailOutlined fontSize="medium" className={classes.icon_footer_all}/>
                         </a>

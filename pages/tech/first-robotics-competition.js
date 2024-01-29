@@ -49,8 +49,8 @@ export default function Story() {
 
         <Divider className={classes.divider}/>
 
-        <Grid container justify="space-between" className={classes.container}>
-            <Grid item xs={12} sm={7} container direction="column" justify="space-between">
+        <Grid container justifyContent="space-between" className={classes.container}>
+            <Grid item xs={12} sm={7} container direction="column" justifyContent="space-between">
                 <Fade>
                     <img className={classes.image} src="/assets/projects/first-robotics-competiton/frc.jpg"/>
                     <img className={classes.image} src="/assets/projects/first-robotics-competiton/frc2.jpg"/>

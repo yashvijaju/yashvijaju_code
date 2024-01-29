@@ -101,7 +101,7 @@ function ContentItemText(props) {
                 {props.text}
             </Typography>
         </Grid>
-        <Grid item xs={12} container direction="row" justify="space-between">
+        <Grid item xs={12} container direction="row" justifyContent="space-between">
             {props.images}
         </Grid>
         </>

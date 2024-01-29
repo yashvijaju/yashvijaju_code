@@ -59,10 +59,10 @@ export default function Story() {
 
         <Divider className={classes.divider}/>
 
-        <Grid container direction="row" justify="space-between" className={classes.container}>
+        <Grid container direction="row" justifyContent="space-between" className={classes.container}>
             <Grid item xs={6} container direction="column">
                 <Fade>
-                    <Grid container direction="row" justify="space-between" alignItems="center" className={classes.container_content}>
+                    <Grid container direction="row" justifyContent="space-between" alignItems="center" className={classes.container_content}>
                         <Grid item xs={7}>
                             <img className={classes.image} src="/assets/projects/kathak/kathak1.jpg"/>
                         </Grid>
@@ -74,7 +74,7 @@ export default function Story() {
                             </Typography>
                         </Grid>
                     </Grid>
-                    <Grid container direction="row" justify="space-between" alignItems="center" className={classes.container_content}>
+                    <Grid container direction="row" justifyContent="space-between" alignItems="center" className={classes.container_content}>
                         <Grid item xs={7}>
                             <img className={classes.image} src="/assets/projects/kathak/kathak3.jpg"/>
                         </Grid>
@@ -87,7 +87,7 @@ export default function Story() {
                             </Typography>
                         </Grid>
                     </Grid>
-                    <Grid container direction="row" justify="space-between" alignItems="center" className={classes.container_content}>
+                    <Grid container direction="row" justifyContent="space-between" alignItems="center" className={classes.container_content}>
                         <Grid item xs={7}>
                             <img className={classes.image} src="/assets/projects/kathak/kathak5.jpg"/>
                         </Grid>
@@ -98,7 +98,7 @@ export default function Story() {
                             </Typography>
                         </Grid>
                     </Grid>
-                    <Grid container direction="row" justify="space-between" alignItems="center" className={classes.container_content}>
+                    <Grid container direction="row" justifyContent="space-between" alignItems="center" className={classes.container_content}>
                         <Grid item xs={7}>
                             <img className={classes.image} src="/assets/projects/kathak/kathak7.jpg"/>
                         </Grid>
@@ -113,7 +113,7 @@ export default function Story() {
             </Grid>
             <Grid item xs={6} container direction="column" style={{paddingTop: '20vh'}}>
                 <Fade>
-                    <Grid container direction="row" justify="space-between" alignItems="center" className={classes.container_content}>
+                    <Grid container direction="row" justifyContent="space-between" alignItems="center" className={classes.container_content}>
                         <Grid item xs={4}>
                             <Typography variant="body2" className={classes.text} align="right">
                                 It has been 14 years <br/>
@@ -127,7 +127,7 @@ export default function Story() {
                             <img className={classes.image} src="/assets/projects/kathak/kathak2.jpg"/>
                         </Grid>
                     </Grid>
-                    <Grid container direction="row" justify="space-between" alignItems="center" className={classes.container_content}>
+                    <Grid container direction="row" justifyContent="space-between" alignItems="center" className={classes.container_content}>
                         <Grid item xs={4}>
                             <Typography variant="body2" className={classes.text} align="right">
                                 I stare at one spot <br/> 
@@ -143,7 +143,7 @@ export default function Story() {
                             <img className={classes.image} src="/assets/projects/kathak/kathak4.jpg"/>
                         </Grid>
                     </Grid>
-                    <Grid container direction="row" justify="space-between" alignItems="center" className={classes.container_content}>
+                    <Grid container direction="row" justifyContent="space-between" alignItems="center" className={classes.container_content}>
                         <Grid item xs={4}>
                             <Typography variant="body2" className={classes.text} align="right">
                                 I am unstoppable <br/>

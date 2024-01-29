@@ -90,14 +90,14 @@ function VideoText(props) {
     const classes = useStyles();
 
     return (
-        <Grid item xs container direction="row" justify="space-between">
+        <Grid item xs container direction="row" justifyContent="space-between">
             <Grid item xs={12} sm={8}>
                 {(props.isVisible) && 
                 <video className={classes.feature_video} alt="Crave Feature" src={props.video} type="video/mp4" autoPlay loop/>}
                 {!(props.isVisible) && 
                 <img className={classes.feature_image} alt="Crave Feature" src={props.image}/>}
             </Grid>
-            <Grid item xs={12} sm={4} container direction="column" justify="center">
+            <Grid item xs={12} sm={4} container direction="column" justifyContent="center">
                 <Typography className={classes.title} variant="body1">{props.title}</Typography>
                 <Typography className={classes.text} variant="body2">{props.text}</Typography>
             </Grid>
@@ -127,7 +127,7 @@ export default function Crave() {
                     </Fade>
                 </div>}/>
                 
-                <Grid item xs container direction="row" justify="space-between">
+                <Grid item xs container direction="row" justifyContent="space-between">
                     <Grid item xs={12} sm={8}></Grid>
                     <Grid item xs={11} sm={4}>
                         <Typography className={classes.solution_overview} variant="body1"><u><b>SOLUTION OVERVIEW</b></u></Typography>

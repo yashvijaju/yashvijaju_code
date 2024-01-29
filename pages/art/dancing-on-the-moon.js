@@ -50,14 +50,14 @@ export default function Story() {
 
           <Divider className={classes.divider}/>
 
-          <Grid container direction="row" justify="space-between" alignItems="center" className={classes.container}>
+          <Grid container direction="row" justifyContent="space-between" alignItems="center" className={classes.container}>
             <Grid item xs={12} sm={8}>
               {/* <Fade> */}
                 <img className={classes.image} src="/assets/projects/dancing-on-the-moon/dancing-on-the-moon.jpg" alt="Dancing on the Moon" title="Dancing on the Moon"/>
               {/* </Fade> */}
             </Grid>
             <Hidden smUp>
-              <Grid item xs={12} sm={3} container justify="center" align="center" style={{margin: '5vh 0 0'}}>
+              <Grid item xs={12} sm={3} container justifyContent="center" align="center" style={{margin: '5vh 0 0'}}>
                 <Typography className={classes.text} variant="caption">
                   Tried to capture motion <br/>
                   In a picture <br/>

@@ -65,7 +65,7 @@ export default function Story() {
 
       <Divider className={classes.divider}/>
 
-      {/* <Grid container className={classes.container} justify="space-between">
+      {/* <Grid container className={classes.container} justifyContent="space-between">
         <Grid item xs={3}>
           <Typography variant="body2" className={classes.text}>
             <b>The Puppet Show — </b><br/>
@@ -106,7 +106,7 @@ export default function Story() {
         </Grid>
       </Grid> */}
 
-      <Grid container className={classes.container} justify="space-between">
+      <Grid container className={classes.container} justifyContent="space-between">
         <Grid item xs={12}>
           <Typography variant="body1" className={classes.title}>
           <b>The Puppet Show — </b><br/>

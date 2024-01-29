@@ -639,13 +639,13 @@ export default function Story() {
 
             <Divider className={classes.divider}/>
 
-            <Grid container justify="space-between" className={classes.container}>
-                <Grid item xs={5} container justify="flex-end">
+            <Grid container justifyContent="space-between" className={classes.container}>
+                <Grid item xs={5} container justifyContent="flex-end">
                     <Typography variant="body2" style={{borderBottom: (value===0) ? '5px solid #9E0D1B' : '0px solid #9E0D1B', fontWeight: (value===0) ? 'bold' : 'normal'}} className={classes.inner_nav} onClick={()=>setValue(0)}>
                         Project 1 : Predictive Covid Model
                     </Typography>
                 </Grid>
-                <Grid item xs={5} container justify="flex-start">
+                <Grid item xs={5} container justifyContent="flex-start">
                     <Typography variant="body2" style={{borderBottom: (value===1) ? '5px solid #9E0D1B' : '0px solid #9E0D1B', fontWeight: (value===1) ? 'bold' : 'normal'}} className={classes.inner_nav} onClick={()=>setValue(1)}>
                         Project 2 : Volunteer Management Tool
                     </Typography>
@@ -707,7 +707,7 @@ export default function Story() {
                     </Grid>
 
                     <DividerLeft text="USE CASES" id="use_cases" borderColor={tertiary} textColor={secondary}/>
-                    <Grid container className={classes.container} direction="row" justify="space-between" id="reflection">
+                    <Grid container className={classes.container} direction="row" justifyContent="space-between" id="reflection">
                         <Grid item xs={12} sm={4}>
                             <a href="https://indiacovidmodel.in/wp-content/uploads/2020/06/User-Individuals-Businesses.pdf" target="_blank" rel="noreferrer noopener">
                                 <div className={classes.case_box}>
@@ -733,7 +733,7 @@ export default function Story() {
         
                     <DividerLeft text="REFLECTION" borderColor={tertiary} textColor={secondary}/>  
                     <Grid container className={classes.container}>
-                        <Grid container direction="row" justify="space-between" item xs={12} className={classes.product_container} style={{marginTop: '2vh'}}>
+                        <Grid container direction="row" justifyContent="space-between" item xs={12} className={classes.product_container} style={{marginTop: '2vh'}}>
                             <Grid item xs={12} sm={2}>
                                 <Typography variant="body2" style={{color: secondary}}><u>My contribution</u><br/><br/></Typography>
                             </Grid>
@@ -745,7 +745,7 @@ export default function Story() {
                                 </Typography>
                             </Grid>
                         </Grid>
-                        <Grid container direction="row" justify="space-between" item xs={12} className={classes.product_container} style={{marginTop: '7.5vh'}}>
+                        <Grid container direction="row" justifyContent="space-between" item xs={12} className={classes.product_container} style={{marginTop: '7.5vh'}}>
                             <Grid item xs={12} sm={2}>
                                 <Typography variant="body2" style={{color: secondary}}><u>What I learned</u><br/><br/></Typography>
                             </Grid>
@@ -801,7 +801,7 @@ export default function Story() {
 
                     <DividerLeft text="CURRENT SYSTEM" borderColor={tertiary} textColor={secondary}/>
                     <Grid container direction="column" className={classes.container}>
-                        <Grid container direction="row" justify="space-between" item xs={12} className={classes.product_container} style={{marginTop: '2vh'}}>
+                        <Grid container direction="row" justifyContent="space-between" item xs={12} className={classes.product_container} style={{marginTop: '2vh'}}>
                             <Grid item xs={12} sm={2}>
                                 <Typography variant="body2" style={{color: secondary}}><u>iSPIRT Volunteer Platform</u><br/><br/></Typography>
                             </Grid>
@@ -813,7 +813,7 @@ export default function Story() {
                                 The platform is governed by the Volunteer Fellowship Council (VFC).</Typography>
                             </Grid>
                         </Grid>
-                        <Grid container direction="row" justify="space-between" item xs={12} className={classes.product_container} style={{marginTop: '7vh'}}>
+                        <Grid container direction="row" justifyContent="space-between" item xs={12} className={classes.product_container} style={{marginTop: '7vh'}}>
                             <Grid item xs={12} sm={2}>
                                 <Typography variant="body2" style={{color: secondary}} id="design"><u>Pain Points (for the VFC)</u><br/><br/></Typography>
                             </Grid>
@@ -825,7 +825,7 @@ export default function Story() {
                                 5. The excel database captures only active volunteers and alumni. The platform does not track balloon volunteer alumni.</Typography>
                             </Grid>
                         </Grid>
-                        <Grid container direction="row" justify="space-between" item xs={12} className={classes.product_container} style={{marginTop: '7vh'}}>
+                        <Grid container direction="row" justifyContent="space-between" item xs={12} className={classes.product_container} style={{marginTop: '7vh'}}>
                             <Grid item xs={12} sm={2}>
                                 <Typography variant="body2" style={{color: secondary}}><u>Pain Points (for Volunteers)</u><br/><br/></Typography>
                             </Grid>
@@ -853,7 +853,7 @@ export default function Story() {
                             <Typography variant="body2" className={classes.text}>
                                 The VFC volunteer flow: <br/><br/>
                             </Typography>
-                            <Grid item xs={12} container direction="row" justify="space-between">
+                            <Grid item xs={12} container direction="row" justifyContent="space-between">
                                 <Grid item xs={4} container direction="column">
                                     <Typography variant="body2" className={classes.text}>
                                         1. Find volunteer in database <br/><br/>
@@ -878,7 +878,7 @@ export default function Story() {
                             <Typography variant="body2" className={classes.text}>
                                 The regular volunteer flow:
                             </Typography>
-                            <Grid item xs={12} container direction="row" justify="space-between">
+                            <Grid item xs={12} container direction="row" justifyContent="space-between">
                                 <Grid item xs={5} container direction="column">
                                     <Typography variant="body2" className={classes.text}>
                                         1. Find volunteer in database
@@ -898,11 +898,11 @@ export default function Story() {
                             <Typography variant="body1" className={classes.title} style={{margin: '2vh 0 1vh'}}>
                                 <b><u>2. Figma</u></b>
                             </Typography>
-                            <Grid item xs={12} container direction="row" justify="space-between">
+                            <Grid item xs={12} container direction="row" justifyContent="space-between">
                                 <Grid item xs={12} sm={7} container direction="row">
                                     <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FJ8QNI1GivY4xJtMK59GkVT%2FZastra%3Fscaling%3Dcontain%26node-id%3D84%253A6" className={classes.iframe_figma}/>
                                 </Grid>
-                                <Grid item xs={12} sm={4} container direction="column" justify="space-between" style={{padding: '3vw', backgroundColor: tertiary_25, borderRadius: '20px'}}>
+                                <Grid item xs={12} sm={4} container direction="column" justifyContent="space-between" style={{padding: '3vw', backgroundColor: tertiary_25, borderRadius: '20px'}}>
                                     <img src="/assets/projects/ispirt/figma_1.jpg" className={classes.image_rounded}/>
                                     <img src="/assets/projects/ispirt/figma_3.jpg" id="development" className={classes.image_rounded}/>
                                 </Grid>
@@ -912,7 +912,7 @@ export default function Story() {
 
                     <DividerLeft text="DEVELOPMENT" borderColor={tertiary} textColor={secondary}/>
                     <Grid container className={classes.container}>
-                        <Grid container direction="row" justify="space-between" id="next.js">
+                        <Grid container direction="row" justifyContent="space-between" id="next.js">
                             <TechNav text="Next.js" subtitle="frontend & backend" link="#next.js"/>
                             <TechNav text="MongoDB" subtitle="database" link="#mongodb"/>
                             <TechNav text="Active Directory" subtitle="sso & identity and access management" link="#active_directory"/>
@@ -921,7 +921,7 @@ export default function Story() {
                             <Typography variant="body2" className={classes.title} style={{margin: '4vh 0 1vh'}}>
                                 <b><u>1. Next.js: frontend and backend solution</u></b>
                             </Typography>
-                            <Grid container direction="row" justify="space-between">
+                            <Grid container direction="row" justifyContent="space-between">
                                 <Grid item xs={12} sm={4} container direction="column">
                                     <Typography variant="body2" className={classes.text}>
                                     <b>Pages (click to see a screenshot of the page)</b><br/><br/>
@@ -986,7 +986,7 @@ export default function Story() {
                                         &gt; api (hidden)
                                     </Typography>
                                 </Grid>
-                                <Grid item xs={12} sm={7} container direction="column" justify="space-between">
+                                <Grid item xs={12} sm={7} container direction="column" justifyContent="space-between">
                                     <Hidden xsDown>
                                         <Typography variant="body2" className={classes.text}>
                                             <b>{typeSrc}</b> <br/><br/>
@@ -1001,7 +1001,7 @@ export default function Story() {
                                     </Hidden>
                                     
                                     <Grid container direction="column">
-                                        <Grid container direction="row" justify="space-evenly" style={{marginTop: '5vh'}}>
+                                        <Grid container direction="row" justifyContent="space-evenly" style={{marginTop: '5vh'}}>
                                             <Hidden xsDown>
                                                 <Typography variant="body2" className={classes.nextjs_inner_nav} style={{borderBottom: (nextjsVal===0) ? '5px solid #FFE295' : '0px solid #9E0D1B'}} onClick={()=>setNextjsValue(0)}>
                                                     Volunteer
@@ -1025,7 +1025,7 @@ export default function Story() {
                                                 </Typography>
                                             </Hidden>
                                         </Grid>
-                                        <Grid container direction="row" justify="space-between" alignItems="center" style={{backgroundColor: tertiary_25, borderRadius: '20px', padding: '1vw'}}>
+                                        <Grid container direction="row" justifyContent="space-between" alignItems="center" style={{backgroundColor: tertiary_25, borderRadius: '20px', padding: '1vw'}}>
                                             <img src={generalSrc} className={classes.image_rounded_nextjs} style={{display: (nextjsVal===0) ? 'block' : 'none'}}/>
                                             <img src={volOpsSrc} className={classes.image_rounded_nextjs} style={{display: (nextjsVal===1) ? 'block' : 'none'}}/>
                                             <img src={vfcSrc} className={classes.image_rounded_nextjs} style={{display: (nextjsVal===2) ? 'block' : 'none'}}/>
@@ -1231,7 +1231,7 @@ export default function Story() {
 
                     <DividerLeft text="REFLECTION" borderColor={tertiary} textColor={secondary}/>  
                     <Grid container className={classes.container}>
-                        <Grid container direction="row" justify="space-between" item xs={12} className={classes.product_container} style={{marginTop: '2vh'}}>
+                        <Grid container direction="row" justifyContent="space-between" item xs={12} className={classes.product_container} style={{marginTop: '2vh'}}>
                             <Grid item xs={12} sm={2}>
                                 <Typography variant="body2" style={{color: secondary}}><u>My contribution</u><br/><br/></Typography>
                             </Grid>
@@ -1245,7 +1245,7 @@ export default function Story() {
                                 </Typography>
                             </Grid>
                         </Grid>
-                        <Grid container direction="row" justify="space-between" item xs={12} className={classes.product_container} style={{marginTop: '7vh'}}>
+                        <Grid container direction="row" justifyContent="space-between" item xs={12} className={classes.product_container} style={{marginTop: '7vh'}}>
                             <Grid item xs={12} sm={2}>
                                 <Typography variant="body2" style={{color: secondary}}><u>What I learned</u><br/><br/></Typography>
                             </Grid>

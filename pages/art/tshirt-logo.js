@@ -84,11 +84,11 @@ export default function Story() {
         <Divider className={classes.divider}/>
 
         <Fade>
-            <Grid container direction="row" justify="space-between" className={classes.container}>
+            <Grid container direction="row" justifyContent="space-between" className={classes.container}>
                 <Grid item xs={7}>
                     <ImageCaption image="/assets/projects/tshirt-logo-design/tshirt-logo-design.png" caption="Logo Design"/>
                 </Grid>
-                <Grid item xs={3} container direction="column" justify="space-between">
+                <Grid item xs={3} container direction="column" justifyContent="space-between">
                     <ImageCaption image="/assets/projects/tshirt-logo-design/tshirt-logo-design-ref.jpg" caption="Original Photo: Reference"/>
                     <ImageCaption image="/assets/projects/tshirt-logo-design/tshirt-logo-design-tshirt.jpg" caption="T-Shirt with Logo Design"/>
                 </Grid>

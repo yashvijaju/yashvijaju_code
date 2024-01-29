@@ -55,14 +55,14 @@ function Step_Component(props) {
     const classes = useStyles();
 
     return (
-        <Grid item xs container direction="row" justify="space-between" style={{marginBottom: '10vh'}}>
+        <Grid item xs container direction="row" justifyContent="space-between" style={{marginBottom: '10vh'}}>
             <Grid item xs={12} sm={2}>
                 <Typography variant="h5" style={{color: '#05602F'}}>
                     <b>Step {props.step_num}</b>
                 </Typography>
                 
             </Grid>
-            <Grid item xs={12} sm={10} container direction="column" justify="center">
+            <Grid item xs={12} sm={10} container direction="column" justifyContent="center">
                 <Typography variant="body2" style={{color: primary, marginBottom: '1vh'}}>
                     {props.text}
                 </Typography>

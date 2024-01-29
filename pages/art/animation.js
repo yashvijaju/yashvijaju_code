@@ -55,7 +55,7 @@ export default function Story() {
 
       <Divider className={classes.divider}/>
 
-      <Grid container direction="row" className={classes.container} justify="center">
+      <Grid container direction="row" className={classes.container} justifyContent="center">
         <Grid item xs={12} sm={5} container direction="column">
           <Typography variant="body1" className={classes.title}>
             <b>Iteration 1</b>
@@ -65,14 +65,14 @@ export default function Story() {
           </Grid>
         </Grid>
         <Hidden xsDown>
-          <Grid item xs={2} container justify="center" alignItems="center">
+          <Grid item xs={2} container justifyContent="center" alignItems="center">
             <Typography variant="h2" className={classes.title}>
               ⇝
             </Typography>
           </Grid>
         </Hidden>
         <Hidden smUp>
-          <Grid item xs={2} container justify="center" alignItems="center" style={{margin: '2vh 0 1vh'}}>
+          <Grid item xs={2} container justifyContent="center" alignItems="center" style={{margin: '2vh 0 1vh'}}>
             <Typography variant="h2" className={classes.title}>
               ↯
             </Typography>
@@ -83,7 +83,7 @@ export default function Story() {
           <Typography variant="body1" className={classes.title}>
             <b>Iteration 4</b>
           </Typography>
-          <Grid item xs={12} justify="center">
+          <Grid item xs={12} justifyContent="center">
             <video className="Animation" id="Video Animation" src="/assets/projects/keyframe-animation/animation_2.mp4" alt="Animation" title="Animation" className={classes.video} autoPlay controls muted/>
           </Grid>
         </Grid>

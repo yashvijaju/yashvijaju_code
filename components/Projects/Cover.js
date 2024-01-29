@@ -63,8 +63,8 @@ export function Cover(props) {
 
     return(
         <>
-            <Grid className={classes.container} container direction="row" justify="space-between" style={{backgroundColor: background}}>
-                <Grid item xs={8} sm={10} container direction="column" justify="center" >
+            <Grid className={classes.container} container direction="row" justifyContent="space-between" style={{backgroundColor: background}}>
+                <Grid item xs={8} sm={10} container direction="column" justifyContent="center" >
                     {props.project_logo && 
                         <img className={classes.logo_image} src={props.project_logo}></img>
                     }
@@ -89,7 +89,7 @@ export function Cover(props) {
                         </Typography>
                     }
                 </Grid>
-                <Grid item xs={4} sm={2} container direction="row" justify="flex-end" alignItems="flex-start" >
+                <Grid item xs={4} sm={2} container direction="row" justifyContent="flex-end" alignItems="flex-start" >
                     {props.bookmark && 
                         <img id="bookmark" src={props.bookmark} className={classes.image} onMouseOver={()=>handleMouseOver()} onMouseOut={()=>handleMouseOut()}/>
                     }
@@ -106,7 +106,7 @@ export function CustomCover(props) {
 
     return(
         <>
-            <Grid className={classes.container} container direction="column" justify="center" style={{backgroundColor: background}}>
+            <Grid className={classes.container} container direction="column" justifyContent="center" style={{backgroundColor: background}}>
                 {props.content}
             </Grid>
         </>

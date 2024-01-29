@@ -108,7 +108,7 @@ export default function Story() {
             }/>
 
             <Fade>
-                <Grid container direction="row" justify="space-between" className={classes.filter_container}>
+                <Grid container direction="row" justifyContent="space-between" className={classes.filter_container}>
                     <Grid item>
                         <Typography variant="body2" className={classes.filter_filter} style={{backgroundColor: (filter==="ALL") ? tertiary : 'transparent'}} onClick={()=>setFilter("ALL")}>
                             ALL
@@ -132,7 +132,7 @@ export default function Story() {
                 </Grid>
             </Fade>
 
-            <Grid container direction="row" justify="space-between" className={classes.container}>
+            <Grid container direction="row" justifyContent="space-between" className={classes.container}>
                 <Grid container direction="column" item xs={12} sm={5} md={4}>
                     <Link href="/art/quilling">
                         <Grid item container direction="column" alignItems="center" className={classes.item} id="TRADITIONAL ART">

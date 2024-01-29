@@ -89,7 +89,7 @@ function TimelineEvent(props) {
       </TimelineSeparator>
       <TimelineContent className={classes.timeline_item}>
         <Fade>
-          <Grid container justify="space-between">
+          <Grid container justifyContent="space-between">
             <Grid item xs={12} sm={1} style={{color: secondary}}>
               {props.time}
             </Grid>
@@ -102,7 +102,7 @@ function TimelineEvent(props) {
                 {props.content}
                 <br/><br/>
               </Typography>
-              <Grid container item xs={12} justify="space-between">
+              <Grid container item xs={12} justifyContent="space-between">
                 {props.images}
               </Grid>
             </Grid>

@@ -203,7 +203,7 @@ export default function Story() {
 
                 <DividerLeft text="PRODUCT ANALYSIS" borderColor={"#FFC72C"} textColor={secondary}/>
                 <Grid container direction="column" className={classes.container}>
-                    <Grid container direction="row" justify="space-between" item xs={12} className={classes.product_container}>
+                    <Grid container direction="row" justifyContent="space-between" item xs={12} className={classes.product_container}>
                         <Grid item xs={12} sm={2}>
                             <Typography variant="body2" style={{color: secondary}}>Assumptions about the Target Audience</Typography>
                         </Grid>
@@ -214,7 +214,7 @@ export default function Story() {
                             4. The typical costumer prefers food delivery over dining in when eating McDonald’s</Typography>
                         </Grid>
                     </Grid>
-                    <Grid container direction="row" justify="space-between" item xs={12} className={classes.product_container}>
+                    <Grid container direction="row" justifyContent="space-between" item xs={12} className={classes.product_container}>
                         <Grid item xs={12} sm={2}>
                             <Typography variant="body2" style={{color: secondary}}>Competitive Comparison</Typography>
                         </Grid>
@@ -243,7 +243,7 @@ export default function Story() {
                             </TableContainer>
                         </Grid>
                     </Grid>
-                    <Grid container direction="row" justify="space-between" item xs={12} className={classes.product_container}>
+                    <Grid container direction="row" justifyContent="space-between" item xs={12} className={classes.product_container}>
                         <Grid item xs={12} sm={2}>
                             <Typography variant="body2" style={{color: secondary}}>Customer Value Proposition</Typography>
                         </Grid>
@@ -268,7 +268,7 @@ export default function Story() {
                         </Typography>
                     </Grid>
                     <Grid item xs={12} sm={5} container direction="column"> 
-                        <Grid item xs={12} container direction="row" justify="space-between">
+                        <Grid item xs={12} container direction="row" justifyContent="space-between">
                             <div className={classes.box_text} id="box_test">
                                 <Typography variant="h3" className={classes.text} style={{marginBottom: '3vh'}}>&nbsp;2.4%</Typography>
                                 <Typography variant="body2" align="center" className={classes.text}>of searches for On The Go were on routes served by pilot franchises</Typography>
@@ -282,7 +282,7 @@ export default function Story() {
                             <img src="/assets/projects/mcdonald/beta_map_zoom.jpg" className={classes.map_image}/>
                         </Grid>
                     </Grid>
-                    <Grid item xs={12} sm={7} container direction="row" justify="flex-end">
+                    <Grid item xs={12} sm={7} container direction="row" justifyContent="flex-end">
                         <img src="/assets/projects/mcdonald/beta_map.jpg" className={classes.image} style={{width: '96%'}}/>
                     </Grid> */}
                 </Grid>
@@ -301,11 +301,11 @@ export default function Story() {
                         These lat-long coordinates were then mapped onto a google-maps layout, with a map containing all the McDonald’s stores in Mumbai strewn over this. <br/> <br/>
                         </Typography>
                     </Grid>
-                    <Grid item xs={12} container direction="row" justify="space-between"> 
+                    <Grid item xs={12} container direction="row" justifyContent="space-between"> 
                         <img src="/assets/projects/mcdonald/data_map_1.jpg" className={classes.new_map_image}/>
                         <img src="/assets/projects/mcdonald/data_map_2.jpg" className={classes.new_map_image}/>
                     </Grid>
-                    <Grid item xs={12} container direction="row" justify="space-between" style={{marginTop: '3vh'}}> 
+                    <Grid item xs={12} container direction="row" justifyContent="space-between" style={{marginTop: '3vh'}}> 
                         <img src="/assets/projects/mcdonald/data_map_3.jpg" className={classes.new_map_image}/>
                         <img src="/assets/projects/mcdonald/data_map_4.jpg" className={classes.new_map_image}/>
                     </Grid>

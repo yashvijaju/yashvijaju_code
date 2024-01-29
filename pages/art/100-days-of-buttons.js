@@ -138,7 +138,7 @@ export default function Story() {
       <Divider className={classes.content_divider}/>
 
       <Grid container direction="row" className={classes.container}>
-        <Grid item xs={12} container direction="row" justify="flex-end" alignItems="center" className={classes.spacing}>
+        <Grid item xs={12} container direction="row" justifyContent="flex-end" alignItems="center" className={classes.spacing}>
           <Hidden xsDown>
             <Typography variant="h3" className={classes.title_title_text_right}><b>day one</b> to <b>twenty</b></Typography>
           </Hidden>
@@ -196,7 +196,7 @@ export default function Story() {
       <Divider className={classes.content_divider}/>
 
       <Grid container direction="row" className={classes.container}>
-        <Grid item xs={12} container direction="row" justify="flex-end" alignItems="center" className={classes.spacing}>
+        <Grid item xs={12} container direction="row" justifyContent="flex-end" alignItems="center" className={classes.spacing}>
           <Hidden xsDown>
             <Typography variant="h3" className={classes.title_title_text_right}><b>day forty-one</b> to <b>sixty</b></Typography>
           </Hidden>
@@ -250,7 +250,7 @@ export default function Story() {
       <Divider className={classes.content_divider}/>
 
       <Grid container direction="row" className={classes.container}>
-        <Grid item xs={12} container direction="row" justify="flex-end" alignItems="center" className={classes.spacing}>
+        <Grid item xs={12} container direction="row" justifyContent="flex-end" alignItems="center" className={classes.spacing}>
           <Hidden xsDown>
             <Typography variant="h3" className={classes.title_title_text_right}><b>day eighty-one</b> to <b>hundred</b></Typography>
           </Hidden>

@@ -127,7 +127,7 @@ export default function Story() {
             A plethora of lines that extend beyond the borders of the page have been drawn to emphasise that the manifesto is, indeed, incomplete as there is no prescribed path leading to “growth” but there exists rather a continuous process that is unique to each individual. These lines are created with different lengths and angles to further highlight this theme.
           </Typography>
         </Grid>
-        <Grid item xs={12} container direction="row" justify="space-between">
+        <Grid item xs={12} container direction="row" justifyContent="space-between">
           <img className={classes.image} src="/assets/projects/manifesto/d1_1.png"/>
           <img className={classes.image} src="/assets/projects/manifesto/d1_2.png"/>
           <img className={classes.image} src="/assets/projects/manifesto/d1_3.png"/>
@@ -137,7 +137,7 @@ export default function Story() {
       <Divider className={classes.content_divider}/>
 
       <Grid container direction="column" className={classes.container}>
-        <Grid item xs={12} container direction="row" justify="flex-end" alignItems="center" className={classes.spacing}>
+        <Grid item xs={12} container direction="row" justifyContent="flex-end" alignItems="center" className={classes.spacing}>
           <Hidden xsDown>
             <Typography variant="h3" className={classes.title_title_text_right}>color palette & space : <b>two</b></Typography>
           </Hidden>
@@ -157,7 +157,7 @@ export default function Story() {
             The color palettes highlight the theme of “[living] in extremes” through heavy contrast. In the first two designs, a combination of red and black print against a solid white background illustrates the increased brilliance red exhibits against black than against white. Similarly, in the third design, red contrasts white more than yellow. A parallel is drawn between these observations and an individual’s path of growth.
           </Typography>
         </Grid>
-        <Grid item xs={12} container direction="row" justify="space-between">
+        <Grid item xs={12} container direction="row" justifyContent="space-between">
           <img className={classes.image} src="/assets/projects/manifesto/d2_1.png"/>
           <img className={classes.image} src="/assets/projects/manifesto/d2_2.png"/>
           <img className={classes.image} src="/assets/projects/manifesto/d2_3.png"/>
@@ -194,7 +194,7 @@ export default function Story() {
       <Divider className={classes.content_divider}/>
 
       <Grid container direction="column" className={classes.container}>
-        <Grid item xs={12} container direction="row" justify="flex-end" alignItems="center" className={classes.spacing}>
+        <Grid item xs={12} container direction="row" justifyContent="flex-end" alignItems="center" className={classes.spacing}>
           <Hidden xsDown>
             <Typography variant="h3" className={classes.title_title_text_right}>final : <b>four</b></Typography>
           </Hidden>
@@ -208,7 +208,7 @@ export default function Story() {
             The final color palette employs tones of pink and blue as these colors are in balance ie no color overpowers the other. Moreover, when overlayed, they create a new stronger tone, akin to how Bruce Mau’s manifesto could lead to exponential growth when combined with an individual’s own perceptions and perspectives regarding the rules, or lack of, of life.
           </Typography>
         </Grid>
-        <Grid item xs={12} container direction="row" justify="space-between">
+        <Grid item xs={12} container direction="row" justifyContent="space-between">
           <img className={classes.image} style={{'width': '65%'}} src="/assets/projects/manifesto/d4_2.png"/>
           <img className={classes.image} src="/assets/projects/manifesto/d4_1.jpg"/>
         </Grid>

@@ -71,7 +71,7 @@ export default function Contact() {
                 I would love to hear from you, let's schedule a coffee chat!
               </Typography>
             </Grid>
-            <Grid item xs={12} sm={4} container justify="flex-end" className={classes.alignXs}>
+            <Grid item xs={12} sm={4} container justifyContent="flex-end" className={classes.alignXs}>
               <a href="mailto:yjaju@usc.edu" target="_blank" rel="noopener noreferrer"><EmailOutlined fontSize="large" className={classes.icon}/></a>
               <Typography variant="h6" style={{color:blue}}> &nbsp; | &nbsp; </Typography>
               <a href="https://www.linkedin.com/in/yashvi-jaju/" target="_blank" rel="noopener noreferrer"><LinkedIn fontSize="large" className={classes.icon}/></a>
