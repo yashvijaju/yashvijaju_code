@@ -1,4 +1,4 @@
-export default async (req, res) => {
+export default yosemite_api = async (req, res) => {
 
     let nodemailer = require('nodemailer')
     

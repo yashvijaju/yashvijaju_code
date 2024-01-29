@@ -1,9 +1,7 @@
 import React from 'react';
-import { Grid, Typography, TextField, Hidden, Divider } from '@material-ui/core';
-import { EmailOutlined, LinkedIn, Instagram, Facebook, GitHub } from '@material-ui/icons';
+import { Grid, Typography } from '@material-ui/core';
+import { EmailOutlined, LinkedIn, GitHub } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles'
-import { Fade } from 'react-reveal';
-
 
 const blue='#bee3f1';
 const grey = '#000000';
@@ -51,13 +49,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Contact() {
   const classes = useStyles();
-
-  const [bodyText,setBodyText] = React.useState("");
-
-  function handleClick() {
-    var x= document.getElementById("Body");
-    setBodyText(x.value);
-  }
 
   return (
     <div>

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Grid, Typography } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles'
-import Link from 'next/link'
+import { makeStyles } from '@material-ui/core/styles';
+import Link from 'next/link';
 import clsx from 'clsx';
 
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
     item: {
       backgroundColor: 'white', 
       padding: '2.5vh 2.5vw 2.5vh 2.5vw', 

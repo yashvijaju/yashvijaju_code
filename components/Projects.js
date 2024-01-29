@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Typography, Hidden, Chip, Snackbar } from '@material-ui/core';
+import { Grid, Typography, Chip, Snackbar } from '@material-ui/core';
 import { CancelOutlined,LaptopChromebookRounded, ColorLensRounded, WorkOutlineRounded, SearchRounded, FormatSizeRounded, EmojiSymbolsRounded, StarOutlineRounded } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles'
 import ProjectCard from './Projects/ProjectCard'
@@ -11,7 +11,7 @@ const title = 'grey';
 const chipStyle = {};
 const chipStyleSelected = {color: 'black', border: '2.5px solid grey', backgroundColor: 'white' , borderRadius: '20px', marginRight: '1vw', fontWeight: 'bolder', fontSize: '2vh', marginBottom: '1vh', paddingBottom: '1.5vh', paddingTop: '1.5vh'};
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   container: {
       padding: '0 5vw',
   },
@@ -38,7 +38,6 @@ export default function Story() {
 
   const [lastFilter, setLastFilter] = React.useState("All");
 
-  const [openNotifs, setOpenNotifs] = React.useState(true);
   const [openFilterNotifs, setOpenFilterNotifs] = React.useState(false);
   const [filterNotifRender, setFilterNotifRender] = React.useState(0);
   
@@ -59,7 +58,6 @@ export default function Story() {
     if (reason === 'clickaway') {
       return;
     }
-    setOpenNotifs(false);
     setOpenFilterNotifs(false);
     clearTimeout(timer);
   };

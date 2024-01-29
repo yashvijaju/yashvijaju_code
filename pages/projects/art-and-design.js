@@ -65,6 +65,8 @@ const useStyles = makeStyles((theme) => ({
 export default function Story() {
     const [filter, setFilter] = useState("ALL");
 
+    const classes = useStyles();
+
     useEffect(() => {
         if (filter === "ALL") {
             var x = document.getElementsByClassName(classes.item);
@@ -83,10 +85,7 @@ export default function Story() {
                 }
             }
         }
-    }, [filter])
-
-
-    const classes = useStyles();
+    }, [filter, classes.item])
     
     return(
         <>

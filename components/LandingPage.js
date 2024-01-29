@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Hidden, Typography } from '@material-ui/core';
+import { Grid, Typography } from '@material-ui/core';
 import { KeyboardArrowDown, ExpandLess } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles'
 
@@ -123,15 +123,13 @@ export default function Animation() {
         }
     }
 
-    function typist() {
-        const intro_string = "< Hi, I am Yashvi Jaju >";
-        let curr_string = intro_string.substring(0,curr.length+1);
-        curr_string += (curr_string.length == intro_string.length) ? '' : '_';
-        setCurr(curr_string);
-    }
-
     React.useEffect(() => {
-        setTimeout(typist, 200);
+        setTimeout(()=> {
+            const intro_string = "< Hi, I am Yashvi Jaju >";
+            let curr_string = intro_string.substring(0,curr.length+1);
+            curr_string += (curr_string.length == intro_string.length) ? '' : '_';
+            setCurr(curr_string);
+        }, 200);
       }, [curr]);
 
     return(

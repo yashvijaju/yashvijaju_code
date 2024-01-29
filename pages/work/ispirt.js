@@ -219,10 +219,6 @@ export default function Story() {
 
     const [nextImgExists, setNextImgExists] = useState(true);
 
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-    };    
-
     function nextJsImages() {
         if (typeSrc === "> login") {
             if (nextjsVal === 0) {

@@ -1,10 +1,9 @@
 import React from 'react';
-import { Grid, Divider, Typography, Hidden, Tooltip } from '@material-ui/core';
+import { Grid, Divider, Typography, Hidden } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles'
 // Components
 import { Cover } from '../../components/Projects/Cover'
 import { Intro } from '../../components/Projects/Intro'
-import { ProblemStatement } from '../../components/Projects/Problem_Statement'
 import { Footer } from '../../components/Projects/Footer'
 
 const primary = '#000000';
@@ -61,7 +60,7 @@ export default function Story() {
             <b>Iteration 1</b>
           </Typography>
           <Grid item xs={12}>
-            <video className="Animation" id="Video Animation" src="/assets/projects/keyframe-animation/animation_1.mp4" alt="Animation" title="Animation" className={classes.video} autoPlay controls muted/>
+            <video id="Video Animation" src="/assets/projects/keyframe-animation/animation_1.mp4" alt="Animation" title="Animation" className={classes.video} autoPlay controls muted/>
           </Grid>
         </Grid>
         <Hidden xsDown>
@@ -84,7 +83,7 @@ export default function Story() {
             <b>Iteration 4</b>
           </Typography>
           <Grid item xs={12} justifyContent="center">
-            <video className="Animation" id="Video Animation" src="/assets/projects/keyframe-animation/animation_2.mp4" alt="Animation" title="Animation" className={classes.video} autoPlay controls muted/>
+            <video id="Video Animation" src="/assets/projects/keyframe-animation/animation_2.mp4" alt="Animation" title="Animation" className={classes.video} autoPlay controls muted/>
           </Grid>
         </Grid>
       </Grid>

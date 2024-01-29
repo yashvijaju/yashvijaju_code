@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import { Grid, Divider, Typography, Hidden, Tooltip } from '@material-ui/core';
+import React from 'react';
+import { Grid, Divider, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles'
 import {Timeline, TimelineItem, TimelineSeparator, TimelineConnector, TimelineContent, TimelineDot, TimelineOppositeContent} from '@material-ui/lab';
 import { Fade } from 'react-reveal';

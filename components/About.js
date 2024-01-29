@@ -2,8 +2,6 @@ import React  from 'react';
 import { Grid, Typography, Hidden } from '@material-ui/core';
 import { AttachFile } from '@material-ui/icons';
 
-const grey = '#efefef'
-
 const descriptor = {color: '#43b14e', fontWeight: '600'}
 
 export default function AboutMe() {

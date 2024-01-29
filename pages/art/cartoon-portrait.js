@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import { Grid, Divider, Typography, Hidden, Tooltip } from '@material-ui/core';
+import React from 'react';
+import { Grid, Divider, Typography, Hidden } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles'
 import { Fade } from 'react-reveal';
 // Components

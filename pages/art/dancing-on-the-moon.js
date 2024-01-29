@@ -1,7 +1,6 @@
 import React from 'react';
-import { Grid, Divider, Typography, Hidden, Tooltip } from '@material-ui/core';
+import { Grid, Divider, Typography, Hidden } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles'
-import { Fade } from 'react-reveal';
 // Components
 import { Cover } from '../../components/Projects/Cover'
 import { Intro } from '../../components/Projects/Intro'

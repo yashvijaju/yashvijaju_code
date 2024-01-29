@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import { Typography, Grid, Divider, Hidden } from '@material-ui/core'
 // Icons
 import { ArrowForwardIos, ArrowBackIos, Apps } from '@material-ui/icons'
-import { EmailOutlined, LinkedIn, Instagram, Facebook, GitHub } from '@material-ui/icons';
+import { EmailOutlined, LinkedIn, GitHub } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -247,7 +247,7 @@ export function FooterAll(props) {
 
             <Grid container className={classes.container_footer_all} direction="row" justifyContent="space-between" alignContent="space-between">
                 <Grid item xs={1}>
-                    <img src="/assets/logo.png" className={classes.image} style={{marginRight: '1vw'}}/>
+                    <img alt="yashvi logo" src="/assets/logo.png" className={classes.image} style={{marginRight: '1vw'}}/>
                 </Grid>
                 <Hidden xsDown>
                     <Grid item xs={6} container direction="column" justifyContent="space-between">

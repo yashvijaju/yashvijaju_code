@@ -1,6 +1,5 @@
 import React from 'react';
 import { Grid, Divider, Typography, Hidden } from '@material-ui/core';
-import { KeyboardArrowLeftOutlined, KeyboardArrowRightOutlined } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles'
 // Components
 import { Cover } from '../../components/Projects/Cover'

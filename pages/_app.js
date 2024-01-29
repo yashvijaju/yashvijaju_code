@@ -79,7 +79,6 @@ export default function MyApp({ Component, pageProps, props }) {
         <meta name="keywords" content="Portfolio, Computer Science Business Administration, Yashvi Jaju"/>
         <meta name="description" content="Yashvi Jaju is pursuing Computer Science and Business Administration at the University of Southern California, with a minor in Entrepreneurship. Over the years, she has founded startups, developed software products, and created digital and traditional art"/>
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"/>
       </Head>
       <ThemeProvider>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}

@@ -66,7 +66,7 @@ export function Cover(props) {
             <Grid className={classes.container} container direction="row" justifyContent="space-between" style={{backgroundColor: background}}>
                 <Grid item xs={8} sm={10} container direction="column" justifyContent="center" >
                     {props.project_logo && 
-                        <img className={classes.logo_image} src={props.project_logo}></img>
+                        <img alt={props.project_name} className={classes.logo_image} src={props.project_logo}></img>
                     }
                     {props.project_name && 
                         <>
