@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import Link from 'next/link'
-import { Grid, Typography, Hidden, Chip, Snackbar } from '@material-ui/core';
+import { Grid, Typography, Chip, Snackbar } from '@material-ui/core';
 import { CancelOutlined,LaptopChromebookRounded, ColorLensRounded, WorkOutlineRounded, SearchRounded, FormatSizeRounded, EmojiSymbolsRounded, StarOutlineRounded } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles'
-import { Fade } from 'react-reveal';
+import { ProjectCard } from './Projects/ProjectCard';
 import clsx from 'clsx';
 
 const pink='#F7CAC9'; 
@@ -16,31 +16,7 @@ const chipStyleSelected = {color: 'black', border: '2.5px solid grey', backgroun
 
 const useStyles = makeStyles((theme) => ({
   container: {
-      padding: '0 5vw',
-  },
-  item: {
-    backgroundColor: 'white', 
-    padding: '2.5vh 2.5vw 2.5vh 2.5vw', 
-    borderRadius: '15px',
-    margin: '0 1vw 2vh',
-    transition: '0.25s',
-    '&:hover': {
-        transform: 'scale(1.05)',
-        cursor: 'pointer',
-        color: 'red',
-        border: '1px solid grey',
-    }
-  },
-  item_desc: {
-    fontWeight: 'lighter',
-  },
-  item_title: {
-    fontWeight: '500',
-    margin: '0.5vh 0',
-  },
-  image: {
-    width: '100%', 
-    marginBottom: '1vh',
+    padding: '0 5vw',
   },
   filter: {
     color: 'grey', 
@@ -127,7 +103,6 @@ export default function Story() {
     setLastFilter("Featured");
   }, []); 
 
-  const className_item = clsx("item", classes.item);
   const className_filter = clsx("filterProjects", classes.filter);
 
   return (
@@ -148,7 +123,7 @@ export default function Story() {
           open={openFilterNotifs}
           autoHideDuration={4000}
           onClose={handleCloseNotif}
-          message="Tip: use the filter buttons (:"
+          message="Click on a project to learn more"
           id="notif1"
           action={
             <CancelOutlined size="small" aria-label="close" color="inherit" style={{cursor: 'pointer'}} onClick={handleCloseNotif}/>
@@ -166,215 +141,82 @@ export default function Story() {
         </Grid>
       {/* </Fade> */}
       <Grid container direction="row" justify="center" style={{marginTop: '3vh'}}>
-        <Link href="/art/100-days-of-buttons">
-          <Grid className={className_item} id="Digital Art, Featured, Side Projects" item xs={10} sm={5} md={3} >
-            <img id="100 Days of Buttons" src="/assets/covers/100-days-of-des.png" alt="100 Days of Buttons" title="100 Days of Buttons" className={classes.image}/>
-            <Typography variant="body1" className={classes.item_title}>
-            100 Days of Buttons: Artist
-            </Typography>
-            <Typography variant="caption" className={classes.item_desc}>
-            I undertook the 100 Days of Design challenge; every day, I designed a button along and developed its corresponding css stylesheet.
-            </Typography>
-          </Grid>
-        </Link>
-        <Link href="/startups/crave">
-          <Grid className={className_item} id="Tech, Entrepreneurship, Featured" item xs={10} sm={5} md={3} >
-            <img id="Crave" src="/assets/covers/crave.png" alt="Crave" title="Crave" className={classes.image}/>
-            <Typography variant="body1" className={classes.item_title}>
-              Crave: Front-End Developer, Founder
-            </Typography>
-            <Typography variant="caption" className={classes.item_desc}>
-            Crave is a web app platform that delivers international, exotic snacks to students on campuses at affordable rates, on demand.
-            </Typography>
-          </Grid>
-        </Link>
-        <Link href="/art/dancing-on-the-moon">
-          <Grid className={className_item} id="Traditional Art, Featured" item xs={10} sm={5} md={3} >
-            <img id="Dancing on the Moon" src="/assets/covers/dancing-on-the-moon.png" alt="Dancing on the Moon" title="Dancing on the Moon" className={classes.image}/>
-            <Typography variant="body1" className={classes.item_title}>
-            'Dancing on the Moon': Artist
-            </Typography>
-            <Typography variant="caption" className={classes.item_desc}>
-            ‘Dancing on the Moon’ is a four-piece oil painting of two dancers caught mid-motion that illustrates the expansion of time and space.
-            </Typography>
-          </Grid>
-        </Link>
-        <Link href="/startups/pride-for-labour">
-          <Grid className={className_item} id="Entrepreneurship, Featured" item xs={10} sm={5} md={3} >
-            <img id="Pride For Labor" src="/assets/covers/pfl.png" alt="Pride For Labour" title="Pride For Labour" className={classes.image}/>
-            <Typography variant="body1" className={classes.item_title}>
-            Pride For Labour: Founder
-            </Typography>
-            <Typography variant="caption" className={classes.item_desc}>
-            Pride For Labour (PFL) was founded in 2016 with a mission to empower domestic labour and instil pride and respect in the occupation.
-            </Typography>
-          </Grid>
-        </Link>
-        <Link href="/art/cartoon-portrait">
-          <Grid className={className_item} id="Digital Art, Featured" item xs={10} sm={5} md={3} >
-            <img id="Cartoon Portrait" src="/assets/covers/cartoon-portrait.png" alt="Cartoon Portrait" title="Cartoon Portrait" className={classes.image}/>
-            <Typography variant="body1" className={classes.item_title}>
-              Cartoon Portrait: Artist
-            </Typography>
-            <Typography variant="caption" className={classes.item_desc}>
-            I designed this cartoon illustration using Adobe Photoshop's various tools, such as adjustment layers, paths, and layer masks.
-            </Typography>
-          </Grid>
-        </Link>
-        <Link href="/work/ispirt">
-          <Grid className={className_item} id="Professional, Tech, Featured" item xs={10} sm={5} md={3} >
-            <img id="iSPIRT" src="/assets/covers/ispirt.png" alt="iSPIRT" title="iSPIRT" className={classes.image}/>
-            <Typography variant="body1" className={classes.item_title}>
-              iSPIRT: Software Intern
-            </Typography>
-            <Typography variant="caption" className={classes.item_desc}>
-            iSPIRT is a think tank that develops societal platforms in India. I have worked on multiple projects, including the India Covid Model.
-            </Typography>
-          </Grid>
-        </Link>
-        <Link href="/startups/a2z">
-          <Grid className={className_item} id="Entrepreneurship" item xs={10} sm={5} md={3} >
-            <img id="A2Z" src="/assets/covers/a2z.png" alt="A2Z" title="A2Z" className={classes.image}/>
-            <Typography variant="body1" className={classes.item_title}>
-            A2Z: Founder, Co-Editor
-            </Typography>
-            <Typography variant="caption" className={classes.item_desc}>
-            Founded as a backyard summer project, A2Z is an advertisement-driven bi-monthly magazine distributed to 400+ flats in my housing society.
-            </Typography>
-          </Grid>
-        </Link>
-        <Link href="/art/manifesto">
-          <Grid className={className_item} id="Digital Art, Featured" item xs={10} sm={5} md={3} >
-            <img id="Manifesto" src="/assets/covers/manifesto.png" alt="Manifesto" title="Manifesto" className={classes.image}/>
-            <Typography variant="body1" className={classes.item_title}>
-            Manifesto: Artist
-            </Typography>
-            <Typography variant="caption" className={classes.item_desc}>
-            This manifesto is a Adobe Indesign redesign for Bruce Mau's Incomplete Manifesto for Growth, and is the product of numerous iterations.
-            </Typography>
-          </Grid>
-        </Link>
-        <Link href="/tech/portfolio">
-          <Grid className={className_item} id="Tech, Digital Art, Featured" item xs={10} sm={5} md={3} >
-            <img id="Portfolio" src="/assets/covers/portfolio.png" alt="Portfolio" title="Portfolio" className={classes.image}/>
-            <Typography variant="body1" className={classes.item_title}>
-              (this): Developer, Designer
-            </Typography>
-            <Typography variant="caption" className={classes.item_desc}>
-            I designed and developed this portfolio to document my projects in software engineering, art and design, and entrepreneurship.
-            </Typography>
-          </Grid>
-        </Link>
-        <Link href="/art/quilling">
-          <Grid className={className_item} id="Entrepreneurship, Traditional Art" item xs={10} sm={5} md={3} >
-            <img id="Quilling" src={"/assets/covers/quilling.png"} alt="Quilling" title="Quilling" className={classes.image}/>
-            <Typography variant="body1" className={classes.item_title}>
-              Quilling: Artist, Entrepreneur
-            </Typography>
-            <Typography variant="caption" className={classes.item_desc}>
-            Quilling is an art style where paper is rolled into different shapes; I designed and sold hand-made goods at boutique exhibitions in India.
-            </Typography>
-          </Grid>
-        </Link>
-        <Link href="/tech/schedule-generator">
-          <Grid className={className_item} id="Side Projects, Featured, Tech" item xs={10} sm={5} md={3} >
-            <img id="Schedule Generator" src="/assets/covers/schedule-generator.png" alt="Schedule Generator" title="Schedule Generator" className={classes.image}/>
-            <Typography variant="body1" className={classes.item_title}>
-              Schedule Generator: Developer
-            </Typography>
-            <Typography variant="caption" className={classes.item_desc}>
-            For a hackathon, we automated the creation and optimization of a USC student's class schedule based on the student’s list of classes.
-            </Typography>
-          </Grid>
-        </Link>
-        <Link href="/art/tshirt-logo">
-          <Grid className={className_item} id="Digital Art" item xs={10} sm={5} md={3} >
-            <img id="T-Shirt Logo" src="/assets/covers/tshirt-logo.png" alt="T-Shirt Logo" title="T-Shirt Logo" className={classes.image}/>
-            <Typography variant="body1" className={classes.item_title}>
-            T-Shirt Logo: Artist
-            </Typography>
-            <Typography variant="caption" className={classes.item_desc}>
-            I designed this cartoon illustration using Adobe Photoshop's various tools, such as adjustment layers, layer effects, masks, and paths.
-            </Typography>
-          </Grid>
-        </Link>
-        <Link href="/art/animation">
-          <Grid className={className_item} id="Digital Art" item xs={10} sm={5} md={3} >
-            <img id="Keyframe Animation" src="/assets/covers/animation.png" alt="Keyframe Animation" title="Keyframe Animation" className={classes.image}/>
-            <Typography variant="body1" className={classes.item_title}>
-            Keyframe Animation: Artist
-            </Typography>
-            <Typography variant="caption" className={classes.item_desc}>
-            Inspired by Bruce Mau’s Incomplete Manifesto for Growth, this keyframe animation was created with Adobe Photoshop.
-            </Typography>
-          </Grid>
-        </Link>
-        <Link href="/art/circle-of-light">
-          <Grid className={className_item} id="Traditional Art" item xs={10} sm={5} md={3} >
-            <img id="Circle of Light" src="/assets/covers/circle-of-light.png" alt="Circle of Light" title="Circle of Light" className={classes.image}/>
-            <Typography variant="body1" className={classes.item_title}>
-            'Circle of Light': Artist 
-            </Typography>
-            <Typography variant="caption" className={classes.item_desc}>
-            'Circle of Light' is a 43-by-39 inch oil portrait of the Gautam Buddha that portrays his state of enlightenment and widespread teachings.
-            </Typography>
-          </Grid>
-        </Link>
-        <Link href="/art/kathak">
-          <Grid className={className_item} id="Traditional Art" item xs={10} sm={5} md={3} >
-            <img id="Kathak" src="/assets/covers/kathak.png" alt="Kathak" title="Kathak" className={classes.image}/>
-            <Typography variant="body1" className={classes.item_title}>
-              Kathak: Artist
-            </Typography>
-            <Typography variant="caption" className={classes.item_desc}>
-            Kathak is a popular style of Indian classical dance. I have been practicing  and performing the Jaipur Gharana of Kathak since the age of 4.
-            </Typography>
-          </Grid>
-        </Link>
-        <Link href="/tech/first-robotics-competition">
-          <Grid className={className_item} id="Side Projects" item xs={10} sm={5} md={3} >
-            <img id="First Robotics Competition" src="/assets/covers/frc.png" alt="First Robotics Competition" title="First Robotics Competition" className={classes.image}/>
-            <Typography variant="body1" className={classes.item_title}>
-              First Robotics Competition: Member, Safety Captain 
-            </Typography>
-            <Typography variant="caption" className={classes.item_desc}>
-            I participated in the First Robotics Competition as a member and Safety Captain of Team 6024-R Factor, the first team from India.
-            </Typography>
-          </Grid>
-        </Link>
-        <Link href="/work/mcdonald">
-          <Grid className={className_item} id="Professional" item xs={10} sm={5} md={3} >
-            <img id="McDonald's Hardcastle Restaurants Private Limited" src="/assets/covers/mcdonald.png" alt="McDonald's Hardcastle Restaurants Private Limited" title="McDonald's Hardcastle Restaurants Private Limited" className={classes.image}/>
-            <Typography variant="body1" className={classes.item_title}>
-              McDonald's Hardcastle Restaurants: Product Development Intern
-            </Typography>
-            <Typography variant="caption" className={classes.item_desc}>
-            I beta-tested and analyzed the pilot feature “On The Go”, conceptualised to deliver food to customers en-route.
-            </Typography>
-          </Grid>
-        </Link>
-        <Link href="/work/bookmyshow">
-          <Grid className={className_item} id="Professional, Tech" item xs={10} sm={5} md={3} >
-            <img id="BookMyShow" src="/assets/covers/bms.png" alt="BookMyShow" title="BookMyShow" className={classes.image}/>
-            <Typography variant="body1" className={classes.item_title}>
-              BookMyShow: Software Analyst Intern
-            </Typography>
-            <Typography variant="caption" className={classes.item_desc}>
-            BookMyShow is the largest e-ticketing company in India. I beta-tested and analyzed the software frameworks and libraries in use.
-            </Typography>
-          </Grid>
-        </Link>
-        <Link href="/tech/metta-capital">
-          <Grid className={className_item} id="Tech, Professional, Digital Art" item xs={10} sm={5} md={3} >
-            <img id="Metta Capital Advisors LLP" src="/assets/covers/metta-capital.png" alt="Metta Capital Advisors LLP" title="Metta Capital Advisors LLP" className={classes.image}/>
-            <Typography variant="body1" className={classes.item_title}>
-              Metta Capital: Developer, Designer
-            </Typography>
-            <Typography variant="caption" className={classes.item_desc}>
-            Metta Capital Advisors LLP is a boutique investment bank in India. I was contracted to design and develop the company’s website.
-            </Typography>
-          </Grid>
-        </Link>        
+        <ProjectCard link="/art/100-days-of-buttons" img_title="100 Days of Buttons" img_src="/assets/covers/100-days-of-des.png"
+          labels="Digital Art, Featured, Side Projects"
+          title="100 Days of Buttons: Artist" description="I undertook the 100 Days of Design challenge; every day, I designed a button along and developed its corresponding css stylesheet."
+        />
+        <ProjectCard link="/startups/crave" img_title="Crave" img_src="/assets/covers/crave.png"
+          labels="Tech, Entrepreneurship, Featured"
+          title="Crave: Front-End Developer, Founder" description="Crave is a web app platform that delivers international, exotic snacks to students on campuses at affordable rates, on demand."
+        />
+        <ProjectCard link="/art/dancing-on-the-moon" img_title="Dancing on the Moon" img_src="/assets/covers/dancing-on-the-moon.png"
+          labels="Traditional Art, Featured"
+          title="'Dancing on the Moon': Artist" description="‘Dancing on the Moon’ is a four-piece oil painting of two dancers caught mid-motion that illustrates the expansion of time and space."
+        />
+        <ProjectCard link="/startups/pride-for-labour" img_title="Pride For Labour" img_src="/assets/covers/pfl.png"
+          labels="Entrepreneurship, Featured"
+          title="Pride For Labour: Founder" description="Pride For Labour (PFL) was founded in 2016 with a mission to empower domestic labour and instil pride and respect in the occupation."
+        />
+        <ProjectCard link="/art/cartoon-portrait" img_title="Cartoon Portrait" img_src="/assets/covers/cartoon-portrait.png"
+          labels="Digital Art, Featured"
+          title="Cartoon Portrait: Artist" description="I designed this cartoon illustration using Adobe Photoshop's various tools, such as adjustment layers, paths, and layer masks."
+        />
+        <ProjectCard link="/work/ispirt" img_title="iSPIRT" img_src="/assets/covers/ispirt.png"
+          labels="Professional, Tech, Featured"
+          title="iSPIRT: Software Intern" description="iSPIRT is a think tank that develops societal platforms in India. I have worked on multiple projects, including the India Covid Model."
+        />
+        <ProjectCard link="/startups/a2z" img_title="A2Z" img_src="/assets/covers/a2z.png"
+          labels="Entrepreneurship"
+          title="A2Z: Founder, Co-Editor" description="Founded as a backyard summer project, A2Z is an advertisement-driven bi-monthly magazine distributed to 400+ flats in my housing society."
+        />
+        <ProjectCard link="/art/manifesto" img_title="Manifesto" img_src="/assets/covers/manifesto.png"
+          labels="Digital Art, Featured"
+          title="Manifesto: Artist" description="This manifesto is a Adobe Indesign redesign for Bruce Mau's Incomplete Manifesto for Growth, and is the product of numerous iterations."
+        />
+        <ProjectCard link="/tech/portfolio" img_title="Portfolio" img_src="/assets/covers/portfolio.png"
+          labels="Tech, Digital Art, Featured"
+          title="(this): Developer, Designer" description="I designed and developed this portfolio to document my projects in software engineering, art and design, and entrepreneurship."
+        />
+        <ProjectCard link="/art/quilling" img_title="Quilling" img_src="/assets/covers/quilling.png"
+          labels="Entrepreneurship, Traditional Art"
+          title="Quilling: Artist, Entrepreneur" description="Quilling is an art style where paper is rolled into different shapes; I designed and sold hand-made goods at boutique exhibitions in India."
+        />
+        <ProjectCard link="/tech/schedule-generator" img_title="Schedule Generator" img_src="/assets/covers/schedule-generator.png"
+          labels="Side Projects, Featured, Tech"
+          title="Schedule Generator: Developer" description="For a hackathon, we automated the creation and optimization of a USC student's class schedule based on the student’s list of classes."
+        />
+        <ProjectCard link="/art/tshirt-logo" img_title="T-Shirt Logo" img_src="/assets/covers/tshirt-logo.png"
+          labels="Digital Art"
+          title="T-Shirt Logo: Artist" description="I designed this cartoon illustration using Adobe Photoshop's various tools, such as adjustment layers, layer effects, masks, and paths."
+        />
+        <ProjectCard link="/art/animation" img_title="Keyframe Animation" img_src="/assets/covers/animation.png"
+          labels="Digital Art"
+          title="Keyframe Animation: Artist" description="Inspired by Bruce Mau’s Incomplete Manifesto for Growth, this keyframe animation was created with Adobe Photoshop."
+        />
+        <ProjectCard link="/art/circle-of-light" img_title="Circle of Light" img_src="/assets/covers/circle-of-light.png"
+          labels="Traditional Art"
+          title="'Circle of Light': Artist" description="'Circle of Light' is a 43-by-39 inch oil portrait of the Gautam Buddha that portrays his state of enlightenment and widespread teachings."
+        />
+        <ProjectCard link="/art/kathak" img_title="Kathak" img_src="/assets/covers/kathak.png"
+          labels="Traditional Art"
+          title="Kathak: Artist" description="Kathak is a popular style of Indian classical dance. I have been practicing  and performing the Jaipur Gharana of Kathak since the age of 4."
+        />
+        <ProjectCard link="/tech/first-robotics-competition" img_title="First Robotics Competition" img_src="/assets/covers/frc.png"
+          labels="Side Projects"
+          title="First Robotics Competition: Member, Safety Captain" description="I participated in the First Robotics Competition as a member and Safety Captain of Team 6024-R Factor, the first team from India."
+        />
+        <ProjectCard link="/work/mcdonald" img_title="McDonald's Hardcastle Restaurants Private Limited" img_src="/assets/covers/mcdonald.png"
+          labels="Professional, Tech"
+          title="McDonald's Hardcastle Restaurants: Product Development Intern" description="I beta-tested and analyzed the pilot feature “On The Go”, conceptualised to deliver food to customers en-route."
+        />
+        <ProjectCard link="/work/bookmyshow" img_title="BookMyShow" img_src="/assets/covers/bms.png"
+          labels="Professional, Tech"
+          title="BookMyShow: Software Analyst Intern" description="BookMyShow is the largest e-ticketing company in India. I beta-tested and analyzed the software frameworks and libraries in use."
+        />
+        <ProjectCard link="/tech/metta-capital" img_title="Metta Capital Advisors LLP" img_src="/assets/covers/metta-capital.png"
+          labels="Professional, Tech, Digital Art"
+          title="Metta Capital: Developer, Designer" description="Metta Capital Advisors LLP is a boutique investment bank in India. I was contracted to design and develop the company’s website."
+        />
       </Grid>
     </div>
   );
