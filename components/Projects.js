@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react';
-import Link from 'next/link'
-import { Grid, Typography, Chip, Snackbar } from '@material-ui/core';
+import React from 'react';
+import { Grid, Typography, Hidden, Chip, Snackbar } from '@material-ui/core';
 import { CancelOutlined,LaptopChromebookRounded, ColorLensRounded, WorkOutlineRounded, SearchRounded, FormatSizeRounded, EmojiSymbolsRounded, StarOutlineRounded } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles'
-import { ProjectCard } from './Projects/ProjectCard';
+import ProjectCard from './Projects/ProjectCard'
 import clsx from 'clsx';
 
 const pink='#F7CAC9'; 
@@ -16,7 +15,7 @@ const chipStyleSelected = {color: 'black', border: '2.5px solid grey', backgroun
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    padding: '0 5vw',
+      padding: '0 5vw',
   },
   filter: {
     color: 'grey', 
@@ -90,19 +89,6 @@ export default function Story() {
     setLastFilter(chip);
   }
 
-  useEffect(() => {
-    var x = document.getElementsByClassName("item");
-    for (var j = 0; j < x.length; j++) {
-      if (x[j].id.includes("Featured")) {
-        x[j].style.display = 'inline';
-      }
-      else {
-        x[j].style.display = 'none';
-      }
-    }
-    setLastFilter("Featured");
-  }, []); 
-
   const className_filter = clsx("filterProjects", classes.filter);
 
   return (
@@ -115,6 +101,22 @@ export default function Story() {
             click on a project to learn more
         </Typography>
       
+        <Hidden mdUp>
+          <Snackbar
+            anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              open={openNotifs}
+              autoHideDuration={4000}
+              onClose={handleCloseNotif}
+              message="Viewing this on a laptop is highly recommended"
+              id="notif1"
+              action={
+                <CancelOutlined size="small" aria-label="close" color="inherit" style={{cursor: 'pointer'}} onClick={handleCloseNotif}/>
+              }
+          />
+        </Hidden>
         <Snackbar
           anchorOrigin={{
               vertical: 'bottom',
@@ -123,15 +125,15 @@ export default function Story() {
           open={openFilterNotifs}
           autoHideDuration={4000}
           onClose={handleCloseNotif}
-          message="Click on a project to learn more"
+          message="Tip: use the filter buttons (:"
           id="notif1"
           action={
             <CancelOutlined size="small" aria-label="close" color="inherit" style={{cursor: 'pointer'}} onClick={handleCloseNotif}/>
           }
         />
-        <Grid container direction="row" justify="center" style={{padding: '2vh 4vw 0 4vw'}}>
-          <Chip className={className_filter} id="All" variant="outlined" label="All" clickable={true} style={(lastFilter==="All") ? chipStyleSelected : chipStyle} onClick={()=>filter("All","All")}/>
+        <Grid container direction="row" justifyContent="center" style={{padding: '2vh 4vw 0 4vw'}}>
           <Chip className={className_filter} id="Featured" variant="outlined" label="Featured" clickable={true} style={(lastFilter==="Featured") ? chipStyleSelected : chipStyle} onClick={()=>filter("Featured","Featured")} icon={<StarOutlineRounded style={{color: 'inherit'}} />}/>
+          <Chip className={className_filter} id="All" variant="outlined" label="All" clickable={true} style={(lastFilter==="All") ? chipStyleSelected : chipStyle} onClick={()=>filter("All","All")}/>
           <Chip className={className_filter} id="Tech" variant="outlined" label="Tech" clickable={true} style={(lastFilter==="Tech") ? chipStyleSelected : chipStyle} onClick={()=>filter("Tech","Tech")} icon={<LaptopChromebookRounded style={{color: 'inherit'}} />} />
           <Chip className={className_filter} id="Entrepreneurship" variant="outlined" label="Entrepreneurship" clickable={true} style={(lastFilter==="Entrepreneurship") ? chipStyleSelected : chipStyle} onClick={()=>filter("Entrepreneurship","Entrepreneurship")} icon={<SearchRounded style={{color: 'inherit'}} />}/>
           <Chip className={className_filter} id="Digital Art" variant="outlined" label="Digital Art" clickable={true} style={(lastFilter==="Digital Art") ? chipStyleSelected : chipStyle} onClick={()=>filter("Digital Art","Digital Art")} icon={<FormatSizeRounded style={{color: 'inherit'}} />}/>
@@ -140,8 +142,8 @@ export default function Story() {
           <Chip className={className_filter} id="Side Projects" variant="outlined" label="Side Projects" clickable={true} style={(lastFilter==="Side Projects") ? chipStyleSelected : chipStyle} onClick={()=>filter("Side Projects","Side Projects")} icon={<EmojiSymbolsRounded style={{color: 'inherit'}} />}/>
         </Grid>
       {/* </Fade> */}
-      <Grid container direction="row" justify="center" style={{marginTop: '3vh'}}>
-        <ProjectCard link="/art/100-days-of-buttons" img_title="100 Days of Buttons" img_src="/assets/covers/100-days-of-des.png"
+      <Grid container direction="row" justifyContent="center" style={{marginTop: '3vh'}}>
+      <ProjectCard link="/art/100-days-of-buttons" img_title="100 Days of Buttons" img_src="/assets/covers/100-days-of-des.png"
           labels="Digital Art, Featured, Side Projects"
           title="100 Days of Buttons: Artist" description="I undertook the 100 Days of Design challenge; every day, I designed a button along and developed its corresponding css stylesheet."
         />
@@ -216,7 +218,7 @@ export default function Story() {
         <ProjectCard link="/tech/metta-capital" img_title="Metta Capital Advisors LLP" img_src="/assets/covers/metta-capital.png"
           labels="Professional, Tech, Digital Art"
           title="Metta Capital: Developer, Designer" description="Metta Capital Advisors LLP is a boutique investment bank in India. I was contracted to design and develop the company’s website."
-        />
+        />      
       </Grid>
     </div>
   );

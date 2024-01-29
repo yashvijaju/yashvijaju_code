@@ -32,23 +32,23 @@ const useStyles = makeStyles((theme) => ({
     }
   }));
 
-export function ProjectCard(props) {       
+export default function ProjectCard(props) {       
     const classes = useStyles();
 
     const className_item = clsx("item", classes.item);
 
 
     return(
-        <Link href={props.link}>
-          <Grid className={className_item} id={props.labels} item xs={10} sm={5} md={3} >
-            <img id={props.img_title} src={props.img_src} alt={props.img_title} title={props.img_title} className={classes.image}/>
-            <Typography variant="body1" className={classes.item_title}>
-                {props.title}
-            </Typography>
-            <Typography variant="caption" className={classes.item_desc}>
-                {props.description}
-            </Typography>
-          </Grid>
+        <Grid className={className_item} id={props.labels} item xs={10} sm={5} md={3} >
+          <Link href={props.link}>
+          <img id={props.img_title} src={props.img_src} alt={props.img_title} title={props.img_title} className={classes.image}/>
+          <Typography variant="body1" className={classes.item_title}>
+              {props.title}
+          </Typography>
+          <Typography variant="caption" className={classes.item_desc}>
+              {props.description}
+          </Typography>
         </Link>
+      </Grid>
     )
 }; 

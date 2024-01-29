@@ -108,12 +108,12 @@ export default function Story() {
             <Fade>
                 <Grid container className={classes.container}>
                     <Typography variant="h5" className={classes.text} style={{margin: '5vh 0'}}>
-                        tech-><b>skills</b>
+                        tech&rarr;<b>skills</b> 
                     </Typography>
                     <Grid item xs={12} container direction="row" justify="space-between" className={classes.skills}>
                         <Grid item className={classes.skills_content}>
                             <Typography variant="body2" color="inherit">
-                                skills-><b>Programming Languages</b> <br/>
+                                skills&rarr;<b>Programming Languages</b> <br/>
                                 <br/>
                                 C++ ***<br/>
                                 JavaScript ***<br/>
@@ -122,7 +122,7 @@ export default function Story() {
                         </Grid>
                         <Grid item className={classes.skills_content}>
                             <Typography variant="body2" color="inherit">
-                                skills-><b>Frontend</b><br/>
+                                skills&rarr;<b>Frontend</b><br/>
                                 <br/>
                                 JavaScript ***<br/>
                                 HTML ***<br/>
@@ -138,7 +138,7 @@ export default function Story() {
                         </Grid>
                         <Grid item className={classes.skills_content}>
                             <Typography variant="body2" color="inherit">
-                                skills-><b>Backend</b><br/>
+                                skills&rarr;<b>Backend</b><br/>
                                 <br/>
                                 Next.js ***<br/>
                                 MongoDB ** <br/>
@@ -149,7 +149,7 @@ export default function Story() {
                         </Grid>
                         <Grid item className={classes.skills_content}>
                             <Typography variant="body2" color="inherit">
-                                skills-><b>Tools and Protocols</b><br/>
+                                skills&rarr;<b>Tools and Protocols</b><br/>
                                 <br/>
                                 Git and GitHub *** <br/>
                                 Azure * <br/>
@@ -163,7 +163,7 @@ export default function Story() {
             </Fade>
             <Grid container className={classes.container}>
                 <Typography variant="h5" className={classes.text} style={{margin: '5vh 0'}}>
-                    tech-><b>projects</b>
+                    tech&rarr;<b>projects</b>
                 </Typography>
 
                 <ProjectCard title="CRAVE" text="A progressive web app that delivers international, exotic snacks to students on campuses at affordable rates, on demand." tags={["javascript xml","react","redux","materialize"]} link="/startups/crave"/>
