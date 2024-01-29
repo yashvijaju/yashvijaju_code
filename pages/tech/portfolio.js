@@ -106,7 +106,7 @@ export default function Story() {
     <Divider className={classes.divider}/>
 
     <Grid container direction="column" className={classes.container}>
-      <Typography variant="h5">this-><b>timeline</b></Typography>
+      <Typography variant="h5">this&rarr;<b>timeline</b></Typography>
       <Timeline>
         <TimelineEvent time="JUNE 2020" iteration="0" content={<>Theme: Each project tells a story. Put together, this is the abridged story of my life. <br/>Color Palette: Pastels <br/>UI / UX: Project description can be read in the project’s modal (9 different modal designs were created). Projects can be filtered by category. Integrated contact-me form. Custom pre-loading and 404 pages. Typewriter animation on landing page developed with pure CSS and JS (no external package used).</>} images={<><img className={classes.image} src="/assets/projects/portfolio/portfolio1_0.jpg"/><img className={classes.image} src="/assets/projects/portfolio/portfolio1_1.jpg"/></>}/>
 

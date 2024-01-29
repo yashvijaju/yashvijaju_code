@@ -5,9 +5,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import ProjectCard from './Projects/ProjectCard'
 import clsx from 'clsx';
 
-const pink='#F7CAC9'; 
 const blue='#bee3f1';
-const grey = '#efefef'; 
 const title = 'grey';
 
 const chipStyle = {};

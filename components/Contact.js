@@ -7,7 +7,6 @@ import { Fade } from 'react-reveal';
 
 const blue='#bee3f1';
 const grey = '#000000';
-const greyy = '#efefef';
 
 const useStyles = makeStyles((theme) => ({
   container: {

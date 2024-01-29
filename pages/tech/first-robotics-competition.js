@@ -5,7 +5,6 @@ import { Fade } from 'react-reveal';
 // Components
 import { Cover } from '../../components/Projects/Cover'
 import { Intro } from '../../components/Projects/Intro'
-import { ProblemStatement } from '../../components/Projects/Problem_Statement'
 import { Footer } from '../../components/Projects/Footer'
 
 const primary = '#fd7c28';
