@@ -3,8 +3,6 @@ import { Grid, Hidden, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles'
 
 
-var title = '#000000'; 
-var text = '#000000';
 var background = '#000000';
 
 
@@ -47,8 +45,8 @@ const useStyles = makeStyles((theme) => ({
 // Name or Logo: project_name or project_logo
 // Subheading: project_subheading
 export function Cover(props) {       
-    title = props.title_color;
-    text = props.text_color;
+    var title_color = props.title_color;
+    var text_color = props.text_color;
     background = props.bg_color;
 
     const classes = useStyles();
@@ -71,12 +69,12 @@ export function Cover(props) {
                     {props.project_name && 
                         <>
                             <Hidden smUp>
-                                <Typography variant="h5" className={classes.title} style={{color: title}}><b>
+                                <Typography variant="h5" className={classes.title} style={{color: title_color}}><b>
                                     {props.project_name}
                                 </b></Typography>
                             </Hidden>
                             <Hidden xsDown>
-                                <Typography variant="h3" className={classes.title} style={{color: title}}><b>
+                                <Typography variant="h3" className={classes.title} style={{color: title_color}}><b>
                                     {props.project_name}
                                 </b></Typography>
                             </Hidden>
@@ -84,7 +82,7 @@ export function Cover(props) {
                         
                     }
                     {props.project_subheading &&
-                        <Typography className={classes.text} variant="body1" style={{color: title}}>
+                        <Typography className={classes.text} variant="body1" style={{color: text_color}}>
                             {props.project_subheading}
                         </Typography>
                     }
