@@ -125,7 +125,7 @@ export default function Animation() {
 
     React.useEffect(() => {
         setTimeout(()=> {
-            const intro_string = "< Hi, I am Yashvi Jaju >";
+            const intro_string = "< Hi! I am Yashvi Jaju >";
             let curr_string = intro_string.substring(0,curr.length+1);
             curr_string += (curr_string.length == intro_string.length) ? '' : '_';
             setCurr(curr_string);
