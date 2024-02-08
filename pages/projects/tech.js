@@ -115,47 +115,41 @@ export default function Story() {
                             <Typography variant="body2" color="inherit">
                                 skills&rarr;<b>Programming Languages</b> <br/>
                                 <br/>
-                                C++ ***<br/>
-                                JavaScript ***<br/>
-                                Python *
+                                C++<br/>
+                                Go <br/>
+                                Java<br/>
+                                JavaScript<br/>
+                                Python <br/>
+                                TypeScript<br/>
                             </Typography>
                         </Grid>
                         <Grid item className={classes.skills_content}>
                             <Typography variant="body2" color="inherit">
-                                skills&rarr;<b>Frontend</b><br/>
+                                skills&rarr;<b>Full-Stack Web Dev</b><br/>
                                 <br/>
-                                JavaScript ***<br/>
-                                HTML ***<br/>
-                                CSS ***<br/>
-                                SASS **
-                                jQuery *<br/>
-                                Material UI **<br/>
-                                Bootstrap *<br/>
-                                React ***<br/>
-                                Redux **<br/>
-                                Wordpress **<br/>
+                                Angular <br/>
+                                React <br/>
+                                Next <br/>
+                                MongoDB  <br/>
+                                MySQL <br/>
+                                REST APIs <br/>
                             </Typography>
                         </Grid>
                         <Grid item className={classes.skills_content}>
                             <Typography variant="body2" color="inherit">
-                                skills&rarr;<b>Backend</b><br/>
+                                skills&rarr;<b>Mobile Dev</b><br/>
                                 <br/>
-                                Next.js ***<br/>
-                                MongoDB ** <br/>
-                                Flask *<br/>
-                                PHP *<br/>
-                                REST APIs **<br/>
+                                Android Studio<br/>
+                                React Native<br/>
                             </Typography>
                         </Grid>
                         <Grid item className={classes.skills_content}>
                             <Typography variant="body2" color="inherit">
                                 skills&rarr;<b>Tools and Protocols</b><br/>
                                 <br/>
-                                Git and GitHub *** <br/>
-                                Azure * <br/>
-                                Active Directory ** <br/>
-                                AWS * <br/>
-                                OAuth 2.0 ** <br/>
+                                Active Directory  <br/>
+                                AWS  <br/>
+                                OAuth 2.0  <br/>
                             </Typography>
                         </Grid>
                     </Grid>
@@ -166,17 +160,15 @@ export default function Story() {
                     tech&rarr;<b>projects</b>
                 </Typography>
 
-                <ProjectCard title="CRAVE" text="A progressive web app that delivers international, exotic snacks to students on campuses at affordable rates, on demand." tags={["javascript xml","react","redux","materialize"]} link="/startups/crave"/>
-
+                <ProjectCard title="TWO SIGMA" text="I developed an internal tool to make service entitlements visible using Angular, Java, and TypeScript, saving up to 100 hours annually." tags={["angular","java","typescript","api"]} link="/tech/two-sigma"/>
+                
                 <Fade bottom>
+                <ProjectCard title="SLACK" text="I developed a templating library in Go to automatically generate Kubernetes configuration files for deploying the different versions." tags={["go","kubernetes"]} link="/tech/slack"/>
+                <ProjectCard title="CRAVE" text="A progressive web app that delivers international, exotic snacks to students on campuses at affordable rates, on demand." tags={["javascript xml","react","redux","materialize"]} link="/startups/crave"/>
                 <ProjectCard title="PORTFOLIO" text="A documentation of my projects in software engineering, art and design, and entrepreneurship." tags={["javascript xml","next.js","material ui"]} link="/tech/portfolio"/>
-
                 <ProjectCard title="SCHEDULE GENERATOR" text="An automated solution for the creation and optimization of a USC student's class schedule based on the student’s list of proespective classes." tags={["python","c++","beautiful soup 4", "tkinter"]} link="/tech/schedule-generator"/>
-
                 <ProjectCard title="ISPIRT — INDIA COVID MODEL" text="An epidemiological SEIR model to predict coronavirus infection trends in different districts and states in India over the next 15-30 days." tags={["python","flask","plotly","flourish","numpy","aws(s3,ec2","google analytics","wordpress"]} link="/work/ispirt"/>
-
                 <ProjectCard title="iSPIRT — VOLUNTEER MANAGEMENT TOOL" text="A custom LinkedIn-style directory for the internal team, with volunteer journeys mapped for admin use." tags={["javascript xml","next.js","mongodb","oauth 2.0","active directory","sso"]} link="/work/ispirt"/>
-
                 <ProjectCard title="CLIENT WEBSITE — METTA CAPITAL" text="A static responsive website designed and developed for a client." tags={["javascript xml","react.js","godaddy","github pages"]} link="/tech/metta-capital"/>
                 </Fade>
             </Grid>

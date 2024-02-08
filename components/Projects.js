@@ -137,6 +137,10 @@ export default function Story() {
           labels="Digital Art, Side Projects"
           title="100 Days of Buttons: Artist" description="I undertook the 100 Days of Design challenge; every day, I designed a button along and developed its corresponding css stylesheet."
         />
+        <ProjectCard link="/tech/two-sigma" img_title="Two Sigma" img_src="/assets/covers/two-sigma.png"
+          labels="Tech"
+          title="Two Sigma: Software Engineer Intern" description="I developed an internal tool to make service entitlements visible using Angular, Java, and TypeScript, saving up to 100 hours annually."
+        />
         <ProjectCard link="/startups/crave" img_title="Crave" img_src="/assets/covers/crave.png"
           labels="Tech, Entrepreneurship, Archive"
           title="Crave: Front-End Developer, Founder" description="Crave is a web app platform that delivers international, exotic snacks to students on campuses at affordable rates, on demand."
@@ -145,24 +149,28 @@ export default function Story() {
           labels="Traditional Art"
           title="'Dancing on the Moon': Artist" description="‘Dancing on the Moon’ is a four-piece oil painting of two dancers caught mid-motion that illustrates the expansion of time and space."
         />
+        <ProjectCard link="/tech/slack" img_title="Slack" img_src="/assets/covers/slack.png"
+          labels="Tech"
+          title="Slack: Software Engineer Intern" description="I developed a templating library in Go to automatically generate Kubernetes configuration files for deploying the different versions."
+        />
         <ProjectCard link="/startups/pride-for-labour" img_title="Pride For Labour" img_src="/assets/covers/pfl.png"
           labels="Entrepreneurship"
           title="Pride For Labour: Founder" description="Pride For Labour (PFL) was founded in 2016 with a mission to empower domestic labour and instil pride and respect in the occupation."
         />
         <ProjectCard link="/art/cartoon-portrait" img_title="Cartoon Portrait" img_src="/assets/covers/cartoon-portrait.png"
-          labels="Digital Art"
+          labels="Digital Art, Archive"
           title="Cartoon Portrait: Artist" description="I designed this cartoon illustration using Adobe Photoshop's various tools, such as adjustment layers, paths, and layer masks."
         />
         <ProjectCard link="/work/ispirt" img_title="iSPIRT" img_src="/assets/covers/ispirt.png"
           labels="Professional, Tech"
-          title="iSPIRT: Software Intern" description="iSPIRT is a think tank that develops societal platforms in India. I have worked on multiple projects, including the India Covid Model."
+          title="iSPIRT: Software Engineer Intern" description="iSPIRT is a think tank that develops societal platforms in India. I have worked on multiple projects, including the India Covid Model."
         />
         <ProjectCard link="/startups/a2z" img_title="A2Z" img_src="/assets/covers/a2z.png"
           labels="Entrepreneurship, Archive"
           title="A2Z: Founder, Co-Editor" description="Founded as a backyard summer project, A2Z is an advertisement-driven bi-monthly magazine distributed to 400+ flats in my housing society."
         />
         <ProjectCard link="/art/manifesto" img_title="Manifesto" img_src="/assets/covers/manifesto.png"
-          labels="Digital Art"
+          labels="Digital Art, Archive"
           title="Manifesto: Artist" description="This manifesto is a Adobe Indesign redesign for Bruce Mau's Incomplete Manifesto for Growth, and is the product of numerous iterations."
         />
         <ProjectCard link="/tech/portfolio" img_title="Portfolio" img_src="/assets/covers/portfolio.png"
