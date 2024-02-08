@@ -120,7 +120,7 @@ export default function Story() {
             <Typography variant="h3" fontWeight={100} className={classes.title_title_text}><b>day one</b> to <b> hundred</b> : a compilation</Typography>
           </Hidden>
           <Hidden smUp>
-            <Typography variant="h5" fontWeight={100} className={classes.title_title_text}><b>day 1</b> to <b> 100</b> : a compilation</Typography>
+            <Typography variant="h5" fontWeight={100} className={classes.title_title_text}><b>day 1</b> to <b> 100</b> : compiled</Typography>
           </Hidden>
         </Grid>
         <Grid item xs={12} className={classes.spacing}>

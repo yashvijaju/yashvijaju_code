@@ -55,15 +55,15 @@ export function Intro(props) {
             </Hidden>
             <Hidden mdUp>
                 <Grid item container direction="column" justifyContent="space-between" spacing={3}>
-                    <Grid item xs={12} container direction="row" justifyContent="space-between">
+                    <Grid item container direction="row" justifyContent="space-between">
                         <TitleText title="Company" text={props.company}></TitleText>
                         <TitleText title="Year" text={props.year}></TitleText>
                     </Grid>
-                    <Grid item xs={12} container direction="row" justifyContent="space-between">
+                    <Grid item container direction="row" justifyContent="space-between">
                         <TitleText title="Role" text={props.role}></TitleText>
                         <TitleText title="Team" text={props.team}></TitleText>
                     </Grid>
-                    <Grid item xs={12} container direction="row" justifyContent="space-between">
+                    <Grid item container direction="row" justifyContent="space-between">
                         <TitleText title="Tools & Stack" text={props.tools}></TitleText>
                         <TitleText title="Category" text={props.category}></TitleText>
                     </Grid>
