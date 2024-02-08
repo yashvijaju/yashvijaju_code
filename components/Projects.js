@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Grid, Typography, Chip, Snackbar } from '@material-ui/core';
-import { CancelOutlined,LaptopChromebookRounded, ColorLensRounded, WorkOutlineRounded, SearchRounded, FormatSizeRounded, EmojiSymbolsRounded, ArchiveRounded } from '@material-ui/icons';
+import { CancelOutlined,LaptopChromebookRounded, ColorLensRounded, SearchRounded, FormatSizeRounded, EmojiSymbolsRounded, ArchiveRounded } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles'
 import ProjectCard from './Projects/ProjectCard'
 import clsx from 'clsx';
@@ -89,7 +89,7 @@ export default function Story() {
 
   useEffect(() => { 
     filter("All","All");
-  }, filter);
+  }, []);
 
 
 
