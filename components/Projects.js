@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Grid, Typography, Chip, Snackbar } from '@material-ui/core';
-import { CancelOutlined,LaptopChromebookRounded, ColorLensRounded, WorkOutlineRounded, SearchRounded, FormatSizeRounded, EmojiSymbolsRounded, StarOutlineRounded } from '@material-ui/icons';
+import { CancelOutlined,LaptopChromebookRounded, ColorLensRounded, WorkOutlineRounded, SearchRounded, FormatSizeRounded, EmojiSymbolsRounded, StarOutlineRounded, ArchiveRounded } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles'
 import ProjectCard from './Projects/ProjectCard'
 import clsx from 'clsx';
@@ -68,7 +68,9 @@ export default function Story() {
     if (props === "All") {
       var x = document.getElementsByClassName("item");
         for (var j = 0; j < x.length; j++) {
-          x[j].style.display = 'inline';
+          if (x[j].id.includes("Archive")) {
+            x[j].style.display = 'none';
+          } else x[j].style.display = 'inline';
         }
     }
     else {
@@ -84,6 +86,12 @@ export default function Story() {
     }
     setLastFilter(chip);
   }
+
+  useEffect(() => { 
+    filter("All","All");
+  }, []);
+
+
 
   const className_filter = clsx("filterProjects", classes.filter);
 
@@ -113,7 +121,8 @@ export default function Story() {
           }
         />
         <Grid container direction="row" justifyContent="center" style={{padding: '2vh 4vw 0 4vw'}}>
-          <Chip className={className_filter} id="Featured" variant="outlined" label="Featured" clickable={true} style={(lastFilter==="Featured") ? chipStyleSelected : chipStyle} onClick={()=>filter("Featured","Featured")} icon={<StarOutlineRounded style={{color: 'inherit'}} />}/>
+          <Chip className={className_filter} id="Archive" variant="outlined" label="Archive" clickable={true} style={(lastFilter==="Archive") ? chipStyleSelected : chipStyle} onClick={()=>filter("Archive","Archive")} icon={<ArchiveRounded style={{color: 'inherit'}} />}/>
+          {/* <Chip className={className_filter} id="Featured" variant="outlined" label="Featured" clickable={true} style={(lastFilter==="Featured") ? chipStyleSelected : chipStyle} onClick={()=>filter("Featured","Featured")} icon={<StarOutlineRounded style={{color: 'inherit'}} />}/> */}
           <Chip className={className_filter} id="All" variant="outlined" label="All" clickable={true} style={(lastFilter==="All") ? chipStyleSelected : chipStyle} onClick={()=>filter("All","All")}/>
           <Chip className={className_filter} id="Tech" variant="outlined" label="Tech" clickable={true} style={(lastFilter==="Tech") ? chipStyleSelected : chipStyle} onClick={()=>filter("Tech","Tech")} icon={<LaptopChromebookRounded style={{color: 'inherit'}} />} />
           <Chip className={className_filter} id="Entrepreneurship" variant="outlined" label="Entrepreneurship" clickable={true} style={(lastFilter==="Entrepreneurship") ? chipStyleSelected : chipStyle} onClick={()=>filter("Entrepreneurship","Entrepreneurship")} icon={<SearchRounded style={{color: 'inherit'}} />}/>
@@ -125,59 +134,59 @@ export default function Story() {
       {/* </Fade> */}
       <Grid container direction="row" justifyContent="center" style={{marginTop: '3vh'}}>
       <ProjectCard link="/art/100-days-of-buttons" img_title="100 Days of Buttons" img_src="/assets/covers/100-days-of-des.png"
-          labels="Digital Art, Featured, Side Projects"
+          labels="Digital Art, Side Projects"
           title="100 Days of Buttons: Artist" description="I undertook the 100 Days of Design challenge; every day, I designed a button along and developed its corresponding css stylesheet."
         />
         <ProjectCard link="/startups/crave" img_title="Crave" img_src="/assets/covers/crave.png"
-          labels="Tech, Entrepreneurship, Featured"
+          labels="Tech, Entrepreneurship, Archive"
           title="Crave: Front-End Developer, Founder" description="Crave is a web app platform that delivers international, exotic snacks to students on campuses at affordable rates, on demand."
         />
         <ProjectCard link="/art/dancing-on-the-moon" img_title="Dancing on the Moon" img_src="/assets/covers/dancing-on-the-moon.png"
-          labels="Traditional Art, Featured"
+          labels="Traditional Art"
           title="'Dancing on the Moon': Artist" description="‘Dancing on the Moon’ is a four-piece oil painting of two dancers caught mid-motion that illustrates the expansion of time and space."
         />
         <ProjectCard link="/startups/pride-for-labour" img_title="Pride For Labour" img_src="/assets/covers/pfl.png"
-          labels="Entrepreneurship, Featured"
+          labels="Entrepreneurship"
           title="Pride For Labour: Founder" description="Pride For Labour (PFL) was founded in 2016 with a mission to empower domestic labour and instil pride and respect in the occupation."
         />
         <ProjectCard link="/art/cartoon-portrait" img_title="Cartoon Portrait" img_src="/assets/covers/cartoon-portrait.png"
-          labels="Digital Art, Featured"
+          labels="Digital Art"
           title="Cartoon Portrait: Artist" description="I designed this cartoon illustration using Adobe Photoshop's various tools, such as adjustment layers, paths, and layer masks."
         />
         <ProjectCard link="/work/ispirt" img_title="iSPIRT" img_src="/assets/covers/ispirt.png"
-          labels="Professional, Tech, Featured"
+          labels="Professional, Tech"
           title="iSPIRT: Software Intern" description="iSPIRT is a think tank that develops societal platforms in India. I have worked on multiple projects, including the India Covid Model."
         />
         <ProjectCard link="/startups/a2z" img_title="A2Z" img_src="/assets/covers/a2z.png"
-          labels="Entrepreneurship"
+          labels="Entrepreneurship, Archive"
           title="A2Z: Founder, Co-Editor" description="Founded as a backyard summer project, A2Z is an advertisement-driven bi-monthly magazine distributed to 400+ flats in my housing society."
         />
         <ProjectCard link="/art/manifesto" img_title="Manifesto" img_src="/assets/covers/manifesto.png"
-          labels="Digital Art, Featured"
+          labels="Digital Art"
           title="Manifesto: Artist" description="This manifesto is a Adobe Indesign redesign for Bruce Mau's Incomplete Manifesto for Growth, and is the product of numerous iterations."
         />
         <ProjectCard link="/tech/portfolio" img_title="Portfolio" img_src="/assets/covers/portfolio.png"
-          labels="Tech, Digital Art, Featured"
+          labels="Tech, Digital Art"
           title="(this): Developer, Designer" description="I designed and developed this portfolio to document my projects in software engineering, art and design, and entrepreneurship."
         />
         <ProjectCard link="/art/quilling" img_title="Quilling" img_src="/assets/covers/quilling.png"
-          labels="Entrepreneurship, Traditional Art"
+          labels="Entrepreneurship, Traditional Art, Archive"
           title="Quilling: Artist, Entrepreneur" description="Quilling is an art style where paper is rolled into different shapes; I designed and sold hand-made goods at boutique exhibitions in India."
         />
         <ProjectCard link="/tech/schedule-generator" img_title="Schedule Generator" img_src="/assets/covers/schedule-generator.png"
-          labels="Side Projects, Featured, Tech"
+          labels="Side Projects, Archive, Tech"
           title="Schedule Generator: Developer" description="For a hackathon, we automated the creation and optimization of a USC student's class schedule based on the student’s list of classes."
         />
         <ProjectCard link="/art/tshirt-logo" img_title="T-Shirt Logo" img_src="/assets/covers/tshirt-logo.png"
-          labels="Digital Art"
+          labels="Archive, Digital Art"
           title="T-Shirt Logo: Artist" description="I designed this cartoon illustration using Adobe Photoshop's various tools, such as adjustment layers, layer effects, masks, and paths."
         />
         <ProjectCard link="/art/animation" img_title="Keyframe Animation" img_src="/assets/covers/animation.png"
-          labels="Digital Art"
+          labels="Digital Art, Archive"
           title="Keyframe Animation: Artist" description="Inspired by Bruce Mau’s Incomplete Manifesto for Growth, this keyframe animation was created with Adobe Photoshop."
         />
         <ProjectCard link="/art/circle-of-light" img_title="Circle of Light" img_src="/assets/covers/circle-of-light.png"
-          labels="Traditional Art"
+          labels="Traditional Art, Archive"
           title="'Circle of Light': Artist" description="'Circle of Light' is a 43-by-39 inch oil portrait of the Gautam Buddha that portrays his state of enlightenment and widespread teachings."
         />
         <ProjectCard link="/art/kathak" img_title="Kathak" img_src="/assets/covers/kathak.png"
@@ -189,15 +198,15 @@ export default function Story() {
           title="First Robotics Competition: Member, Safety Captain" description="I participated in the First Robotics Competition as a member and Safety Captain of Team 6024-R Factor, the first team from India."
         />
         <ProjectCard link="/work/mcdonald" img_title="McDonald's Hardcastle Restaurants Private Limited" img_src="/assets/covers/mcdonald.png"
-          labels="Professional, Tech"
+          labels="Archive"
           title="McDonald's Hardcastle Restaurants: Product Development Intern" description="I beta-tested and analyzed the pilot feature “On The Go”, conceptualised to deliver food to customers en-route."
         />
         <ProjectCard link="/work/bookmyshow" img_title="BookMyShow" img_src="/assets/covers/bms.png"
-          labels="Professional, Tech"
+          labels="Archive"
           title="BookMyShow: Software Analyst Intern" description="BookMyShow is the largest e-ticketing company in India. I beta-tested and analyzed the software frameworks and libraries in use."
         />
         <ProjectCard link="/tech/metta-capital" img_title="Metta Capital Advisors LLP" img_src="/assets/covers/metta-capital.png"
-          labels="Professional, Tech, Digital Art"
+          labels="Archive"
           title="Metta Capital: Developer, Designer" description="Metta Capital Advisors LLP is a boutique investment bank in India. I was contracted to design and develop the company’s website."
         />      
       </Grid>
