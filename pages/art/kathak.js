@@ -158,7 +158,7 @@ export default function Story() {
             </Grid>
         </Grid>
 
-        <Footer prev="SOFTWARE ENGINEER INTERN : ISPIRT" prev_link="/work/ispirt" prev_category="work, tech" next="First Robotics Competition" next_link="/tech/first-robotics-competition" next_category="tech, side projects" title={secondary} subtitle={primary} divider={primary_25}/>
+        <Footer prev="SOFTWARE ENGINEER INTERN : ISPIRT" prev_link="/tech/ispirt" prev_category="work, tech" next="First Robotics Competition" next_link="/tech/first-robotics-competition" next_category="tech, side projects" title={secondary} subtitle={primary} divider={primary_25}/>
         </>
     )
 }

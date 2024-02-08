@@ -132,7 +132,7 @@ export default function Story() {
             </Fade>
         </Grid>
 
-        <Footer prev="KEYFRAME ANIMATION" prev_link="/art/animation" prev_category="digitl art" next="SOFTWARE ENGINEER INTERN : iSPIRT" next_link="/work/ispirt" next_category="tech, work" title={secondary} subtitle={primary} divider={primary_25}/>
+        <Footer prev="KEYFRAME ANIMATION" prev_link="/art/animation" prev_category="digitl art" next="SOFTWARE ENGINEER INTERN : iSPIRT" next_link="/tech/ispirt" next_category="tech, work" title={secondary} subtitle={primary} divider={primary_25}/>
         </>
     )
 }

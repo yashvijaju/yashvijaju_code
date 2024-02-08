@@ -89,7 +89,7 @@ export default function Story() {
 
   useEffect(() => { 
     filter("All","All");
-  }, []);
+  }, filter);
 
 
 
@@ -128,7 +128,6 @@ export default function Story() {
           <Chip className={className_filter} id="Entrepreneurship" variant="outlined" label="Entrepreneurship" clickable={true} style={(lastFilter==="Entrepreneurship") ? chipStyleSelected : chipStyle} onClick={()=>filter("Entrepreneurship","Entrepreneurship")} icon={<SearchRounded style={{color: 'inherit'}} />}/>
           <Chip className={className_filter} id="Digital Art" variant="outlined" label="Digital Art" clickable={true} style={(lastFilter==="Digital Art") ? chipStyleSelected : chipStyle} onClick={()=>filter("Digital Art","Digital Art")} icon={<FormatSizeRounded style={{color: 'inherit'}} />}/>
           <Chip className={className_filter} id="Traditional Art" variant="outlined" label="Traditional Art" clickable={true} style={(lastFilter==="Traditional Art") ? chipStyleSelected : chipStyle} onClick={()=>filter("Traditional Art","Traditional Art")}  icon={<ColorLensRounded style={{color: 'inherit'}} />} />
-          <Chip className={className_filter} id="Professional" variant="outlined" label="Professional" clickable={true} style={(lastFilter==="Professional") ? chipStyleSelected : chipStyle} onClick={()=>filter("Professional","Professional")} icon={<WorkOutlineRounded style={{color: 'inherit'}} />}/>
           <Chip className={className_filter} id="Side Projects" variant="outlined" label="Side Projects" clickable={true} style={(lastFilter==="Side Projects") ? chipStyleSelected : chipStyle} onClick={()=>filter("Side Projects","Side Projects")} icon={<EmojiSymbolsRounded style={{color: 'inherit'}} />}/>
         </Grid>
       {/* </Fade> */}
@@ -161,8 +160,8 @@ export default function Story() {
           labels="Digital Art, Archive"
           title="Cartoon Portrait: Artist" description="I designed this cartoon illustration using Adobe Photoshop's various tools, such as adjustment layers, paths, and layer masks."
         />
-        <ProjectCard link="/work/ispirt" img_title="iSPIRT" img_src="/assets/covers/ispirt.png"
-          labels="Professional, Tech"
+        <ProjectCard link="/tech/ispirt" img_title="iSPIRT" img_src="/assets/covers/ispirt.png"
+          labels="Tech"
           title="iSPIRT: Software Engineer Intern" description="iSPIRT is a think tank that develops societal platforms in India. I have worked on multiple projects, including the India Covid Model."
         />
         <ProjectCard link="/startups/a2z" img_title="A2Z" img_src="/assets/covers/a2z.png"
